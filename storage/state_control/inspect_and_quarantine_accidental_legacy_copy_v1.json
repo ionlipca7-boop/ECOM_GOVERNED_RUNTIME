@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "layer": "INSPECT_AND_QUARANTINE_ACCIDENTAL_LEGACY_COPY_V1",
+  "policy": "legacy code quarantined as reference only; clean runtime remains implementation target",
+  "quarantined_paths": [
+    "storage/quarantine/legacy_accidental_copy_v1/bot.py",
+    "storage/quarantine/legacy_accidental_copy_v1/ebay_auto_token_guard_v1.py",
+    "storage/quarantine/legacy_accidental_copy_v1/guarded_active_listings_fetch_wrapper_v1.py",
+    "storage/quarantine/legacy_accidental_copy_v1/trading_get_my_ebay_selling_fetcher_v1.py"
+  ],
+  "secrets_copied": false,
+  "publish_called": false,
+  "revise_called": false,
+  "delete_called": false,
+  "next_allowed_action": "build_clean_governed_module_skeleton_v1",
+  "timestamp": "2026-04-28T19:24:28.023875+00:00"
+}

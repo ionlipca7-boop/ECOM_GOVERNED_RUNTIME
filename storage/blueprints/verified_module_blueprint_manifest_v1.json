@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "blueprint_only": true,
+  "source": "legacy quarantine/reference",
+  "target": "clean governed modules to be written separately",
+  "modules": [
+    "telegram_control",
+    "ebay_token_guard",
+    "ebay_readonly_trading_fetcher",
+    "governance_state_control"
+  ],
+  "forbidden": [
+    "blind legacy copy",
+    "secrets in git/chat/logs",
+    "live publish/revise/delete"
+  ]
+}

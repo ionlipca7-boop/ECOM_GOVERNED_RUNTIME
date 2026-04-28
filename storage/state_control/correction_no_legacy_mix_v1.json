@@ -1,0 +1,15 @@
+{
+  "status": "STOPPED_FOR_CORRECTION",
+  "reason": "legacy files must not be blindly copied into clean governed runtime",
+  "already_touched_paths": [
+    "runtime/telegram/bot.py"
+  ],
+  "corrected_layer": "extract_verified_module_blueprints_v1",
+  "policy": "old runtime is reference/archive only; new runtime must receive clean adapted governed modules only",
+  "secrets_copied": false,
+  "publish_called": false,
+  "revise_called": false,
+  "delete_called": false,
+  "next_allowed_action": "inspect_and_quarantine_accidental_legacy_copy_v1",
+  "timestamp": "2026-04-28T19:22:37.199941+00:00"
+}

@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "layer": "BUILD_CLEAN_GOVERNED_MODULE_SKELETON_V1",
+  "clean_modules": [
+    "runtime/governance/state.py",
+    "runtime/telegram/adapter.py",
+    "runtime/ebay/token_guard.py",
+    "runtime/ebay/readonly_trading.py"
+  ],
+  "legacy_code_copied": false,
+  "secrets_copied": false,
+  "publish_called": false,
+  "revise_called": false,
+  "delete_called": false,
+  "next_allowed_action": "verify_clean_skeleton_and_git_status_v1",
+  "timestamp": "2026-04-28T19:25:29.590270+00:00"
+}
