@@ -1,8 +1,15 @@
 {
   "project": "ECOM_GOVERNED_RUNTIME",
-  "current_layer": "create_initial_governed_runtime_manifest_v1",
-  "status": "MANIFEST_CREATED",
-  "next_allowed_action": "initialize_new_runtime_gitignore_v1",
-  "stop_condition": "clean runtime ready for selective verified module transfer",
-  "timestamp": "2026-04-28T18:24:20.902363+00:00"
+  "current_layer": "record_initial_commit_pointer_v1",
+  "status": "INITIAL_LOCAL_COMMIT_DONE",
+  "commit": "ecb0b06",
+  "branch": "main",
+  "next_allowed_action": "decide_remote_repository_strategy_v1",
+  "rules": [
+    "no secrets",
+    "no legacy bulk copy",
+    "no live actions",
+    "selective verified transfer only"
+  ],
+  "timestamp": "2026-04-28T18:28:13.760578+00:00"
 }
