@@ -1,0 +1,15 @@
+{
+  "status": "REMOTE_STRATEGY_DECIDED",
+  "layer": "decide_remote_repository_strategy_v1",
+  "strategy": "create_separate_new_github_repo",
+  "recommended_repo_name": "ECOM_GOVERNED_RUNTIME",
+  "reason": "do not mix clean runtime with legacy project history/noise",
+  "current_branch": "main",
+  "current_commit": "c2f82f1",
+  "git_status": "",
+  "remote_now": "",
+  "no_remote_added_yet": true,
+  "no_push": true,
+  "next_allowed_action": "create_or_connect_new_github_remote_v1",
+  "timestamp": "2026-04-28T18:32:07.997532+00:00"
+}

@@ -1,15 +1,7 @@
 {
   "project": "ECOM_GOVERNED_RUNTIME",
-  "current_layer": "record_initial_commit_pointer_v1",
-  "status": "INITIAL_LOCAL_COMMIT_DONE",
-  "commit": "ecb0b06",
-  "branch": "main",
-  "next_allowed_action": "decide_remote_repository_strategy_v1",
-  "rules": [
-    "no secrets",
-    "no legacy bulk copy",
-    "no live actions",
-    "selective verified transfer only"
-  ],
-  "timestamp": "2026-04-28T18:28:13.760578+00:00"
+  "current_layer": "decide_remote_repository_strategy_v1",
+  "status": "REMOTE_STRATEGY_DECIDED",
+  "next_allowed_action": "create_or_connect_new_github_remote_v1",
+  "timestamp": "2026-04-28T18:32:07.997532+00:00"
 }
