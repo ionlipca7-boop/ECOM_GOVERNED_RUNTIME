@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "layer": "initialize_new_runtime_git_repo_v1",
+  "project": "ECOM_GOVERNED_RUNTIME",
+  "branch": "main",
+  "git_status": "?? .gitignore\n?? MANIFEST.json\n?? storage/",
+  "remote": "",
+  "no_remote_yet": true,
+  "no_push": true,
+  "no_live_actions": true,
+  "next_allowed_action": "prepare_initial_clean_runtime_commit_v1",
+  "timestamp": "2026-04-28T18:25:58.619586+00:00"
+}

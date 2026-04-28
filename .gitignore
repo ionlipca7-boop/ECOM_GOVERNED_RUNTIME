@@ -1,0 +1,15 @@
+.env
+.env.local
+*.token
+*.secret
+*secret*
+storage/secrets/
+logs/
+__pycache__/
+*.pyc
+.venv/
+venv/
+runtime_tmp/
+*.log
+nul
+3

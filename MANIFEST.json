@@ -1,0 +1,37 @@
+{
+  "project": "ECOM_GOVERNED_RUNTIME",
+  "status": "IMPLEMENTATION_STARTED",
+  "layer": "create_initial_governed_runtime_manifest_v1",
+  "timestamp": "2026-04-28T18:24:20.902363+00:00",
+  "legacy_source": "D:\\ECOM_LISTING_AGENT_MVP",
+  "local_runtime": "D:\\ECOM_GOVERNED_RUNTIME",
+  "server_runtime": "/home/ionlipca7/ecom_governed_runtime",
+  "migration_mode": "selective_verified_transfer_only",
+  "rules": [
+    "no bulk legacy copy",
+    "no secrets in git/chat/logs",
+    "no publish/revise/delete/live action",
+    "verify before every action",
+    "archive old server runtime before cleanup",
+    "reuse server secrets by path/reference only",
+    "read-only-first for eBay",
+    "retry/backoff/timeout/degraded-mode mandatory"
+  ],
+  "verified_transfer_allowed": [
+    "ebay token refresh pattern",
+    "ebay read-only verification pattern",
+    "telegram approval bridge pattern",
+    "CURRENT_POINTER next_allowed_action pattern",
+    "state_control audit pattern",
+    "server external secrets pattern"
+  ],
+  "forbidden_transfer": [
+    "temp garbage",
+    "broken experiments",
+    "legacy dumps",
+    "unverified files",
+    "secrets",
+    "random state fragments"
+  ],
+  "next_allowed_action": "initialize_new_runtime_gitignore_v1"
+}

@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "layer": "initialize_new_runtime_gitignore_v1",
+  "created": ".gitignore",
+  "protected": [
+    ".env",
+    ".env.local",
+    "storage/secrets/",
+    "*.token",
+    "*secret*"
+  ],
+  "no_secrets": true,
+  "no_live_actions": true,
+  "next_allowed_action": "initialize_new_runtime_git_repo_v1",
+  "timestamp": "2026-04-28T18:25:07.588798+00:00"
+}
