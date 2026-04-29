@@ -1,0 +1,30 @@
+{
+  "status": "AUDIT_ONLY",
+  "layer": "PHONE_REMOTE_CONTROL_WORKFLOW_AUDIT_V1",
+  "timestamp_utc": "2026-04-29T16:46:45.484450",
+  "project_root": "/home/ionlipca7/ecom_governed_runtime",
+  "files_presence": {
+    "storage/control_room/CURRENT_BRIDGE_STATE.json": true,
+    "storage/control_room/CURRENT_POINTER.json": true,
+    "storage/state_control/plan_secure_remote_control_bridge_v1.json": false,
+    "storage/state_control/build_telegram_bridge_protocol_manifest_v1.json": true,
+    "storage/state_control/build_server_runtime_bridge_protocol_manifest_v1.json": true,
+    "storage/state_control/build_telegram_and_server_bridge_protocol_manifests_v1.json": true
+  },
+  "git_status_short": {
+    "returncode": 0,
+    "stdout": "?? storage/server_audit/\n?? storage/server_local_backup/\n?? storage/state_control/existing_ssh_auth_decision_v1.json\n?? storage/state_control/record_server_clone_success_v1.json\n?? storage/state_control/select_verified_modules_for_clean_transfer_v1.json\n?? storage/state_control/server_clean_bridge_dirty_manifest_v1.json\n?? storage/state_control/server_pull_bridge_protocol_checkpoint_787e05e_v1.json\n?? storage/state_control/server_safe_pull_dry_check_v1.json\n?? storage/state_control/server_verify_clean_skeleton_after_pull_v1.json\n?? storage/state_control/ssh_alias_auth_audit_v1.json\n?? storage/state_control/ssh_deploy_key_or_existing_auth_audit_v1.json",
+    "stderr": ""
+  },
+  "git_head": {
+    "returncode": 0,
+    "stdout": "787e05e",
+    "stderr": ""
+  },
+  "remote_url": {
+    "returncode": 0,
+    "stdout": "origin\tgithub-ecom-governed-runtime:ionlipca7-boop/ECOM_GOVERNED_RUNTIME.git (fetch)\norigin\tgithub-ecom-governed-runtime:ionlipca7-boop/ECOM_GOVERNED_RUNTIME.git (push)",
+    "stderr": ""
+  },
+  "next_allowed_action": "analyze_phone_remote_control_route_v1"
+}

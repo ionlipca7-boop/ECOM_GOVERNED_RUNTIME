@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "layer": "EXISTING_SSH_AUTH_DECISION_V1",
+  "timestamp_utc": "2026-04-29T16:45:54.699664",
+  "decision": "USE_EXISTING_SSH_DEPLOY_KEY_ALIAS",
+  "ssh_alias": "github-ecom-governed-runtime",
+  "repo": "ionlipca7-boop/ECOM_GOVERNED_RUNTIME",
+  "confirmed": {
+    "ssh_config_alias_present": true,
+    "deploy_key_path_configured": true,
+    "github_auth_success": true,
+    "git_ls_remote_origin_main_success": true,
+    "new_key_needed": false,
+    "auth_modification_needed": false
+  },
+  "rules": {
+    "no_new_ssh_key_creation": true,
+    "no_remote_rewrite": true,
+    "no_secret_migration": true,
+    "ff_only_pull_policy": true,
+    "server_clean_bridge_reads_github": true,
+    "server_live_runtime_keeps_secrets": true
+  },
+  "next_allowed_action": "phone_remote_control_workflow_audit_v1"
+}

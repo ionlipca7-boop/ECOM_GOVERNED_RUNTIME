@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "layer": "PLAN_SECURE_REMOTE_CONTROL_BRIDGE_V1",
+  "timestamp_utc": "2026-04-29T16:48:23.856077",
+  "purpose": "Define safe phone-controlled remote workflow without moving secrets or starting live actions.",
+  "route": [
+    "phone_operator",
+    "telegram_transport_control",
+    "server_live_runtime_execution_authority",
+    "server_clean_bridge_audit_memory",
+    "github_sync_memory_layer"
+  ],
+  "authority_model": {
+    "phone": "operator_input_only",
+    "telegram": "transport_and_approval_only",
+    "server_live_runtime": "execution_and_secrets_authority",
+    "server_clean_bridge": "audit_memory_and_safe_sync_bridge",
+    "github": "source_memory_sync_no_secrets"
+  },
+  "security_rules": {
+    "no_second_telegram_polling_runtime": true,
+    "no_secrets_to_github": true,
+    "no_token_printing": true,
+    "no_live_publish_without_explicit_approval": true,
+    "token_guard_before_any_ebay_write": true,
+    "git_pull_ff_only_on_server": true,
+    "no_force_push": true,
+    "no_cleanup_delete": true,
+    "no_runtime_overwrite": true
+  },
+  "confirmed_inputs": {
+    "ssh_auth_decision": "USE_EXISTING_SSH_DEPLOY_KEY_ALIAS",
+    "phone_route_decision": "PHONE_REMOTE_CONTROL_USES_TELEGRAM_TRANSPORT_AND_SERVER_RUNTIME_AUTHORITY",
+    "server_clean_bridge": "/home/ionlipca7/ecom_governed_runtime",
+    "server_live_runtime": "/home/ionlipca7/runtime_eco_v1",
+    "current_git_head": "787e05e"
+  },
+  "next_allowed_action": "verify_secure_remote_control_plan_and_update_bridge_state_v1"
+}

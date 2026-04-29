@@ -1,0 +1,25 @@
+{
+  "status": "AUDIT_ONLY",
+  "layer": "SSH_ALIAS_AUTH_AUDIT_V1",
+  "timestamp_utc": "2026-04-29T16:42:17.080487",
+  "ssh_config_exists": true,
+  "alias_block_present": true,
+  "alias_block": [
+    "Host github-ecom-governed-runtime",
+    "  HostName github.com",
+    "  User git",
+    "  IdentityFile /home/ionlipca7/.ssh/ecom_governed_runtime_deploy_key",
+    "  IdentitiesOnly yes"
+  ],
+  "ssh_alias_test": {
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Hi ionlipca7-boop/ECOM_GOVERNED_RUNTIME! You've successfully authenticated, but GitHub does not provide shell access."
+  },
+  "git_ls_remote_head_test": {
+    "returncode": 0,
+    "stdout": "787e05eba27c5156643b91127ba460c5d1436c14\trefs/heads/main",
+    "stderr": ""
+  },
+  "next_allowed_action": "decide_existing_alias_or_new_deploy_key_route_v1"
+}

@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "layer": "PHONE_REMOTE_CONTROL_ROUTE_DECISION_V1",
+  "timestamp_utc": "2026-04-29T16:47:43.782262",
+  "decision": "PHONE_REMOTE_CONTROL_USES_TELEGRAM_TRANSPORT_AND_SERVER_RUNTIME_AUTHORITY",
+  "route": {
+    "phone": "operator_control_surface",
+    "telegram": "transport_and_approval_channel_only",
+    "server_clean_bridge": "/home/ionlipca7/ecom_governed_runtime",
+    "server_live_runtime": "/home/ionlipca7/runtime_eco_v1",
+    "github": "memory_sync_layer_only"
+  },
+  "confirmed": {
+    "server_clean_bridge_head": "787e05e",
+    "github_ssh_auth_working": true,
+    "current_bridge_state_present": true,
+    "telegram_bridge_manifest_present": true,
+    "server_runtime_bridge_manifest_present": true,
+    "secure_remote_control_plan_missing_on_server": true
+  },
+  "rules": {
+    "no_second_telegram_polling_runtime": true,
+    "telegram_not_runtime_authority": true,
+    "server_live_runtime_keeps_secrets": true,
+    "github_no_secrets": true,
+    "git_pull_ff_only": true,
+    "no_live_publish_without_token_guard_and_approval": true,
+    "no_cleanup_delete": true
+  },
+  "next_allowed_action": "create_missing_secure_remote_control_plan_from_existing_manifests_v1"
+}

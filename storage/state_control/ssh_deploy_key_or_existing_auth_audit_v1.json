@@ -1,0 +1,21 @@
+{
+  "status": "AUDIT_ONLY",
+  "layer": "SSH_DEPLOY_KEY_OR_EXISTING_AUTH_AUDIT_V1",
+  "timestamp_utc": "2026-04-29T16:41:09.124882",
+  "git_remote": {
+    "cmd": "git remote -v",
+    "returncode": 0,
+    "stdout": "origin\tgithub-ecom-governed-runtime:ionlipca7-boop/ECOM_GOVERNED_RUNTIME.git (fetch)\norigin\tgithub-ecom-governed-runtime:ionlipca7-boop/ECOM_GOVERNED_RUNTIME.git (push)",
+    "stderr": ""
+  },
+  "ssh_directory_exists": true,
+  "known_hosts_exists": true,
+  "id_rsa_exists": false,
+  "id_ed25519_exists": false,
+  "github_ssh_test": {
+    "returncode": 255,
+    "stdout_preview": "",
+    "stderr_preview": "git@github.com: Permission denied (publickey)."
+  },
+  "next_allowed_action": "analyze_auth_route_and_define_safe_long_term_strategy_v1"
+}

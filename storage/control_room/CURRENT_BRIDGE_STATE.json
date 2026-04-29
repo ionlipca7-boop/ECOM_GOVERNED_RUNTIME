@@ -7,6 +7,10 @@
   "telegram_role": "CONTROL_APPROVAL_STATUS_ONLY",
   "runtime_authority": "SERVER_LIVE_RUNTIME_ONLY",
   "secrets_policy": "SERVER_OR_LOCAL_ONLY_NEVER_GITHUB",
-  "next_allowed_action": "build_telegram_bridge_protocol_manifest_v1",
-  "sync_stage": "A_BRIDGE_STATE_PROTOCOL"
+  "next_allowed_action": "commit_server_bridge_audit_memory_v1",
+  "sync_stage": "A_BRIDGE_STATE_PROTOCOL",
+  "last_confirmed_layer": "PLAN_SECURE_REMOTE_CONTROL_BRIDGE_V1",
+  "last_confirmed_status": "PASS",
+  "remote_control_plan_confirmed": true,
+  "updated_utc": "2026-04-29T16:49:05.422272"
 }
