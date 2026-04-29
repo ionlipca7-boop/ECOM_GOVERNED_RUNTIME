@@ -1,0 +1,41 @@
+{
+  "layer": "github_memory_sync_gate_v1",
+  "status": "GATE_CREATED_NO_PUSH_YET",
+  "timestamp_utc": "2026-04-29T16:08:46.560301+00:00",
+  "goal": "GitHub stores project memory, audits, route decisions and sync bridge state, never secrets.",
+  "safe_to_commit_later": [
+    "storage/state_control/sync_bridge_folder_map_v1.json",
+    "storage/state_control/sync_bridge_route_decision_v1.json",
+    "storage/state_control/build_bridge_preserve_snapshot_plan_v1.json",
+    "storage/state_control/github_memory_sync_gate_v1.json",
+    "storage/architecture/79_ION_SYNC_PROTOCOL_AND_CHAT_HANDOFF_GOVERNANCE_V1.md",
+    "NEW_CHAT_ECOM_GOVERNED_RUNTIME_CONTINUATION_V1.txt"
+  ],
+  "never_commit": [
+    ".env",
+    ".env.local",
+    "storage/secrets",
+    "telegram token",
+    "ebay client secret",
+    "ebay refresh token",
+    "ebay access token",
+    ".venv",
+    "__pycache__",
+    "server raw token files"
+  ],
+  "server_token_policy": {
+    "old_runtime_has_tokens": "/home/ionlipca7/runtime_eco_v1",
+    "new_runtime_no_tokens_yet": "/home/ionlipca7/ecom_governed_runtime",
+    "decision": "Do not move tokens until token migration gate is created."
+  },
+  "next_allowed_action": "verify_github_memory_sync_candidates_v1",
+  "forbidden_now": [
+    "push",
+    "merge",
+    "delete",
+    "cleanup",
+    "copy secrets",
+    "server overwrite",
+    "live publish/revise/delete"
+  ]
+}

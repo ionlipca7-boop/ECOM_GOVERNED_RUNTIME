@@ -1,0 +1,27 @@
+{
+  "layer": "sync_bridge_route_decision_v1",
+  "status": "DECIDED_NO_SYNC_YET",
+  "timestamp_utc": "2026-04-29T16:04:28.890123+00:00",
+  "route": {
+    "windows_main_source": "D:\\ECOM_LISTING_AGENT_MVP",
+    "windows_governed_bridge": "D:\\ECOM_GOVERNED_RUNTIME",
+    "server_live_runtime_locked": "/home/ionlipca7/runtime_eco_v1",
+    "server_governed_bridge": "/home/ionlipca7/ecom_governed_runtime",
+    "github_main_repo": "ionlipca7-boop/-ecom-listing-agent-mvp",
+    "github_governed_repo": "ionlipca7-boop/ECOM_GOVERNED_RUNTIME"
+  },
+  "next_allowed_action": "build_bridge_preserve_snapshot_plan_v1",
+  "forbidden_now": [
+    "delete",
+    "cleanup",
+    "merge",
+    "push",
+    "force_push_reset",
+    "server_overwrite",
+    "live_publish",
+    "revise",
+    "delete_listing",
+    "print_secrets"
+  ],
+  "decision": "First create preserve snapshot plan. Only after that decide what can be committed or synced."
+}

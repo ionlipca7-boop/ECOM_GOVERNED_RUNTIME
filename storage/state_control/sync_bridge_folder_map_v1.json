@@ -1,0 +1,23 @@
+{
+  "layer": "sync_bridge_folder_map_v1",
+  "status": "PASS_READONLY_FOLDER_MAP",
+  "timestamp_utc": "2026-04-29T16:03:15.897358+00:00",
+  "local_main_source": "D:\\ECOM_LISTING_AGENT_MVP",
+  "local_clean_bridge": "D:\\ECOM_GOVERNED_RUNTIME",
+  "local_old_sync_clone": "D:\\ECOM_LISTING_AGENT_MVP_SYNC",
+  "server_live_runtime": "/home/ionlipca7/runtime_eco_v1",
+  "server_clean_runtime": "/home/ionlipca7/ecom_governed_runtime",
+  "github_main_repo": "ionlipca7-boop/-ecom-listing-agent-mvp",
+  "github_clean_runtime_repo": "ionlipca7-boop/ECOM_GOVERNED_RUNTIME",
+  "rules": {
+    "delete": false,
+    "cleanup": false,
+    "merge": false,
+    "push": false,
+    "force_push_reset": false,
+    "server_overwrite": false,
+    "live_publish_revise_delete": false,
+    "secrets_to_git_or_chat": false
+  },
+  "decision": "Do not sync yet. First preserve current states, then build governed bridge route."
+}

@@ -1,0 +1,40 @@
+{
+  "layer": "build_bridge_preserve_snapshot_plan_v1",
+  "status": "PLAN_CREATED",
+  "timestamp_utc": "2026-04-29T16:05:25.426899+00:00",
+  "snapshot_targets": [
+    "D:\\ECOM_LISTING_AGENT_MVP git status/log + state_control manifest",
+    "D:\\ECOM_GOVERNED_RUNTIME git status/log + bridge state files",
+    "/home/ionlipca7/runtime_eco_v1 server live runtime manifest only",
+    "/home/ionlipca7/ecom_governed_runtime server bridge manifest only"
+  ],
+  "exclude_always": [
+    ".env",
+    ".env.local",
+    "storage/secrets",
+    "*.token*",
+    "telegram token",
+    "ebay access token",
+    "ebay refresh token",
+    "venv",
+    ".venv",
+    "__pycache__"
+  ],
+  "allowed_now": [
+    "read status",
+    "record manifests",
+    "compare file names",
+    "record decision json"
+  ],
+  "forbidden_now": [
+    "copy secrets",
+    "push",
+    "merge",
+    "delete",
+    "cleanup",
+    "overwrite server",
+    "live publish/revise/delete"
+  ],
+  "next_allowed_action": "create_windows_preserve_snapshot_manifest_v1",
+  "decision": "Preserve by manifest first, not by copying whole folders."
+}
