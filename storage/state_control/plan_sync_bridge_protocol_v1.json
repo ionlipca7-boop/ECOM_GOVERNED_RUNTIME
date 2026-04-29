@@ -1,0 +1,53 @@
+{
+  "layer": "plan_sync_bridge_protocol_v1",
+  "status": "ARCHITECTURE_CONFIRMED",
+  "timestamp_utc": "2026-04-29T16:24:00.527763+00:00",
+  "bridge_architecture": {
+    "windows_pc": "MAIN_WORK_SOURCE_AND_OPERATOR_CONTROL",
+    "github": "SOURCE_OF_TRUTH_MEMORY_AND_SYNC_LAYER",
+    "server_runtime": "LIVE_RUNTIME_EXECUTION_AND_SECRETS",
+    "telegram": "CONTROL_TRANSPORT_AND_APPROVAL_INTERFACE",
+    "phone": "REMOTE_OPERATOR_ACCESS_LAYER"
+  },
+  "confirmed_protocols": [
+    "JSON_STATE_BRIDGE",
+    "APPEND_ONLY_AUDIT_MEMORY",
+    "GITHUB_SYNC_CHECKPOINTS",
+    "NO_SECRETS_IN_GITHUB",
+    "ONE_RUNTIME_AUTHORITY",
+    "NO_SECOND_TELEGRAM_POLLING",
+    "TOKEN_GUARD_REQUIRED_BEFORE_EBAY_WRITE",
+    "A_TO_B_TO_FINISH_TO_STOP"
+  ],
+  "planned_bridge_layers": [
+    {
+      "step": "A",
+      "layer": "bridge_state_protocol",
+      "goal": "unified current state json route"
+    },
+    {
+      "step": "B",
+      "layer": "telegram_bridge_protocol",
+      "goal": "telegram commands/status/approval sync"
+    },
+    {
+      "step": "C",
+      "layer": "server_runtime_bridge",
+      "goal": "runtime reads/writes governed state manifests"
+    },
+    {
+      "step": "FINISH",
+      "layer": "governed_sync_runtime",
+      "goal": "windows github server telegram fully synchronized"
+    }
+  ],
+  "next_allowed_action": "build_bridge_state_protocol_manifest_v1",
+  "forbidden_now": [
+    "live_publish",
+    "revise",
+    "delete",
+    "server_overwrite",
+    "secret_sync_to_github",
+    "parallel_runtime_bridges"
+  ]
+}

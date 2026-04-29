@@ -1,0 +1,28 @@
+{
+  "layer": "build_telegram_bridge_protocol_manifest_v1",
+  "status": "CREATED_MANIFEST_ONLY",
+  "timestamp_utc": "2026-04-29T16:27:04.672969+00:00",
+  "telegram_role": "CONTROL_APPROVAL_STATUS_ONLY",
+  "allowed_inputs": [
+    "STATUS",
+    "APPROVE_DRAFT",
+    "REJECT_DRAFT",
+    "REQUEST_PREVIEW",
+    "REQUEST_AUDIT"
+  ],
+  "forbidden_inputs": [
+    "LIVE_PUBLISH_DIRECT",
+    "REVISE_DIRECT",
+    "DELETE_DIRECT",
+    "TOKEN_PRINT",
+    "SECRET_SYNC"
+  ],
+  "state_reads": [
+    "storage/control_room/CURRENT_BRIDGE_STATE.json"
+  ],
+  "state_writes": [
+    "storage/state_control/telegram_command_intake_v1.json",
+    "storage/state_control/telegram_approval_gate_v1.json"
+  ],
+  "rule": "Telegram is transport only, not source of truth. No second polling runtime."
+}

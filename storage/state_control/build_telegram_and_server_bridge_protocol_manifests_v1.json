@@ -1,0 +1,13 @@
+{
+  "layer": "build_telegram_and_server_bridge_protocol_manifests_v1",
+  "status": "PASS_CREATED_STEP_B_AND_C_MANIFESTS",
+  "timestamp_utc": "2026-04-29T16:27:04.672969+00:00",
+  "created": [
+    "storage/state_control/build_telegram_bridge_protocol_manifest_v1.json",
+    "storage/state_control/build_server_runtime_bridge_protocol_manifest_v1.json"
+  ],
+  "next_allowed_action": "verify_bridge_protocol_manifests_v1",
+  "push_done": false,
+  "server_touched": false,
+  "live_actions": false
+}

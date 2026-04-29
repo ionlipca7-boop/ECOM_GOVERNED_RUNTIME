@@ -1,0 +1,28 @@
+{
+  "layer": "build_server_runtime_bridge_protocol_manifest_v1",
+  "status": "CREATED_MANIFEST_ONLY",
+  "timestamp_utc": "2026-04-29T16:27:04.672969+00:00",
+  "server_bridge_path": "/home/ionlipca7/ecom_governed_runtime",
+  "server_live_runtime_path": "/home/ionlipca7/runtime_eco_v1",
+  "runtime_authority": "SERVER_LIVE_RUNTIME_ONLY",
+  "allowed_actions": [
+    "READ_STATE",
+    "WRITE_AUDIT",
+    "TOKEN_GUARD_CHECK",
+    "DRAFT_PREVIEW_AFTER_GATE"
+  ],
+  "forbidden_actions": [
+    "OVERWRITE_RUNTIME",
+    "COPY_SECRETS_TO_GITHUB",
+    "LIVE_PUBLISH_WITHOUT_APPROVAL",
+    "REVISE_WITHOUT_APPROVAL",
+    "DELETE_WITHOUT_APPROVAL"
+  ],
+  "state_reads": [
+    "storage/control_room/CURRENT_BRIDGE_STATE.json"
+  ],
+  "state_writes": [
+    "storage/state_control/server_runtime_bridge_status_v1.json"
+  ],
+  "rule": "Server live runtime owns execution and secrets. Clean bridge owns sync memory."
+}

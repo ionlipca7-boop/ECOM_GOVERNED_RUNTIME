@@ -1,0 +1,26 @@
+{
+  "layer": "build_bridge_state_protocol_manifest_v1",
+  "status": "CREATED",
+  "timestamp_utc": "2026-04-29T16:24:42.622700+00:00",
+  "current_bridge_state_path": "storage/control_room/CURRENT_BRIDGE_STATE.json",
+  "state_contract": {
+    "project": "ECOM_GOVERNED_RUNTIME",
+    "active_source": "WINDOWS_GOVERNED_BRIDGE",
+    "github_repo": "ionlipca7-boop/ECOM_GOVERNED_RUNTIME",
+    "server_bridge_path": "/home/ionlipca7/ecom_governed_runtime",
+    "server_live_runtime_path": "/home/ionlipca7/runtime_eco_v1",
+    "telegram_role": "CONTROL_APPROVAL_STATUS_ONLY",
+    "runtime_authority": "SERVER_LIVE_RUNTIME_ONLY",
+    "secrets_policy": "SERVER_OR_LOCAL_ONLY_NEVER_GITHUB",
+    "next_allowed_action": "build_telegram_bridge_protocol_manifest_v1",
+    "sync_stage": "A_BRIDGE_STATE_PROTOCOL"
+  },
+  "forbidden": [
+    "live_publish",
+    "revise",
+    "delete",
+    "copy_secrets_to_github",
+    "server_overwrite",
+    "parallel_runtime_authority"
+  ]
+}
