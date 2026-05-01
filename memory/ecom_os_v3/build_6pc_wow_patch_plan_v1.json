@@ -1,0 +1,108 @@
+{
+  "status": "PASS_BUILD_6PC_WOW_PATCH_PLAN_V1",
+  "timestamp_utc": "2026-05-01T10:36:11.594793+00:00",
+  "project": "ECOM OS V3 / CONTROL ROOM",
+  "listing_id": "318228151138",
+  "sku": "USB-C-USB-A-OTG-MIX-6PC-SET-001",
+  "current_price": "10.99",
+  "current_quantity": 40,
+  "source_playbook": "storage/state_control/wow_marketplace_agent_playbook_v1.json",
+  "main_goal": "Turn current 6pc OTG adapter listing into WOW mobile-first marketplace listing",
+  "critical_findings": [
+    "main photo is better but not final policy-safe hero image",
+    "item specifics are incomplete",
+    "compatibility brand/model fields need safe universal values",
+    "title can be stronger for search",
+    "description needs sharper mobile-first buyer structure",
+    "new duplicate listings require real variant difference"
+  ],
+  "agent_tasks": {
+    "photo_director_agent_v3": {
+      "task": "create photo V3 brief",
+      "must_fix": [
+        "hero image: 6 adapters visible, clean white/light background, no text",
+        "show connector direction clearly",
+        "show set quantity clearly",
+        "add use-case photo with phone/laptop/USB stick",
+        "add scale/hand photo",
+        "move text-heavy infographic away from main photo"
+      ]
+    },
+    "item_specifics_agent": {
+      "task": "prepare specifics patch",
+      "fields_to_prepare": [
+        "Marke",
+        "Produktart",
+        "Farbe",
+        "Anschluss A",
+        "Anschluss B",
+        "Besonderheiten",
+        "Markenkompatibilität",
+        "Modellkompatibilität",
+        "EAN",
+        "MPN",
+        "Einheit",
+        "Material",
+        "Herstellungsland"
+      ]
+    },
+    "seo_title_agent": {
+      "task": "prepare title candidates",
+      "candidate_primary": "6x USB C auf USB A OTG Adapter Set 6A 120W Schnellladen Datenübertragung",
+      "warning": "connector direction must be verified before live title update"
+    },
+    "description_conversion_agent": {
+      "task": "upgrade description",
+      "must_include": [
+        "6 Stück im Set",
+        "Laden und Datenübertragung",
+        "OTG / Plug & Play",
+        "use cases: Büro, Reise, Auto, Zuhause",
+        "compatibility explanation",
+        "honest limitation: Leistung hängt von Gerät/Kabel/Netzteil ab",
+        "Lieferumfang"
+      ]
+    },
+    "category_agent": {
+      "task": "verify category before changes",
+      "current_category_guess": "USB-Kabel, -Hubs & -Adapter",
+      "required_check": "category suggestion by final title"
+    },
+    "price_positioning_agent": {
+      "task": "compare competitor 2x/4x/6x packs",
+      "current_price": "10.99",
+      "rule": "do not change price until competitor table exists"
+    },
+    "duplicate_variation_policy_guard": {
+      "task": "define allowed future variants",
+      "allowed_only_if_real_difference": [
+        "2x pack",
+        "4x pack",
+        "6x pack",
+        "different connector direction",
+        "different color set",
+        "different bundle",
+        "different verified compatibility angle"
+      ]
+    },
+    "final_listing_critic_gate": {
+      "task": "block live update until payload passes",
+      "must_verify": [
+        "no title/connector mismatch",
+        "no false compatibility",
+        "no duplicate policy risk",
+        "photo main image policy-safe",
+        "specifics not empty where safe value exists"
+      ]
+    }
+  },
+  "forbidden_now": [
+    "live title update",
+    "live item specifics update",
+    "live description update",
+    "new listing publish",
+    "git push",
+    "delete cleanup"
+  ],
+  "next_allowed_action": "CREATE_6PC_WOW_AGENT_TASK_PACKETS_V1"
+}

@@ -1,0 +1,104 @@
+{
+  "status": "PASS_RUN_6PC_WOW_AGENT_READONLY_ANALYSIS_V1",
+  "timestamp_utc": "2026-05-01T10:38:33.687162+00:00",
+  "listing_id": "318228151138",
+  "sku": "USB-C-USB-A-OTG-MIX-6PC-SET-001",
+  "agent_count": 8,
+  "agent_results": {
+    "competitor_intelligence_agent": {
+      "verdict": "NEED_BENCHMARK_TABLE_BEFORE_PRICE_OR_NEW_VARIANTS",
+      "key_findings": [
+        "top sellers use pack-size clarity, strong connector wording, sold-count trust, multi-buy logic",
+        "successful listings separate 2x/4x/6x or connector-direction variants",
+        "do not copy duplicate listings unless real variant difference exists"
+      ]
+    },
+    "photo_director_agent_v3": {
+      "verdict": "PHOTO_V3_REQUIRED_FOR_WOW",
+      "must_create": [
+        "main hero: 6 adapters visible, white background, no text",
+        "connector closeup: USB-C/USB-A direction impossible to misunderstand",
+        "use-case photo: phone/laptop/USB-stick",
+        "scale photo: hand/desk size",
+        "color/quantity photo if mixed colors are real"
+      ]
+    },
+    "mobile_buyer_critic": {
+      "verdict": "CURRENT_LISTING_BETTER_BUT_NOT_FINAL_WOW",
+      "3_second_test_questions": [
+        "Do I instantly see 6 pieces?",
+        "Do I understand USB-C vs USB-A direction?",
+        "Do I know if it fits my device?",
+        "Do I trust 6A/120W claim?"
+      ]
+    },
+    "seo_title_agent": {
+      "verdict": "TITLE_CAN_BE_STRONGER_AFTER_CONNECTOR_DIRECTION_VERIFY",
+      "candidate_primary": "6x USB C auf USB A OTG Adapter Set 6A 120W Schnellladen Datenübertragung",
+      "warning": "Do not live update title until connector direction is confirmed from product photos/specs."
+    },
+    "item_specifics_agent": {
+      "verdict": "ITEM_SPECIFICS_ARE_MAIN_MISSING_LAYER",
+      "patch_fields": [
+        "Marke",
+        "Produktart",
+        "Farbe",
+        "Anschluss A",
+        "Anschluss B",
+        "Besonderheiten",
+        "Markenkompatibilität",
+        "Modellkompatibilität",
+        "EAN",
+        "MPN",
+        "Einheit",
+        "Material",
+        "Herstellungsland"
+      ],
+      "safe_defaults_to_consider": {
+        "Marke": "Markenlos",
+        "EAN": "Nicht zutreffend",
+        "MPN": "Nicht zutreffend",
+        "Markenkompatibilität": "Universell",
+        "Modellkompatibilität": "Universell"
+      }
+    },
+    "description_conversion_agent": {
+      "verdict": "DESCRIPTION_NEEDS_MOBILE_FIRST_REWRITE",
+      "must_include": [
+        "6 Stück im Set",
+        "OTG / Plug & Play",
+        "Laden und Datenübertragung",
+        "compatibility explanation",
+        "honest limitation: Leistung hängt von Gerät/Kabel/Netzteil ab",
+        "Lieferumfang"
+      ]
+    },
+    "category_price_variation_guard": {
+      "verdict": "NO_NEW_DUPLICATE_LISTING_WITHOUT_REAL_VARIANT_REASON",
+      "allowed_future_variants": [
+        "2x pack",
+        "4x pack",
+        "6x pack",
+        "different connector direction",
+        "different real color set",
+        "different verified bundle"
+      ],
+      "price_rule": "Do not change 10.99 EUR until competitor table is created."
+    },
+    "final_listing_critic_gate": {
+      "verdict": "BLOCK_LIVE_PATCH_UNTIL_DRAFT_PAYLOAD_EXISTS",
+      "required_before_live_update": [
+        "post-photo-update readonly verify",
+        "connector direction confirmed",
+        "item specifics draft complete",
+        "photo V3 brief complete",
+        "title/description patch reviewed",
+        "forbidden fields protected"
+      ]
+    }
+  },
+  "live_edit_done": false,
+  "git_push_done": false,
+  "delete_done": false,
+  "next_allowed_action": "POST_PHOTO_UPDATE_READONLY_VERIFY_AND_BUILD_6PC_WOW_PATCH_DRAFT_V1"
+}

@@ -1,0 +1,22 @@
+{
+  "status": "PASS_CREATE_6PC_WOW_AGENT_TASK_PACKETS_V1",
+  "timestamp_utc": "2026-05-01T10:37:02.226663+00:00",
+  "listing_id": "318228151138",
+  "sku": "USB-C-USB-A-OTG-MIX-6PC-SET-001",
+  "packet_count": 8,
+  "packets": [
+    "storage/state_control/wow_6pc_agent_packets_v1/01_competitor_intelligence_agent.json",
+    "storage/state_control/wow_6pc_agent_packets_v1/02_photo_director_agent_v3.json",
+    "storage/state_control/wow_6pc_agent_packets_v1/03_mobile_buyer_critic.json",
+    "storage/state_control/wow_6pc_agent_packets_v1/04_seo_title_agent.json",
+    "storage/state_control/wow_6pc_agent_packets_v1/05_item_specifics_agent.json",
+    "storage/state_control/wow_6pc_agent_packets_v1/06_description_conversion_agent.json",
+    "storage/state_control/wow_6pc_agent_packets_v1/07_category_price_variation_guard.json",
+    "storage/state_control/wow_6pc_agent_packets_v1/08_final_listing_critic_gate.json"
+  ],
+  "execution_mode": "readonly_analysis_first",
+  "live_edit_allowed": false,
+  "git_push_allowed": false,
+  "delete_allowed": false,
+  "next_allowed_action": "RUN_6PC_WOW_AGENT_READONLY_ANALYSIS_V1"
+}

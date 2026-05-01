@@ -1,0 +1,22 @@
+{
+  "status": "PASS_6PC_WOW_AGENT_SYNTHESIS_V1",
+  "timestamp_utc": "2026-05-01T10:38:33.687162+00:00",
+  "priority_order": [
+    "1. Verify live photo update readonly",
+    "2. Confirm connector direction and real colors",
+    "3. Build item specifics patch draft",
+    "4. Build title + description patch draft",
+    "5. Build Photo V3 production brief",
+    "6. Only then prepare controlled live patch gate"
+  ],
+  "wow_definition": "Buyer understands in 3 seconds on mobile: 6 pieces, connector direction, compatibility, use case, value, delivery content.",
+  "blocked_now": [
+    "new duplicate listing",
+    "price change",
+    "title live change",
+    "item specifics live change",
+    "git push",
+    "delete cleanup"
+  ],
+  "next_allowed_action": "POST_PHOTO_UPDATE_READONLY_VERIFY_AND_BUILD_6PC_WOW_PATCH_DRAFT_V1"
+}

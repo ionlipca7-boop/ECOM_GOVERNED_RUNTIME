@@ -1,0 +1,27 @@
+{
+  "status": "PENDING_AGENT_TASK",
+  "timestamp_utc": "2026-05-01T10:37:02.226663+00:00",
+  "project": "ECOM OS V3 / CONTROL ROOM",
+  "listing_id": "318228151138",
+  "sku": "USB-C-USB-A-OTG-MIX-6PC-SET-001",
+  "source_plan": "storage/state_control/build_6pc_wow_patch_plan_v1.json",
+  "agent": "08_final_listing_critic_gate",
+  "goal": "Final block/pass gate before any live listing update.",
+  "must_output": [
+    "photo pass/fail",
+    "title pass/fail",
+    "specifics pass/fail",
+    "description pass/fail",
+    "category pass/fail",
+    "policy risk",
+    "ready_for_live_patch true/false"
+  ],
+  "forbidden": [
+    "live edit",
+    "git push",
+    "delete cleanup",
+    "new listing publish",
+    "price/title/category update without patch gate"
+  ],
+  "output_required_file": "storage/state_control/wow_6pc_agent_packets_v1/08_final_listing_critic_gate_result.json"
+}

@@ -1,0 +1,73 @@
+{
+  "status": "PASS_WOW_MARKETPLACE_AGENT_PLAYBOOK_V1_CREATED",
+  "timestamp_utc": "2026-05-01T10:35:14.657297+00:00",
+  "project": "ECOM OS V3 / CONTROL ROOM",
+  "product_focus": "USB-C / USB-A OTG Adapter 6 Stück Set",
+  "goal": "WOW marketplace listing system: mobile-first, policy-safe, search-visible, competitor-aware, conversion-focused",
+  "current_priority": "Improve existing 6pc listing before scaling/new variants",
+  "agents": {
+    "competitor_intelligence_agent": [
+      "collect top eBay/Amazon competitor titles, prices, sold count, photos, videos, item specifics, delivery, returns",
+      "extract repeated winning patterns",
+      "separate copyable ideas from policy-risk ideas"
+    ],
+    "photo_director_agent_v3": [
+      "main photo: clean product-only, white/light background, no text, 6 pieces visible",
+      "photo order: main, connector closeup, 6pc set, use case, scale, colors, compatibility, package",
+      "block text-heavy main images and unclear connector direction"
+    ],
+    "mobile_buyer_critic": [
+      "3-second test: buyer must understand what it is, how many pieces, connector direction, compatibility, why buy",
+      "criticize from phone view, not desktop view"
+    ],
+    "seo_title_agent": [
+      "build title under eBay search intent",
+      "must include: 6x, USB C, USB A, OTG, Adapter, 6A, 120W, Schnellladen, Datenübertragung if true",
+      "block wrong connector direction and keyword spam"
+    ],
+    "item_specifics_agent": [
+      "fill brand, product type, color, Anschluss A/B, compatibility brand/model, features, EAN, MPN, unit, material if verified",
+      "no empty important fields if safe value exists",
+      "use Nicht zutreffend only where correct"
+    ],
+    "description_conversion_agent": [
+      "write mobile-first description with benefits, use cases, compatibility, limitations, delivery scope",
+      "include honest note: charging/data speed depends on device, cable, charger",
+      "make buyer understand exact delivery content"
+    ],
+    "category_agent": [
+      "verify eBay category by title and competitor category",
+      "block wrong category before live update"
+    ],
+    "price_positioning_agent": [
+      "compare 2x/4x/6x competitor packs",
+      "decide whether 10.99 EUR is value-pack justified",
+      "recommend price only after competitor table"
+    ],
+    "duplicate_variation_policy_guard": [
+      "block duplicate fixed-price listings for identical item",
+      "allow new listing only for real difference: pack size, connector direction, color, bundle, compatibility angle",
+      "record reason for every new variant"
+    ],
+    "ai_search_visibility_agent": [
+      "align title, photos, item specifics, description around same buyer intent",
+      "optimize for eBay Best Match, Google Shopping, AI-style product understanding"
+    ],
+    "final_listing_critic_gate": [
+      "block publish/update if photo, title, specifics, category, price, description or policy checks fail",
+      "require before/after snapshot and rollback note"
+    ],
+    "memory_archivist_agent": [
+      "save decisions, competitor findings, prompts, patch plans, final results",
+      "update CURRENT_POINTER only after verified PASS"
+    ]
+  },
+  "forbidden_now": [
+    "manual random save in eBay UI",
+    "new duplicate listing without variant reason",
+    "git push",
+    "delete cleanup",
+    "price/title/category live change without patch plan"
+  ],
+  "next_allowed_action": "BUILD_6PC_WOW_PATCH_PLAN_V1"
+}
