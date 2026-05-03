@@ -1,0 +1,135 @@
+{
+  "status": "PASS_GITHUB_ARCHIVE_ECOM_OS_V3_G3_V3_WRAPPER_PATCH_CURRENT_CHAT_TRANSITION_V1",
+  "layer": "GITHUB_ARCHIVE_CURRENT_CHAT_ECOM_OS_V3_G3_V3_WRAPPER_PATCH_TRANSITION_V1",
+  "timestamp_utc": "20260503T180000Z",
+  "operator": "Ion / ION",
+  "project": "ECOM OS V3 / ECOM LISTING AGENT MVP / CONTROL ROOM",
+  "canonical_archive_location": "GitHub: ionlipca7-boop/ECOM_GOVERNED_RUNTIME:storage/memory/archive/",
+  "server_runtime_archive_created": false,
+  "last_confirmed_pass": "PASS_REVIEW_AND_APPLY_G3_WRAPPER_V3_EXACT_ROUTE_LOCK_PATCH_GATE_V1",
+  "current_next_allowed_action": "VERIFY_G3_WRAPPER_V3_EXACT_ROUTE_LOCK_PATCH_STATIC_NO_API_NO_SECRET_V1",
+  "active_route": "G3_POLICY_TOKEN_CONSENT_REPAIR_NO_LIVE",
+  "active_block": "G3_WRAPPER_V3_EXACT_ROUTE_LOCK_PATCH_STATIC_VERIFY",
+  "live_gate": "CLOSED",
+  "skeleton_audit": {
+    "canonical_line": ["manifest", "rules", "state", "history", "control_agent", "archivist_agent", "runner_agent", "n8n", "compact_core"],
+    "server_role": "production/runtime only",
+    "github_role": "canon/design/archive/source layer",
+    "wip_limit": 1,
+    "parallel_branch_opened": false,
+    "amazon_branch_opened": false,
+    "skeleton_deviation_found": false,
+    "priority_ok": true,
+    "priority_note": "Current priority remains eBay G3 token guard + policy binding readonly repair. Do not continue route inside archive step."
+  },
+  "what_was_completed": [
+    {
+      "block": "B24 Telegram dry approval card",
+      "status": "FINISHED",
+      "details": [
+        "Telegram dry card rendered correctly.",
+        "Human Russian text fixed.",
+        "Fallback/lower unwanted text removed.",
+        "SKU/price/quantity mapping fixed.",
+        "No live marketplace action started."
+      ]
+    },
+    {
+      "block": "Return to G3 route",
+      "status": "FINISHED",
+      "details": [
+        "B24 route finalized.",
+        "Pointer/route lock returned to G3 token/scope/consent repair.",
+        "Live gate stayed CLOSED."
+      ]
+    },
+    {
+      "block": "Marketplace auth guard architecture",
+      "status": "RECORDED",
+      "details": [
+        "eBay auto token guard is current route.",
+        "Amazon/future marketplace adapters recorded for later only.",
+        "No parallel Amazon branch opened."
+      ]
+    },
+    {
+      "block": "Old eBay layer audit",
+      "status": "FINISHED",
+      "details": [
+        "Old working eBay OAuth/token layer found.",
+        "Canonical guard selected: storage/tools/ecom_os_v3/adapters/ebay_oauth_token_guard_v1.py.",
+        "No secret values printed."
+      ]
+    },
+    {
+      "block": "G3 token guarded readonly wrapper",
+      "status": "PARTIAL_PASS_THEN_REPAIR",
+      "details": [
+        "Token guard refresh worked with OAuth HTTP 200.",
+        "Access token received with expires_in 7200.",
+        "Wrapper executed, but inner G3 runner stopped safe."
+      ]
+    },
+    {
+      "block": "G3 root cause",
+      "status": "FOUND",
+      "details": [
+        "G3 runner expects CURRENT_ROUTE_LOCK.json key only_allowed_next_action.",
+        "Required value: RUN_G3_POLICY_BINDING_READONLY_V1.",
+        "Current lock did not have this key, so route_lock_action was null.",
+        "Token refresh inside G3 was SKIPPED because route lock blocked before token refresh."
+      ]
+    },
+    {
+      "block": "Wrapper V2 compatibility",
+      "status": "INSUFFICIENT",
+      "details": [
+        "V2 created compatibility context file.",
+        "G3 runner did not consume compatibility context file.",
+        "V2 was not repeated blindly."
+      ]
+    },
+    {
+      "block": "Wrapper V3 exact route-lock patch",
+      "status": "LAST_CONFIRMED_PASS",
+      "details": [
+        "Wrapper-only patch applied.",
+        "G3 runner was not patched.",
+        "Wrapper temporarily adds only_allowed_next_action before G3 runner.",
+        "Wrapper contains restore marker for route lock.",
+        "Backup created: storage/backups/g3_wrapper_before_v3_exact_route_lock_patch_20260503T175319Z.py.",
+        "AST OK, patch marker present, restore marker present, required key/value present, bad secret literals absent.",
+        "Static verify V3 has not yet been completed."
+      ]
+    }
+  ],
+  "known_terminal_paste_errors": [
+    "Several Bash command not found errors were caused by accidental pasted output, not confirmed project damage.",
+    "The last real project PASS remains PASS_REVIEW_AND_APPLY_G3_WRAPPER_V3_EXACT_ROUTE_LOCK_PATCH_GATE_V1."
+  ],
+  "do_not_do_next_chat": [
+    "Do not continue from B24.",
+    "Do not restart OAuth/consent from zero.",
+    "Do not open Amazon branch.",
+    "Do not patch G3 runner blindly.",
+    "Do not run live eBay write.",
+    "Do not delete.",
+    "Do not push without gate.",
+    "Do not print secrets.",
+    "Do not rerun wrapper execute before static verify V3."
+  ],
+  "new_chat_start": {
+    "read_archive_first": true,
+    "front_file": "storage/memory/archive/ECOM_OS_V3_G3_V3_WRAPPER_PATCH_CURRENT_CHAT_TRANSITION_20260503T180000Z_NEW_CHAT_FRONT.txt",
+    "exact_first_action": "VERIFY_G3_WRAPPER_V3_EXACT_ROUTE_LOCK_PATCH_STATIC_NO_API_NO_SECRET_V1",
+    "expected_after_pass": "RUN_G3_TOKEN_GUARDED_READONLY_WRAPPER_EXECUTE_GATE_V3_NO_LIVE_NO_SECRET_V1"
+  },
+  "safety": {
+    "api_call_done_by_archive": false,
+    "live_write_done_by_archive": false,
+    "delete_done_by_archive": false,
+    "push_done_by_archive": false,
+    "secret_printed_by_archive": false,
+    "server_runtime_archive_created": false
+  }
+}
