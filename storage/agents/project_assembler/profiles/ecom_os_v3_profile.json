@@ -1,0 +1,40 @@
+{
+  "project_name": "ECOM OS V3 / ECOM LISTING AGENT MVP / CONTROL ROOM",
+  "source_runtime_readonly": "/home/ionlipca7/runtime_eco_v1",
+  "assembler_workspace": "/home/ionlipca7/ecom_project_assembler",
+  "clean_build_target": "/home/ionlipca7/ecom_clean_build_current",
+  "canonical_memory": "GitHub repo ionlipca7-boop/ECOM_OS_V3",
+  "mode": "READ_ONLY_FIRST",
+  "expected_capabilities": [
+    "telegram",
+    "url_intake",
+    "field_sources",
+    "photo_pipeline",
+    "description_html",
+    "category_aspects",
+    "ebay_readonly",
+    "ebay_write_route",
+    "listing_registry",
+    "final_critic",
+    "memory_system"
+  ],
+  "master_blueprint_lock": {
+    "route": "A_TO_B_TO_FINISH_STOP",
+    "telegram_operator_cockpit": true,
+    "single_product_isolated_session": true,
+    "source_based_photo_pipeline": true,
+    "german_listing_output": true,
+    "reuse_first": true,
+    "clean_export_after_finish_only": true
+  },
+  "forbidden": [
+    "marketplace_write",
+    "cleanup",
+    "delete",
+    "move",
+    "quarantine_move",
+    "secret_print",
+    "runtime_restart",
+    "old_product_mixing"
+  ]
+}
