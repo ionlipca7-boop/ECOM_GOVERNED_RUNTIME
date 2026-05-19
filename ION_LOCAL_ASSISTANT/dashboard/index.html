@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ION Локальный Помощник</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; color: #111; }
+    header { background: #111; color: white; padding: 22px; }
+    main { padding: 22px; max-width: 1100px; margin: auto; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .card { background: white; border-radius: 14px; padding: 18px; box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+    .card h2 { margin-top: 0; font-size: 20px; }
+    .btn { display: block; padding: 12px; margin-top: 10px; background: #222; color: white; border-radius: 10px; text-decoration: none; text-align: center; }
+    .note { background: #fff7d6; padding: 14px; border-radius: 12px; margin-bottom: 18px; }
+    code { background: #eee; padding: 2px 5px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ION Локальный Помощник</h1>
+    <p>Режим: ТОЛЬКО ПРОВЕРКА / DRY RUN</p>
+  </header>
+
+  <main>
+    <div class="note">
+      Эта панель — безопасный центр управления. Она не удаляет файлы и не запускает live-действия. Для запуска действий используй CMD-меню или ярлыки.
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Файлы</h2>
+        <p>Проверка папок, дубликатов, больших файлов и пустых папок.</p>
+        <code>scripts\ION_MENU_RU.cmd</code>
+      </div>
+
+      <div class="card">
+        <h2>Фотографии</h2>
+        <p>Поиск и группировка фото без перемещения и удаления.</p>
+        <code>photo_organizer_dry_run_v1.py</code>
+      </div>
+
+      <div class="card">
+        <h2>Проекты</h2>
+        <p>Определение папок проектов: ECOM, код, документы, фото.</p>
+        <code>project_detector_v1.py</code>
+      </div>
+
+      <div class="card">
+        <h2>AI помощник</h2>
+        <p>Русский локальный чат-помощник с оценкой риска.</p>
+        <code>scripts\start_ai_chat_ru.cmd</code>
+      </div>
+
+      <div class="card">
+        <h2>Отчёты</h2>
+        <p>Все результаты сохраняются в папку:</p>
+        <code>storage\reports</code>
+      </div>
+
+      <div class="card">
+        <h2>Память</h2>
+        <p>История действий, задач и AI-диалогов.</p>
+        <code>storage\memory</code>
+      </div>
+    </div>
+
+    <h2>Как запускать</h2>
+    <p>Открой Windows CMD в папке <code>ION_LOCAL_ASSISTANT</code> и запусти:</p>
+    <pre>scripts\ION_MENU_RU.cmd</pre>
+
+    <h2>Правило безопасности</h2>
+    <p>Любое действие, которое меняет файлы, требует отдельного подтверждения оператора.</p>
+  </main>
+</body>
+</html>
