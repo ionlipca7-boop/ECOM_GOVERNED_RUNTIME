@@ -1,6 +1,15 @@
 {
   "project": "ECOM_GOVERNED_RUNTIME",
-  "current_layer": "build_clean_governed_module_skeleton_v1",
-  "next_allowed_action": "verify_clean_skeleton_and_git_status_v1",
-  "status": "PASS"
+  "current_layer": "local_helper_ecom_operator_integration_v1",
+  "next_allowed_action": "prepare_git_review_for_local_helper_files_v1",
+  "status": "PASS",
+  "confirmed": [
+    "LOCAL_HELPER_CORE_V1_PASS",
+    "ION_HELPER_V2_ECOM_BUTTON_PASS",
+    "ION_HELPER_V2_OPERATOR_BUTTON_PASS",
+    "ECOM_READONLY_BRIDGE_SIMPLE_V1_PASS",
+    "ECOM_OPERATOR_STATUS_WORKFLOW_V1_PASS"
+  ],
+  "mode": "LOCAL_SAFE_OPERATOR_READ_ONLY",
+  "updated_at": "2026-05-20T21:19:56.467202"
 }
