@@ -1,137 +1,68 @@
 @echo off
-
 setlocal
-
 chcp 65001 >nul
-
-cd /d %~dp0\..
-
+cd /d %%~dp0\..
 :menu
-
 cls
-
 echo ======================================
-
 echo        ION HELPER V2
-
-echo        ЛОКАЛЬНЫЙ БЕЗОПАСНЫЙ ОПЕРАТОР
-
+echo        LOCAL SAFE OPERATOR / RU MODE
 echo ======================================
-
 echo.
-
-echo [1] ПРЕВЬЮ   - принять CMD из буфера и открыть Блокнот
-
-echo [2] ЗАПУСК   - запустить pending CMD после safety-check
-
-echo [3] ОТЧЁТ    - показать последний approve-run report
-
-echo [4] AI       - проверить Ollama / Python / Git слой
-
-echo [5] ОТЧЁТЫ   - открыть папку reports
-
-echo [6] GIT      - read-only git status
-
-echo [8] ECOM     - статус ECOM проекта read-only
-
-echo [9] OPERATOR - подготовить статус для ChatGPT
-
-echo [7] ВЫХОД
-
+echo [1] PREVIEW / ПРЕВЬЮ  - буфер в Блокнот
+echo [2] RUN / ЗАПУСК      - pending CMD после safety-check
+echo [3] REPORT / ОТЧЁТ    - последний approve-run report
+echo [4] AI / ИИ           - проверить Ollama / Python / Git
+echo [5] REPORTS / ОТЧЁТЫ  - открыть папку reports
+echo [6] GIT               - read-only git status
+echo [7] EXIT / ВЫХОД
+echo [8] ECOM              - статус ECOM проекта read-only
+echo [9] OPERATOR          - статус для ChatGPT
 echo.
-
-set /p choice=Выбери действие:
-
-if "%choice%"=="1" goto preview
-
-if "%choice%"=="2" goto approve
-
-if "%choice%"=="3" goto report
-
-if "%choice%"=="4" goto ai
-
-if "%choice%"=="5" goto reports
-
-if "%choice%"=="6" goto gitstatus
-
-if "%choice%"=="8" goto ecom
-
-if "%choice%"=="9" goto operator
-
-if "%choice%"=="7" goto end
-
+choice /c 123456789 /n /m "Выбери действие: "
+if errorlevel 9 goto operator
+if errorlevel 8 goto ecom
+if errorlevel 7 goto end
+if errorlevel 6 goto gitstatus
+if errorlevel 5 goto reports
+if errorlevel 4 goto ai
+if errorlevel 3 goto report
+if errorlevel 2 goto approve
+if errorlevel 1 goto preview
 goto menu
-
 :preview
-
 py scripts\clipboard_cmd_preview_v1.py
-
 pause
-
 goto menu
-
 :approve
-
 py scripts\approve_run_pending_cmd_v1.py
-
 pause
-
 goto menu
-
 :report
-
-if exist storage\reports\approve_run_pending_cmd_v1.json (type storage\reports\approve_run_pending_cmd_v1.json) else (echo Нет approve-run report.)
-
+type storage\reports\approve_run_pending_cmd_v1.json
 pause
-
 goto menu
-
 :ai
-
 py scripts\ai_layer_check_v1.py
-
 pause
-
 goto menu
-
 :reports
-
 if not exist storage\reports mkdir storage\reports
-
 start "" storage\reports
-
 goto menu
-
 :gitstatus
-
-cd /d %~dp0\..
-
+cd /d %%~dp0\..
 echo === GIT STATUS READ-ONLY ===
-
 git status --short
-
 echo.
-
 git log -1 --oneline
-
 pause
-
 goto menu
-
 :ecom
-
 call scripts\ecom_status_bridge_simple_v1.cmd
-
 goto menu
-
 :operator
-
 call scripts\ecom_operator_prompt_v1.cmd
-
 goto menu
-
 :end
-
 echo ION HELPER V2 CLOSED
-
-exit /b 0
