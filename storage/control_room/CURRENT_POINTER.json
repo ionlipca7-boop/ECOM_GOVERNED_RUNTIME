@@ -1,15 +1,25 @@
 {
   "project": "ECOM_GOVERNED_RUNTIME",
-  "current_layer": "local_helper_ecom_operator_integration_v1",
-  "next_allowed_action": "prepare_git_review_for_local_helper_files_v1",
+  "current_layer": "local_helper_ecom_operator_bridge_complete_v1",
+  "next_allowed_action": "resume_ecom_project_with_local_helper_readonly_operator_v1",
   "status": "PASS",
   "confirmed": [
     "LOCAL_HELPER_CORE_V1_PASS",
     "ION_HELPER_V2_ECOM_BUTTON_PASS",
     "ION_HELPER_V2_OPERATOR_BUTTON_PASS",
     "ECOM_READONLY_BRIDGE_SIMPLE_V1_PASS",
-    "ECOM_OPERATOR_STATUS_WORKFLOW_V1_PASS"
+    "ECOM_OPERATOR_STATUS_WORKFLOW_V1_PASS",
+    "local_commit_4a341bb",
+    "github_push_done",
+    "post_push_local_checkpoint_done"
   ],
   "mode": "LOCAL_SAFE_OPERATOR_READ_ONLY",
-  "updated_at": "2026-05-20T21:19:56.467202"
+  "blocked_until_gate": [
+    "cleanup_delete",
+    "runtime_cleanup",
+    "extra_git_staging",
+    "live_ebay_action",
+    "server_write_action"
+  ],
+  "updated_at": "2026-05-20T21:35:40.092685"
 }
