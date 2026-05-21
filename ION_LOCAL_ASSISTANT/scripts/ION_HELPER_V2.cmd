@@ -18,8 +18,10 @@ echo [6] GIT               - read-only git status
 echo [7] EXIT / ВЫХОД
 echo [8] ECOM              - статус ECOM проекта read-only
 echo [9] OPERATOR          - статус для ChatGPT
+echo [S] SERVER            - server status read-only
 echo.
-choice /c 123456789 /n /m "Выбери действие: "
+choice /c 123456789S /n /m "Выбери действие: "
+if errorlevel 10 goto serverstatus
 if errorlevel 9 goto operator
 if errorlevel 8 goto ecom
 if errorlevel 7 goto end
@@ -70,6 +72,11 @@ goto menu
 :operator
 cd /d D:\ECOM_GOVERNED_RUNTIME\ION_LOCAL_ASSISTANT
 call scripts\ecom_operator_prompt_v1.cmd
+goto menu
+:serverstatus
+cd /d D:\ECOM_GOVERNED_RUNTIME
+call ION_LOCAL_ASSISTANT\scripts\server_status_readonly_v2.cmd
+pause
 goto menu
 :end
 echo ION HELPER V2 CLOSED

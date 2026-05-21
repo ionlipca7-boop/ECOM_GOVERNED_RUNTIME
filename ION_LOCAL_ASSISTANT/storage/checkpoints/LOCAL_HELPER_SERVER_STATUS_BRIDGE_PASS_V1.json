@@ -1,0 +1,22 @@
+{
+  "project": "ECOM_GOVERNED_RUNTIME",
+  "layer": "LOCAL_HELPER_SERVER_STATUS_BRIDGE_PASS_V1",
+  "status": "PASS",
+  "confirmed": [
+    "WINDOWS_TO_SERVER_SSH_METADATA_PASS",
+    "SERVER_STATUS_READONLY_V2_PASS",
+    "PASS_GOVERNED_RUNTIME",
+    "PASS_LEGACY_RUNTIME",
+    "PASS_ECOM_BOT_TMUX_ACTIVE",
+    "HELPER_S_BUTTON_PASS"
+  ],
+  "mode": "LOCAL_HELPER_TO_SERVER_READ_ONLY",
+  "blocked_until_gate": [
+    "server_write",
+    "git_commit",
+    "cleanup_delete",
+    "ebay_live"
+  ],
+  "next_allowed_action": "build_helper_server_operator_report_v1",
+  "updated_at": "2026-05-21T19:20:28.866382"
+}
