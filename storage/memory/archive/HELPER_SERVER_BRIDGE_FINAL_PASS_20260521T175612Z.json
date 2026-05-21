@@ -1,0 +1,23 @@
+{
+  "project": "ECOM_GOVERNED_RUNTIME",
+  "layer": "HELPER_SERVER_BRIDGE_FINAL_PASS",
+  "status": "FINISH_PASS",
+  "confirmed": [
+    "helper_menu_pass",
+    "button_9_operator_full_report_pass",
+    "button_s_server_status_pass",
+    "windows_to_server_ssh_metadata_pass",
+    "server_readonly_status_pass",
+    "github_commit_b4e6175_pushed",
+    "ecom_bot_tmux_active"
+  ],
+  "commit": "b4e6175 Add helper server readonly bridge v1",
+  "next_allowed_action": "resume_ecom_project_readonly_from_helper_operator",
+  "blocked_until_gate": [
+    "cleanup_delete",
+    "server_write",
+    "ebay_live",
+    "runtime_restart"
+  ],
+  "updated_at_utc": "20260521T175612Z"
+}

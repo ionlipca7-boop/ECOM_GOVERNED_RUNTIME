@@ -1,25 +1,21 @@
 {
   "project": "ECOM_GOVERNED_RUNTIME",
-  "current_layer": "local_helper_ecom_operator_bridge_complete_v1",
-  "next_allowed_action": "resume_ecom_project_with_local_helper_readonly_operator_v1",
-  "status": "PASS",
+  "current_layer": "HELPER_SERVER_BRIDGE_FINAL_PASS",
+  "status": "FINISH_PASS",
   "confirmed": [
-    "LOCAL_HELPER_CORE_V1_PASS",
-    "ION_HELPER_V2_ECOM_BUTTON_PASS",
-    "ION_HELPER_V2_OPERATOR_BUTTON_PASS",
-    "ECOM_READONLY_BRIDGE_SIMPLE_V1_PASS",
-    "ECOM_OPERATOR_STATUS_WORKFLOW_V1_PASS",
-    "local_commit_4a341bb",
-    "github_push_done",
-    "post_push_local_checkpoint_done"
+    "LOCAL_HELPER_PASS",
+    "SERVER_STATUS_READONLY_PASS",
+    "GITHUB_PUSH_PASS_b4e6175",
+    "OPERATOR_BUTTON_9_FULL_REPORT_PASS",
+    "SERVER_BUTTON_S_PASS"
   ],
-  "mode": "LOCAL_SAFE_OPERATOR_READ_ONLY",
+  "next_allowed_action": "resume_ecom_project_readonly_from_helper_operator",
+  "mode": "LOCAL_HELPER_TO_SERVER_READ_ONLY",
   "blocked_until_gate": [
     "cleanup_delete",
-    "runtime_cleanup",
-    "extra_git_staging",
-    "live_ebay_action",
-    "server_write_action"
+    "server_write",
+    "ebay_live",
+    "runtime_restart"
   ],
-  "updated_at": "2026-05-20T21:35:40.092685"
+  "updated_at_utc": "20260521T175612Z"
 }

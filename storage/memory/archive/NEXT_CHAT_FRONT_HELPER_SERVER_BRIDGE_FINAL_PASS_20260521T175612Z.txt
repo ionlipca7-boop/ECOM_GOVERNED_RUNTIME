@@ -1,0 +1,7 @@
+ION / E1 - NEXT CHAT FRONT - ECOM OS V3
+
+STATUS: HELPER_SERVER_BRIDGE_FINAL_PASS / FINISH_PASS
+COMMIT: b4e6175 Add helper server readonly bridge v1
+HELPER START: cd /d D:\ECOM_GOVERNED_RUNTIME && START_ION_HELPER_V2.cmd
+NEXT STEP: press [9] OPERATOR, paste report to ChatGPT, resume main ECOM project read-only.
+BLOCKED: cleanup_delete, server_write, ebay_live, runtime_restart until explicit gate.
