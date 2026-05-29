@@ -1,0 +1,6 @@
+ION CONTINUE ECOM WORKSPACE AUTOWATCH HUB V1
+Continue ECOM OS / ECOM_GOVERNED_RUNTIME. Do not start over.
+Current status PASS: one desktop button ION WORKSPACE.cmd starts Server Eyes/ngrok, AutoWatch Hub, and ION Helper.
+R is now AutoWatch Hub. Use small marker blocks, especially ION_AUTO:SERVER_READONLY_STATUS_V1.
+Root has one main launcher START_ION_WORKSPACE.cmd. Internal launchers are in ION_LOCAL_ASSISTANT\launchers_internal.
+Next safe action: read CURRENT_POINTER and run Git review for workspace/autowatch files only. No eBay live, no cleanup delete, no server write.

@@ -1,0 +1,13 @@
+{
+  "version": "R_BLOCK_LIBRARY_V1",
+  "mode": "NO_CLUTTER_STABLE_BLOCKS_ONLY",
+  "default_block_id": "server_readonly_status_adapter_v1",
+  "blocks": {
+    "server_readonly_status_adapter_v1": {
+      "path": "ION_LOCAL_ASSISTANT/storage/server_blocks/current/server_readonly_status_adapter_v1.sh",
+      "marker": "# ION_SERVER_AUTO_SAFE_V1",
+      "mode": "READ_ONLY_NO_WRITE_NO_LIVE",
+      "status": "READY_FOR_R_ENGINE_REPAIR_TEST"
+    }
+  }
+}
