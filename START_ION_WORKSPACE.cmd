@@ -18,6 +18,7 @@ timeout /t 2 /nobreak >nul
 echo STEP 3 - start ION Helper menu
 start "ION HELPER MENU" cmd /k call "D:\ECOM_GOVERNED_RUNTIME\ION_LOCAL_ASSISTANT\launchers_internal\START_ION_HELPER_V2.cmd"
 echo STEP 4 - collect clean workspace status to clipboard
-call "D:\ECOM_GOVERNED_RUNTIME\ION_LOCAL_ASSISTANT\scripts\workspace_status_clip_v1.cmd"
+call D:\ECOM_GOVERNED_RUNTIME\ION_LOCAL_ASSISTANT\autoclip\YSTATUS.cmd"
 timeout /t 5 /nobreak >nul
 exit /b 0
+
