@@ -1,0 +1,65 @@
+ION_HUB_V3_FINAL_SUCCESS_ARCHIVE
+TITLE=HUB_V3_FINAL_SUCCESS_ONE_CHAT_ROUTE
+UTC=20260531T134500Z
+STATUS=ONE_CHAT_SERVER_EYES_PLUS_GITHUB_FULL_MEMORY_PLUS_GITHUB_HANDS_PASS
+
+GOAL_CONFIRMED:
+One chat = server eyes + GitHub full memory + GitHub hands.
+
+FINAL PASS:
+- ECOM_OS_HUB_MCP_V3 callable in ChatGPT.
+- Server eyes PASS: server health, pointers, reports.
+- GitHub API auth PASS: repo visible, admin/push permission confirmed, private value not printed.
+- GitHub memory read PASS.
+- GitHub memory write PASS: archive created by HUB V3 direct GitHub API.
+- GitHub pointer update PASS.
+- Readback PASS.
+
+ARCHITECTURE:
+GitHub = main memory / archive / source of truth.
+Server = runtime / eyes / workspace.
+Windows local = helper + fallback only.
+HUB V3 = one-chat control layer.
+
+MAIN ERRORS LEARNED:
+- Patching old V2 did not update ChatGPT callable schema.
+- Server git push was blocked by read-only deploy key.
+- Windows bridge worked but was only fallback, not final goal.
+- Parallel V1/V2/V3 routes create confusion; keep one active route.
+- Long Windows CMD / SSH one-liners with embedded Python are unsafe.
+- Windows CRLF breaks bash unless normalized.
+- Write tools need explicit inputSchema so ChatGPT can pass approval/content/path.
+
+FIXES:
+- Created active HUB V3 connector identity.
+- Added GitHub API memory tools.
+- Added input schema for write tools.
+- Verified direct archive write, pointer update and readback.
+
+STRICT NEXT RULES:
+- No false PASS.
+- No eBay live/write without explicit gate.
+- No delete/cleanup without separate gate.
+- Do not print private values.
+- Use HUB V3 as main memory route.
+- Windows bridge only fallback.
+- One route: A -> B -> FINISH -> STOP.
+
+NEW_CHAT_MINI_PROMPT:
+ION / E1 — ECOM OS HUB V3 FINAL CHECK
+Отвечай по-русски, коротко, строго A/B/C/D/FINISH.
+Проверь ECOM_OS_HUB_MCP_V3 only.
+Read-only first:
+1. server_health_readonly
+2. github_api_auth_audit_readonly
+3. github_memory_read_latest_archive
+4. read_current_pointers
+Никаких eBay, delete, cleanup, private values print.
+Report:
+A = server eyes PASS/BLOCK
+B = GitHub API auth PASS/BLOCK
+C = GitHub memory latest archive PASS/BLOCK
+D = current project pointer summary + next_allowed_action
+FINISH = exact status
+
+NEXT_SAFE_ACTION=RUN_NEW_CHAT_V3_FINAL_READONLY_PROOF_THEN_RETURN_TO_PROJECT_CURRENT_POINTER
