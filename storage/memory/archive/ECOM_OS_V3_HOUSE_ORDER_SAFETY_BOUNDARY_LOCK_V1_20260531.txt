@@ -1,0 +1,77 @@
+TITLE=ECOM_OS_V3_HOUSE_ORDER_SAFETY_BOUNDARY_LOCK_V1_20260531
+STATUS=PASS_SAFETY_BOUNDARY_LOCK_CREATED
+
+PURPOSE:
+Create a permanent safety structure for ECOM OS V3 audits, checks, repairs, cleanup planning, and project changes.
+
+CORE PRINCIPLE:
+Before any action, especially write/patch/delete/cleanup/commit/push/live, the system must verify twice or three times, ask the right questions, and confirm the right answers. No fast actions when project integrity may be affected.
+
+MANDATORY STRUCTURE FOR FUTURE WORK:
+1. READ FIRST:
+- Read current pointer / current route.
+- Read relevant archive/memory.
+- Read actual file/tool/server status.
+- Never work from assumptions.
+
+2. CLASSIFY BEFORE ACTING:
+- Determine if the target is CORE_KEEP, MEMORY_KEEP, GOVERNANCE_KEEP, RUNTIME_KEEP, REVIEW, CANDIDATE, BACKUP, QUARANTINE, or TRASH_CANDIDATE.
+- TRASH_CANDIDATE must start empty.
+- Nothing becomes delete-approved without separate classification and approval.
+
+3. VERIFY 2-3 TIMES BEFORE WRITE:
+- Verify path exists.
+- Verify environment is correct: SERVER / WINDOWS / GITHUB / CHATGPT.
+- Verify the action is within the approved route.
+- Verify no secrets are printed.
+- Verify no eBay live/write unless explicitly approved.
+
+4. DRY/AUDIT BEFORE PATCH:
+- Prefer read-only audit first.
+- If patch needed, create plan/diff/backup.
+- Patch only after approval.
+- After patch, run compile/check/readonly verification.
+
+5. ARCHIVE BEFORE CLEANUP:
+- Before cleanup/delete, create archive or memory note.
+- Create boundary map.
+- Create candidate list.
+- Confirm protected paths.
+- Delete only after explicit separate cleanup approval.
+
+6. NO FALSE PASS:
+- If tool output is truncated, say truncated.
+- If visibility is partial, say partial.
+- If source is not verified, do not claim verified.
+- If cleanup did not happen, say no cleanup happened.
+
+7. ACTIVE PROJECT PROTECTION:
+Protected until separate gate:
+- storage/control_room/CURRENT_POINTER.json
+- storage/server_direct_eyes_mcp/server_direct_eyes_local_service_v1.py
+- storage/memory/archive/
+- storage/control_room/*.json
+- storage/backups/
+- storage/secrets/
+- .env
+- active Telegram/runtime files
+- eBay-related tools/routes
+
+8. HOUSE ORDER V1 RULE:
+House Order V1 is boundary and classification only.
+No delete, no cleanup, no reset, no mass commit, no push.
+
+9. DECISION FORMAT:
+Use ION/E1 style: A/B/C/D/FINISH/STOP.
+Every step must end with exact status and next allowed action.
+
+10. LESSON FROM HUB V3 REPAIR:
+Do not confuse access problems with schema problems.
+GitHub access can be PASS while write fails because tool inputSchema is missing.
+Always inspect actual tool behavior and verify with a real test after repair.
+
+NEXT_SAFE_ACTION:
+Continue House Order V1 with Pointer Boundary Map V2 or .gitignore review plan. No cleanup/delete.
+
+FINISH:
+SAFETY_BOUNDARY_LOCK_V1_ARCHIVED__PROJECT_PROTECTION_RULE_ACTIVE
