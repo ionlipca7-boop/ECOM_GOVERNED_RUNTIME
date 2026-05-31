@@ -1,0 +1,9 @@
+{
+  "status": "PASS_HUB_V2_APPROVAL_DETECTION_PATCHED",
+  "updated_utc": "20260531T101135Z",
+  "source": "storage/server_direct_eyes_mcp/server_direct_eyes_local_service_v1.py",
+  "patch_report": "storage/state_control/PATCH_HUB_V2_APPROVAL_DETECTION_20260531T101013Z.json",
+  "commit_scope": "MCP_SOURCE_AND_PATCH_CHECKPOINT_ONLY",
+  "approval_gate": "SESSION_FILE_APPROVAL_ACTIVE",
+  "next_safe_action": "RUN_GITHUB_COMMIT_AFTER_APPROVAL"
+}

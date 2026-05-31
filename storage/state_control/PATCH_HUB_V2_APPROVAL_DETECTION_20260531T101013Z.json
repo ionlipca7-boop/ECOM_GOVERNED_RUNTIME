@@ -1,0 +1,40 @@
+{
+  "step": "PATCH_HUB_V2_APPROVAL_DETECTION",
+  "utc": "20260531T101013Z",
+  "mode": "MCP_MAINTENANCE_PATCH_APPROVAL_GATE_NO_EBAY_NO_GIT_WRITE",
+  "src": "/home/ionlipca7/ecom_governed_runtime/storage/server_direct_eyes_mcp/server_direct_eyes_local_service_v1.py",
+  "patch_done": true,
+  "restart_attempted": true,
+  "restart_ok_hint": true,
+  "delete_done": false,
+  "cleanup_done": false,
+  "ebay_api_called": false,
+  "git_commit_called": false,
+  "git_push_called": false,
+  "private_values_printed": false,
+  "status": "PASS_PATCHED_APPROVAL_GATE_AND_RESTARTED_MCP",
+  "source_size": 13518,
+  "terms_found": {
+    "github_commit_after_approval": true,
+    "github_push_after_approval": true,
+    "APPROVE_GITHUB_COMMIT_AFTER_REVIEW": true,
+    "APPROVE_GITHUB_PUSH_AFTER_COMMIT": true,
+    "missing_approval": true
+  },
+  "backup": "/home/ionlipca7/ecom_governed_runtime/storage/backups/server_direct_eyes_mcp/server_direct_eyes_local_service_v1.py.before_approval_gate_patch_20260531T101013Z.bak",
+  "patched_commit_gate": true,
+  "patched_push_gate": true,
+  "session_file": "/home/ionlipca7/ecom_governed_runtime/storage/approval/session/HUB_V2_APPROVAL_SESSION.json",
+  "session_expires_utc": "2026-06-01T10:10:13Z",
+  "compile_ok": true,
+  "old_processes": [
+    "3164023 python3 storage/server_direct_eyes_mcp/server_direct_eyes_local_service_v1.py"
+  ],
+  "new_processes": [
+    "3166518 python3 /home/ionlipca7/ecom_governed_runtime/storage/server_direct_eyes_mcp/server_direct_eyes_local_service_v1.py"
+  ],
+  "restart_log": "/home/ionlipca7/ecom_governed_runtime/storage/logs/server_direct_eyes_mcp/hub_v2_mcp_restart_after_approval_gate_patch_20260531T101013Z.log",
+  "local_tools_http_returncode": 0,
+  "local_tools_http_sample": "{\n  \"tools\": [\n    \"github_commit_after_approval\",\n    \"github_push_after_approval\",\n    \"github_prepare_stage_review\",\n    \"github_status_readonly\",\n    \"github_branch_readonly\",\n    \"github_recent_commits_readonly\",\n    \"github_remote_readonly\",\n    \"server_health_readonly\",\n    \"list_project_roots\",\n    \"list_tree_safe\",\n    \"read_file_safe\",\n    \"grep_safe\",\n    \"read_current_pointers\",\n    \"read_latest_reports\"\n  ],\n  \"write_allowed\": false\n}",
+  "local_tools_http_stderr": ""
+}
