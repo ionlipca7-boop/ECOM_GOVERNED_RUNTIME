@@ -1,0 +1,37 @@
+TITLE=ECOM_OS_V3_HUB_V3_INPUT_SCHEMA_REPAIR_PASS_20260531
+STATUS=PASS_HUB_V3_INPUT_SCHEMA_PATCH_VERIFY_DONE
+
+SUMMARY:
+HUB V3 write-tool inputSchema issue was diagnosed and repaired.
+
+ROOT_CAUSE:
+GitHub access was PASS, but github_memory_write_archive_after_approval could not receive approval/content/path because the MCP tool schema exposed no explicit inputSchema for write parameters. Chat approval text alone was not read by the tool.
+
+ACTIONS:
+- Located local repair scripts in D:\ECOM_GOVERNED_RUNTIME\ION_LOCAL_ASSISTANT\scripts.
+- Confirmed server did not contain the local patch script path.
+- Recreated approved temporary server patch script in /tmp.
+- Patched /home/ionlipca7/ecom_governed_runtime/storage/server_direct_eyes_mcp/server_direct_eyes_local_service_v1.py.
+- Restarted MCP service.
+- Verified local tools/list schema.
+
+VERIFY:
+SCHEMA_ARGS_OK=YES
+STATUS=PASS_HUB_V3_INPUT_SCHEMA_PATCH_VERIFY_DONE
+
+WRITE TOOL NOW HAS INPUTS:
+- approval
+- title
+- content
+- path
+
+POINTER TOOL NOW HAS INPUTS:
+- approval
+- archive / archive_path
+- path
+- next_safe_action
+
+RULE:
+Cleanup/dirty folder route remains deferred. Do not delete/cleanup until separate inventory -> classification -> boundary -> archive -> approval -> cleanup gate.
+
+NEXT_SAFE_ACTION=TEST_GITHUB_MEMORY_WRITE_FROM_CHATGPT_THEN_OPTIONAL_POINTER_UPDATE
