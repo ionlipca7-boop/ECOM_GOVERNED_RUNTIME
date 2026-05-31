@@ -1,0 +1,60 @@
+TITLE=ECOM_OS_V3_STORAGE_SIZE_AUDIT_V1_20260531
+STATUS=PASS_STORAGE_SIZE_AUDIT_REVIEWED
+
+SERVER DISK:
+Filesystem /dev/sda1 size 9.7G, used 7.7G, available 1.5G, use 84%.
+This is not full yet but it is close enough to require care. No heavy builds/downloads should be added without checking disk first.
+
+PROJECT ROOT SIZES:
+- /home/ionlipca7/ecom_governed_runtime: 227M
+- /home/ionlipca7/runtime_eco_v1: 1.1G
+
+CURRENT ROOT MAIN SIZE GROUPS:
+- storage: 184M
+- .venv_photo: 43M
+- .git: 872K
+- runtime: 40K
+- bridge: 20K
+
+CURRENT STORAGE LARGEST GROUPS:
+- storage/server_direct_eyes_mcp: 75M
+- storage/tools: 46M
+- storage/images: 24M
+- storage/state_control: 9.1M
+- storage/runtime_bridge: 8.6M
+- storage/exports: 6.9M
+- storage/audit: 4.6M
+- storage/backups: 3.7M
+- storage/memory: 2.5M
+- storage/control_room: 1.4M
+
+LOCAL GIT SIZE ON SERVER:
+- .git: 872K
+- git count objects size 320 KiB, pack 53.21 KiB
+This means Git history is small. The problem is not .git history; it is untracked/generated/runtime folders.
+
+GITHUB REMOTE:
+origin github-ecom-governed-runtime:ionlipca7-boop/ECOM_GOVERNED_RUNTIME.git
+GH CLI not available on server, so exact GitHub cloud diskUsage could not be fetched from gh repo view.
+Inference: because local .git is under 1M, tracked Git repo itself is likely small. GitHub cloud size needs API/gh check later if required.
+
+LARGEST FILES:
+- cloudflared binary duplicated in downloads and bin, each about 39M.
+- PHOTO_V5_ASSET_QUALITY_AUDIT zip about 5.2M.
+- duplicated Pillow libraries in storage/tools/photo_v3_pillow_venv and .venv_photo.
+- audit raw indexes around 1-2M on server.
+
+SAFETY DECISION:
+No delete/cleanup approved.
+Potential review candidates only:
+- duplicated cloudflared download/bin copies
+- .venv_photo
+- storage/tools/photo_v3_pillow_venv
+- generated audit raw files
+- old export zip artifacts
+But all require separate candidate list, archive/checksum, and cleanup approval.
+
+NEXT_SAFE_ACTION:
+Stop here or create dedicated STORAGE_CLEANUP_CANDIDATE_REVIEW_V1 later. No delete now.
+
+FINISH=STORAGE_SIZE_AUDIT_ARCHIVED__NO_DELETE_NO_CLEANUP
