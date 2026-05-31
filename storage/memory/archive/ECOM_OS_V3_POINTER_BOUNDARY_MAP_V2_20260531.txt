@@ -1,0 +1,72 @@
+TITLE=ECOM_OS_V3_POINTER_BOUNDARY_MAP_V2_20260531
+STATUS=PASS_POINTER_BOUNDARY_MAP_V2_CREATED
+
+PURPOSE:
+Refine pointer classification after POINTER_CLASSIFICATION_SUMMARY_V1. This is boundary-only work: no cleanup, no delete, no git reset, no mass commit, no push.
+
+SOURCE SUMMARY:
+Server pointer classification found TOTAL_JSON_POINTERS=316 in storage/control_room.
+Class counts:
+- GOVERNANCE_KEEP: 179
+- FAILURE_LESSON_KEEP_REVIEW: 75
+- MARKETPLACE_SAFETY_KEEP_REVIEW: 51
+- TELEGRAM_RUNTIME_KEEP_REVIEW: 8
+- CURRENT_ACTIVE_KEEP: 2
+- MEMORY_SYNC_KEEP_REVIEW: 1
+
+BOUNDARY MAP V2:
+
+1. CURRENT_ACTIVE_KEEP
+Definition: active current-state files used to continue the project.
+Examples:
+- CURRENT_POINTER.json
+- SERVER_V6_5_RUNTIME_CURRENT_POINTER.json
+Action: keep in active path. Never delete. Read before project work.
+
+2. GOVERNANCE_KEEP
+Definition: approval gates, live gates, restart gates, ledgers, safety route blockers.
+Reason: protects project from unsafe live/write/delete operations.
+Action: keep. Later may create index, but do not remove.
+
+3. MARKETPLACE_SAFETY_KEEP_REVIEW
+Definition: eBay/listing/dry/live/publish/revise related safety pointers and evidence routes.
+Reason: protects marketplace actions and preserves operator decisions.
+Action: keep until eBay/listing route is stable and fully documented.
+
+4. TELEGRAM_RUNTIME_KEEP_REVIEW
+Definition: Telegram bot/menu/digest/runtime route pointers.
+Reason: needed to understand bot state, patch history, restarts, and menu work.
+Action: keep until Telegram runtime route is stable and archived.
+
+5. MEMORY_SYNC_KEEP_REVIEW
+Definition: GitHub/archive/memory continuity pointers.
+Reason: needed for source-of-truth and cross-chat continuity.
+Action: keep.
+
+6. FAILURE_LESSON_KEEP_REVIEW
+Definition: failed/blocked/partial attempts and patch lessons.
+Reason: these prevent repeated mistakes and contain repair lessons.
+Action: do not delete. Later consolidate into failure-lessons archive, then mark original files as cold-archive candidates only after approval.
+
+7. HISTORICAL_CHECKPOINT_KEEP_REVIEW
+Definition: PASS checkpoint pointers that are no longer active but document route history.
+Action: keep for now. Later move to cold history archive after consolidation and approval.
+
+8. UNCLASSIFIED_REVIEW
+Definition: any pointer not confidently classified by prefix/status/content.
+Action: manual review required. No delete.
+
+TRASH_CANDIDATE:
+EMPTY.
+No storage/control_room pointer is approved for deletion in V2.
+
+SAFE NEXT STEPS:
+A. Create pointer index summary file for human navigation.
+B. Create .gitignore review plan for generated/local-heavy folders like .venv_photo and audit raw outputs.
+C. Later create cold archive plan for historical checkpoints, but no deletion.
+
+PROJECT PROTECTION:
+storage/control_room/*.json is now classified as safety/history/governance layer, not trash.
+
+FINISH:
+POINTER_BOUNDARY_MAP_V2_CREATED__NO_DELETE_NO_CLEANUP__READY_FOR_GITIGNORE_REVIEW_OR_POINTER_INDEX
