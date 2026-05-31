@@ -1,0 +1,49 @@
+ION_HUB_V3_FINAL_PROOF_AND_DREAM_FINISH
+TITLE=HUB_V3_FINAL_PROOF_AND_DREAM_FINISH
+UTC=20260531T135000Z
+STATUS=FINAL_PASS_DREAM_FINISH_STOP
+
+DREAM_GOAL_COMPLETED:
+One chat = server eyes + GitHub full memory + GitHub hands.
+
+NEW_CHAT_PROOF_RESULT:
+A = server eyes PASS
+B = GitHub API auth PASS
+C = GitHub memory latest archive PASS
+D = current project pointers PASS
+FINISH = HUB_V3_FINAL_READONLY_PROOF_PASS__READY_RETURN_TO_PROJECT_CURRENT_POINTER
+
+ARCHITECTURE_LOCKED:
+GitHub = main memory / archive / project source of truth.
+Server = runtime / eyes / workspace.
+Windows local = helper / fallback / clean copy only.
+ECOM_OS_HUB_MCP_V3 = main one-chat control layer.
+
+WHAT WAS FINISHED:
+- ECOM_OS_HUB_MCP_V3 is callable in ChatGPT.
+- Server read-only eyes work.
+- GitHub API auth works without printing secrets.
+- GitHub memory latest archive read works.
+- GitHub direct archive write works through HUB V3.
+- GitHub pointer update works through HUB V3.
+- New chat proof passed with V3 activated.
+
+KEY LESSONS:
+- Do not patch old V2 connector identity and expect ChatGPT schema refresh.
+- Use V3 connector identity as active route.
+- Do not create parallel V2/V3 active routes.
+- Windows bridge is fallback, not main route.
+- Avoid long CMD/SSH one-liners with embedded Python.
+- For Windows-created shell scripts use CRLF normalization when sending to bash.
+- Write tools need explicit inputSchema.
+
+STRICT OPERATING RULES GOING FORWARD:
+- Russian, short, ION/E1 format.
+- One active route: A -> B -> FINISH -> STOP.
+- No false PASS.
+- No eBay live/write without explicit gate.
+- No delete/cleanup without separate cleanup gate.
+- No private values printed.
+- Read HUB V3 memory and current pointers before project work.
+
+NEXT_SAFE_ACTION=RETURN_TO_PROJECT_CURRENT_POINTER
