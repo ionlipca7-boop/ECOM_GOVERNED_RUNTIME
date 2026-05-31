@@ -1,0 +1,66 @@
+TITLE=ECOM_OS_V3_NEXT_ROUTE_SERVER_STORAGE_CLEANUP_FRONT_20260531
+STATUS=PASS_NEXT_ROUTE_FRONT_ARCHIVED
+
+USER DECISION:
+Next project route after this chat: clean server storage safely and free disk space without damaging active ECOM OS project.
+
+CURRENT VERIFIED STORAGE STATE:
+Server disk /dev/sda1: size 9.7G, used 7.7G, available 1.5G, use 84%.
+Current clean root /home/ionlipca7/ecom_governed_runtime: 227M.
+Legacy root /home/ionlipca7/runtime_eco_v1: 1.1G.
+Local Git size on server: .git 872K; Git history is small.
+GitHub exact cloud diskUsage not verified because gh CLI was not available on server. Inference: repo itself is small; main size problem is server runtime/generated/untracked files.
+
+BIG SERVER GROUPS FOUND:
+- storage/server_direct_eyes_mcp: 75M
+- storage/tools: 46M
+- .venv_photo: 43M
+- storage/images: 24M
+- storage/state_control: 9.1M
+- storage/runtime_bridge: 8.6M
+- storage/exports: 6.9M
+- storage/audit: 4.6M
+- storage/backups: 3.7M
+- storage/memory: 2.5M
+- legacy /home/ionlipca7/runtime_eco_v1: 1.1G
+
+LARGEST DUPLICATE/REVIEW CANDIDATES:
+- cloudflared binary duplicated in storage/server_direct_eyes_mcp/downloads and storage/server_direct_eyes_mcp/bin, about 39M each.
+- duplicated photo Python/Pillow environments: .venv_photo and storage/tools/photo_v3_pillow_venv around 43M each.
+- old photo/image artifacts in storage/images and storage/exports.
+- generated audit/raw/index files.
+- legacy runtime root 1.1G requires separate legacy retention review before any cleanup.
+
+ABSOLUTE RULES FOR NEXT CHAT:
+- No delete immediately.
+- No cleanup without candidate list.
+- No git reset.
+- No mass commit.
+- No push.
+- No eBay live/write.
+- No secrets print.
+- Do not touch .env, storage/secrets, CURRENT_POINTER.json, storage/memory/archive, active Telegram/runtime, active MCP service source, or eBay routes without explicit gate.
+
+NEXT ROUTE NAME:
+SERVER_STORAGE_CLEANUP_CANDIDATE_REVIEW_V1
+
+MANDATORY ORDER:
+1. Read latest memory archive and current pointers.
+2. Re-check df -h and root sizes.
+3. Build cleanup candidate list only.
+4. Classify each candidate: SAFE_ARCHIVE_FIRST, SAFE_IGNORE_ONLY, KEEP_ACTIVE, KEEP_REVIEW, BLOCK_DELETE.
+5. For each possible delete candidate: verify path, size, purpose, duplicate/copy, active usage, and backup/archive status.
+6. Create archive/checksum for approved candidates before deletion.
+7. Ask explicit approval marker before any delete.
+8. Delete only candidates approved by Ion.
+9. Verify free disk space after deletion.
+10. Save cleanup result to GitHub memory.
+
+RECOMMENDED FIRST TARGETS FOR REVIEW ONLY:
+A. cloudflared duplicate download/bin copies.
+B. photo virtual env duplication (.venv_photo vs storage/tools/photo_v3_pillow_venv).
+C. old generated photo/export zip artifacts.
+D. legacy runtime retention plan for /home/ionlipca7/runtime_eco_v1.
+
+FINISH:
+NEXT_ROUTE_SERVER_STORAGE_CLEANUP_FRONT_ARCHIVED__READY_FOR_NEW_CHAT_OR_RETURN_TO_PROJECT
