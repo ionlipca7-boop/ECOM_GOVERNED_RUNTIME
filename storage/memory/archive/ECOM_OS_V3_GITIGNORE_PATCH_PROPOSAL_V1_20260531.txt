@@ -1,0 +1,65 @@
+TITLE=ECOM_OS_V3_GITIGNORE_PATCH_PROPOSAL_V1_20260531
+STATUS=PASS_GITIGNORE_PATCH_PROPOSAL_CREATED_NO_PATCH_APPLIED
+
+PURPOSE:
+Create a .gitignore patch proposal for ECOM OS V3 House Order route. This is proposal only. No file was modified by this archive action.
+
+SOURCE STATE:
+Server and local .gitignore are identical and currently contain:
+- .env
+- .env.local
+- *.token
+- *.secret
+- *secret*
+- storage/secrets/
+- logs/
+- __pycache__/
+- *.pyc
+- .venv/
+- venv/
+- runtime_tmp/
+- *.log
+- nul
+- 3
+
+OBSERVATION:
+Lines 'nul' and '3' look accidental/noisy, but removal is not approved yet. Treat as review candidates only.
+
+PROPOSED ADDITIONS FOR REVIEW ONLY:
+1. Environment/dependencies:
+- .venv_photo/
+
+2. Large generated local audit outputs:
+- storage/audit/master_consolidation/*raw*.txt
+- storage/audit/master_consolidation/*index*.txt
+- storage/audit/master_consolidation/*hits*.txt
+
+3. Temporary command/output artifacts:
+- ION_LOCAL_ASSISTANT/%OUT%
+- %OUT%
+- 20
+
+4. Backup artifacts for review:
+- *.backup*
+- *.bak
+- *.tmp
+
+5. Runtime/download/generated artifacts for review:
+- storage/server_direct_eyes_mcp/downloads/
+- storage/server_direct_eyes_mcp/bin/
+- storage/server_direct_eyes_mcp/*.tmp*
+
+DO NOT IGNORE BLINDLY:
+- storage/memory/archive/
+- storage/control_room/*.json
+- storage/secrets/ is already ignored and should stay ignored.
+- active HUB V3 scripts/source that are needed for operations.
+
+PATCH POLICY:
+A .gitignore patch may be applied only after separate approval. After patch, run git status read-only to confirm noise reduction. No commit/push until staged review.
+
+NEXT SAFE ACTION:
+Stop House Order V1 audit checkpoint here or create final audit closeout archive. Do not cleanup/delete.
+
+FINISH:
+GITIGNORE_PATCH_PROPOSAL_V1_CREATED__NO_PATCH_NO_DELETE_NO_COMMIT_NO_PUSH
