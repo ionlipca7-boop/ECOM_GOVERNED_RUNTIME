@@ -1,0 +1,106 @@
+TITLE=ECOM_OS_V3_GITIGNORE_REVIEW_PLAN_V1_20260531
+STATUS=PASS_GITIGNORE_REVIEW_PLAN_CREATED
+
+PURPOSE:
+Create a safe .gitignore review plan for ECOM OS V3 House Order route. This is not a .gitignore patch yet, not cleanup, not deletion, not commit, not push.
+
+STRICT RULES:
+- No delete.
+- No cleanup.
+- No git reset.
+- No mass commit.
+- No push.
+- No eBay live/write.
+- No secrets printed.
+- Do not modify .gitignore without separate approval.
+
+WHY THIS PLAN IS NEEDED:
+Server and local snapshots show many untracked generated/runtime/helper/audit files. Some are important history and should not be deleted, but not everything should be committed to GitHub active source.
+
+OBSERVED UNTRACKED / REVIEW GROUPS:
+SERVER:
+- .venv_photo/ approx 43M
+- bridge/
+- storage/audit/
+- storage/backups/
+- storage/candidates/
+- storage/activation/
+- storage/approval/
+- storage/architecture/
+- storage/compliance/
+- storage/contracts/
+- many storage/control_room/*.json pointers
+
+LOCAL:
+- ION_LOCAL_ASSISTANT/scripts/HUB_V3_*.sh
+- ION_LOCAL_ASSISTANT/scripts/ION_SERVER_*.cmd/.ps1
+- ION_LOCAL_ASSISTANT/storage/checkpoints/
+- storage/audit/master_consolidation/*.txt large audit outputs
+- storage/quarantine/
+- helper backups and bridge logs
+
+RECOMMENDED .GITIGNORE REVIEW CATEGORIES:
+
+1. IGNORE_ENV_CANDIDATE:
+- .venv_photo/
+Reason: likely local/server virtual environment/dependencies. Should not be committed unless deliberately vendored.
+Action: add to .gitignore only after checking no unique source code is inside.
+
+2. IGNORE_GENERATED_AUDIT_RAW_CANDIDATE:
+- storage/audit/master_consolidation/*raw*.txt
+- storage/audit/master_consolidation/*index*.txt
+Reason: large generated audit outputs. Keep locally/server as audit artifacts, but do not necessarily track in active GitHub source.
+Action: create archive summary first, then consider ignore pattern.
+
+3. KEEP_MEMORY_ARCHIVE:
+- storage/memory/archive/*.txt
+Reason: GitHub memory archive is project continuity source of truth.
+Action: do not ignore memory archive.
+
+4. REVIEW_CONTROL_ROOM_POINTERS:
+- storage/control_room/*.json
+Reason: classified as governance/safety/history, not trash.
+Action: do not blanket-ignore until pointer strategy is decided.
+
+5. REVIEW_BACKUPS:
+- storage/backups/
+- *.backup*
+Reason: backups protect previous patch states. Some may belong to cold archive, but do not delete/ignore blindly.
+Action: keep review.
+
+6. REVIEW_HELPER_SCRIPTS:
+- ION_LOCAL_ASSISTANT/scripts/*.cmd
+- ION_LOCAL_ASSISTANT/scripts/*.ps1
+- ION_LOCAL_ASSISTANT/scripts/HUB_V3_*.sh
+Reason: some helper scripts are operationally important; others are old backups.
+Action: classify canonical scripts vs old backups before ignore/commit.
+
+7. REVIEW_QUARANTINE:
+- storage/quarantine/
+Reason: quarantine contains previous cleanup/recovery evidence; not automatically trash.
+Action: keep review; later cold archive.
+
+8. REVIEW_RUNTIME_BRIDGE_AND_CANDIDATES:
+- storage/runtime_bridge/
+- storage/candidates/
+Reason: contains patch candidates and runtime bridge artifacts.
+Action: review before ignoring or archiving.
+
+PROPOSED SAFE ORDER:
+A. Read current .gitignore on server and local.
+B. Compare tracked/untracked categories.
+C. Build .gitignore patch proposal only.
+D. Ask approval.
+E. Apply .gitignore patch only if approved.
+F. Run git status read-only after patch.
+G. No commit/push until staged review.
+
+NO DECISION YET:
+No .gitignore modification approved in this plan.
+TRASH_CANDIDATE=EMPTY.
+
+NEXT_SAFE_ACTION:
+Read current .gitignore on server and local, then create .gitignore patch proposal V1 without applying it.
+
+FINISH:
+GITIGNORE_REVIEW_PLAN_V1_CREATED__NO_PATCH_NO_DELETE_NO_COMMIT
