@@ -1,0 +1,133 @@
+TITLE=ECOM_OS_V3_SERVER_LOCAL_BOUNDARY_MAP_V1_20260531
+STATUS=PASS_BOUNDARY_MAP_V1_CREATED_FROM_SERVER_AND_LOCAL_SNAPSHOTS
+
+PURPOSE:
+Create first safe boundary map for ECOM OS V3 house order route using server and local inventory snapshots. This is not cleanup and not deletion.
+
+STRICT RULES:
+- No delete.
+- No cleanup.
+- No git reset.
+- No mass commit.
+- No push.
+- No eBay live/write.
+- No secrets printed.
+- TRASH_CANDIDATE remains empty until separate approval.
+
+SOURCES USED:
+1. SERVER_FULL_INVENTORY_V1 from /home/ionlipca7/ecom_governed_runtime.
+2. LOCAL_FULL_INVENTORY_V1 from D:\ECOM_GOVERNED_RUNTIME.
+3. HUB V3 GitHub status/read-only checks.
+
+SERVER SNAPSHOT SUMMARY:
+Root: /home/ionlipca7/ecom_governed_runtime.
+Branch: memory-sync-wow-6pc-agent-playbook-20260501_110213.
+Remote: ionlipca7-boop/ECOM_GOVERNED_RUNTIME.
+Top-level major sizes:
+- storage: 183M
+- storage/server_direct_eyes_mcp: 75M
+- storage/tools: 46M
+- .venv_photo: 43M
+- storage/images: 24M
+- storage/state_control: 9.1M
+- storage/runtime_bridge: 8.6M
+- storage/exports: 6.9M
+- storage/audit: 4.4M
+- storage/backups: 3.7M
+- storage/memory: 2.5M
+Modified:
+- storage/control_room/CURRENT_POINTER.json
+- storage/server_direct_eyes_mcp/server_direct_eyes_local_service_v1.py
+Untracked major groups:
+- .venv_photo/
+- bridge/
+- storage/activation/
+- storage/approval/
+- storage/architecture/
+- storage/audit/
+- storage/backups/
+- storage/candidates/
+- storage/compliance/
+- storage/contracts/
+- many storage/control_room/*.json pointers.
+
+LOCAL SNAPSHOT SUMMARY:
+Root: D:\ECOM_GOVERNED_RUNTIME.
+Branch: main.
+Remote: https://github.com/ionlipca7-boop/ECOM_GOVERNED_RUNTIME.git.
+Main local volume:
+- storage approx 69M
+- storage/audit approx 67M
+- storage/quarantine approx 1.3M
+- ION_LOCAL_ASSISTANT approx 248K
+Large local files mostly under storage/audit/master_consolidation/*.txt, including raw index and photo worker audit files around 8-9M each.
+Local untracked includes many helper/HUB V3 scripts, backups, reports, checkpoints, storage/audit, storage/quarantine, storage/state_control bridge run logs.
+
+KEY DIFFERENCES:
+- Server branch is memory-sync-wow-6pc-agent-playbook-20260501_110213; local branch is main.
+- Server contains active runtime/server_direct_eyes_mcp/tools/images and larger runtime storage.
+- Local contains helper scripts and large audit/master_consolidation outputs.
+- Local helper scripts include HUB V3 patch scripts used to repair inputSchema; server did not initially have those local script paths.
+
+BOUNDARY CLASSIFICATION V1:
+CORE_KEEP:
+- MANIFEST.json
+- runtime/
+- storage/server_direct_eyes_mcp/
+- storage/control_room/CURRENT_POINTER.json
+- storage/memory/archive/
+- current GitHub memory pointer files
+
+HUB_V3_KEEP:
+- storage/server_direct_eyes_mcp/server_direct_eyes_local_service_v1.py
+- the current repaired MCP schema state
+- GitHub auth/read/write memory route
+
+LOCAL_HELPER_KEEP_REVIEW:
+- ION_LOCAL_ASSISTANT/scripts/HUB_V3_*.sh
+- ION_LOCAL_ASSISTANT/scripts/ION_SERVER_*.cmd/.ps1
+- ION_LOCAL_ASSISTANT/storage/checkpoints/
+Keep for now; later select canonical helper scripts only.
+
+AUDIT_ARCHIVE_KEEP_REVIEW:
+- server storage/audit/
+- local storage/audit/master_consolidation/
+These are large but contain recovery/index knowledge. Do not delete. Later compress/archive or move to cold archive after review.
+
+BACKUP_KEEP_REVIEW:
+- server storage/backups/
+- local backup files in ION_LOCAL_ASSISTANT/scripts/*.backup*
+Keep for now until current stable scripts are confirmed and archived.
+
+ENV_REVIEW:
+- server .venv_photo/
+Likely environment/dependency folder. Do not commit to GitHub until reviewed. Possible .gitignore candidate.
+
+BRIDGE_REVIEW:
+- server bridge/
+- local helper bridge scripts
+Need compare with active HUB V3 route before deciding canonical/fallback split.
+
+CANDIDATES_REVIEW:
+- storage/candidates/
+- storage/runtime_bridge/
+- patch/build candidates
+Review before cleanup.
+
+CONTROL_ROOM_POINTER_REVIEW:
+- many storage/control_room/*.json pointers
+Need classification into CURRENT_ACTIVE, HISTORICAL_ARCHIVE, OBSOLETE_REVIEW. Do not delete now.
+
+TRASH_CANDIDATE:
+EMPTY. No file/folder is approved for deletion at this stage.
+
+D_DRIVE_GLOBAL_SCAN:
+Deferred. Do not scan entire D: yet. Current project snapshots are enough for Boundary Map V1. Later create D_DRIVE_GLOBAL_DISCOVERY_V1 top-level-only if needed.
+
+NEXT_SAFE_ACTION:
+1. Create a more detailed pointer classification for storage/control_room/*.json.
+2. Create .gitignore review plan for .venv_photo and generated audit outputs.
+3. No delete/cleanup until boundary map is reviewed and archive gate is approved.
+
+FINISH:
+SERVER_LOCAL_BOUNDARY_MAP_V1_CREATED__NO_DELETE_NO_CLEANUP__READY_FOR_POINTER_CLASSIFICATION_V1
