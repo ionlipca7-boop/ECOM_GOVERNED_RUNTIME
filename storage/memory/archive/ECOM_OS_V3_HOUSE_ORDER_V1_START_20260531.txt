@@ -1,0 +1,84 @@
+TITLE=ECOM_OS_V3_HOUSE_ORDER_V1_START_20260531
+STATUS=HOUSE_ORDER_V1_STARTED_READONLY_BOUNDARY_ONLY
+
+PURPOSE:
+Start a careful ECOM OS V3 house-order route to bring structure to the project without unsafe cleanup.
+
+STRICT RULES:
+- No delete.
+- No cleanup.
+- No git reset.
+- No mass commit.
+- No push.
+- No eBay live/write.
+- No secrets printed.
+- Every step must be read-only or explicitly gated.
+
+CURRENT VERIFIED STATE:
+Server eyes: PASS.
+GitHub branch: memory-sync-wow-6pc-agent-playbook-20260501_110213.
+Remote repo: ionlipca7-boop/ECOM_GOVERNED_RUNTIME.
+GitHub memory write now works after HUB V3 inputSchema repair.
+
+CURRENT GIT STATUS SUMMARY:
+Modified:
+- storage/control_room/CURRENT_POINTER.json
+- storage/server_direct_eyes_mcp/server_direct_eyes_local_service_v1.py
+
+Untracked top-level / major groups:
+- .venv_photo/
+- NEW_CHAT_ECOM_OS_V3_AFTER_DRY_ENGINES_CHECKPOINT_V1.txt
+- NEW_CHAT_ECOM_OS_V3_AFTER_REVIEW_PACKET_V1.txt
+- NEW_CHAT_ECOM_OS_V3_BEFORE_QUANTITY_LIVE_GATE_V1.txt
+- bridge/
+- storage/activation/
+- storage/approval/
+- storage/architecture/
+- storage/audit/
+- storage/backups/
+- storage/candidates/
+- storage/compliance/
+- storage/contracts/
+- many storage/control_room/*.json pointer/checkpoint files
+
+INITIAL BOUNDARY CLASSIFICATION — NOT FINAL:
+CORE_KEEP:
+- runtime/
+- MANIFEST.json
+- storage/server_direct_eyes_mcp/server_direct_eyes_local_service_v1.py
+- storage/control_room/CURRENT_POINTER.json
+
+MEMORY_KEEP:
+- storage/memory/archive/
+- GitHub memory latest pointer files
+- important continuity archives
+
+POINTER_KEEP_REVIEW:
+- storage/control_room/*.json
+Need classification by current/live vs historical checkpoint vs obsolete pointer.
+
+AUDIT_BACKUP_KEEP_REVIEW:
+- storage/audit/
+- storage/backups/
+Keep for now. Later move/compact only after inventory and archive verification.
+
+LOCAL_ENV_REVIEW:
+- .venv_photo/
+Likely local environment / dependency folder. Do not track to GitHub until reviewed. Potential .gitignore candidate, not delete candidate yet.
+
+BRIDGE_REVIEW:
+- bridge/
+Need compare with active HUB V3/server eyes route before deciding.
+
+CANDIDATES_REVIEW:
+- storage/candidates/
+Potential temporary patch/build candidates. Review before cleanup.
+
+NO_TRASH_ASSIGNED_YET:
+No path is currently approved for deletion. TRASH_CANDIDATE remains empty until inventory -> classification -> archive -> approval.
+
+NEXT_SAFE_ACTION:
+Create/prepare a boundary snapshot plan: inventory small/medium/large groups, classify current vs archive vs review, then save CLEANUP_BOUNDARY_MAP_V1 only after review.
+
+FINISH:
+HOUSE_ORDER_V1_STARTED__BOUNDARY_ONLY__NO_DELETE_NO_CLEANUP
