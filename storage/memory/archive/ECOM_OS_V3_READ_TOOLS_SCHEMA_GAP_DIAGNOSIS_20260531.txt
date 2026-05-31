@@ -1,0 +1,53 @@
+TITLE=ECOM_OS_V3_READ_TOOLS_SCHEMA_GAP_DIAGNOSIS_20260531
+STATUS=DIAGNOSIS_READ_TOOLS_SCHEMA_GAP_CONFIRMED_FROM_CHAT_EVIDENCE
+
+QUESTION:
+Why did HUB V3 write work after repair in this chat, but a new chat still cannot directly read specific archive files by path?
+
+ANSWER:
+Today we repaired the write-tool inputSchema, not the read-tool inputSchema.
+The repaired tools were:
+- github_memory_write_archive_after_approval
+- github_memory_update_pointer_after_approval
+
+The still-problematic tools are read tools such as:
+- read_file_safe
+- grep_safe
+- list_tree_safe
+
+EVIDENCE:
+Before repair, github_memory_write_archive_after_approval failed with missing_approval because approval/content/path could not be passed.
+After repair, the schema verification showed write tools now expose approval/title/content/path and write succeeded with ok=true http=201.
+However, read_file_safe later returned 502 / BLOCK_SCHEMA when asked to read a concrete file path, because the currently exposed read_file_safe schema does not accept path arguments.
+
+WHY THIS CHAT COULD CONTINUE:
+This chat had the archive content already in conversation context and also had successful write confirmations. It could reason from previously saved outputs and user-supplied server outputs. That is not the same as direct read_file_safe(path) access.
+
+WHY NEW CHAT FAILS:
+New chat starts without this chat's long context. It relies on connector tools. If read_file_safe has no explicit inputSchema for path, it cannot pass archive path to the MCP service. github_memory_read_latest_archive may return an older latest pointer and not the specific file Ion asks for.
+
+ROOT CAUSE:
+Partial MCP schema repair. Write schema fixed; read schema still incomplete.
+
+FIX NEEDED LATER:
+Add explicit inputSchema for read tools:
+- read_file_safe: path, max_lines/from_line optional
+- list_tree_safe: path, depth optional
+- grep_safe: query/pattern, path optional, max_results optional
+Then restart MCP and verify tools/list schema.
+
+CURRENT SAFE WORKAROUND:
+Use SERVER bash read-only to cat/sed specific archive files until read tools schema is fixed.
+
+NO ACTIONS DONE IN THIS DIAGNOSIS:
+- No patch.
+- No restart.
+- No delete.
+- No cleanup.
+- No git commit/push.
+- No eBay.
+
+NEXT_SAFE_ACTION:
+Either continue cleanup route using server bash read-only, or start separate HUB_V3_READ_TOOLS_INPUT_SCHEMA_REPAIR_V1 after approval.
+
+FINISH=READ_TOOLS_SCHEMA_GAP_DIAGNOSED__WRITE_SCHEMA_FIXED_ONLY__READ_SCHEMA_REPAIR_STILL_NEEDED
