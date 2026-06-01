@@ -1,7 +1,14 @@
 {
-  "status": "PASS_HUB_V3_GITHUB_MEMORY_POINTER_UPDATED",
-  "updated_utc": "20260531T134629Z",
-  "archive": "storage/memory/archive/HUB_V3_FINAL_PROOF_AND_DREAM_FINISH_20260531T135000Z.txt",
-  "mode": "HUB_V3_DIRECT_GITHUB_API",
-  "next_safe_action": "RETURN_TO_PROJECT_CURRENT_POINTER"
+  "status": "PASS_SERVER_CLEANUP_CHECKPOINT_SAVED_TO_GITHUB_MEMORY",
+  "updated_utc": "20260601T164839Z",
+  "archive": "storage/memory/archive/ECOM_OS_V3_SERVER_CLEANUP_PASS_20260601T161205Z.txt",
+  "mode": "SERVER_DIRECT_GITHUB_MEMORY_WRITER_SCRIPT_V1",
+  "source_audit": "storage/audit/server_cleanup_v1/POST_CLEANUP_STATUS_20260601T161205Z.txt",
+  "summary": {
+    "governed_root": "117M",
+    "legacy_root": "1.1G",
+    "df": "9.7G total / 7.8G used / 1.4G free / 85%",
+    "freed_approx": "111M"
+  },
+  "next_safe_action": "READ_GITHUB_MEMORY_CLEANUP_CHECKPOINT_THEN_OPTIONAL_LEGACY_READONLY_REVIEW"
 }
