@@ -1,0 +1,145 @@
+ECOM OS V3 — SERVER CLEANUP PASS
+
+UTC=20260601T164839Z
+MODE=SERVER_DIRECT_GITHUB_MEMORY_WRITER_SCRIPT_V1
+APPROVAL=APPROVE_SERVER_DIRECT_GITHUB_MEMORY_WRITE_CLEANUP_CHECKPOINT
+SECRET_PRINTED=false
+DELETE_DONE_IN_THIS_STEP=false
+RESTART_DONE=false
+EBAY_CALLED=false
+
+SUMMARY:
+- Server cleanup completed safely.
+- Removed duplicate cloudflared download copy: about 38M.
+- Removed old photo/export media older than 24h: 158 files / 31,696,153 bytes.
+- Removed duplicate photo_v3_pillow_venv: about 43M.
+- Total freed approx: 111M.
+- Governed root after cleanup: 117M.
+- Legacy root remains: 1.1G.
+- Legacy root is ACTIVE because runtime_eco_v1/bot.py process is running.
+- Do not delete legacy root without separate LEGACY_GATE.
+- Active cloudflared binary kept.
+- .venv_photo kept and Pillow verified.
+- Telegram menu 18/8 not touched.
+- eBay/live not touched.
+- .env/secrets/control_room/memory archive not touched.
+
+SOURCE_AUDIT=storage/audit/server_cleanup_v1/POST_CLEANUP_STATUS_20260601T161205Z.txt
+ARCHIVE_PATH=storage/memory/archive/ECOM_OS_V3_SERVER_CLEANUP_PASS_20260601T161205Z.txt
+POINTER_PATH=storage/control_room/HUB_V3_GITHUB_MEMORY_LATEST_POINTER.json
+
+=== POST_CLEANUP_STATUS_SOURCE ===
+TITLE=POST_CLEANUP_STATUS
+UTC=20260601T161205Z
+MODE=READONLY_FINAL_STATUS_NO_DELETE
+ROOT=/home/ionlipca7/ecom_governed_runtime
+
+A_DF_NOW
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1       9.7G  7.8G  1.4G  85% /
+
+B_ROOT_SIZES
+117M	/home/ionlipca7/ecom_governed_runtime
+1.1G	/home/ionlipca7/runtime_eco_v1
+
+C_CURRENT_ROOT_TOP
+4.0K	./.env
+4.0K	./.gitignore
+4.0K	./MANIFEST.json
+4.0K	./NEW_CHAT_ECOM_OS_V3_AFTER_DRY_ENGINES_CHECKPOINT_V1.txt
+4.0K	./NEW_CHAT_ECOM_OS_V3_AFTER_REVIEW_PACKET_V1.txt
+4.0K	./NEW_CHAT_ECOM_OS_V3_BEFORE_QUANTITY_LIVE_GATE_V1.txt
+4.0K	./storageauditmaster_consolidationlocal_recovery_map_v5.txt
+20K	./bridge
+40K	./runtime
+64K	./memory
+872K	./.git
+43M	./.venv_photo
+73M	./storage
+
+D_STORAGE_TOP
+4.0K	storage/briefings
+4.0K	storage/external_readonly_fetch
+8.0K	storage/blueprints
+8.0K	storage/compliance
+8.0K	storage/customer_service
+8.0K	storage/evidence
+8.0K	storage/finance
+8.0K	storage/github_milestone_summaries
+8.0K	storage/inventory
+8.0K	storage/master_product_registry
+8.0K	storage/performance
+8.0K	storage/quarantine
+8.0K	storage/route
+8.0K	storage/server_audit
+8.0K	storage/teacher_memory
+12K	storage/architecture
+12K	storage/maintenance
+12K	storage/outbox
+12K	storage/runtime_routes
+12K	storage/samples
+12K	storage/validators
+16K	storage/marketplace_guard
+16K	storage/operator_inputs
+16K	storage/transfer
+20K	storage/marketplace_adapters
+24K	storage/research
+28K	storage/scheduler
+28K	storage/server_local_backup
+32K	storage/restore
+36K	storage/secrets
+44K	storage/decision_inbox
+44K	storage/exports
+44K	storage/photo_review
+52K	storage/intake
+56K	storage/review_actions
+64K	storage/activation
+64K	storage/outputs
+64K	storage/runtime_state
+76K	storage/contracts
+96K	storage/listing_drafts
+112K	storage/images
+120K	storage/logs
+128K	storage/marketplace_audit
+176K	storage/reports
+212K	storage/runtime_agents
+220K	storage/telegram
+268K	storage/candidates
+272K	storage/rules
+460K	storage/approval
+1.4M	storage/control_room
+2.5M	storage/memory
+2.7M	storage/tools
+3.7M	storage/backups
+4.8M	storage/audit
+8.6M	storage/runtime_bridge
+9.1M	storage/state_control
+38M	storage/server_direct_eyes_mcp
+
+E_CLEANUP_AUDIT_FILES
+total 212K
+-rw-r--r-- 1 ionlipca7 ionlipca7 1.3K Jun  1 16:01 CLOUDFLARED_DOWNLOAD_COPY_DELETE_20260601T160148Z.txt
+-rw-r--r-- 1 ionlipca7 ionlipca7 9.1K Jun  1 16:05 OLD_PHOTO_EXPORTS_24H_DELETE_AUDIT_20260601T160508Z.txt
+-rw-r--r-- 1 ionlipca7 ionlipca7  15K Jun  1 16:05 OLD_PHOTO_EXPORTS_24H_DELETE_LIST_20260601T160508Z.txt
+-rw-r--r-- 1 ionlipca7 ionlipca7  26K Jun  1 16:05 OLD_PHOTO_EXPORTS_24H_SHA256_20260601T160508Z.txt
+-rw-r--r-- 1 ionlipca7 ionlipca7  52K Jun  1 16:03 PHOTO_EXPORTS_OLDER_THAN_24H_MANIFEST_20260601T160307Z.txt
+-rw-r--r-- 1 ionlipca7 ionlipca7  19K Jun  1 16:10 PHOTO_V3_PILLOW_VENV_DELETE_20260601T161007Z.txt
+-rw-r--r-- 1 ionlipca7 ionlipca7  75K Jun  1 16:07 PHOTO_VENV_REVIEW_20260601T160746Z.txt
+-rw-r--r-- 1 ionlipca7 ionlipca7 2.2K Jun  1 16:12 POST_CLEANUP_STATUS_20260601T161205Z.txt
+
+F_VERIFY_DELETED_TARGETS
+DELETED_OK: storage/server_direct_eyes_mcp/downloads/cloudflared-linux-amd64-2026.5.0
+DELETED_OK: storage/tools/photo_v3_pillow_venv
+
+G_VERIFY_KEPT_ACTIVE
+-rwxr-xr-x 1 ionlipca7 ionlipca7 38M May 24 14:39 storage/server_direct_eyes_mcp/bin/cloudflared
+KEEP_VENV_PILLOW_OK 12.2.0
+
+H_ACTIVE_PROCESSES
+ionlipc+ 2953639  0.2  1.6  41988 32636 pts/0    S+   May28  11:35 /usr/bin/python3 /home/ionlipca7/runtime_eco_v1/bot.py
+ionlipc+ 3177444  0.1  1.6 1360108 34108 ?       Sl   May31   1:43 /home/ionlipca7/ecom_governed_runtime/storage/server_direct_eyes_mcp/bin/cloudflared tunnel --url http://127.0.0.1:8765 --no-autoupdate
+ionlipc+ 3183515  0.0  2.2  65488 46032 ?        S    May31   0:34 python3 /home/ionlipca7/ecom_governed_runtime/storage/server_direct_eyes_mcp/server_direct_eyes_local_service_v1.py
+
+I_FINISH
+POST_CLEANUP_AUDIT_CREATED_NO_DELETE
+
