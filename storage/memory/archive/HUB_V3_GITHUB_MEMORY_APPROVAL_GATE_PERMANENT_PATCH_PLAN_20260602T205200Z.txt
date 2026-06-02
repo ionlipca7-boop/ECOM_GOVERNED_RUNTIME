@@ -1,0 +1,34 @@
+ECOM OS V3 — HUB V3 GitHub Memory Approval Gate Permanent Patch Plan
+UTC=20260602T205200Z
+APPROVAL=APPROVE_PATCH_HUB_V3_GITHUB_MEMORY_APPROVAL_DETECTION_V1
+SECRET_PRINTED=false
+EBAY_CALLED=false
+DELETE_DONE=false
+SERVER_RESTART_DONE=false
+
+CONFIRMED STATUS:
+- Windows helper cleanup refactor PASS and saved to GitHub memory.
+- HUB V3 GitHub memory direct write was blocked by missing_approval when no approval-session existed.
+- Temporary approval-session repaired the issue.
+- Direct github_memory_write_archive_after_approval PASS: http 201.
+- github_memory_update_pointer_after_approval PASS, but bug found: when archive arg is missing it can set archive to empty string.
+- Pointer was corrected to a valid test archive.
+
+ROOT CAUSE:
+- HUB V3 write-tools rely on args.approval or approval-session file.
+- Approval marker from user chat text does not automatically reach tool args.
+- Therefore future chats can hit missing_approval unless session flow or tool schema/approval tool is patched.
+
+PERMANENT PATCH REQUIRED:
+1. Add safe HUB V3 approval-session creation tool, e.g. hub_v3_create_approval_session_after_approval.
+2. Tool must require exact approval arg: APPROVE_HUB_V3_CREATE_APPROVAL_SESSION.
+3. Tool writes short-lived approval session only, default 3h, max 12h.
+4. Allowlist markers only: github memory write/update, commit/push only if explicitly requested.
+5. Patch github_memory_update_pointer_after_approval to BLOCK if archive/archive_path is missing, not write empty pointer.
+6. Patch github_memory_write_archive_after_approval to return clear blocked/missing_content if content is required by route, or safe default only for tests.
+7. Update schemas/descriptions for the new approval-session tool and pointer archive required field.
+8. py_compile, controlled restart of MCP service/cloudflared only after approval.
+9. Verify in new chat: create approval session -> write archive -> update pointer with archive -> read latest archive.
+
+NEXT_SAFE_ACTION:
+PATCH_HUB_V3_APPROVAL_SESSION_TOOL_AND_POINTER_EMPTY_ARCHIVE_GUARD_V1
