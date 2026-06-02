@@ -1,0 +1,34 @@
+ECOM OS V3 — LEGACY BIG DELETE PASS
+
+UTC=20260602T162126Z
+APPROVAL=APPROVE_SAVE_LEGACY_BIG_DELETE_CHECKPOINT_TO_GITHUB_MEMORY
+SECRET_PRINTED=false
+DELETE_SCOPE=ONLY_LEGACY_RUNTIME_BROWSERS_AND_VENVS
+EBAY_CALLED=false
+BOT_STOPPED=false
+BOT_STARTED=false
+
+SUMMARY:
+- Governed bot remains active from:
+  /home/ionlipca7/ecom_governed_runtime/storage/runtime_bridge/legacy_bot_staging_20260602T153604Z/bot.py
+- Legacy bot remains stopped.
+- Deleted exact legacy heavy folders only:
+  /home/ionlipca7/runtime_eco_v1/storage/runtime_browsers
+  /home/ionlipca7/runtime_eco_v1/storage/venvs
+- Approx freed in this step: about 900M.
+- Disk before: 9.7G total / 6.0G used / 3.2G free / 66%.
+- Disk after: 9.7G total / 5.1G used / 4.1G free / 56%.
+- Legacy root after delete: about 183M.
+- Governed root after delete: about 119M.
+- Secrets/control_room/.env/token files were NOT touched.
+- Legacy root itself was NOT deleted.
+- Telegram bot remains active from governed project.
+
+BOUNDARY:
+- Active runtime = /home/ionlipca7/ecom_governed_runtime
+- Legacy root = small cleanup/review candidate, not delete yet.
+- Next cleanup must audit remaining legacy root before deleting anything else.
+- Future route also needed: BOT_MENU_CLEANUP_REFACTOR_ROUTE.
+
+NEXT_SAFE_ACTION:
+LEGACY_REMAINDER_FINAL_REVIEW_READONLY
