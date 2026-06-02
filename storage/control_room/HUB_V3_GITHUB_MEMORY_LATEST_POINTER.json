@@ -1,14 +1,17 @@
 {
-  "status": "PASS_SERVER_CLEANUP_CHECKPOINT_SAVED_TO_GITHUB_MEMORY",
-  "updated_utc": "20260601T164839Z",
-  "archive": "storage/memory/archive/ECOM_OS_V3_SERVER_CLEANUP_PASS_20260601T161205Z.txt",
+  "status": "PASS_SYSTEM_CLEANUP_WAVE_1_CHECKPOINT_SAVED_TO_GITHUB_MEMORY",
+  "updated_utc": "20260602T151859Z",
+  "archive": "storage/memory/archive/ECOM_OS_V3_SYSTEM_CLEANUP_WAVE_1_PASS_20260602T151554Z.txt",
   "mode": "SERVER_DIRECT_GITHUB_MEMORY_WRITER_SCRIPT_V1",
-  "source_audit": "storage/audit/server_cleanup_v1/POST_CLEANUP_STATUS_20260601T161205Z.txt",
   "summary": {
+    "df_after": "9.7G total / 6.0G used / 3.2G free / 65%",
+    "system_cleanup_freed_approx": "1.6G",
     "governed_root": "117M",
     "legacy_root": "1.1G",
-    "df": "9.7G total / 7.8G used / 1.4G free / 85%",
-    "freed_approx": "111M"
+    "legacy_bot_active": true,
+    "project_roots_touched": false,
+    "secrets_printed": false,
+    "ebay_touched": false
   },
-  "next_safe_action": "READ_GITHUB_MEMORY_CLEANUP_CHECKPOINT_THEN_OPTIONAL_LEGACY_READONLY_REVIEW"
+  "next_safe_action": "LEGACY_BOT_MIGRATION_READONLY_ROUTE"
 }
