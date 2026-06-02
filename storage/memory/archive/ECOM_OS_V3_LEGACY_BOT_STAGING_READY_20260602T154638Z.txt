@@ -1,0 +1,36 @@
+ECOM OS V3 — LEGACY BOT STAGING READY
+
+UTC=20260602T154850Z
+MODE=SERVER_DIRECT_GITHUB_MEMORY_WRITER_SCRIPT_V1
+APPROVAL=APPROVE_SAVE_LEGACY_BOT_STAGING_CHECKPOINT_TO_GITHUB_MEMORY
+SECRET_PRINTED=false
+DELETE_DONE=false
+RESTART_DONE=false
+EBAY_CALLED=false
+BOT_STARTED=false
+LEGACY_STOPPED=false
+
+SUMMARY:
+- Legacy Telegram bot is still active from /home/ionlipca7/runtime_eco_v1/bot.py.
+- Governed staging copy prepared at storage/runtime_bridge/legacy_bot_staging_20260602T153604Z.
+- Staged bot.py compile PASS.
+- Staged ru_keyboard_handlers_current.py compile PASS.
+- Dry launcher prepared: storage/runtime_bridge/governed_bot_launcher_dry_v1.sh.
+- New governed bot was NOT started.
+- Legacy bot was NOT stopped.
+- Required env keys present in active legacy process by name only:
+  TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, EBAY_ACCESS_TOKEN, EBAY_CLIENT_ID, EBAY_CLIENT_SECRET, EBAY_RU_NAME.
+- Secret values were not printed.
+- Import classification: missing old modules are optional runtime branches, not startup blockers.
+- Disk around this checkpoint: about 3.2G free / 66%.
+- Next route: CONTROLLED_BOT_SWITCH_PLAN_NO_DELETE.
+
+BOUNDARY_RULES:
+- Do not delete /home/ionlipca7/runtime_eco_v1 until controlled switch + Telegram verification PASS.
+- Do not delete token/secret files.
+- Do not run two Telegram bots live at the same time without explicit controlled switch plan.
+- Bot cleanup/refactor comes after stable governed launch.
+- Later project-agent cleanup should follow same audit/classify/migrate/delete-gate pattern.
+
+NEXT_SAFE_ACTION:
+CONTROLLED_BOT_SWITCH_PLAN_NO_DELETE
