@@ -1,16 +1,18 @@
 {
-  "status": "PASS_LEGACY_BOT_STAGING_CHECKPOINT_SAVED_TO_GITHUB_MEMORY",
-  "updated_utc": "20260602T154850Z",
-  "archive": "storage/memory/archive/ECOM_OS_V3_LEGACY_BOT_STAGING_READY_20260602T154638Z.txt",
+  "status": "PASS_CONTROLLED_BOT_SWITCH_PLAN_SAVED_TO_GITHUB_MEMORY",
+  "updated_utc": "20260602T155249Z",
+  "archive": "storage/memory/archive/ECOM_OS_V3_CONTROLLED_BOT_SWITCH_PLAN_READY_20260602T155102Z.txt",
   "mode": "SERVER_DIRECT_GITHUB_MEMORY_WRITER_SCRIPT_V1",
   "summary": {
     "legacy_bot_active": true,
+    "legacy_bot_pid_at_plan": "2953639",
     "staged_bot": "storage/runtime_bridge/legacy_bot_staging_20260602T153604Z/bot.py",
     "dry_launcher": "storage/runtime_bridge/governed_bot_launcher_dry_v1.sh",
     "bot_started": false,
     "legacy_stopped": false,
+    "delete_done": false,
     "secret_values_printed": false,
-    "next_route": "CONTROLLED_BOT_SWITCH_PLAN_NO_DELETE"
+    "next_route": "CONTROLLED_BOT_SWITCH_EXECUTION_GATE"
   },
-  "next_safe_action": "CONTROLLED_BOT_SWITCH_PLAN_NO_DELETE"
+  "next_safe_action": "CONTROLLED_BOT_SWITCH_EXECUTION_GATE"
 }
