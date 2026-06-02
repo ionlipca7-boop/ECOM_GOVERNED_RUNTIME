@@ -1,0 +1,45 @@
+ECOM OS V3 — LEGACY REMAINDER MANIFEST / KEEP PROTECTED
+
+UTC=20260602T163342Z
+APPROVAL=APPROVE_SAVE_LEGACY_REMAINDER_MANIFEST_TO_GITHUB_MEMORY
+SECRET_PRINTED=false
+DELETE_DONE=false
+BOT_STOPPED=false
+BOT_STARTED=false
+EBAY_CALLED=false
+
+SUMMARY:
+- Server cleanup main phase is nearly complete.
+- Active runtime is now /home/ionlipca7/ecom_governed_runtime.
+- Governed Telegram bot is active from:
+  /home/ionlipca7/ecom_governed_runtime/storage/runtime_bridge/legacy_bot_staging_20260602T153604Z/bot.py
+- Legacy bot is NOT running.
+- /home/ionlipca7/ecom_governed_runtime size: about 119M.
+- /home/ionlipca7/runtime_eco_v1 size: about 114M.
+- Disk state: about 9.7G total / 5.1G used / 4.1G free / 56%.
+- Legacy root is now protected/reference only, not active runtime.
+- Do NOT delete whole runtime_eco_v1 yet.
+
+LEGACY_REMAINDER_KEEP_PROTECTED:
+- storage/secrets
+- storage/control_room
+- storage/state_control
+- .env / token / secret files
+- eBay/token/audit/history files
+- .venv temporarily
+- .git temporarily
+- storage/memory, storage/tools, storage/backups, storage/products, storage/telegram_inbox temporarily
+
+DECISION:
+- Keep runtime_eco_v1 as small protected reference/quarantine root for now.
+- Future goal remains one main folder: /home/ionlipca7/ecom_governed_runtime.
+- Before final legacy delete: create protected snapshot/manifest, migrate necessary references into governed/GitHub memory, then exact delete gate only after approval.
+
+NEXT_SAFE_ACTION:
+SERVER_CLEANUP_MAIN_PHASE_CLOSEOUT
+
+FUTURE_ROUTES:
+- BOT_MENU_CLEANUP_REFACTOR_ROUTE
+- PROJECT_AGENTS_CLEANUP_AUDIT
+- LEGACY_PROTECTED_REFERENCE_MIGRATION_TO_GOVERNED
+- LOCAL_WINDOWS_CLEANUP_FUTURE_ROUTE
