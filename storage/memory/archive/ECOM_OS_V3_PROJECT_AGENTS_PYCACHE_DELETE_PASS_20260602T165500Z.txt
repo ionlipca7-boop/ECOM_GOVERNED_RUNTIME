@@ -1,0 +1,52 @@
+ECOM OS V3 — PROJECT AGENTS PYCACHE DELETE PASS
+
+UTC=20260602T165828Z
+APPROVAL=APPROVE_SAVE_PROJECT_AGENTS_PYCACHE_DELETE_CHECKPOINT_TO_GITHUB_MEMORY
+SECRET_PRINTED=false
+DELETE_SCOPE=ONLY_GOVERNED_RUNTIME_PYCACHE
+BOT_STOPPED=false
+BOT_STARTED=false
+EBAY_CALLED=false
+
+SUMMARY:
+- PROJECT_AGENTS_CLEANUP_AUDIT completed read-only classification.
+- Clean project was not heavy and no large trash was found.
+- Deleted only __pycache__ folders inside:
+  /home/ionlipca7/ecom_governed_runtime
+- Pycache before: about 17M.
+- Pycache after: empty.
+- Governed root before: about 119M.
+- Governed root after: about 102M.
+- Active core remains running:
+  cloudflared
+  server_direct_eyes_local_service_v1.py
+  governed Telegram bot from storage/runtime_bridge/legacy_bot_staging_20260602T153604Z/bot.py
+- Protected areas were NOT touched:
+  storage/secrets, storage/control_room, storage/memory, storage/state_control, .py, .env, token/secret files.
+- runtime_eco_v1 remains protected reference/quarantine root, not active runtime.
+- Disk remains around 9.7G total / 5.1G used / 4.1G free / 56%.
+
+CLASSIFICATION:
+- ACTIVE_CORE_KEEP:
+  storage/server_direct_eyes_mcp
+  storage/runtime_bridge/legacy_bot_staging_20260602T153604Z
+  storage/secrets
+  storage/control_room
+  storage/memory
+  storage/state_control
+  .venv_photo
+- REVIEW_KEEP:
+  storage/runtime_bridge/candidates
+  Telegram menu/cockpit/digest candidates
+  old patch plans
+  audit/checkpoint writer scripts
+- DELETE_DONE:
+  __pycache__ only
+
+DECISION:
+- PROJECT_AGENTS_CLEANUP_AUDIT = PASS for current cleanup phase.
+- Do not delete candidates now; they are small and useful for future BOT_MENU_CLEANUP_REFACTOR_ROUTE.
+- Main server cleanup + project agents light cleanup can be closed.
+
+NEXT_SAFE_ACTION:
+BOT_MENU_CLEANUP_REFACTOR_ROUTE
