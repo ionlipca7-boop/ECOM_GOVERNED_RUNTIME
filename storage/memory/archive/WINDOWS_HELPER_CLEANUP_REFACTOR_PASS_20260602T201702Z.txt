@@ -1,0 +1,22 @@
+ECOM OS V3 - WINDOWS HELPER CLEANUP REFACTOR PASS 
+UTC_LOCAL=20260602T221300_APPROX 
+APPROVAL=APPROVE_SAVE_WINDOWS_HELPER_CLEANUP_REFACTOR_PASS_TO_GITHUB_MEMORY 
+DELETE_GATE=APPROVE_WINDOWS_HELPER_DELETE_CONFIRMED_TRASH_V1 
+SECRET_PRINTED=false 
+EBAY_CALLED=false 
+SERVER_DELETE=false 
+SERVER_RESTART=false 
+ 
+SUMMARY: 
+- Windows helper refactor completed. 
+- Desktop project icons cleaned: only ION WORKSPACE - Server Bridge and ION HELPER MENU remain. 
+- Root cleaned: only ION WORKSPACE.cmd and START_HELPER_MENU_ONLY.cmd remain. 
+- ION WORKSPACE.cmd = server bridge only. 
+- START_HELPER_MENU_ONLY.cmd = helper menu only. 
+- R inside helper menu opens AutoClip. 
+- AutoClip exit keys X/Q/Esc return to helper menu. 
+- Old local visual launcher trash and old script backup tails deleted after approval. 
+- Protected files kept: START_SERVER_BRIDGE_ONLY.cmd, registry.json, server_blocks/current, latest reports/backups. 
+ 
+STATUS=WINDOWS_HELPER_CLEANUP_REFACTOR_PASS 
+NEXT_SAFE_ACTION=FIX_HUB_V3_GITHUB_MEMORY_APPROVAL_DETECTION_OR_WRITE_CHECKPOINT_VIA_WINDOWS_BRIDGE 

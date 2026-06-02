@@ -1,17 +1,8 @@
 {
-  "status": "PASS_PROJECT_AGENTS_PYCACHE_DELETE_CHECKPOINT_SAVED_TO_GITHUB_MEMORY",
-  "updated_utc": "20260602T165828Z",
-  "archive": "storage/memory/archive/ECOM_OS_V3_PROJECT_AGENTS_PYCACHE_DELETE_PASS_20260602T165500Z.txt",
-  "mode": "SERVER_DIRECT_GITHUB_MEMORY_WRITER_SCRIPT_V1",
-  "summary": {
-    "project_agents_cleanup_audit": "PASS",
-    "pycache_deleted_only": true,
-    "governed_root_after": "102M",
-    "legacy_root_mode": "KEEP_PROTECTED_REFERENCE_NOT_ACTIVE",
-    "governed_bot_active": true,
-    "protected_touched": false,
-    "secret_values_printed": false,
-    "next_route": "BOT_MENU_CLEANUP_REFACTOR_ROUTE"
-  },
-  "next_safe_action": "BOT_MENU_CLEANUP_REFACTOR_ROUTE"
+  "status": "PASS_HUB_V3_GITHUB_MEMORY_LATEST_POINTER_UPDATED",
+  "updated_utc": "20260602T201702Z",
+  "archive_path": "storage/memory/archive/WINDOWS_HELPER_CLEANUP_REFACTOR_PASS_20260602T201702Z.txt",
+  "archive": "storage/memory/archive/WINDOWS_HELPER_CLEANUP_REFACTOR_PASS_20260602T201702Z.txt",
+  "mode": "WINDOWS_HELPER_TEMP_CLONE_GITHUB_MEMORY_PUSH_REPAIR",
+  "next_safe_action": "VERIFY_WINDOWS_HELPER_CHECKPOINT_FROM_HUB_V3"
 }
