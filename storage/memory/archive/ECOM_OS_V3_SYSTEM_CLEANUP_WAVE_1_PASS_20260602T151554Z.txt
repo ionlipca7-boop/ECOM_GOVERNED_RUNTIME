@@ -1,0 +1,37 @@
+ECOM OS V3 — SYSTEM CLEANUP WAVE 1 PASS
+
+UTC=20260602T151859Z
+MODE=SERVER_DIRECT_GITHUB_MEMORY_WRITER_SCRIPT_V1
+APPROVAL=APPROVE_SAVE_SYSTEM_CLEANUP_CHECKPOINT_TO_GITHUB_MEMORY
+SECRET_PRINTED=false
+DELETE_DONE_IN_THIS_STEP=false
+RESTART_DONE=false
+EBAY_CALLED=false
+
+SUMMARY:
+- System log/cache cleanup completed.
+- Disk before system cleanup: 9.7G total / 7.6G used / 1.6G free / 83%.
+- Disk after cleanup: 9.7G total / 6.0G used / 3.2G free / 65%.
+- Approx total freed from system cleanup: about 1.6G.
+- Journal cleaned: about 980M -> 108M.
+- APT cache cleaned: about 254M -> 20K.
+- Pip cache deleted: about 70M.
+- Google Ops rotated log removed: about 400M.
+- Google Ops active log truncated.
+- Governed project not touched: 117M.
+- Legacy runtime not touched: 1.1G.
+- Active bot still runs from /home/ionlipca7/runtime_eco_v1/bot.py.
+- Active cloudflared and server eyes still running.
+- Secrets/tokens not printed and not touched.
+- eBay/live not touched.
+- Telegram menu 18/8 not touched.
+
+BOUNDARY_RULES:
+- governed project = clean future source of truth.
+- legacy root = temporary active runtime source until bot migration.
+- Do not delete runtime_eco_v1 until LEGACY_BOT_MIGRATION_READONLY_ROUTE + controlled switch + Telegram verification PASS.
+- Future cleanup must verify active tokens/IDs by auth/status only, never print secrets.
+- Local Windows cleanup is future route only, not touched now.
+
+NEXT_SAFE_ACTION:
+LEGACY_BOT_MIGRATION_READONLY_ROUTE
