@@ -1,0 +1,49 @@
+ECOM OS V3 — CONTROLLED BOT SWITCH PLAN READY
+
+UTC=20260602T155249Z
+MODE=SERVER_DIRECT_GITHUB_MEMORY_WRITER_SCRIPT_V1
+APPROVAL=APPROVE_SAVE_CONTROLLED_BOT_SWITCH_PLAN_TO_GITHUB_MEMORY
+SECRET_PRINTED=false
+DELETE_DONE=false
+RESTART_DONE=false
+EBAY_CALLED=false
+BOT_STARTED=false
+LEGACY_STOPPED=false
+
+SUMMARY:
+- Controlled bot switch plan prepared.
+- Legacy bot is still active from /home/ionlipca7/runtime_eco_v1/bot.py.
+- Legacy bot PID at plan time: 2953639.
+- Governed staged bot: storage/runtime_bridge/legacy_bot_staging_20260602T153604Z/bot.py.
+- Staged bot compile PASS.
+- Required env keys present by name only:
+  TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, EBAY_ACCESS_TOKEN, EBAY_CLIENT_ID, EBAY_CLIENT_SECRET, EBAY_RU_NAME.
+- Dry launcher exists: storage/runtime_bridge/governed_bot_launcher_dry_v1.sh.
+- No new bot started.
+- Legacy bot not stopped.
+- No legacy delete.
+- Disk around plan: 9.7G total / 6.0G used / 3.2G free / 66%.
+
+CONTROLLED_SWITCH_PLAN:
+1_PREPARE_ENV_EXPORT_FROM_ACTIVE_SESSION_OR_PROTECTED_ENV_FILE_NO_SECRET_PRINT
+2_CONFIRM_NO_SECOND_BOT_RUNNING
+3_ION_APPROVAL_REQUIRED_TO_STOP_LEGACY_BOT
+4_STOP_LEGACY_BOT_BY_EXACT_PID_ONLY
+5_START_GOVERNED_STAGED_BOT_FROM_PROJECT_ROOT
+6_VERIFY_TELEGRAM_RESPONSE
+7_IF_PASS_MARK_LEGACY_RUNTIME_AS_CLEANUP_CANDIDATE
+8_IF_FAIL_STOP_GOVERNED_BOT_AND_RESTART_LEGACY_BOT
+
+BLOCKED_UNTIL_NEXT_APPROVAL:
+- NO_STOP_LEGACY
+- NO_START_GOVERNED
+- NO_DELETE_LEGACY
+- NO_SECRET_PRINT
+
+BIG_DELETE_CANDIDATES_AFTER_SWITCH_PASS:
+- /home/ionlipca7/runtime_eco_v1/storage/runtime_browsers approx 631M
+- /home/ionlipca7/runtime_eco_v1/storage/venvs approx 247M
+- old scripts/tests/artifacts review after switch
+
+NEXT_SAFE_ACTION:
+CONTROLLED_BOT_SWITCH_EXECUTION_GATE
