@@ -1,0 +1,28 @@
+ECOM OS V3 — BOT SWITCH SUCCESS / TELEGRAM PASS
+
+UTC=20260602T161038Z
+APPROVAL=APPROVE_SAVE_BOT_SWITCH_SUCCESS_CHECKPOINT_TO_GITHUB_MEMORY
+SECRET_PRINTED=false
+DELETE_DONE=false
+EBAY_CALLED=false
+
+SUMMARY:
+- Controlled bot switch executed successfully.
+- Legacy bot PID 2953639 was stopped.
+- Governed bot is active from:
+  /home/ionlipca7/ecom_governed_runtime/storage/runtime_bridge/legacy_bot_staging_20260602T153604Z/bot.py
+- Telegram verify PASS by operator screenshots.
+- Telegram menu responds.
+- /start currently routes into intake/control flow; later cleanup/refactor needed.
+- Legacy runtime was NOT deleted.
+- Secrets/tokens were NOT printed.
+- Disk around verification: about 3.2G free / 66%.
+
+CURRENT_BOUNDARY:
+- governed project = active bot runtime now.
+- legacy root = cleanup candidate source, not delete yet.
+- no legacy delete until candidate review + archive/gate.
+- menu cleanup/refactor is separate later route.
+
+NEXT_SAFE_ACTION:
+LEGACY_RUNTIME_CLEANUP_CANDIDATE_REVIEW
