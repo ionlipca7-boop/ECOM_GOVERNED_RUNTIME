@@ -1,0 +1,39 @@
+ECOM OS V3 — LEGACY SAFE ARTIFACTS DELETE PASS
+
+UTC=20260602T162851Z
+APPROVAL=APPROVE_SAVE_LEGACY_SAFE_ARTIFACTS_DELETE_CHECKPOINT_TO_GITHUB_MEMORY
+SECRET_PRINTED=false
+DELETE_SCOPE=ONLY_LEGACY_SAFE_ARTIFACTS
+EBAY_CALLED=false
+BOT_STOPPED=false
+BOT_STARTED=false
+
+SUMMARY:
+- Governed bot remains active from:
+  /home/ionlipca7/ecom_governed_runtime/storage/runtime_bridge/legacy_bot_staging_20260602T153604Z/bot.py
+- Legacy bot remains stopped.
+- Deleted only safe legacy artifacts:
+  storage/images
+  storage/exports
+  storage/review
+  storage/evidence
+  storage/manual_packets
+  storage/tmp
+  storage/outputs
+  __pycache__
+- Protected areas were NOT touched:
+  storage/secrets, storage/control_room, storage/state_control, .venv, .env, token/secret files.
+- Legacy root after cleanup: about 114M.
+- Governed root: about 119M.
+- Disk remains about 9.7G total / 5.1G used / 4.1G free / 56%.
+- Legacy root itself was NOT deleted.
+- Telegram bot remains active from governed project.
+
+BOUNDARY:
+- Active runtime = /home/ionlipca7/ecom_governed_runtime
+- Legacy root = small protected/reference candidate, not active runtime.
+- Next decision gate: keep protected legacy reference or archive/manifest before final delete.
+- Future route needed: BOT_MENU_CLEANUP_REFACTOR_ROUTE.
+
+NEXT_SAFE_ACTION:
+LEGACY_ROOT_KEEP_OR_DELETE_DECISION_GATE
