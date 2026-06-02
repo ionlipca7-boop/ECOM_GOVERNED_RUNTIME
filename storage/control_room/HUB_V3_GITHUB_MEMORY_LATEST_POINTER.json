@@ -1,15 +1,21 @@
 {
-  "status": "PASS_BOT_SWITCH_SUCCESS_TELEGRAM_PASS_SAVED_TO_GITHUB_MEMORY",
-  "updated_utc": "20260602T161038Z",
-  "archive": "storage/memory/archive/ECOM_OS_V3_BOT_SWITCH_SUCCESS_TELEGRAM_PASS_20260602T160441Z.txt",
+  "status": "PASS_LEGACY_BIG_DELETE_CHECKPOINT_SAVED_TO_GITHUB_MEMORY",
+  "updated_utc": "20260602T162126Z",
+  "archive": "storage/memory/archive/ECOM_OS_V3_LEGACY_BIG_DELETE_PASS_20260602T161917Z.txt",
   "mode": "SERVER_DIRECT_GITHUB_MEMORY_WRITER_SCRIPT_V1",
   "summary": {
     "governed_bot_active": true,
     "legacy_bot_stopped": true,
-    "telegram_verify": "PASS",
+    "deleted_exact": [
+      "/home/ionlipca7/runtime_eco_v1/storage/runtime_browsers",
+      "/home/ionlipca7/runtime_eco_v1/storage/venvs"
+    ],
     "legacy_runtime_deleted": false,
+    "legacy_root_after": "183M",
+    "governed_root_after": "119M",
+    "disk_after": "9.7G total / 5.1G used / 4.1G free / 56%",
     "secret_values_printed": false,
-    "next_route": "LEGACY_RUNTIME_CLEANUP_CANDIDATE_REVIEW"
+    "next_route": "LEGACY_REMAINDER_FINAL_REVIEW_READONLY"
   },
-  "next_safe_action": "LEGACY_RUNTIME_CLEANUP_CANDIDATE_REVIEW"
+  "next_safe_action": "LEGACY_REMAINDER_FINAL_REVIEW_READONLY"
 }
