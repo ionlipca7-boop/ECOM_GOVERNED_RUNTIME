@@ -1,17 +1,16 @@
 {
-  "status": "PASS_SYSTEM_CLEANUP_WAVE_1_CHECKPOINT_SAVED_TO_GITHUB_MEMORY",
-  "updated_utc": "20260602T151859Z",
-  "archive": "storage/memory/archive/ECOM_OS_V3_SYSTEM_CLEANUP_WAVE_1_PASS_20260602T151554Z.txt",
+  "status": "PASS_LEGACY_BOT_STAGING_CHECKPOINT_SAVED_TO_GITHUB_MEMORY",
+  "updated_utc": "20260602T154850Z",
+  "archive": "storage/memory/archive/ECOM_OS_V3_LEGACY_BOT_STAGING_READY_20260602T154638Z.txt",
   "mode": "SERVER_DIRECT_GITHUB_MEMORY_WRITER_SCRIPT_V1",
   "summary": {
-    "df_after": "9.7G total / 6.0G used / 3.2G free / 65%",
-    "system_cleanup_freed_approx": "1.6G",
-    "governed_root": "117M",
-    "legacy_root": "1.1G",
     "legacy_bot_active": true,
-    "project_roots_touched": false,
-    "secrets_printed": false,
-    "ebay_touched": false
+    "staged_bot": "storage/runtime_bridge/legacy_bot_staging_20260602T153604Z/bot.py",
+    "dry_launcher": "storage/runtime_bridge/governed_bot_launcher_dry_v1.sh",
+    "bot_started": false,
+    "legacy_stopped": false,
+    "secret_values_printed": false,
+    "next_route": "CONTROLLED_BOT_SWITCH_PLAN_NO_DELETE"
   },
-  "next_safe_action": "LEGACY_BOT_MIGRATION_READONLY_ROUTE"
+  "next_safe_action": "CONTROLLED_BOT_SWITCH_PLAN_NO_DELETE"
 }
