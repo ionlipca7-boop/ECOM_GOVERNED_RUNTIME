@@ -1,19 +1,17 @@
 {
-  "status": "PASS_LEGACY_REMAINDER_MANIFEST_SAVED_TO_GITHUB_MEMORY_KEEP_PROTECTED",
-  "updated_utc": "20260602T163342Z",
-  "archive": "storage/memory/archive/ECOM_OS_V3_LEGACY_REMAINDER_MANIFEST_KEEP_PROTECTED_20260602T163030Z.txt",
+  "status": "PASS_PROJECT_AGENTS_PYCACHE_DELETE_CHECKPOINT_SAVED_TO_GITHUB_MEMORY",
+  "updated_utc": "20260602T165828Z",
+  "archive": "storage/memory/archive/ECOM_OS_V3_PROJECT_AGENTS_PYCACHE_DELETE_PASS_20260602T165500Z.txt",
   "mode": "SERVER_DIRECT_GITHUB_MEMORY_WRITER_SCRIPT_V1",
   "summary": {
-    "active_runtime": "/home/ionlipca7/ecom_governed_runtime",
+    "project_agents_cleanup_audit": "PASS",
+    "pycache_deleted_only": true,
+    "governed_root_after": "102M",
     "legacy_root_mode": "KEEP_PROTECTED_REFERENCE_NOT_ACTIVE",
     "governed_bot_active": true,
-    "legacy_bot_running": false,
-    "legacy_root_after": "114M",
-    "governed_root_after": "119M",
-    "disk_after": "9.7G total / 5.1G used / 4.1G free / 56%",
-    "whole_legacy_delete_allowed": false,
+    "protected_touched": false,
     "secret_values_printed": false,
-    "next_route": "SERVER_CLEANUP_MAIN_PHASE_CLOSEOUT"
+    "next_route": "BOT_MENU_CLEANUP_REFACTOR_ROUTE"
   },
-  "next_safe_action": "SERVER_CLEANUP_MAIN_PHASE_CLOSEOUT"
+  "next_safe_action": "BOT_MENU_CLEANUP_REFACTOR_ROUTE"
 }
