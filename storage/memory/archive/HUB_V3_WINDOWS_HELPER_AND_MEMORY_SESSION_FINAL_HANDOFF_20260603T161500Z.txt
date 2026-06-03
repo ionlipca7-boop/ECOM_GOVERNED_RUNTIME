@@ -1,0 +1,49 @@
+ECOM OS V3 - HUB V3 / Windows Helper / GitHub Memory Final Handoff
+UTC=20260603T161500Z
+STATUS=PASS_WITH_FUTURE_HARDENING
+SECRET_PRINTED=false
+EBAY_CALLED=false
+DELETE_DONE_ONLY_APPROVED_LOCAL_HELPER_TRASH=true
+SERVER_RESTART_ATTEMPTED_FOR_PARTIAL_PATCH=true
+
+CONFIRMED PASS:
+1. Windows local helper cleanup/refactor PASS.
+2. Desktop project icons cleaned: only ION WORKSPACE - Server Bridge and ION HELPER MENU.
+3. Project root D:\ECOM_GOVERNED_RUNTIME cleaned: only ION WORKSPACE.cmd and START_HELPER_MENU_ONLY.cmd visible.
+4. ION WORKSPACE.cmd = server bridge only.
+5. START_HELPER_MENU_ONLY.cmd = helper menu only.
+6. Helper menu R opens AutoClip.
+7. AutoClip X/Q/Esc exits back to helper menu.
+8. Server eyes PASS through HUB V3.
+9. GitHub API auth PASS with admin/push/pull true, no secret printed.
+10. GitHub memory write missing_approval problem was operationally fixed by server approval-session file.
+11. Persistent approval-session set on server until 2027-01-01 for GitHub memory write/update only.
+12. Commit/push are NOT included in persistent session.
+13. HUB V3 github_memory_write_archive_after_approval no-args test PASS http 201 on 20260603T155446Z and 20260603T160644Z.
+14. Latest memory pointer was kept on permanent patch-plan archive, not on temporary test archive.
+
+IMPORTANT BUGS / LESSONS:
+1. Long Windows CMD with inline ssh/scp/json/python/heredoc is unstable and must not be used.
+2. Working Windows CMD format: create/read report file -> type report -> clip < report -> Ctrl+V.
+3. For large code use file-based writer-script or copy con / Ctrl+Z / Enter, not echo >> py and not ssh python heredoc.
+4. Direct HUB V3 write-tool missing_approval was caused by missing approval-session; approval text in chat does not automatically reach tool args.
+5. github_memory_update_pointer_after_approval can write empty archive if called without archive; future hardening required.
+6. Attempted code patch for session-tool / pointer guard was partial; callable new session tool did not appear. Do not mark it PASS.
+
+CURRENT SAFE STATUS:
+- Server eyes: PASS.
+- GitHub eyes/API auth: PASS.
+- GitHub memory write via persistent session: PASS.
+- GitHub memory pointer/read latest: PASS.
+- Source-level guard/session-tool patch: PARTIAL / FUTURE HARDENING, not blocker.
+
+NEXT CHAT START ROUTE:
+1. Read server_health_readonly.
+2. Read github_api_auth_audit_readonly.
+3. Read github_memory_read_latest_archive.
+4. Optional test github_memory_write_archive_after_approval no-args; expect ok true/http 201.
+5. Do not run delete/eBay/restart.
+6. Continue project route after verify.
+
+NEXT_SAFE_ACTION:
+NEW_CHAT_VERIFY_HUB_V3_PERSISTENT_MEMORY_WRITE_SESSION_AFTER_WINDOWS_HELPER_CLEANUP_PASS
