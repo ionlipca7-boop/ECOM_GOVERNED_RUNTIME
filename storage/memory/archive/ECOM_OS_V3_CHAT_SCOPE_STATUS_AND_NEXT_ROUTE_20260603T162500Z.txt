@@ -1,0 +1,52 @@
+ECOM OS V3 - Chat Scope Status and Next Route
+UTC=20260603T162500Z
+STATUS=PASS_ARCHIVED_CLARIFICATION
+SECRET_PRINTED=false
+EBAY_CALLED=false
+SERVER_DELETE=false
+SERVER_RESTART=false
+
+WHY THIS ARCHIVE EXISTS:
+Ion asked whether all work in the long chat was saved, including menu files / Telegram Remote Control / G50 Promt V2 / V6.5 visual candidate / main menu files, and where the project stands.
+
+CONFIRMED SAVED IN GITHUB MEMORY:
+1. Final handoff archive saved and verified: storage/memory/archive/HUB_V3_WINDOWS_HELPER_AND_MEMORY_SESSION_FINAL_HANDOFF_20260603T161500Z.txt
+2. Windows helper cleanup/refactor PASS.
+3. Desktop project icons cleaned to two buttons: ION WORKSPACE - Server Bridge and ION HELPER MENU.
+4. Local root D:\ECOM_GOVERNED_RUNTIME cleaned to two visible CMD launchers: ION WORKSPACE.cmd and START_HELPER_MENU_ONLY.cmd.
+5. ION WORKSPACE.cmd = server bridge only.
+6. START_HELPER_MENU_ONLY.cmd = helper menu only.
+7. Helper menu R opens AutoClip.
+8. AutoClip X/Q/Esc returns to helper menu.
+9. Approved local helper trash cleanup completed.
+10. Server eyes PASS through HUB V3.
+11. GitHub API auth PASS with admin/push/pull true, no secrets printed.
+12. GitHub memory missing_approval operational issue fixed by persistent approval-session until 2027-01-01 for memory write/update only.
+13. GitHub memory write no-args tests PASS http 201.
+14. Latest memory pointer/read latest PASS.
+
+NOT FULLY COMPLETED / NOT SAFE TO CLAIM PASS:
+1. Full audit of uploaded/planned menu files such as ECOM OS Telegram Remote Control, G50 Promt V2, My V6.5 visual final candidate, main ECOM OS menu was NOT completed to FINISH in this chat.
+2. No final table exists yet for old/new menu: keep/remove/rename/connect-to-agents.
+3. No final Telegram menu skeleton comparison checkpoint was saved as PASS.
+4. Source-level HUB V3 hardening patch for new approval-session tool and empty archive guard was attempted partially but not verified; do NOT mark it PASS.
+5. github_memory_update_pointer_after_approval can still be risky if called without archive; use explicit archive argument only.
+
+CURRENT PROJECT POSITION:
+Stable platform/bridge work is completed enough to move to a new chat safely. Next project route should not redo helper/GitHub repairs; it should verify them read-only, then start TELEGRAM_MENU_FILES_AND_V6_5_SKELETON_AUDIT if files are available.
+
+STRICT CMD LESSONS:
+Do not use long Windows CMD with inline ssh/scp/json/python/heredoc.
+Working format: create/read report file -> type report -> clip < report -> Ctrl+V.
+For large code use file-based writer-script or copy con file.py -> paste code -> Ctrl+Z -> Enter.
+Do not use echo >> py for complex code.
+
+NEXT CHAT REQUIRED FIRST STEPS:
+1. server_health_readonly.
+2. github_api_auth_audit_readonly.
+3. github_memory_read_latest_archive.
+4. Confirm this archive or final handoff archive is visible.
+5. Then ask Ion to upload or point to the menu files for TELEGRAM_MENU_FILES_AND_V6_5_SKELETON_AUDIT if they are not accessible.
+
+NEXT_SAFE_ROUTE:
+NEW_CHAT_VERIFY_HUB_AND_START_TELEGRAM_MENU_FILES_AND_V6_5_SKELETON_AUDIT
