@@ -1,0 +1,12 @@
+# V7.3C R07 Card State Rule
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Rule:
+After Ion presses a button, card status must change.
+
+States:
+open, wait, yes, no, block, done.
+
+Old buttons must not stay active after decision.
