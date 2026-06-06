@@ -1,0 +1,52 @@
+# V7.3C GitHub Code Contract Drafts — Part 02 Route Registry Buttons
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Telegram button map draft
+
+01 🆕 Новый товар
+route_id: route_01_new_product
+callback: v73c:r:01
+opens: product intake and simple listing flow
+
+02 🧩 Товар с вариантами
+route_id: route_02_variant_product
+callback: v73c:r:02
+opens: variant matrix and variant listing flow
+
+03 📝 Листинг-студия
+route_id: route_03_listing_studio
+callback: v73c:r:03
+opens: A/B/C listing experiments and improvement flow
+
+04 🛒 Жизнь листингов
+route_id: route_04_marketplace_lifecycle
+callback: v73c:r:04
+opens: listing lifecycle state and attention cards
+
+05 📊 Финансы / склад
+route_id: route_05_finance_inventory
+callback: v73c:r:05
+opens: stock and money truth center
+
+06 🔎 Product Radar
+route_id: route_06_product_radar
+callback: v73c:r:06
+opens: product research and opportunity scoring
+
+07 🧭 Решения / отчёты
+route_id: route_07_decision_center
+callback: v73c:r:07
+opens: approvals, reports and waiting decisions
+
+08 🧠 Память / учитель
+route_id: route_08_memory_teacher
+callback: v73c:r:08
+opens: memory, lessons, rules and teacher summaries
+
+## Callback rule
+
+Main menu callbacks must stay short.
+Full payload stays in case storage.
+Route 07 decision callbacks use short keys only.
