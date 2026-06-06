@@ -1,0 +1,473 @@
+# ECOM OS V7.3C — Routes 01-05 + 07-08 Candidate Code Drafts in GitHub Memory
+
+Status: CODE_DRAFTS_CREATED_IN_GITHUB_MEMORY_NO_SERVER_WRITE
+Approval marker: APPROVE_BUILD_GITHUB_MEMORY_CODE_DRAFTS_FOR_ROUTES_01_02_03_04_05_07_08_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+Mode: GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY_NO_DELETE_NO_COMMIT_NO_PUSH
+Parent all-8 spec archive: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T171540Z.txt
+Route 06 code draft archive: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T171158Z.txt
+
+## Purpose
+
+Build reproducible GitHub-memory code drafts for routes 01, 02, 03, 04, 05, 07, 08 so all 8 V7.3C route-blocks are complete in GitHub memory before clean server transfer.
+
+Route 06 already has detailed code draft and is referenced as existing.
+
+## Runtime/server status
+
+No runtime/server files are created by this archive.
+No active bot.py is modified.
+No Telegram restart.
+No eBay API call.
+No delete/cleanup.
+No commit/push.
+No secrets printed.
+
+## Future server target paths
+
+storage/runtime_bridge/candidates/V7_3C_ALL_ROUTES/route_01_new_product_candidate.py
+storage/runtime_bridge/candidates/V7_3C_ALL_ROUTES/route_02_variant_product_candidate.py
+storage/runtime_bridge/candidates/V7_3C_ALL_ROUTES/route_03_listing_studio_candidate.py
+storage/runtime_bridge/candidates/V7_3C_ALL_ROUTES/route_04_marketplace_lifecycle_candidate.py
+storage/runtime_bridge/candidates/V7_3C_ALL_ROUTES/route_05_finance_inventory_candidate.py
+storage/runtime_bridge/candidates/V7_3C_ALL_ROUTES/route_06_product_radar_candidate.py
+storage/runtime_bridge/candidates/V7_3C_ALL_ROUTES/route_07_decisions_reports_agents_candidate.py
+storage/runtime_bridge/candidates/V7_3C_ALL_ROUTES/route_08_system_memory_candidate.py
+storage/runtime_bridge/candidates/V7_3C_ALL_ROUTES/v73c_all_routes_schema.json
+storage/runtime_bridge/candidates/V7_3C_ALL_ROUTES/v73c_all_routes_review.json
+storage/control_room/V7_3C_ALL_8_BUTTONS_POINTER.json
+
+## Shared route candidate module pattern
+
+All route candidate files must be DRY/STUB ONLY. They expose:
+- ROUTE_ID
+- ROUTE_TITLE
+- CASE_NAMESPACE
+- CALLBACKS
+- BUTTONS
+- SAFETY_LOCKS
+- SCREENS
+- AGENTS
+- REPORTS
+- SCHEMAS
+- LINKS
+- get_home_screen()
+- get_callback_response(callback_data)
+- self_review()
+
+Shared safety locks for all route candidates:
+active_bot_patch_allowed=false
+telegram_restart_allowed=false
+ebay_api_allowed=false
+ebay_publish_allowed=false
+ebay_revise_allowed=false
+ebay_delete_allowed=false
+purchase_allowed=false
+delete_cleanup_allowed=false
+secret_print_allowed=false
+git_commit_allowed=false
+git_push_allowed=false
+
+Shared global callback behavior:
+Back -> previous screen inside route only.
+Home -> main menu only; unfinished case -> PAUSED -> Route 07.
+Stop -> confirmation; cancel or pause; no physical delete.
+
+## route_01_new_product_candidate.py DRAFT
+
+```python
+ROUTE_ID = 'route_01_new_product'
+ROUTE_TITLE = '🆕 Новый товар'
+CASE_NAMESPACE = 'cases/v73c/route_01_new_product'
+MODE = 'DRY_STUB_ONLY'
+
+CALLBACKS = {
+    'route_home': 'v73c:route:01_new_product',
+    'build_product': 'v73c:r01:build_product',
+    'accepted_inputs': 'v73c:r01:accepted_inputs',
+    'show_full_listing': 'v73c:r01:show_full_listing',
+    'rework': 'v73c:r01:rework',
+    'readiness': 'v73c:r01:readiness',
+    'publish_gate': 'v73c:r01:publish_gate',
+    'back': 'v73c:r01:back',
+    'home': 'v73c:r01:home',
+    'stop': 'v73c:r01:stop',
+}
+
+BUTTONS = [
+    [('📦 Собрать товар', CALLBACKS['build_product']), ('📊 Что уже принято', CALLBACKS['accepted_inputs'])],
+    [('👁 Показать полный листинг', CALLBACKS['show_full_listing']), ('🔁 Переделать', CALLBACKS['rework'])],
+    [('✅ Проверить готовность', CALLBACKS['readiness']), ('🚀 Опубликовать на eBay', CALLBACKS['publish_gate'])],
+    [('⬅️ Назад', CALLBACKS['back']), ('🏠 Домой', CALLBACKS['home']), ('⛔ Стоп', CALLBACKS['stop'])],
+]
+
+SCREENS = {
+    'home': 'Ion sends link/photos/receipt/specs/comments. Silent collection. One product / one variant.',
+    'accepted_inputs': 'Show link yes/no, photo count, receipt yes/no, specs yes/no, comments yes/no, case status.',
+    'build_product': 'Dry-run agent chain creates product_passport + listing_draft. No eBay.',
+    'show_full_listing': 'Show card, title/price, description, designed description, specifics, photo-plan, shop/cross-sell, final draft.',
+    'rework': 'Choose title, description, price/margin, specifics, photo-plan, shop block, keywords, whole listing, custom text.',
+    'readiness': 'Check title/photos/description/specifics/category/price/quantity/policies/duplicates/risks/eBay readiness.',
+    'publish_gate': 'Show approval requirement only. No publish without eBay marker.',
+}
+
+AGENTS = ['Source Agent', 'Photo Agent', 'Receipt Agent', 'Product Passport Agent', 'Category Agent', 'Title Agent', 'Description Agent', 'Item Specifics Agent', 'Price Agent', 'Critic Agent', 'Readiness Agent']
+REPORTS = ['accepted_inputs_report', 'short_product_card', 'full_listing_preview', 'readiness_report', 'missing_data_report', 'publish_gate_packet']
+SCHEMAS = ['case_01_new_product', 'accepted_input_state', 'product_passport', 'listing_draft', 'readiness_result', 'rework_request', 'publish_gate_record']
+LINKS = ['01->05 stock/finance', '01->04 after publish', '01->07 pause/block/decision', '01->08 archive/lesson']
+```
+
+## route_02_variant_product_candidate.py DRAFT
+
+```python
+ROUTE_ID = 'route_02_variant_product'
+ROUTE_TITLE = '🧬 Новый товар с вариантами'
+CASE_NAMESPACE = 'cases/v73c/route_02_variant_product'
+MODE = 'DRY_STUB_ONLY'
+
+CALLBACKS = {
+    'route_home': 'v73c:route:02_variant_product',
+    'build_variant_product': 'v73c:r02:build_variant_product',
+    'accepted_inputs': 'v73c:r02:accepted_inputs',
+    'show_variant_matrix': 'v73c:r02:show_variant_matrix',
+    'show_full_listing': 'v73c:r02:show_full_listing',
+    'rework': 'v73c:r02:rework',
+    'readiness': 'v73c:r02:readiness',
+    'publish_gate': 'v73c:r02:publish_gate',
+    'back': 'v73c:r02:back',
+    'home': 'v73c:r02:home',
+    'stop': 'v73c:r02:stop',
+}
+
+BUTTONS = [
+    [('📦 Собрать товар с вариантами', CALLBACKS['build_variant_product']), ('📊 Что уже принято', CALLBACKS['accepted_inputs'])],
+    [('👁 Показать матрицу вариантов', CALLBACKS['show_variant_matrix']), ('👁 Показать полный листинг', CALLBACKS['show_full_listing'])],
+    [('🔁 Переделать', CALLBACKS['rework']), ('✅ Проверить готовность', CALLBACKS['readiness'])],
+    [('🚀 Опубликовать на eBay', CALLBACKS['publish_gate'])],
+    [('⬅️ Назад', CALLBACKS['back']), ('🏠 Домой', CALLBACKS['home']), ('⛔ Стоп', CALLBACKS['stop'])],
+]
+
+SCREENS = {
+    'home': 'Ion sends supplier link, variant photos, receipt, specs. Product with variants only.',
+    'accepted_inputs': 'Show source, variant photos, cost, specs, comments, status.',
+    'show_variant_matrix': 'Show variant/color/size/length/kit/power/model/SKU/price/qty/photo/status.',
+    'show_full_listing': 'Show master listing + variant matrix + per-variant readiness.',
+    'rework': 'Matrix, variant photos, price/qty, SKU, title, description, specifics, photo-plan, shop/cross-sell, whole listing.',
+    'readiness': 'Check master product and every variant. Incomplete matrix blocks readiness.',
+    'publish_gate': 'Explicit eBay marker required. No partial variant publish.',
+}
+
+AGENTS = ['Variant Matrix Agent', 'SKU Agent', 'Photo Mapping Agent', 'Variant Price Agent', 'Variant Quantity Agent', 'Category Variation Agent', 'Title Agent', 'Description Agent', 'Item Specifics Agent', 'Critic Agent', 'Readiness Agent']
+REPORTS = ['variant_matrix_report', 'master_product_card', 'per_variant_readiness_report', 'missing_variant_fields_report', 'publish_gate_packet']
+SCHEMAS = ['case_02_variant_product', 'master_product', 'variant_matrix', 'variant_sku_map', 'variant_photo_map', 'variant_price_qty_map', 'variant_readiness_result']
+LINKS = ['02->05 stock/finance', '02->04 after publish', '02->07 pause/block/decision', '02->08 archive/lesson']
+```
+
+## route_03_listing_studio_candidate.py DRAFT
+
+```python
+ROUTE_ID = 'route_03_listing_studio'
+ROUTE_TITLE = '📝 Листинг-студия'
+CASE_NAMESPACE = 'cases/v73c/route_03_listing_studio'
+MODE = 'DRY_STUB_ONLY'
+
+CALLBACKS = {
+    'route_home': 'v73c:route:03_listing_studio',
+    'select_source': 'v73c:r03:select_source',
+    'create_3_variants': 'v73c:r03:create_3_variants',
+    'show_variant_a': 'v73c:r03:show_variant_a',
+    'show_variant_b': 'v73c:r03:show_variant_b',
+    'show_variant_c': 'v73c:r03:show_variant_c',
+    'compare_variants': 'v73c:r03:compare_variants',
+    'duplicate_risk_check': 'v73c:r03:duplicate_risk_check',
+    'select_best': 'v73c:r03:select_best',
+    'rework': 'v73c:r03:rework',
+    'publish_update_gate': 'v73c:r03:publish_update_gate',
+    'back': 'v73c:r03:back',
+    'home': 'v73c:r03:home',
+    'stop': 'v73c:r03:stop',
+}
+
+BUTTONS = [
+    [('📦 Выбрать товар / листинг', CALLBACKS['select_source']), ('✨ Сделать 3 варианта', CALLBACKS['create_3_variants'])],
+    [('👁 Показать вариант A', CALLBACKS['show_variant_a']), ('👁 Показать вариант B', CALLBACKS['show_variant_b']), ('👁 Показать вариант C', CALLBACKS['show_variant_c'])],
+    [('🧪 Сравнить варианты', CALLBACKS['compare_variants']), ('🧯 Проверить дубли / риски', CALLBACKS['duplicate_risk_check'])],
+    [('✅ Выбрать лучший', CALLBACKS['select_best']), ('🔁 Переделать', CALLBACKS['rework'])],
+    [('🚀 Опубликовать / обновить', CALLBACKS['publish_update_gate'])],
+    [('⬅️ Назад', CALLBACKS['back']), ('🏠 Домой', CALLBACKS['home']), ('⛔ Стоп', CALLBACKS['stop'])],
+]
+
+SCREENS = {
+    'home': 'Choose product/listing source. Works with existing products/listings/drafts/archives. No cloning.',
+    'select_source': 'Load source with master_product_id, stock_pool, finance_cost, listing/draft state.',
+    'create_3_variants': 'Create A External Search, B Marketplace Buyer, C AI Search listing angles.',
+    'compare_variants': 'Compare angle, title, description, value signal, risks.',
+    'duplicate_risk_check': 'Duplicate/risk audit. High duplicate risk blocks selection.',
+    'select_best': 'Chosen variant moves to approval gate.',
+    'publish_update_gate': 'No revise/publish without explicit gate.',
+}
+
+AGENTS = ['Listing Studio Agent', 'External Search Listing Agent', 'Marketplace Buyer Agent', 'AI Search Listing Agent', 'Duplicate Guard Agent', 'Competitor Angle Agent', 'Value Signal Agent', 'Critic Agent']
+REPORTS = ['listing_experiment_A', 'listing_experiment_B', 'listing_experiment_C', 'experiment_comparison', 'duplicate_risk_report', 'selected_variant_recommendation', 'publish_update_gate_packet']
+SCHEMAS = ['listing_studio_case', 'listing_source_reference', 'listing_experiment', 'duplicate_risk_result', 'selected_experiment', 'update_gate_record']
+LINKS = ['03 receives from 01/02/04/06', '03->04 after publish/update', '03->05 stock/finance link', '03->07 decisions', '03->08 lessons']
+```
+
+## route_04_marketplace_lifecycle_candidate.py DRAFT
+
+```python
+ROUTE_ID = 'route_04_marketplace_lifecycle'
+ROUTE_TITLE = '🛒 Маркетплейсы / жизнь листингов'
+CASE_NAMESPACE = 'cases/v73c/route_04_marketplace_lifecycle'
+MODE = 'DRY_STUB_ONLY'
+
+CALLBACKS = {
+    'route_home': 'v73c:route:04_marketplace_lifecycle',
+    'active_listings': 'v73c:r04:active_listings',
+    'needs_attention': 'v73c:r04:needs_attention',
+    'medium_listings': 'v73c:r04:medium_listings',
+    'summary': 'v73c:r04:summary',
+    'details': 'v73c:r04:details',
+    'send_to_listing_studio': 'v73c:r04:send_to_listing_studio',
+    'leave_unchanged': 'v73c:r04:leave_unchanged',
+    'back': 'v73c:r04:back',
+    'home': 'v73c:r04:home',
+    'stop': 'v73c:r04:stop',
+}
+
+BUTTONS = [
+    [('📋 Активные листинги', CALLBACKS['active_listings']), ('🔴 Требуют внимания', CALLBACKS['needs_attention'])],
+    [('🟡 Средние', CALLBACKS['medium_listings']), ('📊 Сводка', CALLBACKS['summary'])],
+    [('📈 Подробно', CALLBACKS['details']), ('🔁 Отправить в Листинг-студию', CALLBACKS['send_to_listing_studio'])],
+    [('⏸ Оставить без изменений', CALLBACKS['leave_unchanged'])],
+    [('⬅️ Назад', CALLBACKS['back']), ('🏠 Домой', CALLBACKS['home']), ('⛔ Стоп', CALLBACKS['stop'])],
+]
+
+SCREENS = {
+    'home': 'Lifecycle dashboard. Good silent, medium summary, bad separate card.',
+    'active_listings': 'List/filter active listings. Dry placeholder until marketplace read source attached.',
+    'needs_attention': 'Red problem cards: listing, metrics, verdict, reason, recommendation.',
+    'medium_listings': 'Medium listings summary.',
+    'summary': 'Marketplace health summary.',
+    'details': 'Selected listing metrics: impressions, views, CTR, sales, conversion, ads, returns, age, stock, margin.',
+    'send_to_listing_studio': 'Creates route 03 case in dry/stub mode.',
+    'leave_unchanged': 'Records decision only. No marketplace action.',
+}
+
+AGENTS = ['Marketplace Lifecycle Agent', 'Metrics Agent', 'Weak Listing Agent', 'Ad Cost Agent', 'Listing Health Agent', 'Recommendation Agent']
+REPORTS = ['active_listings_report', 'lifecycle_summary', 'weak_listing_card', 'listing_detail_report', 'recommendation_report']
+SCHEMAS = ['marketplace_listing_snapshot', 'listing_health_status', 'lifecycle_verdict', 'attention_card', 'lifecycle_decision_record']
+LINKS = ['04 receives from 01/02/03', '04 weak listings->03', '04 sales/cost->05', '04 decisions->07', '04 lessons->08']
+```
+
+## route_05_finance_inventory_candidate.py DRAFT
+
+```python
+ROUTE_ID = 'route_05_finance_inventory'
+ROUTE_TITLE = '📊 Финансы / склад'
+CASE_NAMESPACE = 'cases/v73c/route_05_finance_inventory'
+MODE = 'DRY_STUB_ONLY'
+
+CALLBACKS = {
+    'route_home': 'v73c:route:05_finance_inventory',
+    'stock_left': 'v73c:r05:stock_left',
+    'purchases': 'v73c:r05:purchases',
+    'sales': 'v73c:r05:sales',
+    'low_stock': 'v73c:r05:low_stock',
+    'product_card': 'v73c:r05:product_card',
+    'reorder_decision': 'v73c:r05:reorder_decision',
+    'profit': 'v73c:r05:profit',
+    'reports': 'v73c:r05:reports',
+    'elster': 'v73c:r05:elster',
+    'by_marketplace': 'v73c:r05:by_marketplace',
+    'loss_makers': 'v73c:r05:loss_makers',
+    'returns': 'v73c:r05:returns',
+    'back': 'v73c:r05:back',
+    'home': 'v73c:r05:home',
+    'stop': 'v73c:r05:stop',
+}
+
+BUTTONS = [
+    [('📦 Остатки', CALLBACKS['stock_left']), ('📥 Закупки', CALLBACKS['purchases']), ('📤 Продажи', CALLBACKS['sales'])],
+    [('⚠️ Заканчивается', CALLBACKS['low_stock']), ('📋 Карточка товара', CALLBACKS['product_card']), ('🛒 Решение по закупке', CALLBACKS['reorder_decision'])],
+    [('💰 Прибыль', CALLBACKS['profit']), ('📈 Отчёты', CALLBACKS['reports']), ('🧾 ELSTER', CALLBACKS['elster'])],
+    [('📊 По маркетплейсам', CALLBACKS['by_marketplace']), ('📉 Убыточные товары', CALLBACKS['loss_makers']), ('↩️ Возвраты', CALLBACKS['returns'])],
+    [('⬅️ Назад', CALLBACKS['back']), ('🏠 Домой', CALLBACKS['home']), ('⛔ Стоп', CALLBACKS['stop'])],
+]
+
+SCREENS = {
+    'home': 'Finance/stock dashboard with separated 05A stock and 05B finance.',
+    'stock_left': 'SKU, master_product_id, qty purchased/sold/left, linked listings/marketplaces.',
+    'purchases': 'Purchase records and supplier/cost data.',
+    'sales': 'Sales records from marketplace lifecycle.',
+    'low_stock': '75% observe, 50% first warning, 25% serious, 10-15% urgent, 0% stop/hide only through gate.',
+    'product_card': 'Product stock/finance card.',
+    'reorder_decision': 'Reorder Agent: buy, wait, do not buy, stop ads, send to Listing Studio.',
+    'profit': 'Profit after purchase, China shipping, German shipping, packaging, fees, ads, returns, defects, taxes.',
+    'reports': 'Finance reports index.',
+    'elster': 'ELSTER summary/export only. No tax submission.',
+    'by_marketplace': 'Marketplace finance summary.',
+    'loss_makers': 'High revenue/low profit, high ads, returns, dead stock.',
+    'returns': 'Return cost report.',
+}
+
+AGENTS = ['Stock Agent', 'Reorder Agent', 'Finance Health Agent', 'Return Cost Agent', 'ELSTER Export Agent', 'Dead Stock Agent']
+REPORTS = ['stock_report', 'purchase_report', 'sales_report', 'low_stock_alert', 'reorder_decision', 'profit_report', 'marketplace_finance_report', 'loss_makers_report', 'return_report', 'elster_export_packet']
+SCHEMAS = ['stock_item', 'purchase_record', 'sale_record', 'stock_alert', 'reorder_decision_record', 'finance_entry', 'profit_result', 'return_record', 'elster_summary']
+LINKS = ['05 receives sales from 04', '05 purchases from 06', '05 stock to 04', '05 cost to 01/02/03', '05 decisions->07', '05 lessons->08']
+```
+
+## route_07_decisions_reports_agents_candidate.py DRAFT
+
+```python
+ROUTE_ID = 'route_07_decisions_reports_agents'
+ROUTE_TITLE = '📥 Решения / отчёты / агенты'
+CASE_NAMESPACE = 'cases/v73c/route_07_decisions_reports_agents'
+MODE = 'DRY_STUB_ONLY'
+
+CALLBACKS = {
+    'route_home': 'v73c:route:07_decisions_reports_agents',
+    'requires_decision': 'v73c:r07:requires_decision',
+    'paused': 'v73c:r07:paused',
+    'blocks': 'v73c:r07:blocks',
+    'reports': 'v73c:r07:reports',
+    'agents': 'v73c:r07:agents',
+    'lessons': 'v73c:r07:lessons',
+    'back': 'v73c:r07:back',
+    'home': 'v73c:r07:home',
+    'stop': 'v73c:r07:stop',
+}
+
+BUTTONS = [
+    [('📥 Требует решения', CALLBACKS['requires_decision']), ('⏸ На паузе', CALLBACKS['paused'])],
+    [('⚠️ Блокировки', CALLBACKS['blocks']), ('📊 Отчёты', CALLBACKS['reports'])],
+    [('🤖 Агенты', CALLBACKS['agents']), ('🧠 Уроки системы', CALLBACKS['lessons'])],
+    [('⬅️ Назад', CALLBACKS['back']), ('🏠 Домой', CALLBACKS['home']), ('⛔ Стоп', CALLBACKS['stop'])],
+]
+
+SCREENS = {
+    'home': 'Decision inbox overview. Ion does not search tasks; system brings tasks to Ion.',
+    'requires_decision': 'Active decision cards: continue, rework, reject, later, approval required.',
+    'paused': 'Paused/unfinished cases from all routes.',
+    'blocks': 'Blockers and repair recommendations.',
+    'reports': 'Reports index.',
+    'agents': 'Agent status, last run, last error, last lesson.',
+    'lessons': 'Lesson inbox and route links.',
+}
+
+AGENTS = ['Decision Inbox Agent', 'Approval Agent', 'Report Agent', 'Agent Status Agent', 'Lesson Inbox Agent', 'Block Explainer Agent']
+REPORTS = ['decision_inbox', 'paused_cases_report', 'block_report', 'reports_index', 'agent_status_report', 'lesson_inbox_report']
+SCHEMAS = ['decision_card', 'paused_case', 'block_record', 'approval_wait_record', 'agent_status_snapshot', 'lesson_inbox_item']
+LINKS = ['all routes->07', '07->correct route-block', '07->08 memory/lessons']
+```
+
+## route_08_system_memory_candidate.py DRAFT
+
+```python
+ROUTE_ID = 'route_08_system_memory'
+ROUTE_TITLE = '⚙️ Система / память'
+CASE_NAMESPACE = 'cases/v73c/route_08_system_memory'
+MODE = 'DRY_STUB_ONLY'
+
+CALLBACKS = {
+    'route_home': 'v73c:route:08_system_memory',
+    'system_status': 'v73c:r08:system_status',
+    'memory': 'v73c:r08:memory',
+    'archive': 'v73c:r08:archive',
+    'rules': 'v73c:r08:rules',
+    'agents': 'v73c:r08:agents',
+    'version': 'v73c:r08:version',
+    'security': 'v73c:r08:security',
+    'back': 'v73c:r08:back',
+    'home': 'v73c:r08:home',
+    'stop': 'v73c:r08:stop',
+}
+
+BUTTONS = [
+    [('🟢 Статус системы', CALLBACKS['system_status']), ('🧠 Память', CALLBACKS['memory'])],
+    [('📁 Архив', CALLBACKS['archive']), ('📜 Правила', CALLBACKS['rules'])],
+    [('🤖 Агенты', CALLBACKS['agents']), ('🏷 Версия', CALLBACKS['version']), ('🔒 Безопасность', CALLBACKS['security'])],
+    [('⬅️ Назад', CALLBACKS['back']), ('🏠 Домой', CALLBACKS['home']), ('⛔ Стоп', CALLBACKS['stop'])],
+]
+
+SCREENS = {
+    'home': 'Admin/info/diagnostic panel. Not daily product work.',
+    'system_status': 'Bot, server, Telegram, GitHub, memory, archive, queues, last error.',
+    'memory': 'Active rules, lessons, routes, current version.',
+    'archive': 'Transition archives, decision archives, lesson archives, listing archives.',
+    'rules': 'Safety, publish, approve, cleanup, eBay, agent rules.',
+    'agents': 'Agent list/status/last run/last error/last lesson.',
+    'version': 'ECOM OS V7.3C, date, changes, added, forbidden, planned.',
+    'security': 'eBay lock, delete lock, restart lock, git push lock, approval mode, secrets guard.',
+}
+
+AGENTS = ['System Status Agent', 'Memory View Agent', 'Archive View Agent', 'Rules View Agent', 'Version Agent', 'Security Lock Agent', 'Agent Registry Agent']
+REPORTS = ['system_status_card', 'memory_summary', 'archive_index', 'rules_summary', 'agent_registry_report', 'version_report', 'security_locks_report']
+SCHEMAS = ['system_status_snapshot', 'memory_pointer_summary', 'archive_index_item', 'rules_index', 'agent_registry_entry', 'version_record', 'security_lock_state']
+LINKS = ['all routes->08 memory/archive', '08->rules', '08->audit', '08->version updates']
+```
+
+## Unified schema draft for all routes
+
+```json
+{
+  "version": "ECOM_OS_V7_3C",
+  "mode": "DRY_STUB_ONLY",
+  "routes": [
+    "route_01_new_product",
+    "route_02_variant_product",
+    "route_03_listing_studio",
+    "route_04_marketplace_lifecycle",
+    "route_05_finance_inventory",
+    "route_06_product_radar",
+    "route_07_decisions_reports_agents",
+    "route_08_system_memory"
+  ],
+  "required_fields_per_route": ["route_id", "route_title", "case_namespace", "callbacks", "buttons", "screens", "agents", "reports", "schemas", "links", "safety_locks"],
+  "global_navigation": ["back", "home", "stop"],
+  "forbidden_in_dry": ["active_bot_patch", "telegram_restart", "ebay_api", "purchase", "delete_cleanup", "secret_print", "git_commit", "git_push"]
+}
+```
+
+## Unified self-review expected result
+
+```json
+{
+  "status": "PASS_GITHUB_MEMORY_CODE_DRAFTS_READY",
+  "routes_with_code_drafts": ["01", "02", "03", "04", "05", "07", "08"],
+  "route_06_existing_code_draft": true,
+  "all_8_routes_memory_ready": true,
+  "server_write_done": false,
+  "active_bot_patch_done": false,
+  "telegram_restart_done": false,
+  "ebay_api_called": false,
+  "delete_cleanup_done": false,
+  "commit_push_done": false,
+  "secrets_printed": false
+}
+```
+
+## Current status by route
+
+Route 01: CODE_DRAFT_READY_IN_MEMORY
+Route 02: CODE_DRAFT_READY_IN_MEMORY
+Route 03: CODE_DRAFT_READY_IN_MEMORY
+Route 04: CODE_DRAFT_READY_IN_MEMORY
+Route 05: CODE_DRAFT_READY_IN_MEMORY
+Route 06: CODE_DRAFT_READY_IN_MEMORY from previous archive
+Route 07: CODE_DRAFT_READY_IN_MEMORY
+Route 08: CODE_DRAFT_READY_IN_MEMORY
+
+## Verdict
+
+All 8 buttons are now complete in GitHub memory at spec/code-draft level.
+Ready for unified server transfer packet.
+Not ready for active bot patch yet.
+Not ready for restart yet.
+Not ready for eBay live/write actions.
+
+## Next allowed action
+
+CREATE_UNIFIED_V7_3C_SERVER_TRANSFER_PACKET_FOR_ALL_8_ROUTES_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+
+Suggested next marker:
+APPROVE_CREATE_UNIFIED_V7_3C_SERVER_TRANSFER_PACKET_FOR_ALL_8_ROUTES_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
