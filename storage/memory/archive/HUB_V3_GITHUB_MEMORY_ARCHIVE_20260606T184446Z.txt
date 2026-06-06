@@ -1,0 +1,73 @@
+# ECOM OS V7.3C — Route 03 Source and Experiment Contracts Addendum
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+Base Route 03 index: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T184045Z.txt
+Recheck archive: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T184431Z.txt
+
+## Route 03 source package contract
+
+Route 03 must load one source package before experiments.
+
+Allowed source types:
+- product_from_route_01
+- product_from_route_02
+- published_listing
+- archived_listing
+- draft_listing
+- weak_listing_from_route_04
+- opportunity_from_route_06
+
+Required source package fields:
+- master_product_id
+- source_route
+- source_case_id
+- stock_pool
+- finance_cost
+- marketplace_id
+- marketplace_listing_id if exists
+- current_title
+- current_description
+- current_photos
+- current_item_specifics
+- current_price
+- current_status
+- known_lessons
+
+## Route 03 experiment identity contract
+
+Each experiment must store:
+- experiment_id
+- master_product_id
+- experiment_type: A_EXTERNAL_SEARCH | B_MARKETPLACE_BUYER | C_AI_SEARCH
+- buyer_intent
+- title_de
+- description_de
+- html_shop_block
+- photo_order_plan
+- item_specifics_focus
+- value_signal
+- duplicate_risk
+- expected_effect
+- selected_status
+
+## Buyer intent rule
+
+Route 03 is not allowed to create clone listings.
+A new experiment is valid only if buyer intent, offer structure or listing angle is clearly different.
+If same product and same buyer intent already exists, Route 03 must improve/update existing listing plan instead of creating a duplicate.
+
+## Stock and finance rule
+
+Every Route 03 experiment must keep link to stock_pool and finance_cost.
+No experiment can hide bad margin, missing stock or reserve problems.
+If finance data is missing, handoff to Route 05 or Route 07.
+
+## Marketplace listing link rule
+
+If source is a live listing, Route 03 must preserve marketplace_listing_id and current listing state.
+Update or publish action is never automatic. Route 03 creates approval packet only.
+
+## Next
+
+Build Route 03 final agent passports using this addendum.
