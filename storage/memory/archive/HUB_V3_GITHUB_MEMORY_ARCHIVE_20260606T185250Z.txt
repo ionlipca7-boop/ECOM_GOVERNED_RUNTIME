@@ -1,0 +1,19 @@
+# V7.3C R03 Research Upgrade
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Route 03 may compare listing angles through read-only research.
+
+Checks:
+- German keyword fit;
+- price range fit;
+- item-specific fit;
+- competitor title and photo strength;
+- value-signal difference.
+
+Output:
+listing_angle_research_report.
+
+No live action.
+No false claims.
