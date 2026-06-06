@@ -1,0 +1,42 @@
+# ECOM OS V7.3C — Route 06 Product Radar Part 03 Scoring
+
+topic_id: V7_3C_ROUTE_06_PRODUCT_RADAR
+part_number: 03_SCORING
+previous_part: V7_3C_ROUTE_06_PRODUCT_RADAR_PART_02_SOURCES
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Product radar score
+
+Each opportunity gets a score, not a blind yes/no.
+
+Score blocks:
+- demand strength
+- competition pressure
+- price room
+- cost clarity
+- profit after reserve
+- stock risk
+- return risk
+- defect risk
+- compliance risk
+- photo/content possibility
+- German listing fit
+- supplier trust
+- bundle or variant potential
+- route fit: 01, 02 or 03
+
+## Verdicts
+
+- BUY_TEST_SMALL
+- WATCH_ONLY
+- NEEDS_MORE_EVIDENCE
+- SEND_TO_ROUTE_01
+- SEND_TO_ROUTE_02
+- SEND_TO_ROUTE_03
+- SEND_TO_ROUTE_05_REORDER
+- BLOCKED_RISK
+
+## Rule
+
+No opportunity becomes green without profit after reserve and compliance review.
