@@ -1,0 +1,61 @@
+# ECOM OS V7.3C — Route 05 Locked After Agent Passports
+
+Status: ROUTE_05_LOCKED_COMPLETE_AT_GITHUB_MEMORY_LEVEL
+Mode: GITHUB_MEMORY_ONLY
+
+## Base checkpoints
+
+Route 05 deep blueprint index:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T193724Z.txt
+
+Route 05 upgrade refs:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T194749Z.txt
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T194756Z.txt
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T194801Z.txt
+
+Route 05 agent passports index:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T195431Z.txt
+
+## Route 05 lock result
+
+Route 05 is locked for GitHub-memory stage.
+
+It now includes:
+- finance and inventory deep blueprint;
+- two cores: stock and finance;
+- collector;
+- stock truth;
+- shared stock pool;
+- returns;
+- cost view;
+- result view;
+- alerts;
+- reports;
+- tax summary;
+- handoffs;
+- Russian Telegram cards for Ion;
+- links to Route 01, 02, 03, 04, 06, 07 and 08.
+
+## Core locked rules
+
+Route 05 is the source of truth for stock and money.
+One SKU has one shared stock truth.
+If one item is sold on any sales site, the shared stock pool must be reduced.
+Route 05 prevents overselling and wrong quantity across listings.
+Route 05 collects source records through adapters later.
+Route 05 sends Russian attention cards to Ion when stock or money needs action.
+Other routes request Route 05 data through handoff and must not overwrite the stock or money truth directly.
+No live marketplace action is allowed from this memory stage.
+
+## Safety status
+
+server_write_done: false
+active_bot_patch_done: false
+telegram_restart_done: false
+marketplace_api_called: false
+commit_push_done: false
+secrets_printed: false
+
+## Next allowed action
+
+BUILD_ROUTE_06_PRODUCT_RADAR_DEEP_BLUEPRINT_GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
