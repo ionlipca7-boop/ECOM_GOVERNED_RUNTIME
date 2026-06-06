@@ -1,0 +1,12 @@
+# V7.3C R06 Ref A
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Reference group:
+eBay Browse search.
+
+Route impact:
+Route 06 can compare German keywords, categories, price range, item details and aspect signals.
+
+No action is performed here.
