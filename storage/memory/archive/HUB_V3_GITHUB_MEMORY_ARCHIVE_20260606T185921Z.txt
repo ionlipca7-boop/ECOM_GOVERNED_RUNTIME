@@ -1,0 +1,42 @@
+# ECOM OS V7.3C — Route 04 Marketplace Lifecycle Part 02 Status Cards
+
+topic_id: V7_3C_ROUTE_04_MARKETPLACE_LIFECYCLE
+part_number: 02_STATUS_CARDS
+previous_part: V7_3C_ROUTE_04_MARKETPLACE_LIFECYCLE_PART_01_SCOPE
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Listing statuses
+
+Route 04 uses four status levels:
+- ⚫ Нет данных
+- 🟢 Хороший
+- 🟡 Средний
+- 🔴 Требует внимания
+
+## Notification rules
+
+Good listing: silent.
+Medium listing: appears in summary.
+Bad listing: separate attention card.
+No-data listing: setup/check card only.
+
+## Attention card fields
+
+- listing_id
+- sku
+- marketplace_id
+- title_ru_short
+- title_de_current
+- status
+- reason
+- suggested_route
+- suggested_action
+- stock_note
+- finance_note
+- last_check_note
+
+## Ion language
+
+All Route 04 cards for Ion must be Russian.
+Buyer-facing listing content remains German.
