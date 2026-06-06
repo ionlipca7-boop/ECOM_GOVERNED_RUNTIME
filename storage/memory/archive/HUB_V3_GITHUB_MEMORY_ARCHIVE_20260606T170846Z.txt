@@ -1,0 +1,113 @@
+# ECOM OS V7.3C — Route 06 Product Radar Detailed Blueprint Review
+
+Status: REVIEW_PASS_DRY
+Approval marker: APPROVE_REVIEW_ROUTE_06_PRODUCT_RADAR_DETAILED_BLUEPRINT_DRY_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+Mode: DRY_ONLY_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY_NO_DELETE_NO_COMMIT_NO_PUSH
+Reviewed source archive: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T170703Z.txt
+Parent V7.3C Candidate V2 archive: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T170425Z.txt
+
+## Review Result
+
+Overall: PASS_FOR_APPROVAL_PACKET_DRAFT
+
+Route 06 detailed blueprint is consistent with V7.3C Candidate V2 and should be used as canonical deep implementation spec for route_06_product_radar.
+
+## What is confirmed
+
+1. Purpose is clear: Market Intelligence Radar, not random product search.
+2. Two modes are confirmed: Manual Mode and Autonomous Radar Mode.
+3. Data source categories are defined: China/suppliers, Germany/demand, marketplaces.
+4. 0-12 analysis chain is defined and implementable.
+5. Safety filter is defined and includes NEEDS REVIEW for uncertainty.
+6. Demand discovery separates problem search and product search.
+7. Market proof checks real marketplace evidence.
+8. Buyer behavior layer is defined.
+9. Profit layer includes return reserve and defect reserve.
+10. Value Signal layer includes the UD24 lesson: title alone is not enough.
+11. Business Ladder and Offer Structure are defined.
+12. Critic Agent raises risk flags but does not decide final outcome.
+13. Decision Board gives final decision; no single-agent final decision except hard safety block.
+14. Memory/Lesson and Master Teacher loop are defined.
+15. NEW PRODUCT ALERT output contract is defined.
+16. Telegram subbuttons are defined.
+17. Safety rules block purchase, eBay publish/revise, delete, token print, cookies-in-chat and live actions without approval.
+
+## Implementation gaps before active patch
+
+These are not blockers for approval packet draft, but must be handled before live/autonomous operation:
+
+1. Actual data-source integrations are not bound yet.
+2. Terapeak/Product Research availability must be verified separately.
+3. Google Keyword Planner/SEO tools may require credentials or external workflow.
+4. Autonomous Radar scheduling/frequency is not defined yet.
+5. Supplier scoring formula needs exact numeric fields in later implementation.
+6. Profit calculator needs project-wide fee/ad/return category defaults.
+7. Watchlist storage schema needs final path.
+8. Product Alert storage schema needs final path.
+9. Decision Board scoring weights need dry-test calibration.
+10. No active bot handler exists yet for route_06_product_radar in this review.
+
+## Safe implementation order
+
+Phase 1: Approval packet draft only.
+- Convert blueprint into candidate module contract.
+- Define callbacks and button screens.
+- Define data schemas: radar_signal, product_alert, watchlist_item, decision_board_result, lesson_record.
+- Define dry-run handlers with stub responses.
+- No web/source scraping automation yet.
+- No eBay call.
+- No purchase action.
+- No restart.
+
+Phase 2: Candidate code dry only.
+- Build separate candidate file/module or route map draft.
+- Compile/check syntax only.
+- No active bot.py write unless separate approval.
+
+Phase 3: Active patch approval packet.
+- Show exact files to change.
+- Show diff/patch plan.
+- Show rollback plan.
+- Keep restart gate closed.
+
+Phase 4: Active patch no restart after approval.
+- Apply only after explicit marker.
+- Compile active bot.
+- No restart yet.
+
+Phase 5: Controlled restart gate.
+- Restart only after explicit marker.
+- Verify Telegram menu manually.
+
+## Route 06 first dry product test candidate
+
+Suggested future dry test product:
+Desk Cable Organizer Kit / Kabelmanagement Set Schreibtisch.
+
+Reason:
+- already used in previous discussion;
+- low legal risk;
+- small/light product;
+- supports before/after demo;
+- supports bundle/variant/replacement listing logic;
+- good for testing full 0-12 chain without eBay live action.
+
+## Review verdict
+
+Route 06 Product Radar Detailed Blueprint: PASS
+Ready for: MERGE_ROUTE_06_DETAILED_BLUEPRINT_INTO_V7_3C_ACTIVE_PATCH_APPROVAL_PACKET_DRAFT_NO_PATCH_NO_RESTART_NO_EBAY
+Not ready for: active patch, restart, autonomous live sourcing, purchase, eBay publish/revise.
+
+## Safety status
+
+active_bot_patch: NOT_DONE
+telegram_restart: NOT_DONE
+ebay_api: NOT_CALLED
+purchase_action: NOT_DONE
+delete_cleanup: NOT_DONE
+commit_push: NOT_DONE
+secrets_printed: NO
+
+## Next allowed action
+
+MERGE_ROUTE_06_DETAILED_BLUEPRINT_INTO_V7_3C_ACTIVE_PATCH_APPROVAL_PACKET_DRAFT_NO_PATCH_NO_RESTART_NO_EBAY
