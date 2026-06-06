@@ -1,0 +1,48 @@
+# ECOM OS V7.3C Master Menu / Operator Manual — Part 01 Overview
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+Purpose: human-readable master menu for Ion before server transfer.
+
+## Current decision
+
+Server transfer is paused.
+Do not patch server yet.
+Do not restart Telegram bot.
+Do not call marketplaces.
+Do not publish/revise/delete.
+
+Next work stays in GitHub memory until the menu, route contracts and clean code draft are ready.
+
+## System idea
+
+ECOM OS V7.3C has 8 Telegram buttons / routes.
+Each route is separate but connected through handoffs.
+Routes do not overwrite each other directly.
+Route 07 handles decisions.
+Route 08 stores memory, rules and lessons.
+Route 05 is truth for stock and money.
+
+## Visual menu
+
+01 🆕 Новый товар
+02 🧩 Товар с вариантами
+03 📝 Листинг-студия
+04 🛒 Жизнь листингов
+05 📊 Финансы / склад
+06 🔎 Product Radar
+07 🧭 Решения / отчёты
+08 🧠 Память / учитель
+
+## Global language rules
+
+Ion-facing Telegram/cards/reports: Russian.
+Buyer-facing marketplace content for Germany: German.
+Supplier/source language can be any language, but output must be converted and checked.
+
+## Global safety rules
+
+No live action without exact approval gate.
+No hidden publish/update/delete/restart.
+No secret values in memory, Telegram or reports.
+If archive is too long and blocked, save in numbered chunks and create index.
