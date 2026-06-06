@@ -1,0 +1,22 @@
+# V7.3C ROUTE 03 LISTING STUDIO INDEX
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+PARTS:
+01 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T183950Z.txt
+02 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T183959Z.txt
+03 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T184013Z.txt
+04 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T184025Z.txt
+05 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T184037Z.txt
+
+RESULT:
+Route 03 deep blueprint created.
+Listing Studio uses A/B/C controlled experiments.
+It connects Route 01/02/04/05/06/07/08.
+It keeps Russian Telegram output and German buyer-facing content.
+It prepares approval packets only.
+No server write. No active patch. No restart. No marketplace call.
+
+NEXT:
+REVIEW_ROUTE_03_LISTING_STUDIO_DEEP_BLUEPRINT_AND_BUILD_AGENT_PASSPORTS_GITHUB_MEMORY_ONLY
