@@ -1,0 +1,37 @@
+# ECOM OS V7.3C — Route 08 Memory Teacher Part 01 Scope
+
+topic_id: V7_3C_ROUTE_08_MEMORY_TEACHER
+part_number: 01_SCOPE
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Identity
+
+Button: 08 🧠 Память / Учитель
+route_id: route_08_memory_teacher
+callback: v73c:route:08_memory_teacher
+case_namespace: cases/v73c/route_08_memory_teacher
+
+## Purpose
+
+Route 08 is the system memory, teacher, archivist and rule center.
+It stores what was learned from all routes and prevents repeated mistakes.
+
+## Main jobs
+
+- save lessons
+- save rules
+- save route decisions
+- save experiment results
+- create next-chat front
+- keep archive pointers
+- resolve rule conflicts
+- prepare teacher summaries for Ion
+
+## Safety
+
+GitHub memory only.
+No server write.
+No active patch.
+No restart.
+No marketplace call.
