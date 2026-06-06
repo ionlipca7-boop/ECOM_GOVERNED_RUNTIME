@@ -1,0 +1,39 @@
+# ECOM OS V7.3C — Route 07 Decision Center Part 02 Cards
+
+topic_id: V7_3C_ROUTE_07_DECISION_CENTER
+part_number: 02_CARDS
+previous_part: V7_3C_ROUTE_07_DECISION_CENTER_PART_01_SCOPE
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Telegram card rule
+
+All Route 07 cards for Ion must be Russian.
+Cards must show only what Ion needs to decide.
+
+## Card types
+
+- approval needed
+- blocked case
+- missing data
+- risk warning
+- report summary
+- waiting decision
+- finished decision
+- repair needed
+
+## Card fields
+
+- case_id
+- source_route
+- reason
+- short summary
+- risk level
+- suggested decision
+- buttons
+- expires_or_review_note
+
+## Button rule
+
+Buttons must be short and route-safe.
+No hidden live action behind a vague button.
