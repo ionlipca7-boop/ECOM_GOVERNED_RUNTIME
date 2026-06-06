@@ -1,0 +1,37 @@
+# ECOM OS V7.3C — Route 07 Decision Center Part 01 Scope
+
+topic_id: V7_3C_ROUTE_07_DECISION_CENTER
+part_number: 01_SCOPE
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Identity
+
+Button: 07 🧭 Решения / отчёты
+route_id: route_07_decision_center
+callback: v73c:route:07_decision_center
+case_namespace: cases/v73c/route_07_decision_center
+
+## Purpose
+
+Route 07 is Ion decision center.
+It receives problems, approvals, blocked cases, reports and waiting decisions from all routes.
+It keeps Ion from losing tasks across Telegram messages.
+
+## Main outputs
+
+- decision_card
+- approval_card
+- blocked_case_card
+- report_card
+- waiting_list
+- decision_log
+- handoff_record
+
+## Safety
+
+GitHub memory only.
+No server write.
+No active patch.
+No restart.
+No marketplace call.
