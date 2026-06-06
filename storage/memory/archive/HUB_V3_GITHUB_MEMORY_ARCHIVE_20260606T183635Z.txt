@@ -1,0 +1,59 @@
+# ECOM OS V7.3C — Route 02 Locked After Language, Shop and Image Rules
+
+Status: ROUTE_02_LOCKED_COMPLETE_AT_GITHUB_MEMORY_LEVEL
+Mode: GITHUB_MEMORY_ONLY
+
+## Base checkpoints
+
+Route 02 final passports:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T181131Z.txt
+
+Language/shop short rules:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T182442Z.txt
+
+Image rules index:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T183103Z.txt
+
+HTML shop block index:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T183355Z.txt
+
+## Route 02 lock result
+
+Route 02 is locked for GitHub-memory stage.
+
+It now includes:
+- variant product deep blueprint;
+- final agent passports;
+- eBay variant UI map;
+- dynamic variant count;
+- German-only buyer content;
+- Russian-only Telegram output for Ion;
+- image governance rules;
+- variant photo mapping rules;
+- HTML shop / related-products block rules;
+- readiness gates;
+- handoff rules to 01/03/04/05/06/07/08.
+
+## Core locked rules
+
+Route 02 handles master product plus selectable variants.
+Variant count is dynamic and comes from the real variant matrix.
+The agent does not create final photos; Ion provides or creates them.
+The agent checks, critiques, maps, ranks and creates rework tasks.
+Buyer-facing text and image text must be German.
+Ion-facing Telegram reports must be Russian.
+HTML shop block may show related products only if truthful and useful.
+No live marketplace action is allowed from this memory stage.
+
+## Safety status
+
+server_write_done: false
+active_bot_patch_done: false
+telegram_restart_done: false
+marketplace_api_called: false
+commit_push_done: false
+secrets_printed: false
+
+## Next allowed action
+
+BUILD_ROUTE_03_LISTING_STUDIO_DEEP_BLUEPRINT_GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
