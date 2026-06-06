@@ -1,0 +1,16 @@
+# V7.3C R08 Pass D Operator Version
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 07 Operator Front.
+Creates continuation helper for Ion when needed.
+Output: operator_front.
+
+Agent 08 Version.
+Tracks route versions and system stage.
+Output: version_record.
+
+Rule:
+Operator front is helper only.
+Autonomous project memory stays in files, archive and pointers.
