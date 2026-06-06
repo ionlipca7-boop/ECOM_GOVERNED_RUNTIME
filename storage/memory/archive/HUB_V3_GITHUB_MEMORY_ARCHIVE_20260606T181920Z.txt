@@ -1,0 +1,120 @@
+# ECOM OS V7.3C — Route 01/02 Corrections: RU Output, Dynamic Variants, HTML Shop Links
+
+Status: ROUTE_01_02_CORRECTIONS_SAVED
+Mode: GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY_NO_COMMIT_NO_PUSH
+Base latest Route 02 checkpoint: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T181131Z.txt
+
+## 1. Russian Telegram output rule
+
+All Telegram operator-facing content for Ion must be in Russian:
+- menu text;
+- product cards;
+- missing data reports;
+- readiness reports;
+- agent status cards;
+- approval packets;
+- route 07 decision cards;
+- route 08 system/memory reports.
+
+Internal code and schema fields may remain English.
+Buyer-facing eBay listing text remains German.
+Every German buyer-facing text must have a Russian preview/explanation for Ion before approval.
+
+This applies to Route 01, Route 02 and later all 8 routes.
+
+## 2. Dynamic variants correction
+
+The screenshot with 5 variants is only an example.
+Route 02 must support dynamic variant_count:
+- 2 variants;
+- 3 variants;
+- 5 variants;
+- 7 variants;
+- more if marketplace rules allow.
+
+No agent may assume exactly 5 variants.
+variant_count must come from the real variant matrix.
+
+## 3. HTML shop / related products block
+
+Route 01 and Route 02 must include a listing HTML block when safe related products exist.
+
+Purpose:
+- show related products;
+- guide buyer to Ion's eBay shop;
+- show compatible accessories;
+- show upgrades, bundles, replacements or alternatives;
+- make it easy for buyer to open the related product or shop.
+
+Applies to:
+- Route 01 simple listing;
+- Route 02 variant listing;
+- Route 03 Listing Studio later.
+
+Rules:
+- buyer-facing block is German;
+- Ion preview is Russian;
+- only truthful compatibility;
+- no broken links;
+- no confusing the main product;
+- no related product unless it has a reason: accessory, compatible, upgrade, replacement, bundle, alternative, shop category.
+
+New shared agent:
+listing_html_cross_sell_agent
+
+Used by:
+- route_01_new_product
+- route_02_variant_product
+- route_03_listing_studio later
+
+Outputs:
+- shop_link_block
+- related_products_block
+- compatible_products_block
+- html_description_with_cross_sell
+- cross_sell_safety_report
+
+## 4. Screenshot preservation status
+
+The screenshot lessons are preserved as text rules in GitHub memory:
+- Route 01 eBay UI field map;
+- Route 02 variant UI map;
+- item specifics and search-signal notes;
+- variant table behavior;
+- photos / price / quantity / ads / product documents sections.
+
+Actual image files were not saved to GitHub by this step because the available memory tool saves text archives and pointers, not image binaries.
+
+Future image-storage step should create:
+- storage/reference_screenshots/ebay_route_01_ui/
+- storage/reference_screenshots/ebay_route_02_variants_ui/
+- screenshot_index.json
+
+Then those files can be committed/pushed only through a separate approved file-ingestion route.
+
+## 5. Route status
+
+Route 01:
+- remains locked at GitHub-memory level;
+- now includes RU Telegram output rule;
+- now includes HTML shop/cross-sell block rule.
+
+Route 02:
+- final passports remain valid;
+- variant_count corrected to dynamic;
+- now includes RU Telegram output rule;
+- now includes HTML shop/cross-sell block rule;
+- still needs final lock review.
+
+## Safety status
+
+server_write_done: false
+active_bot_patch_done: false
+telegram_restart_done: false
+marketplace_api_called: false
+commit_push_done: false
+secrets_printed: false
+
+## Next allowed action
+
+REVIEW_AND_LOCK_ROUTE_02_COMPLETE_WITH_RU_OUTPUT_HTML_CROSSSELL_AND_DYNAMIC_VARIANTS_GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
