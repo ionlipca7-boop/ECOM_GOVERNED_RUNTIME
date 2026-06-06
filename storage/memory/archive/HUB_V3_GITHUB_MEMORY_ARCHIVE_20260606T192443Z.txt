@@ -1,0 +1,13 @@
+# V7.3C R04 Pass E Final Refs
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Route 04 must remember final gate refs:
+E storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T192020Z.txt
+F storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T192026Z.txt
+G2 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T192037Z.txt
+
+Meaning:
+Fields, IDs, auth state and adapter type must be checked before approval path.
+No secret values are stored here.
