@@ -1,0 +1,54 @@
+# ECOM OS V7.3C — Route 05 Finance Inventory Part 04 Finance Core
+
+topic_id: V7_3C_ROUTE_05_FINANCE_INVENTORY
+part_number: 04_FINANCE_CORE
+previous_part: V7_3C_ROUTE_05_FINANCE_INVENTORY_PART_03_STOCK_CORE
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Finance objects
+
+Route 05 finance core must track by date:
+- purchase cost
+- China shipping cost
+- Germany shipping cost
+- packaging cost
+- marketplace fee
+- ad cost
+- refund cost
+- return shipping cost
+- defect reserve
+- return reserve
+- revenue
+- profit before reserve
+- profit after reserve
+
+## Report views
+
+- daily report
+- weekly report
+- monthly report
+- product report
+- SKU report
+- marketplace report
+- return report
+- low profit report
+- dead stock report
+- ELSTER export summary later
+
+## Date rule
+
+Every finance event needs:
+- event_date
+- source
+- source_document_ref
+- product_ref
+- sku_ref
+- amount
+- currency
+- category
+- note
+
+## Rule
+
+No product is profit PASS until purchase cost, shipping, packaging, fees, ads and reserve are considered.
