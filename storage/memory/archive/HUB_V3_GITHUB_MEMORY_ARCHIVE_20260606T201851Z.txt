@@ -1,0 +1,39 @@
+# ECOM OS V7.3C — Route 07 Decision Center Part 04 Agent Team
+
+topic_id: V7_3C_ROUTE_07_DECISION_CENTER
+part_number: 04_AGENT_TEAM
+previous_part: V7_3C_ROUTE_07_DECISION_CENTER_PART_03_GATES
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Agents
+
+01 R07 Inbox Agent
+Receives decision cases from all routes.
+
+02 R07 Case Classifier
+Classifies case as approval, block, report, missing data, repair, wait or finished.
+
+03 R07 Risk Agent
+Marks risk level and required approval strength.
+
+04 R07 Report Agent
+Creates short Russian report for Ion.
+
+05 R07 Button Agent
+Creates safe Telegram buttons and callback names.
+
+06 R07 Approval Marker Agent
+Builds exact approval marker text.
+
+07 R07 Decision Log Agent
+Stores what Ion decided and when.
+
+08 R07 Handoff Agent
+Returns case to correct route.
+
+09 R07 Reminder Agent
+Keeps waiting decisions visible.
+
+10 R07 Safety Gate Agent
+Blocks hidden live, delete, restart, token print or unclear approval.
