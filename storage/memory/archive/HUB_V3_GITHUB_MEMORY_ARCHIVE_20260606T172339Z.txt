@@ -1,0 +1,216 @@
+# ECOM OS V7.3C — ALL 8 BUTTONS RECHECK + RESTRUCTURE AUDIT BEFORE SERVER TRANSFER
+
+Status: RECHECK_DONE_NEEDS_V3_RESTRUCTURE_LAYER_BEFORE_SERVER_TRANSFER
+Approval/context: Ion requested full recheck of all 8 blocks using archive, previous discussions, saved memory, and internet/best-practice review before moving to server.
+Mode: GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY_NO_DELETE_NO_COMMIT_NO_PUSH
+Latest checked archive: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T171810Z.txt
+Parent all-8 spec archive: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T171540Z.txt
+Route 06 deep draft: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T171158Z.txt
+
+## Executive verdict
+
+The current architecture is correct in principle:
+- 8 buttons = 8 independent route-blocks.
+- Each route has its own route_id, callback namespace, case_namespace, screens, agents, reports, schemas, links, safety locks.
+- The blocks are separate but connected through explicit LINKS, not chaotic shared flow.
+- Route 07 is the decision/paused/block dispatcher.
+- Route 08 is system/memory/rules/security, not daily product work.
+- Route 06 is the most detailed and already has a deeper code draft.
+
+However, before server transfer, one more GitHub-memory restructure layer is required:
+V7.3C_ALL_ROUTES_V3_SERVER_READY_CONTRACT.
+
+Reason: current code drafts are good memory drafts, but not yet strict enough as server-ready contracts. They need unified route contracts, validation rules, callback length checks, state machine, shared schemas, and self-review requirements.
+
+## External / internet audit findings to apply
+
+1. Telegram Bot API callback_data must be 1-64 bytes. All V7.3C callbacks must be validated before server transfer.
+2. Telegram callback_query must be handled as an update type; callback handlers must acknowledge/respond cleanly.
+3. If aiogram-style routing is used, independent routers/modules can be attached through include_router/include_routers. This supports the 8 independent route-block design.
+4. Nested routers must not form circular includes. Route modules must never include each other directly.
+5. If python-telegram-bot ConversationHandler-style state machines are used, sequential update processing/state consistency must be respected. Route state must not be corrupted by parallel flow.
+6. eBay Inventory API has separate inventory item, offer, inventory item group, business policies, and publish requirements. Therefore 01/02/03 publish gates must remain separate from dry route logic; variants route 02 must account for inventory item group later, but not now.
+
+## Archive audit result
+
+Latest GitHub memory contains:
+- all 8 routes as memory specs;
+- code draft layer for 01-05 and 07-08;
+- deeper code draft for 06;
+- target server paths;
+- global safety locks;
+- global navigation;
+- links between routes.
+
+Confirmed correct:
+- route separation exists;
+- callback namespaces exist;
+- case namespaces exist;
+- every route has buttons/screens/agents/reports/schemas/links;
+- server transfer is explicitly delayed;
+- active bot patch not done;
+- eBay/restart/delete not done.
+
+## Gaps found before server transfer
+
+GAP 1 — Need strict route contract file
+Current drafts use a pattern, but need one explicit V7.3C route contract defining required fields for every module:
+ROUTE_ID, ROUTE_TITLE, CASE_NAMESPACE, CALLBACKS, BUTTONS, SAFETY_LOCKS, SCREENS, AGENTS, REPORTS, SCHEMAS, LINKS, get_home_screen, get_callback_response, self_review.
+
+GAP 2 — Need callback validator
+All callbacks must be checked:
+- unique globally;
+- 1-64 bytes;
+- start with v73c:;
+- route-specific callbacks match r01/r02/r03/r04/r05/r06/r07/r08;
+- no duplicate callback across routes.
+
+GAP 3 — Need route state model
+Each route needs state fields:
+case_id, route_id, status, current_screen, previous_screen, created_utc, updated_utc, operator_id, pending_decision, links_to_other_routes, safety_lock_state.
+
+Status values:
+NEW, COLLECTING, IN_PROGRESS, NEEDS_REVIEW, READY_FOR_GATE, PAUSED, BLOCKED, CANCELLED, DONE.
+
+GAP 4 — Need cross-route handoff contract
+Links must not be only text. Need handoff objects:
+from_route, to_route, case_id, reason, payload_ref, decision_required, created_utc, allowed_actions.
+
+GAP 5 — Need route 07 as real inbox aggregator
+Route 07 must receive PAUSED/BLOCKED/DECISION_REQUIRED from all routes through decision_card schema.
+
+GAP 6 — Need route 08 as read-only registry
+Route 08 must read route registry, memory pointers, archive index, rules, version, and security locks. It must not mutate routes without approval.
+
+GAP 7 — Need dry self-review output for every route
+Each candidate module must produce self_review with:
+unique callbacks, callback byte limit, all safety locks false, required fields present, required global buttons present, no live actions, no secrets.
+
+GAP 8 — Need server transfer packet to be generated from V3 contract, not from loose drafts.
+The next server packet must materialize strict files only after V3 contract is saved.
+
+## Route-by-route recheck
+
+### 01 Новый товар
+Status: LOGIC PASS, NEEDS V3 CONTRACT WRAP
+Already has purpose, buttons, agents, reports, schemas, links, safety.
+Must add before server:
+- accepted_input_state exact JSON schema;
+- route state machine;
+- handoff to 02 if variants detected;
+- handoff to 05 for stock/finance;
+- handoff to 07 for paused/block;
+- publish_gate object with eBay lock.
+
+### 02 Новый товар с вариантами
+Status: LOGIC PASS, NEEDS V3 CONTRACT WRAP
+Already has variant matrix logic.
+Must add before server:
+- variant_matrix exact schema;
+- per-variant SKU/photo/price/qty validation;
+- eBay inventory item group note for later live phase;
+- block partial publish unless matrix complete;
+- handoff to 05 and 07.
+
+### 03 Листинг-студия
+Status: LOGIC PASS, NEEDS V3 CONTRACT WRAP
+Already has experiment A/B/C and duplicate guard.
+Must add before server:
+- listing_experiment schema;
+- master_product_id / stock_pool / finance_cost link required;
+- duplicate_policy audit object;
+- selected_experiment gate;
+- no clone rule as validator.
+
+### 04 Маркетплейсы / жизнь листингов
+Status: LOGIC PASS, NEEDS V3 CONTRACT WRAP
+Already has status model good/medium/bad/no-data.
+Must add before server:
+- listing_health_status schema;
+- metrics source placeholder;
+- attention_card schema;
+- dry card only, no live revise/hide;
+- handoff weak listing to 03.
+
+### 05 Финансы / склад
+Status: LOGIC PASS, NEEDS V3 CONTRACT WRAP
+Already split 05A stock and 05B finance.
+Must add before server:
+- stock_item and finance_entry exact schemas;
+- reorder_decision object;
+- low-stock threshold rule object;
+- return/defect reserve defaults by category later;
+- no ELSTER submit rule.
+
+### 06 Product Radar / Найти товар
+Status: STRONG PASS, CODE_DRAFT_READY, NEEDS V3 CONTRACT WRAP
+Most detailed route.
+Must add before server:
+- callback byte validation;
+- decision_board_result schema enforcement;
+- watchlist/product_alert storage paths;
+- dry mode no autonomous scraping;
+- source integration gates later.
+
+### 07 Решения / отчёты / агенты
+Status: LOGIC PASS, NEEDS V3 CONTRACT WRAP
+Correctly acts as dispatcher center.
+Must add before server:
+- decision_card exact schema;
+- paused_case schema;
+- approval_wait_record schema;
+- route return contract;
+- no hidden delete.
+
+### 08 Система / память
+Status: LOGIC PASS, NEEDS V3 CONTRACT WRAP
+Correctly acts as read-only admin/system panel.
+Must add before server:
+- route registry view;
+- memory pointer summary;
+- archive index schema;
+- security_lock_state schema;
+- no patch/restart/delete from 08 without approval.
+
+## What must be added now before server transfer
+
+Create one GitHub-memory V3 contract layer:
+V7_3C_ALL_ROUTES_SERVER_READY_CONTRACT_V3
+
+This contract must include:
+1. Global route module interface.
+2. Global callback registry with byte-limit validator.
+3. Global route state model.
+4. Global cross-route handoff model.
+5. Global decision inbox model for Route 07.
+6. Global system/memory read-only model for Route 08.
+7. Exact self_review requirements for all 8 routes.
+8. Server transfer file manifest.
+9. No circular routing rule.
+10. No route owns another route's state rule.
+11. Shared agents may advise, but only route-block owns its case state.
+
+## Final decision
+
+Do not transfer to server yet.
+Do not create active patch yet.
+Do not restart.
+Do not call eBay.
+
+Next safe action:
+CREATE_V7_3C_ALL_ROUTES_SERVER_READY_CONTRACT_V3_IN_GITHUB_MEMORY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+
+After that:
+CREATE_UNIFIED_V7_3C_SERVER_TRANSFER_PACKET_FOR_ALL_8_ROUTES_FROM_V3_CONTRACT_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+
+## Safety status
+
+server_write_done: false
+active_bot_patch_done: false
+telegram_restart_done: false
+ebay_api_called: false
+purchase_action_done: false
+delete_cleanup_done: false
+git_commit_done: false
+git_push_done: false
+secrets_printed: false
