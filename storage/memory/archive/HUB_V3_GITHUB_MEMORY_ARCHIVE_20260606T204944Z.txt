@@ -1,0 +1,62 @@
+# ECOM OS V7.3C — Server Transfer Review After All 8 Routes Locked
+
+Status: SERVER_TRANSFER_REVIEW_PREPARED
+Mode: GITHUB_MEMORY_ONLY
+
+## Verified
+
+Final master index:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T204708Z.txt
+
+Final master status:
+ALL_8_ROUTES_LOCKED_AT_GITHUB_MEMORY_LEVEL
+
+Server active runtime:
+/home/ionlipca7/ecom_governed_runtime
+
+Legacy root:
+/home/ionlipca7/runtime_eco_v1
+Legacy root stays read-only reference.
+
+GitHub auth:
+PASS read-only audit and write-capable token present, no secret printed.
+
+## Server transfer review result
+
+Ready for server transfer review, not for active patch yet.
+
+Allowed next phase:
+- build server transfer packet draft;
+- map GitHub memory route contracts to server folders;
+- create dry file plan;
+- define Telegram button contract;
+- define runtime route registry plan;
+- define validators plan;
+- define no-live safety gates.
+
+Not allowed yet:
+- no bot.py patch;
+- no restart;
+- no marketplace API call;
+- no eBay live/revise/publish/delete;
+- no server delete/cleanup;
+- no secrets print.
+
+## Candidate server zones for later dry transfer review
+
+- storage/route
+- storage/runtime_routes
+- storage/blueprints
+- storage/contracts
+- storage/rules
+- storage/validators
+- storage/telegram
+- storage/marketplace_adapters
+- storage/decision_inbox
+- storage/teacher_memory
+- storage/memory_v2
+- storage/control_room
+
+## Next allowed action
+
+BUILD_V7_3C_SERVER_TRANSFER_PACKET_DRAFT_GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
