@@ -1,0 +1,19 @@
+# V7.3C R06 Ref C Supplier Proof
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Rule:
+Supplier page is evidence source, not final truth.
+
+Route 06 must mark:
+- source link
+- screenshot proof
+- visible price
+- visible options
+- visible shipping note
+- visible reviews or risk notes
+- unknown claims
+
+Output:
+supplier_proof_card
