@@ -1,0 +1,34 @@
+# V7.3C R03 Readiness Gates
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Gates
+
+A source package complete.
+B master_product_id present.
+C stock_pool and finance_cost linked or decision card created.
+D A/B/C experiments created.
+E buyer intent is different where experiment differs.
+F German buyer content passed.
+G Russian Ion preview exists.
+H photo order and image tasks checked.
+I HTML shop block checked.
+J duplicate risk checked.
+K compliance risk checked.
+L comparison report created.
+M best option selected or rework requested.
+N approval packet prepared only.
+O lesson candidate created.
+
+## Block reasons
+
+Missing source package.
+Missing master_product_id.
+Same buyer intent duplicate.
+Mixed language.
+Weak proof.
+Bad photo support.
+Missing finance link.
+Compliance risk.
+Ion decision needed.
