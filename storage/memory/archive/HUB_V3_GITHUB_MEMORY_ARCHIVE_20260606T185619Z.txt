@@ -1,0 +1,16 @@
+# V7.3C R03 After Check Rule
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Rule:
+After Ion chooses a Listing Studio option, the system must create a later check note.
+
+Fields:
+- case_id
+- chosen_option
+- check_after_days
+- result_note
+- lesson_target
+
+Lesson target: Route 08.
