@@ -1,0 +1,40 @@
+# V7.3C R03 Agent Passports 03
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Agent 11 Critic Agent
+Finds weak title, weak value signal, confusing structure, unsupported claims and missing proof.
+Output: critic_report.
+
+## Agent 12 Comparison Agent
+Compares A, B and C.
+Criteria: search strength, truth, German quality, duplicate risk, photo support, margin fit, handoff need.
+Output: experiment_comparison_report.
+
+## Agent 13 Approval Packet Agent
+Creates approval packet for selected option.
+Rule: packet only, no automatic action.
+Output: studio_approval_packet.
+
+## Agent 14 Lesson Agent
+Saves experiment lesson for Route 08 and future Route 01, 02, 04 and 06.
+Output: listing_studio_lesson.
+
+## Output contracts
+
+source_package
+experiment_plan
+listing_experiment_A
+listing_experiment_B
+listing_experiment_C
+language_quality_report
+html_shop_block_variant
+photo_order_review
+duplicate_risk_report
+compliance_risk_report
+critic_report
+experiment_comparison_report
+selected_experiment
+studio_approval_packet
+listing_studio_lesson
