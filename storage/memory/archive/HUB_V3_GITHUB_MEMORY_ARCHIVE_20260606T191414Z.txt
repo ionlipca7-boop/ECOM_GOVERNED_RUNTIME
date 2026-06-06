@@ -1,0 +1,14 @@
+# V7.3C R04 Agent 01 02
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 01 Registry Agent.
+Keeps references by SKU, listing id, product id, source route and platform.
+
+Agent 02 Snapshot Agent.
+Creates a read-only state view for one listing.
+
+Outputs:
+registry_record
+snapshot_record
