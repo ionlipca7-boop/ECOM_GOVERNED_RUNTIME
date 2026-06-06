@@ -1,0 +1,30 @@
+# V7.3C Code Draft 03B Handoff Decision Schema
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Handoff fields:
+- handoff_id
+- from_route
+- to_route
+- case_id
+- product_id
+- sku
+- listing_id
+- reason_ru
+- payload_ref
+- risk_level
+- status
+
+Decision fields:
+- case_id
+- source_route
+- case_type
+- summary_ru
+- required_decision
+- button_plan
+- full_ref
+- state
+
+Rule:
+Route 07 records decision. Source route continues after correct gate.
