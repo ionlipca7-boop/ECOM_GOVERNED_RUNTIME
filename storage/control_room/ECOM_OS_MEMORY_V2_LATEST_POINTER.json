@@ -24,5 +24,14 @@
     "MEMORY_V2_POLICY_READY": "PASS",
     "FULL_MEMORY_V2_FILE_CREATED": "YES"
   },
-  "next_allowed_action": "VERIFY_MEMORY_V2_FILES_AND_PREPARE_STAGE_REVIEW_NO_COMMIT_NO_PUSH"
+  "next_allowed_action": "CONTINUE_MAIN_PROJECT_FROM_V7_3B_TELEGRAM_MENU",
+  "updated_utc": "20260606T092918Z",
+  "last_project_checkpoint": {
+    "status": "PASS_V7_3B_TELEGRAM_MENU_CHECKPOINT",
+    "branch": "memory-sync-wow-6pc-agent-playbook-20260501_110213",
+    "commit": "6158ee5",
+    "summary": "V7.3B Telegram menu active patch, controlled restart, visual verification, commit and push completed.",
+    "active_bot_target": "/home/ionlipca7/ecom_governed_runtime/storage/runtime_bridge/legacy_bot_staging_20260602T153604Z/bot.py",
+    "new_pid": "3642736"
+  }
 }

@@ -77,3 +77,39 @@ Do not delete old archives.
 Verify these Memory V2 files.
 Then prepare staged review.
 No commit/push until Ion approval.
+
+---
+
+## V7.3B Telegram menu checkpoint — PASS
+
+Updated UTC: 20260606T092918Z
+
+Confirmed:
+- MEMORY_V2=PASS
+- V7_3B_ACTIVE_PATCH=PASS
+- CONTROLLED_RESTART=PASS
+- TELEGRAM_VISUAL_VERIFY=PASS
+- V7_3B_COMMIT=PASS
+- V7_3B_PUSH=PASS
+
+Git:
+- Branch: memory-sync-wow-6pc-agent-playbook-20260501_110213
+- Commit: 6158ee5 Record V7.3B Telegram menu checkpoint
+
+Runtime:
+- Active bot target: /home/ionlipca7/ecom_governed_runtime/storage/runtime_bridge/legacy_bot_staging_20260602T153604Z/bot.py
+- New PID after restart: 3642736
+- V7.3B menu visible in Telegram.
+- 8 main buttons visible and safe screens open.
+
+Safety:
+- eBay gate CLOSED.
+- delete gate CLOSED.
+- no secrets printed.
+- old dirty repo files remain outside V7.3B checkpoint.
+
+Next safe route:
+- Continue main project from V7.3B Telegram operator menu.
+- Use Memory V2 first.
+- Do not clean/commit/push unrelated dirty files without separate gate.
+
