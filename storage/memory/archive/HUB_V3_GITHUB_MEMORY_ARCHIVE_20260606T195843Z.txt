@@ -1,0 +1,35 @@
+# ECOM OS V7.3C — Route 06 Product Radar Part 01 Scope
+
+topic_id: V7_3C_ROUTE_06_PRODUCT_RADAR
+part_number: 01_SCOPE
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Identity
+
+Button: 06 🔎 Product Radar
+route_id: route_06_product_radar
+callback: v73c:route:06_product_radar
+case_namespace: cases/v73c/route_06_product_radar
+
+## Purpose
+
+Route 06 finds and evaluates product opportunities before Ion buys or lists them.
+It is not a random product finder.
+It is a decision system for demand, competition, margin, stock risk, compliance risk and listing angle.
+
+## Legal rule
+
+Use official APIs, allowed pages, manual evidence, public data and Ion-provided sources.
+No illegal bypass, no account-risk scraping, no hidden automation against site rules.
+
+## Main outputs
+
+- product_opportunity_card
+- product_radar_score
+- supplier_evidence_card
+- demand_signal_card
+- competition_card
+- margin_risk_card
+- compliance_risk_card
+- Ion decision card
