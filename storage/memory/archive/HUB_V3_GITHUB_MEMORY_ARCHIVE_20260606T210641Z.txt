@@ -1,0 +1,22 @@
+# V7.3C Code Draft 03A Agent Schema
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent passport fields:
+- agent_id
+- route_id
+- display_name_ru
+- purpose_ru
+- owns_state
+- inputs
+- outputs
+- rules
+- blocks
+- handoffs
+- telegram_ru_output
+- buyer_language_rule
+- safety_notes
+
+Rule:
+Each route agent must have clear input, output and block condition.
