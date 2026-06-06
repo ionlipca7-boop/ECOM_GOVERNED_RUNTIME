@@ -1,0 +1,15 @@
+# V7.3C R07 Pass A Inbox Classify
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 01 Inbox.
+Receives cases from all routes.
+Output: decision_case.
+
+Agent 02 Classify.
+Marks case type: approve, wait, info, block, repair, done.
+Output: case_type.
+
+Rule:
+Ion sees Russian summary only.
