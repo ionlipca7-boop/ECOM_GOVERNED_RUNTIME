@@ -1,0 +1,32 @@
+# V7.3C R01/R02/R03 Shared Listing Rules From Route 03 Audit
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Applies to routes
+
+Route 01 simple listing.
+Route 02 variant listing.
+Route 03 listing studio.
+
+## Shared rules
+
+1. HTML links inside eBay description must be checked before approval.
+2. Shop and related-product links must be safe, useful and buyer-relevant.
+3. No duplicate listing logic.
+4. Same product plus same buyer intent means improve existing plan, not create a clone.
+5. Any different listing angle must have a clear reason.
+6. Competitor or market comparison is read-only and only for decision support.
+7. Photo proof must support the chosen value signal.
+8. Buyer-facing content must be German.
+9. Ion-facing Telegram preview must be Russian.
+
+## Route impact
+
+Route 01 uses these rules before simple publish gate.
+Route 02 uses these rules before variant group gate.
+Route 03 uses these rules before choosing best A/B/C experiment.
+
+## Result
+
+Route 03 audit improvements are now marked as shared rules for 01/02/03.
