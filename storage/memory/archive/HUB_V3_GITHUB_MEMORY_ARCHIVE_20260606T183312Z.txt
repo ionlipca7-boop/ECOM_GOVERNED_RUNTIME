@@ -1,0 +1,39 @@
+# ECOM OS V7.3C — HTML Shop Block Part 01 Scope
+
+topic_id: V7_3C_HTML_SHOP_BLOCK
+part_number: 01_SCOPE
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Purpose
+
+Routes 01 and 02 must support a German buyer-facing HTML shop block inside eBay descriptions.
+Route 03 will later optimize and test this block.
+
+The block helps buyer see:
+- Ion shop;
+- compatible products;
+- accessories;
+- replacements;
+- upgrades;
+- bundles;
+- alternatives;
+- selected extra products from the shop.
+
+## Language
+
+Buyer-facing content: German only.
+Ion Telegram preview: Russian only.
+Internal fields may be technical.
+
+## Core rule
+
+The block is allowed only if it is useful, truthful and not confusing.
+It must support the main product, not distract from it.
+
+## Safety
+
+No server write.
+No active patch.
+No restart.
+No marketplace call.
