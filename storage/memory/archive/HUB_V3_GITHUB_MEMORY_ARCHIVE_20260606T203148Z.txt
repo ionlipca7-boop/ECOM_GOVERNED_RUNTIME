@@ -1,0 +1,12 @@
+# V7.3C R07 Lock Detail 04 Card State
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Card state rule:
+After Ion chooses an option, the case card must change state.
+
+States:
+open, wait, yes, no, block, done.
+
+Old decision controls must not remain active after a choice.
