@@ -1,0 +1,11 @@
+# V7.3C R05 Ref A Collector
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Rule:
+Route 05 needs a collector for orders, returns, costs, payouts, reports and stock counts.
+
+Each sales site needs its own adapter.
+
+No action is performed here.
