@@ -1,0 +1,31 @@
+# ECOM OS V7.3C — Route 03 Listing Studio Part 05 Handoffs
+
+topic_id: V7_3C_ROUTE_03_LISTING_STUDIO
+part_number: 05_HANDOFFS
+previous_part: V7_3C_ROUTE_03_LISTING_STUDIO_PART_04_RULES
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Receives from
+
+Route 01: simple product draft needs better listing angle.
+Route 02: variant product needs better group description, variant guide or related-products block.
+Route 04: weak or medium live listing needs improvement.
+Route 05: bad profit, high ads, returns or dead stock signal.
+Route 06: product opportunity needs listing angle before test.
+Route 07: decision inbox sends paused/blocked cases.
+Route 08: lessons and old experiments.
+
+## Sends to
+
+Route 01/02: if base product data is missing.
+Route 04: after future approved update/publish and verification.
+Route 05: if price, stock or margin decision needed.
+Route 06: if market proof or supplier comparison is missing.
+Route 07: if Ion decision/approval/block exists.
+Route 08: lessons, experiment results and rules.
+
+## No hidden actions
+
+All handoffs use handoff objects.
+Route 03 does not change another route state directly.
