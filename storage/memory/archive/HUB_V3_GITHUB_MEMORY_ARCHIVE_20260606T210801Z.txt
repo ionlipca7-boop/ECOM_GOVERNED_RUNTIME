@@ -1,0 +1,46 @@
+# V7.3C GitHub Code Contract Drafts — Part 07 Server Alignment No Write
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+Server write: false
+
+## Server zones seen read-only
+
+storage/route
+storage/runtime_routes
+storage/blueprints
+storage/contracts
+storage/rules
+storage/validators
+storage/telegram
+storage/marketplace_adapters
+storage/decision_inbox
+storage/teacher_memory
+storage/memory_v2
+storage/control_room
+storage/inventory
+storage/finance
+storage/research
+storage/performance
+storage/evidence
+
+## Future mapping idea
+
+GitHub route contracts later map to storage/contracts and storage/route.
+Telegram button map later maps to storage/telegram.
+Runtime registry later maps to storage/runtime_routes.
+Validators later map to storage/validators.
+Memory contracts later map to storage/memory_v2 and storage/control_room.
+Marketplace adapters later map to storage/marketplace_adapters.
+
+## Quarantine rule
+
+Legacy root stays read-only reference.
+Old or unclear server files are not modified.
+If old logic conflicts with V7.3C contracts, mark it as quarantine/reference before any future patch.
+
+## Next before server
+
+Create actual reviewed GitHub file drafts from these contracts.
+Then run dry review.
+Only after separate approval, prepare server transfer packet.
