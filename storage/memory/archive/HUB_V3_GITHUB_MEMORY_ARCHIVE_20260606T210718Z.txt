@@ -1,0 +1,40 @@
+# V7.3C GitHub Code Contract Drafts — Part 04 Routes 01-04
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Route 01 contract draft
+
+id: route_01_new_product
+kind: simple_product_listing
+inputs: Ion link/photo/text/receipt/idea
+outputs: product_case, listing_draft, preview_card, handoff
+required agents: intake, source_proof, category, title, specifics, German content, photo critic, price link, html block, compliance, final gate
+blocks: missing facts, weak photo proof, unsafe category, duplicate risk, missing stock/cost, missing approval
+
+## Route 02 contract draft
+
+id: route_02_variant_product
+kind: variant_listing
+inputs: product with variant options
+outputs: variant_matrix, per_sku_plan, group_preview_card, handoff
+required agents: variant intake, matrix, sku mapper, stock link, price, photo map, German group text, html block, duplicate guard, final gate
+blocks: missing SKU, unclear variants, missing per-variant photo, stock mismatch, approval missing
+
+## Route 03 contract draft
+
+id: route_03_listing_studio
+kind: listing_experiment
+inputs: source package from 01/02/04/06 or existing listing/draft
+outputs: experiment_A, experiment_B, experiment_C, comparison, approval packet, lesson
+required agents: source loader, planner, A/B/C agents, language, html, photo critic, duplicate, compliance, critic, comparison, packet, lesson
+blocks: same buyer intent clone, missing source package, missing stock/finance link, mixed language, no approval
+
+## Route 04 contract draft
+
+id: route_04_marketplace_lifecycle
+kind: listing_lifecycle
+inputs: live listing ref, snapshot, route refs, performance/status notes
+outputs: state label, Ion card, route handoff, lesson
+required agents: registry, snapshot, state label, Ion card, improve link, stock link, money link, recommendation, handoff, lesson
+blocks: missing listing ref, missing SKU, unclear state, no data source
