@@ -1,0 +1,32 @@
+# ECOM OS V7.3C Master Menu — Part 03B Route 04
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Route 04 — Жизнь листингов
+
+Role: marketplace lifecycle center.
+Purpose: watch published listings and show Ion only useful signals.
+
+Main flow:
+1 keep listing registry;
+2 create read-only listing snapshot;
+3 label state: no data, good, watch, action needed;
+4 send Russian attention card only when useful;
+5 route weak content to Route 03;
+6 route stock or money issue to Route 05;
+7 route decision to Route 07;
+8 route lesson to Route 08.
+
+Logic:
+Good listing = silent.
+Medium listing = summary.
+Weak listing = attention card.
+
+Agents:
+Registry, Snapshot, State Label, Ion Card, Improve Link, Stock Link, Money Link, Recommendation, Handoff, Lesson.
+
+Important rules:
+Route 04 observes and does not spam Ion.
+Before any future final path, IDs, policies, location, stock, price, content, photos, safety data and auth state must be checked by tools.
+No live action from memory stage.
