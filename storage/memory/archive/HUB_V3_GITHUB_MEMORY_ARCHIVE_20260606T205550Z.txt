@@ -1,0 +1,41 @@
+# ECOM OS V7.3C Master Menu — Part 04 Routes 05 and 06
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Route 05 — Финансы / склад
+
+Role: truth center for stock and money.
+Purpose: know what was bought, what is available, what sold, what returned, what cost money and what created profit.
+
+Two cores:
+05A Stock core: SKU, variant, stock pool, bought, sold, returned, reserved, available, damaged, lost, physical place, marketplace quantity links.
+05B Finance core: purchase, shipping, packaging, marketplace cost, ads, refund, return, reserve, revenue, result before/after reserve.
+
+Agents:
+Purchase Intake, Site Collector, Stock Ledger, Variant Stock, Return Agent, Cost View, Result View, Stock Alert, Reorder View, Report View, Tax Summary, Handoff.
+
+Important rules:
+One SKU has one shared stock truth.
+If item is sold anywhere, shared stock pool is reduced.
+Other routes request data from Route 05, not overwrite it.
+Russian Telegram cards show stock/money actions for Ion.
+
+## Route 06 — Product Radar
+
+Role: legal product opportunity radar.
+Purpose: evaluate product before Ion buys or builds listing.
+
+Main checks:
+demand, competition, price range, supplier proof, margin after reserve, stock risk, return risk, defect risk, compliance risk, German listing fit, bundle/variant potential.
+
+Tools and sources:
+eBay read-only search, German query plan, supplier proof, screenshots, public evidence, Ion notes, marketplace adapters later.
+
+Agents:
+Intake, Query Planner, Demand Review, Market Compare, Supplier Proof, Margin Risk, Safety Fit, Offer Structure, Ion Card, Lesson.
+
+Important rules:
+Supplier page is evidence, not final truth.
+Marketplace comparison is read-only.
+Route 06 recommends; Ion decides before buying or listing.
