@@ -1,0 +1,258 @@
+# ECOM OS V7.3C — Route 06 Active Patch Approval Packet DRAFT
+
+Status: DRAFT_CREATED_NO_ACTIVE_PATCH
+Approval marker: APPROVE_MERGE_ROUTE_06_DETAILED_BLUEPRINT_INTO_V7_3C_ACTIVE_PATCH_APPROVAL_PACKET_DRAFT_NO_PATCH_NO_RESTART_NO_EBAY
+Mode: APPROVAL_PACKET_DRAFT_ONLY_NO_PATCH_NO_RESTART_NO_EBAY_NO_DELETE_NO_COMMIT_NO_PUSH
+Reviewed source: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T170846Z.txt
+Route: 06 Product Radar / Найти товар
+
+## Purpose
+
+Prepare an approval packet draft for implementing route_06_product_radar into ECOM OS V7.3C Telegram route system. This packet does not modify active bot.py and does not restart Telegram.
+
+Route 06 purpose: Market Intelligence Radar for finding and evaluating product opportunities. It must support Manual Mode and Autonomous Radar Mode, but first implementation must be dry/stub-only.
+
+## Active Patch Status
+
+active_patch_done: false
+active_bot_py_changed: false
+telegram_restart_done: false
+ebay_api_called: false
+purchase_action_done: false
+delete_cleanup_done: false
+git_commit_done: false
+git_push_done: false
+secrets_printed: false
+
+## Proposed Files For Future Candidate Phase
+
+These are planned files only. They are not created by this packet unless a later candidate-code marker allows it.
+
+1. storage/runtime_bridge/candidates/V7_3C_ROUTE_06_PRODUCT_RADAR/route_06_product_radar_candidate.py
+Purpose: isolated dry candidate module for Route 06 screens, callbacks, handler contracts, and stub outputs.
+
+2. storage/runtime_bridge/candidates/V7_3C_ROUTE_06_PRODUCT_RADAR/route_06_product_radar_schema.json
+Purpose: schema definitions for radar_signal, product_alert, watchlist_item, decision_board_result, lesson_record.
+
+3. storage/runtime_bridge/candidates/V7_3C_ROUTE_06_PRODUCT_RADAR/route_06_product_radar_review.json
+Purpose: dry review output after syntax/schema checks.
+
+4. storage/approval/V7_3C_ROUTE_06_ACTIVE_PATCH_APPROVAL_PACKET_RU.md
+Purpose: later human-readable packet before any active bot.py write.
+
+5. storage/control_room/V7_3C_ROUTE_06_PRODUCT_RADAR_POINTER.json
+Purpose: pointer for Route 06 candidate/review/next allowed action.
+
+## Telegram Callback Contract
+
+Main route callback:
+- v73c:route:06_product_radar
+
+Subbutton callbacks:
+- v73c:r06:auto_find
+- v73c:r06:check_product
+- v73c:r06:watchlist
+- v73c:r06:product_alerts
+- v73c:r06:competitor_analysis
+- v73c:r06:compare_suppliers
+- v73c:r06:add_to_test
+- v73c:r06:reject_product
+- v73c:r06:save_lesson
+- v73c:r06:back
+- v73c:r06:home
+- v73c:r06:stop
+
+Global callbacks must respect V7.3C global navigation contract:
+- Back: previous screen inside route only.
+- Home: main menu only; unfinished case -> PAUSED -> route 07.
+- Stop: asks confirmation; cancel or pause; no physical delete.
+
+## Telegram Screen Contract
+
+Screen 0 — Route 06 Home
+Title: 🧭 Product Radar / Найти товар
+Shows: purpose, current mode options, last alerts/watchlist count when available, safety note.
+Buttons:
+🔍 Найти автоматически
+🔎 Проверить товар
+📋 Watchlist
+🚨 Product Alerts
+🏪 Анализ конкурентов
+🏭 Сравнить поставщиков
+🧪 Добавить в тест
+❌ Отклонить товар
+📚 Сохранить урок
+⬅️ Назад
+🏠 Домой
+⛔ Стоп
+
+Screen 1 — Manual Check Product
+Purpose: Ion sends link/photo/name/supplier idea. Stub response must explain accepted input types and create radar_signal stub only.
+No external calls in first dry candidate.
+
+Screen 2 — Autonomous Radar
+Purpose: show that autonomous mode is planned but dry-locked until data-source integrations and schedule gate exist.
+No automated scraping/search in first dry candidate.
+
+Screen 3 — Watchlist
+Purpose: show watchlist placeholder and schema path.
+No live marketplace action.
+
+Screen 4 — Product Alerts
+Purpose: show NEW PRODUCT ALERT output contract and latest saved alerts placeholder.
+
+Screen 5 — Competitor Analysis
+Purpose: planned analysis for eBay/Amazon competitors. First dry version returns required data fields only.
+
+Screen 6 — Compare Suppliers
+Purpose: planned supplier comparison. First dry version returns required fields only.
+
+Screen 7 — Add To Test
+Purpose: convert Decision Board output into test candidate only. No purchase.
+
+Screen 8 — Reject Product
+Purpose: record reject decision/lesson. No delete.
+
+Screen 9 — Save Lesson
+Purpose: create lesson_record stub. No rule update without separate gate.
+
+## Data Schemas Draft
+
+radar_signal:
+- signal_id
+- created_utc
+- mode: manual | autonomous
+- input_type: link | photo | screenshot | name | supplier_listing | idea
+- source
+- source_url
+- raw_title
+- category_guess
+- supplier_price
+- moq
+- shipping
+- photos_count
+- primary_idea
+- status: NEW | NEEDS_REVIEW | IN_ANALYSIS | DECISION_READY | PAUSED | REJECTED
+
+product_alert:
+- alert_id
+- signal_id
+- product
+- source
+- link
+- supplier_price
+- moq
+- shipping
+- category
+- problem_solved
+- german_search_terms
+- marketplace_proof
+- competition
+- profit_before_reserve
+- return_reserve
+- defect_reserve
+- profit_after_reserve
+- value_signals
+- listing_idea
+- offer_structure
+- risks
+- decision
+- next_action
+
+watchlist_item:
+- watch_id
+- signal_id
+- product
+- reason
+- watch_until
+- status: WATCH_7_DAYS | WATCH_30_DAYS | NEEDS_MORE_DATA
+- next_check
+- notes
+
+decision_board_result:
+- decision_id
+- signal_id
+- demand_status
+- market_proof_status
+- profit_status
+- critic_flags
+- board_decision: STRONG_TEST | TEST_SMALL_LOT | WATCH_7_DAYS | WATCH_30_DAYS | NEEDS_MORE_DATA | REJECT | REPLACE_UPGRADE
+- decision_reason
+- next_action
+- created_utc
+
+lesson_record:
+- lesson_id
+- source_route: route_06_product_radar
+- signal_id
+- decision_id
+- what_was_expected
+- what_happened
+- what_worked
+- what_failed
+- rule_update_candidate
+- teacher_review_required
+
+## Dry Handler Contract
+
+First candidate handlers must be stub-only:
+- show route screen;
+- accept manual product signal text/photo/link in design only;
+- generate static sample NEW PRODUCT ALERT for Desk Cable Organizer Kit only in dry mode;
+- show watchlist/product alert placeholders;
+- show safety locks;
+- never call eBay;
+- never buy;
+- never scrape autonomously;
+- never delete;
+- never print secrets.
+
+## First Dry Test Product
+
+Desk Cable Organizer Kit / Kabelmanagement Set Schreibtisch.
+
+Use as dry test because:
+- low legal risk;
+- small/light;
+- supports before/after photo logic;
+- supports bundle/variation/replacement/premium offer structure;
+- good for testing 0-12 chain without live action.
+
+Expected dry decision: TEST_SMALL_LOT / WATCH, not purchase.
+
+## Rollback Plan For Later Active Patch
+
+This packet does not patch. For later active patch packet, rollback must include:
+1. exact active file backup path before bot.py write;
+2. candidate module kept separate;
+3. compile check before and after;
+4. restore backup if compile fails;
+5. restart gate remains closed after patch;
+6. no eBay credentials touched;
+7. no secrets logged.
+
+## Approval Requirements For Later Steps
+
+Next candidate-code step requires marker:
+APPROVE_BUILD_ROUTE_06_PRODUCT_RADAR_CANDIDATE_CODE_DRY_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+
+Active bot patch requires separate future marker:
+APPROVE_APPLY_ROUTE_06_PRODUCT_RADAR_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+
+Restart requires separate future marker:
+APPROVE_CONTROLLED_RESTART_AFTER_ROUTE_06_PRODUCT_RADAR_PATCH_NO_EBAY
+
+Any eBay live/write action requires separate eBay marker and is not part of Route 06 dry implementation.
+
+## Packet Verdict
+
+Route 06 Active Patch Approval Packet Draft: PASS_CREATED
+Ready for candidate-code dry build: YES, after explicit marker.
+Ready for active patch: NO.
+Ready for restart: NO.
+Ready for autonomous live sourcing: NO.
+Ready for eBay/purchase action: NO.
+
+## Next allowed action
+
+BUILD_ROUTE_06_PRODUCT_RADAR_CANDIDATE_CODE_DRY_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
