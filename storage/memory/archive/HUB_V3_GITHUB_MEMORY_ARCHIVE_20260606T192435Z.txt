@@ -1,0 +1,18 @@
+# V7.3C R04 Pass D Decision Lesson
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 08 Recommendation.
+Purpose: suggest keep, watch, improve, stock check, finance check or Ion decision.
+Output: r04_recommendation.
+
+Agent 09 Handoff.
+Purpose: create route handoff to 03, 05, 07 or 08.
+Output: r04_handoff.
+
+Agent 10 Lesson.
+Purpose: save listing-life lesson for Route 08.
+Output: r04_lesson.
+
+Telegram output: Russian.
