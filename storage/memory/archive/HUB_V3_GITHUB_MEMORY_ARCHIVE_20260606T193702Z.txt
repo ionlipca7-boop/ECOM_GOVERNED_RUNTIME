@@ -1,0 +1,30 @@
+# ECOM OS V7.3C — Route 05 Finance Inventory Part 06 Handoffs
+
+topic_id: V7_3C_ROUTE_05_FINANCE_INVENTORY
+part_number: 06_HANDOFFS
+previous_part: V7_3C_ROUTE_05_FINANCE_INVENTORY_PART_05_AGENT_TEAM
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Receives from
+
+Route 01: simple product cost, receipt, quantity and listing price.
+Route 02: variant matrix, per-SKU cost, quantity and price.
+Route 03: listing experiment price and cost decisions.
+Route 04: sales, returns, ad and listing-life signals.
+Route 06: product opportunity and reorder signal.
+Route 07: Ion decision.
+Route 08: rules and lessons.
+
+## Sends to
+
+Route 03: bad margin, weak listing, dead stock improvement.
+Route 04: lifecycle watch for active listings.
+Route 06: reorder or new supplier/product opportunity.
+Route 07: Ion decision card.
+Route 08: finance/stock lessons.
+
+## Rule
+
+Route 05 keeps stock and finance truth.
+Other routes use Route 05 data but do not overwrite it directly.
