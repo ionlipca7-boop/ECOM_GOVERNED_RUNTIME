@@ -1,0 +1,62 @@
+# ECOM OS V7.3C — Route 03 Locked After Agent Passports
+
+Status: ROUTE_03_LOCKED_COMPLETE_AT_GITHUB_MEMORY_LEVEL
+Mode: GITHUB_MEMORY_ONLY
+
+## Base checkpoints
+
+Route 03 deep blueprint index:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T184045Z.txt
+
+Route 03 master blueprint recheck/addendum index:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T184453Z.txt
+
+Route 03 agent passports index:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T184803Z.txt
+
+## Route 03 lock result
+
+Route 03 is locked for GitHub-memory stage.
+
+It now includes:
+- Listing Studio deep blueprint;
+- A/B/C controlled experiment logic;
+- source package contract;
+- experiment identity contract;
+- buyer-intent differentiation rule;
+- stock and finance link rule;
+- marketplace listing link rule;
+- 14 agent passports;
+- output contracts;
+- readiness gates;
+- handoff rules to 01/02/04/05/06/07/08;
+- German-only buyer content;
+- Russian-only Telegram output for Ion;
+- HTML shop block optimization role;
+- image critique/order role;
+- duplicate and compliance guards;
+- lesson export to Route 08.
+
+## Core locked rules
+
+Route 03 is a Listing Studio, not a new physical product route.
+It works with Route 01 product, Route 02 product, published listing, archived listing, draft, weak listing, or Route 06 opportunity.
+It creates controlled listing experiments A/B/C.
+It is not a clone machine.
+A valid experiment needs different buyer intent, offer structure, or listing angle.
+Every experiment stays connected to master_product_id, stock_pool, finance_cost and marketplace_listing_id when available.
+Route 03 prepares approval packets only.
+No live marketplace action is allowed from this memory stage.
+
+## Safety status
+
+server_write_done: false
+active_bot_patch_done: false
+telegram_restart_done: false
+marketplace_api_called: false
+commit_push_done: false
+secrets_printed: false
+
+## Next allowed action
+
+BUILD_ROUTE_04_MARKETPLACE_LIFECYCLE_DEEP_BLUEPRINT_GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
