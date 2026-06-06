@@ -1,0 +1,12 @@
+# V7.3C R04 Source Ref B
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Official reference group:
+eBay Marketing API.
+
+Route impact:
+Route 04 should later know ad and promotion state as a separate review area.
+
+No action is performed here.
