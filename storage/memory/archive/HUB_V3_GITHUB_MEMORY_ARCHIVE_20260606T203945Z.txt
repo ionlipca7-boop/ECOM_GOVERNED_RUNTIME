@@ -1,0 +1,16 @@
+# V7.3C R08 Pass A Lesson Rule
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 01 Lesson Intake.
+Receives lessons from routes 01 to 07.
+Output: lesson_record.
+
+Agent 02 Rule Registry.
+Stores stable route rules and contracts.
+Output: rule_record.
+
+Rule:
+Lesson needs source route and reason.
+Stable rule goes to memory, not only chat text.
