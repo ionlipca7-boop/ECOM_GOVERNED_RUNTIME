@@ -1,0 +1,320 @@
+# ECOM OS V7.3C — ROUTE 01 Product Search Chat Lessons for Title, Value Signal and Profit
+
+Status: ROUTE_01_EXTENDED_FROM_UPLOADED_PRODUCT_SEARCH_CHAT
+Mode: GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY_NO_DELETE_NO_COMMIT_NO_PUSH
+Base Route 01 UI field map: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T174857Z.txt
+Base Route 01 final passports: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T174129Z.txt
+Source uploaded file: Вставленный текст.txt — Product Search / Market Intelligence Chain V2.1R conversation.
+
+## Purpose
+
+Ion uploaded the full product-search chat. This archive extracts only the parts that must strengthen Button 01 / Route 01 "Новый товар". The same file will be reused later for Route 02 and Route 06, but this checkpoint is specifically Route 01.
+
+Route 01 must use Product Radar lessons when turning a single product into an eBay-first listing draft:
+- not only title generation;
+- not only description generation;
+- full value-signal construction;
+- profit after return/defect reserve;
+- buyer problem and search intent;
+- offer structure awareness;
+- memory/lesson feedback loop.
+
+## Key extraction from uploaded chat for Route 01
+
+The uploaded chat defines ECOM OS Market Intelligence Chain V2.1R with Return Reserve and Product Radar logic. Useful Route 01 parts are:
+
+1. Return Reserve rule.
+A product is not profitable until it survives return reserve and defect reserve.
+Route 01 pricing must calculate profit before reserve and profit after reserve before any publish gate.
+
+2. Value Signal rule.
+Title alone is not enough. A listing becomes strong through:
+Title + Item Specifics + Photos + Description + Package Truth + Delivery / Ads logic.
+Route 01 must generate all of these as one connected system, not as isolated text blocks.
+
+3. UD24 title/value lesson.
+Technical products need confirmed value words and product function words, not generic low-value titles.
+Formula:
+Brand/Model if confirmed + Product Class + Premium Feature + Value Function + Buyer Intent + Protocols if true.
+This should guide R01 German Title SEO Agent and Search Demand Aspects Agent.
+
+4. Buyer search logic.
+Route 01 should use two input types from Product Radar:
+Problem Search and Product Search.
+Problem Search asks what pain buyer has.
+Product Search asks what exact product buyer searches.
+For Route 01, these signals are used in title, item specifics, description and photo plan.
+
+5. Offer Structure awareness.
+Even for a single product, Route 01 must check whether it is actually:
+- single listing;
+- variation candidate;
+- bundle candidate;
+- replacement listing candidate;
+- premium/niche listing candidate;
+- watch-only candidate.
+If it is not truly one simple product, Route 01 hands off to Route 02 or Route 03/06/07.
+
+6. No duplicate listing rule.
+Each listing must have distinct buyer intent. If a proposed Route 01 listing duplicates an existing product/listing, it must go to Route 03 Listing Studio or Route 07 decision, not create a clone.
+
+7. Supplier evidence rule.
+Route 01 must not trust supplier page blindly. It must preserve supplier claims as unverified until evidence exists: screenshots, photos, specs, receipt, reviews, or Ion confirmation.
+
+8. Manual input route.
+Ion can send photo, link, screenshot, supplier listing, product name or idea. Route 01 intake should accept all these and build an accepted_input_state.
+
+9. Missing data route.
+If real supplier/browser/scraper is not available, Route 01 can still build a draft from screenshots/manual evidence, but must mark confidence and missing evidence.
+
+10. Learning loop.
+Every Route 01 listing draft and later result must create lessons for Route 08 / Master Teacher: title worked/not worked, price worked/not worked, photo/aspect missing, return/defect assumptions, eBay recommended price movement.
+
+## Route 01 Agent Updates From Product Search Chat
+
+### Update AGENT 08 — R01 German Title SEO Agent
+Add product-radar title logic:
+- title must be built from buyer demand + value signal + confirmed product truth;
+- avoid generic titles that hide value;
+- include product class, problem/solution language, confirmed connector/protocol/power/size/material where true;
+- do not use unconfirmed brand/model/accessory;
+- max 80 characters;
+- for technical goods: confirmed brand/model + product class + premium feature + value function + buyer intent + protocol.
+
+Add title output fields:
+- title_primary_de
+- title_alternative_a_de
+- title_alternative_b_de
+- used_value_signals
+- omitted_unconfirmed_claims
+- character_count
+- reason_for_keyword_order
+
+### Update AGENT 07 / 20 — eBay Aspect + Search Demand Aspects Agent
+Add rule:
+Item specifics are part of Value Signal, not only form fields.
+For each truthful high-demand aspect, agent must decide:
+- fill in item specifics;
+- mirror in title if important and character space allows;
+- mention in description;
+- show in photo plan if visually helpful.
+
+Add fields:
+- aspect_name
+- source_of_truth
+- search_demand_signal
+- confirmed_value
+- title_use
+- description_use
+- photo_use
+- missing_evidence
+
+### Update AGENT 09 — Description Agent
+Add Product Radar description logic:
+Description must answer buyer pain and buyer decision friction:
+- what problem does it solve;
+- what exactly is included;
+- why buyer should trust it;
+- compatibility/limits;
+- why this offer is better than generic competitors;
+- simple German, mobile readable.
+
+Description must not become marketing fantasy. Package truth controls text.
+
+### Update AGENT 10 — Photo Plan Agent
+Add Product Radar photo logic:
+Photos are not only decoration. They are proof of value.
+Photo plan should include if possible:
+- hero product truth;
+- package contents;
+- feature proof;
+- before/after or problem/solution visual where allowed;
+- size/compatibility visual;
+- detail close-up;
+- use case image.
+No invented product geometry.
+
+### Update AGENT 13 — Finance / Pricing Agent
+Add Return Reserve V2.1R:
+Calculate:
+- profit_before_reserve;
+- return_reserve;
+- defect_reserve;
+- misunderstanding_reserve;
+- profit_after_reserve;
+- status: PROFIT_PASS_AFTER_RESERVE / PROFIT_FAIL_AFTER_RESERVE / PASS_IF_BUNDLE.
+
+Reserve defaults from product-search chat:
+- simple goods: 5-7 percent return reserve + 2-3 percent defect reserve;
+- compatibility risk goods: 8-10 percent return + 2-4 percent defect;
+- electronics/chargers/Bluetooth/complex compatibility: 12-15 percent+ return + 3-5 percent+ defect.
+
+Route 01 charger/cable products should start with electronics/compatibility reserve until evidence reduces risk.
+
+### Update AGENT 15 — Duplicate Guard Agent
+Add buyer-intent duplicate logic:
+A listing is not duplicate only by title. It is duplicate if it targets the same buyer intent with the same physical item and no distinct offer structure.
+If same product but different validated intent exists, Route 03 must decide.
+
+### Update AGENT 18 — Handoff Agent
+Add Product Radar handoff logic:
+- If bundle/kit is better than single item -> Route 02 or Route 03 decision depending on variants/listing angle.
+- If product looks weak alone but strong as bundle -> Route 06/03/07 decision, not direct publish.
+- If product needs market proof before listing -> Route 06 watch/market proof.
+
+### Add AGENT 21 — R01 Product Radar Lesson Import Agent
+id: r01_product_radar_lesson_import_agent
+owns_state: route_01_radar_lesson_map
+purpose: import relevant Product Radar/Market Intelligence lessons into Route 01 listing generation.
+inputs:
+- uploaded market intelligence chat summaries
+- Route 06 product radar lessons
+- UD24 value signal lessons
+- Route 04 performance results later
+outputs:
+- route_01_radar_lesson_map
+- title_value_signal_rules
+- profit_reserve_rules
+- offer_structure_warning
+rules:
+- use lessons only if they apply to product/category;
+- do not force Route 06 full chain inside Route 01;
+- Route 01 uses Product Radar lessons for listing quality and readiness, while Route 06 owns new product discovery.
+
+## Route 01 New Internal Checks
+
+### CHECK 1 — Is this truly Route 01?
+Questions:
+- one simple product?
+- one SKU?
+- no selectable variants?
+- no bundle decision pending?
+- no market proof missing so badly that listing should wait?
+If NO -> handoff before building publish gate.
+
+### CHECK 2 — Does title reflect value signal?
+Title cannot be only generic product name.
+Must include confirmed high-value search signals if true.
+
+### CHECK 3 — Do item specifics support title?
+High-search aspects must be filled truthfully where possible.
+Unknown high-search fields become missing evidence.
+
+### CHECK 4 — Do photos prove the offer?
+Photo plan must support the same value signal used in title/description.
+
+### CHECK 5 — Does description reduce buyer uncertainty?
+Description must answer problem, contents, compatibility, limits and trust.
+
+### CHECK 6 — Does price survive reserve?
+No READY_FOR_EBAY_GATE if profit_after_reserve fails, unless Ion explicitly approves strategic test.
+
+### CHECK 7 — Is offer structure correct?
+If bundle/variation/premium/replacement would be better, Route 01 must warn before publish gate.
+
+### CHECK 8 — Is there a lesson to save?
+Even draft decisions can create a lesson candidate for Route 08.
+
+## Route 01 Revised Output Contracts
+
+Add route_01_radar_lesson_map:
+- source_lesson_id
+- applied_to_product_type
+- applied_to_agent
+- rule_text
+- confidence
+- reason
+- not_applicable_reason
+
+Add value_signal_bundle:
+- title_signal
+- item_specifics_signal
+- photo_signal
+- description_signal
+- package_truth_signal
+- delivery_ads_signal
+- overall_value_signal_status
+
+Add product_search_context:
+- problem_search_terms
+- product_search_terms
+- buyer_pain
+- buyer_intent
+- market_proof_needed
+- route_06_ref_if_needed
+
+Add route_01_offer_structure_warning:
+- single_listing_ok
+- variation_candidate
+- bundle_candidate
+- replacement_listing_candidate
+- premium_listing_candidate
+- duplicate_intent_risk
+- recommended_route
+
+Add route_01_profit_after_reserve:
+- profit_before_reserve
+- return_reserve_percent
+- defect_reserve_percent
+- misunderstanding_reserve_percent
+- profit_after_reserve
+- verdict
+- category_risk_class
+
+## What belongs to Route 01 vs Route 06
+
+Route 01 uses Product Radar logic for listing construction and readiness:
+- title strength;
+- item specifics completeness;
+- photo proof;
+- description clarity;
+- profit after reserve;
+- offer structure warning;
+- lessons.
+
+Route 06 owns full product discovery:
+- autonomous search;
+- demand discovery;
+- market proof;
+- supplier comparison;
+- decision board for new product selection.
+
+If Route 01 lacks demand/market proof, it should not pretend. It creates a handoff to Route 06 or Route 07.
+
+## Route 01 Completion Status After This Addendum
+
+Route 01 now includes:
+- final agent passports;
+- eBay UI field map;
+- search-demand aspect logic;
+- Product Search Chat / Chain V2.1R lessons;
+- return reserve rules;
+- value signal system;
+- offer structure warning;
+- lesson import path;
+- handoff to Route 02/03/06/07/08.
+
+Route 01 is now complete enough for GitHub-memory lock-check.
+It is still not materialized on server.
+
+## Safety status
+
+server_write_done: false
+active_bot_patch_done: false
+telegram_restart_done: false
+ebay_api_called: false
+amazon_api_called: false
+kaufland_api_called: false
+otto_api_called: false
+purchase_action_done: false
+delete_cleanup_done: false
+git_commit_done: false
+git_push_done: false
+secrets_printed: false
+
+## Next allowed action
+
+REVIEW_AND_LOCK_ROUTE_01_COMPLETE_WITH_PRODUCT_SEARCH_CHAT_LESSONS_GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+
+Then:
+BUILD_ROUTE_02_VARIANT_PRODUCT_DEEP_BLUEPRINT_GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
