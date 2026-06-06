@@ -1,0 +1,35 @@
+# ECOM OS V7.3C — Route 01 Photo Rules Part 03A
+
+topic_id: V7_3C_PHOTO_RULES
+part_number: 03A
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Route 01 photo rule
+
+Route 01 is for one simple product.
+Ion creates or provides final photos.
+The agent only checks, critiques, orders and creates rework tasks.
+
+## Required Route 01 photo outputs
+
+- photo_manifest
+- photo_truth_report
+- photo_language_report
+- photo_rework_tasks
+- photo_order_plan
+- photo_readiness_status
+
+## Checks
+
+- product truth matches real item;
+- buyer-facing image text is German;
+- no English/Chinese/Russian text on final buyer photos;
+- hero photo is clean and truthful;
+- photo order supports value signal;
+- missing or weak photos create Russian task for Ion;
+- no invented product geometry.
+
+## Telegram
+
+All photo critique for Ion must be Russian.
