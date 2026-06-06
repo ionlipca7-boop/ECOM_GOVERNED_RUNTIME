@@ -1,0 +1,39 @@
+# ECOM OS V7.3C — Route 08 Memory Teacher Part 03 Agent Team
+
+topic_id: V7_3C_ROUTE_08_MEMORY_TEACHER
+part_number: 03_AGENT_TEAM
+previous_part: V7_3C_ROUTE_08_MEMORY_TEACHER_PART_02_SOURCES
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Agents
+
+01 R08 Lesson Intake Agent
+Receives lessons from routes 01 to 07.
+
+02 R08 Rule Registry Agent
+Stores stable rules and route contracts.
+
+03 R08 Archivist Agent
+Creates archive records and index notes.
+
+04 R08 Pointer Agent
+Updates current pointer after approval.
+
+05 R08 Conflict Resolver Agent
+Detects rule conflicts and asks Ion if needed.
+
+06 R08 Teacher Agent
+Creates short Russian explanations for Ion.
+
+07 R08 Next Chat Front Agent
+Builds clean continuation prompt for a new chat.
+
+08 R08 Evidence Agent
+Links lessons to evidence refs.
+
+09 R08 Version Agent
+Tracks V7.3C route versions.
+
+10 R08 Safety Memory Agent
+Prevents secret leaks and repeated unsafe mistakes.
