@@ -1,0 +1,43 @@
+# ECOM OS V7.3C — Route 06 Product Radar Part 06 Handoffs Outputs
+
+topic_id: V7_3C_ROUTE_06_PRODUCT_RADAR
+part_number: 06_HANDOFFS_OUTPUTS
+previous_part: V7_3C_ROUTE_06_PRODUCT_RADAR_PART_05_TELEGRAM_CARDS
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Receives from
+
+Route 01: product idea needs market proof.
+Route 02: variant or bundle idea needs validation.
+Route 03: listing studio needs market angle evidence.
+Route 04: weak or strong listing suggests new opportunity.
+Route 05: low stock, reorder, dead stock or profit signal.
+Route 07: Ion decision request.
+Route 08: lessons and rules.
+
+## Sends to
+
+Route 01 for simple product build.
+Route 02 for variant product build.
+Route 03 for listing angle.
+Route 05 for cost/reorder check.
+Route 07 for Ion decision.
+Route 08 for lessons.
+
+## Output contracts
+
+product_opportunity_card
+supplier_evidence_card
+demand_signal_card
+competition_card
+margin_risk_card
+compliance_risk_card
+product_radar_score
+Ion_decision_card
+handoff_record
+lesson_record
+
+## Rule
+
+Route 06 does not buy, list or publish. It prepares decision evidence only.
