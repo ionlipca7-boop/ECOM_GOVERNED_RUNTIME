@@ -1,0 +1,42 @@
+# ECOM OS V7.3C — Route 03 Listing Studio Part 01 Scope
+
+topic_id: V7_3C_ROUTE_03_LISTING_STUDIO
+part_number: 01_SCOPE
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Identity
+
+Button: 03 📝 Листинг-студия
+route_id: route_03_listing_studio
+callback: v73c:route:03_listing_studio
+case_namespace: cases/v73c/route_03_listing_studio
+
+## Purpose
+
+Route 03 is the listing laboratory. It does not create random products and does not clone listings.
+It improves the listing strategy for an existing product, draft, live listing, weak listing or product opportunity.
+
+## Sources
+
+Route 03 can receive cases from:
+- Route 01 simple product;
+- Route 02 variant product;
+- Route 04 weak/medium live listings;
+- Route 05 finance or bad-margin signals;
+- Route 06 product radar opportunities;
+- Route 07 decisions/paused cases;
+- Route 08 lessons/memory.
+
+## Main outputs
+
+- three listing variants A/B/C;
+- comparison report;
+- duplicate/risk report;
+- selected best listing angle;
+- HTML shop block optimization request;
+- update/publish approval packet only.
+
+## Safety
+
+No server write. No active patch. No restart. No marketplace call. No live update.
