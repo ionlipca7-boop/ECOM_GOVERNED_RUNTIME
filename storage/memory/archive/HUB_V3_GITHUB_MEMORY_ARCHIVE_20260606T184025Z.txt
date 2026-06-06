@@ -1,0 +1,38 @@
+# ECOM OS V7.3C — Route 03 Listing Studio Part 04 Rules
+
+topic_id: V7_3C_ROUTE_03_LISTING_STUDIO
+part_number: 04_RULES
+previous_part: V7_3C_ROUTE_03_LISTING_STUDIO_PART_03_AGENT_TEAM
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Language rules
+
+Ion-facing Telegram output: Russian only.
+Buyer-facing listing content: German only.
+Supplier-language leftovers are blocked.
+
+## HTML rules
+
+HTML description may include eBay-internal links only when policy-safe.
+No external shop links.
+No active content or scripts.
+Shop/related-products block must be German, useful and truthful.
+
+## Photo rules
+
+Ion provides final photos.
+Agents only critique, order, map, and create rework tasks.
+Buyer-facing image text must be German.
+No invented product geometry.
+
+## Duplicate rule
+
+Route 03 does not create clones.
+It can create different listing angles only when buyer intent and offer structure are truly different.
+If same item and same buyer intent exists, update/improve existing route only.
+
+## Approval rule
+
+Route 03 can prepare an update/publish packet.
+It cannot revise, publish, delete, restart or call marketplace APIs in GitHub-memory stage.
