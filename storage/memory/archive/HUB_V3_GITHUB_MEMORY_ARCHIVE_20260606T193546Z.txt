@@ -1,0 +1,49 @@
+# ECOM OS V7.3C — Route 05 Finance Inventory Part 03 Stock Core
+
+topic_id: V7_3C_ROUTE_05_FINANCE_INVENTORY
+part_number: 03_STOCK_CORE
+previous_part: V7_3C_ROUTE_05_FINANCE_INVENTORY_PART_02_DATA_SOURCES
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Stock objects
+
+Route 05 stock core must track:
+- master_product_id
+- SKU
+- variant_id if exists
+- stock_pool
+- bought quantity
+- sold quantity
+- returned quantity
+- reserved quantity
+- available quantity
+- damaged quantity
+- lost quantity
+- marketplace linked quantity
+- local physical location
+
+## Stock events
+
+- purchase_added
+- stock_received
+- listing_created
+- sale_detected
+- return_detected
+- refund_detected
+- manual_adjustment
+- damaged_item
+- stock_count_check
+- reorder_decision
+
+## Low stock rules
+
+- 75 percent left: observe
+- 50 percent left: first warning
+- 25 percent left: serious warning
+- 10 to 15 percent left: urgent card
+- 0 percent: stop or hide decision through gate only
+
+## Rule
+
+Route 05 must prevent overselling across marketplaces by keeping one stock truth per SKU.
