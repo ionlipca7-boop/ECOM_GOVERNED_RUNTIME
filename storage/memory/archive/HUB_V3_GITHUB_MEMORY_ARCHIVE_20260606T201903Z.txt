@@ -1,0 +1,38 @@
+# ECOM OS V7.3C — Route 07 Decision Center Part 05 Handoffs Outputs
+
+topic_id: V7_3C_ROUTE_07_DECISION_CENTER
+part_number: 05_HANDOFFS_OUTPUTS
+previous_part: V7_3C_ROUTE_07_DECISION_CENTER_PART_04_AGENT_TEAM
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Receives from
+
+Route 01: publish approval, missing product data, simple listing decision.
+Route 02: variant group approval, missing variant data, risky variant decision.
+Route 03: listing experiment selection and update approval.
+Route 04: weak listing, report, lifecycle decision.
+Route 05: stock, finance, reorder or tax-summary decision.
+Route 06: buy/watch/reject product opportunity decision.
+Route 08: policy/rule conflict or learning review.
+
+## Sends to
+
+The original source route after Ion decision.
+Route 08 for decision lessons.
+
+## Output contracts
+
+decision_case
+approval_card
+report_card
+blocked_case_card
+waiting_decision
+approval_marker
+decision_log
+handoff_record
+
+## Rule
+
+Route 07 does not replace other routes.
+It decides, records and sends the case back.
