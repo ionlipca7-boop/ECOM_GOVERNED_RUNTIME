@@ -1,0 +1,14 @@
+# V7.3C R05 Ref C Stock Truth
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Rule:
+One SKU must have one stock truth.
+
+If one item is sold on any sales site, Route 05 must reduce the shared stock pool.
+
+Purpose:
+Prevent overselling and wrong quantity across listings.
+
+No action is performed here.
