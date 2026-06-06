@@ -1,0 +1,343 @@
+# ECOM OS V7.3C — MARKETPLACE RULES + ABSTRACTION LAYER BEFORE SERVER TRANSFER
+
+Status: MARKETPLACE_RULES_PRECHECK_CREATED_BEFORE_SERVER_TRANSFER
+Approval/context: Ion approved unified server transfer packet but added requirement to check and save universal vs platform-specific marketplace rules before moving to server.
+Mode: GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY_NO_DELETE_NO_COMMIT_NO_PUSH
+Base V3 contract: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T172422Z.txt
+
+## Decision
+
+Do not create server transfer packet yet.
+First add marketplace abstraction layer so server transfer is closer to the real project and requires less later rework.
+
+Reason:
+Telegram buttons and route-blocks are not just UI. They must map to marketplace-safe actions, product compliance, listing gates, finance/stock, and platform-specific adapters.
+
+## Official source audit applied
+
+Telegram:
+- callback_data must be 1-64 bytes.
+- callback_query is a real update type.
+
+EU/Germany product compliance:
+- GPSR Regulation (EU) 2023/988 is in force and applies to product safety in EU market.
+- Online selling needs product safety/compliance information and risk-aware product handling.
+
+Ebay:
+- Inventory API separates Location, Inventory Item, Offer, Inventory Item Group, business policies and publish.
+- Inventory Item needs unique SKU.
+- Offer becomes live listing only after publish.
+- Multiple-variation listings use Inventory Item Group and publishOfferByInventoryItemGroup.
+- Offers require payment, fulfillment and return business policies.
+
+Amazon:
+- SP-API has Listings Items, Listings Restrictions and Product Type Definitions.
+- Amazon requires product-type/category-driven schema handling; listings are not simply eBay-like offers.
+
+Kaufland:
+- Seller API covers product data, variant suggestions, inventory, orders, invoices, tickets, returns, reports, push notifications and CSV interfaces.
+- Kaufland supports API and CSV workflows; integration must not assume only one API style.
+
+OTTO:
+- OTTO Market API distinguishes Sellers and Service Partners.
+- APIs cover business domains such as orders and products.
+- OpenAPI specifications and changelog must be used for integration.
+
+## Universal marketplace layer
+
+These concepts are universal enough to be used across eBay/Amazon/Kaufland/OTTO/Etsy later:
+
+1. product_passport
+- product identity
+- brand/model if known
+- category guess
+- supplier source
+- package truth
+- photos
+- product safety notes
+- compliance risk notes
+
+2. listing_content
+- title
+- subtitle/short value proposition where platform supports it
+- description
+- bullet points/features where platform supports it
+- item specifics/attributes
+- keywords/search terms where platform supports it
+- photos/photo order
+
+3. offer_commercials
+- price
+- quantity
+- shipping profile/logistics
+- return policy
+- handling time
+- marketplace fees estimate
+- ad/promotion plan
+
+4. stock_finance_link
+- SKU/master_product_id
+- stock pool
+- purchase cost
+- delivery cost
+- packaging
+- fees
+- returns reserve
+- defect reserve
+- profit after reserve
+
+5. compliance_packet
+- GPSR safety info
+- manufacturer/importer/responsible person fields if required
+- warnings/safety instructions
+- CE/EPR/WEEE/battery/packaging flags where relevant
+- product category risk
+- marketplace restricted/prohibited flags
+
+6. lifecycle_metrics
+- impressions/views/clicks/CTR if available
+- sales/conversion
+- ad spend
+- returns
+- age
+- margin
+- stock status
+
+7. decision_gate
+- draft only
+- readiness check
+- duplicate/risk check
+- compliance check
+- finance check
+- publish/update approval marker
+- rollback/undo plan
+
+## Platform-specific adapters
+
+### eBay adapter
+Entities:
+- inventory_location
+- inventory_item
+- offer
+- inventory_item_group for variants
+- business_policies payment/fulfillment/return
+- listing_id after publish
+
+Special rules:
+- SKU uniqueness required.
+- Business policies required.
+- Variant route 02 must later map to inventory item group.
+- Publish action is separate from create/update offer.
+- Revise/update must stay through Inventory API if listing created by Inventory API.
+
+Route impact:
+01 simple item -> inventory_item + offer + publish gate.
+02 variants -> inventory_items + inventory_item_group + offers + group publish gate.
+03 listing studio -> update offer/listing only through eBay update gate.
+04 lifecycle -> read metrics/listing health only until live gate.
+05 stock -> quantity update gate separate.
+
+### Amazon adapter
+Entities:
+- marketplace_id
+- SKU
+- product_type
+- listings item
+- product type definition schema
+- listing restrictions
+- offers/pricing/fulfillment may require separate APIs.
+
+Special rules:
+- Product type/category schema is central.
+- Restrictions must be checked before listing.
+- ASIN/catalog matching may be required.
+- Listing content fields differ from eBay.
+
+Route impact:
+01/02 must not assume eBay category/specifics structure.
+03 listing studio needs Amazon buyer/search fields separately.
+04 lifecycle needs Amazon metric/report adapter.
+06 radar can use Amazon reviews/search as proof but no Amazon write without future gate.
+
+### Kaufland adapter
+Entities:
+- product data
+- variant suggestions
+- inventory/units
+- orders
+- invoices
+- returns
+- reports
+- CSV/API interface.
+
+Special rules:
+- May use API or CSV.
+- Product data and inventory can be separate workflows.
+- Variant suggestions may be a separate process, not same as eBay inventory item group.
+
+Route impact:
+02 variant logic must be adapter-specific.
+05 stock/finance must support Kaufland order/invoice/return data.
+04 lifecycle should consume reports when available.
+
+### OTTO adapter
+Entities:
+- seller/service partner context
+- products
+- orders
+- API specs via OpenAPI
+- changelog/version tracking.
+
+Special rules:
+- Integration must track OTTO API version/changelog.
+- Do not assume eBay/Amazon listing fields.
+- Future OTTO support should be adapter module, not core route rewrite.
+
+Route impact:
+08 version/rules must track OTTO adapter version later.
+07 decision center must show OTTO-specific blockers separately.
+
+### Etsy future adapter
+Status: FUTURE_ONLY
+Rule:
+Do not build Etsy server logic now. Store as possible future adapter because product type, handmade/vintage/supply policies, listing taxonomy and inventory/variation model differ from eBay/Amazon/Kaufland.
+
+## New architecture layer to add before server transfer
+
+Add marketplace_adapter_contract to every route packet.
+
+marketplace_adapter_contract fields:
+- marketplace_id: ebay_de | amazon_de | kaufland_de | otto_de | etsy_future
+- mode: disabled | dry_read | dry_write_candidate | live_gate_required
+- supported_actions
+- required_entities
+- required_policies
+- required_compliance
+- listing_schema_type
+- variant_model_type
+- stock_model_type
+- order_model_type
+- metrics_model_type
+- live_gate_marker_required
+- version_source
+
+## Universal vs non-universal map
+
+Universal:
+- product_passport
+- supplier/cost data
+- photos/photo-plan
+- title/description concept
+- attributes/item specifics concept
+- price/qty concept
+- stock/finance link
+- compliance packet
+- readiness gate
+- publish/update approval gate
+- lifecycle monitoring concept
+- decision inbox
+- memory/lesson/rules
+
+Not universal:
+- exact category IDs
+- exact item specifics/product attributes
+- exact variation model
+- exact publish API call
+- exact business policies
+- exact listing restrictions
+- exact metrics availability
+- exact returns/orders/report API
+- exact ad/promoted listing model
+- exact fees estimate API
+- exact taxonomy/product type definitions
+
+## Route changes required before server packet
+
+### Route 01
+Add marketplace_target field.
+Default: ebay_de.
+Add adapter readiness: ebay_simple_offer_readiness, amazon_product_type_readiness, kaufland_product_data_readiness, otto_product_readiness.
+Dry server version only shows eBay default and future adapters disabled.
+
+### Route 02
+Add variant_model abstraction:
+- ebay_inventory_item_group
+- amazon_variation_theme/product_type_definitions
+- kaufland_variant_suggestion
+- otto_product_variants_future
+Do not hardcode eBay variant logic into route core.
+
+### Route 03
+Add listing_experiment.marketplace_angle:
+- external_search
+- ebay_buyer_search
+- amazon_buyer_search
+- ai_search
+- future marketplace angle.
+Duplicate guard must be marketplace-specific.
+
+### Route 04
+Add marketplace_lifecycle_adapter:
+- ebay metrics/read reports
+- amazon reports later
+- kaufland reports later
+- otto reports later
+Good/medium/bad status is universal; metrics source is not.
+
+### Route 05
+Add marketplace_finance_source:
+- ebay transactions/fees
+- amazon finance reports later
+- kaufland invoices/orders/returns later
+- otto orders/settlements later
+Stock is universal; source import is adapter-specific.
+
+### Route 06
+Add marketplace proof source separation:
+- search demand
+- eBay sold/listings
+- Amazon reviews/search
+- Kaufland/OTTO competitor later
+No single marketplace proof decides alone.
+
+### Route 07
+Decision cards must include marketplace_id and adapter_id when relevant.
+
+### Route 08
+Add adapter registry:
+- ebay_de: active_first
+- amazon_de: future_planned
+- kaufland_de: future_planned
+- otto_de: future_planned
+- etsy_future: future_only
+Track adapter version/changelog/rules.
+
+## Server transfer impact
+
+The transfer packet must now create an additional contract file:
+
+storage/runtime_bridge/candidates/V7_3C_ALL_ROUTES/v73c_marketplace_adapter_contract.py
+
+and include marketplace adapter registry in:
+
+storage/runtime_bridge/candidates/V7_3C_ALL_ROUTES/v73c_all_routes_schema.json
+storage/runtime_bridge/candidates/V7_3C_ALL_ROUTES/v73c_all_routes_review.json
+storage/control_room/V7_3C_ALL_8_BUTTONS_POINTER.json
+
+## Server packet must not do
+
+No active bot.py patch.
+No Telegram restart.
+No eBay API call.
+No Amazon/Kaufland/OTTO/Etsy API call.
+No scraping.
+No purchase.
+No delete/cleanup.
+No commit/push.
+No secrets print.
+
+## Correct next allowed action
+
+CREATE_UNIFIED_V7_3C_SERVER_TRANSFER_PACKET_FOR_ALL_8_ROUTES_FROM_V3_CONTRACT_AND_MARKETPLACE_RULES_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+
+This replaces the previous next action because marketplace abstraction must now be included before server transfer.
