@@ -1,0 +1,15 @@
+# V7.3C R06 Agent 03 04
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 03 Demand Review.
+Purpose: check if buyer interest exists.
+Output: demand_note.
+
+Agent 04 Market Compare.
+Purpose: compare similar offers, price range and visible value signals.
+Output: compare_note.
+
+Rule:
+Read-only review only.
