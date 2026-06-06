@@ -1,0 +1,40 @@
+# V7.3C GitHub Code Contract Drafts — Part 05 Routes 05-08
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Route 05 contract draft
+
+id: route_05_finance_inventory
+kind: stock_money_truth
+inputs: receipts, supplier costs, stock counts, normalized site records, route refs
+outputs: stock_item, cost_view, result_view, stock_card, report_view, handoff
+required agents: purchase intake, site collector, stock ledger, variant stock, return, cost view, result view, alert, reorder, report, tax summary, handoff
+blocks: missing SKU, missing cost, stock mismatch, source conflict, unsafe overwrite
+
+## Route 06 contract draft
+
+id: route_06_product_radar
+kind: product_research
+inputs: Ion idea, link, screenshot, supplier source, route signal
+outputs: query_plan, supplier_proof, demand_note, compare_note, risk_card, Ion decision card, lesson
+required agents: intake, query plan, demand, market compare, supplier proof, margin risk, safety fit, offer structure, Ion card, lesson
+blocks: no source notes, no query plan, weak evidence, bad margin, high risk, Ion decision missing
+
+## Route 07 contract draft
+
+id: route_07_decision_center
+kind: decision_report_gate
+inputs: decision case from any route
+outputs: short Ion card, marker, decision log, handoff, waiting state
+required agents: inbox, classify, risk, card, buttons, marker, log, handoff, wait list, safety
+blocks: unclear action, missing exact marker, hidden live action, stale card state, secret exposure risk
+
+## Route 08 contract draft
+
+id: route_08_memory_teacher
+kind: autonomous_memory_teacher
+inputs: lesson, rule, archive ref, conflict, evidence ref
+outputs: lesson_record, rule_record, archive_index, pointer request, teacher summary, version record, safety note
+required agents: lesson intake, rule registry, archivist, pointer, conflict, teacher, operator front, version, evidence, safety memory
+blocks: missing source route, no evidence for factual lesson, rule conflict without Ion decision, secret in memory
