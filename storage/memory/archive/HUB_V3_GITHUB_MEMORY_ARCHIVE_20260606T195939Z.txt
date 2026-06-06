@@ -1,0 +1,21 @@
+# V7.3C ROUTE 06 PRODUCT RADAR INDEX
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+PARTS:
+01 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T195843Z.txt
+02 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T195851Z.txt
+03 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T195900Z.txt
+04 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T195911Z.txt
+05 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T195921Z.txt
+06 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T195929Z.txt
+
+RESULT:
+Route 06 deep blueprint created.
+Route 06 is legal Product Radar for demand, competition, supplier evidence, margin, risk, offer structure and Ion decision.
+It connects 01/02/03/04/05/07/08.
+No server write. No active patch. No restart. No marketplace call.
+
+NEXT:
+REVIEW_ROUTE_06_PRODUCT_RADAR_DEEP_BLUEPRINT_AND_BUILD_AGENT_PASSPORTS_GITHUB_MEMORY_ONLY
