@@ -1,0 +1,36 @@
+# ECOM OS V7.3C — Route 06 Product Radar Part 05 Telegram Cards
+
+topic_id: V7_3C_ROUTE_06_PRODUCT_RADAR
+part_number: 05_TELEGRAM_CARDS
+previous_part: V7_3C_ROUTE_06_PRODUCT_RADAR_PART_04_AGENT_TEAM
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Telegram cards for Ion
+
+All Route 06 cards must be Russian.
+
+Card types:
+- new opportunity
+- good demand but high risk
+- good margin but weak demand
+- good product but bad supplier
+- good product for variants
+- product to watch
+- reorder candidate
+- blocked product risk
+
+## Card buttons
+
+- Открыть детали
+- Отправить в Route 01
+- Отправить в Route 02
+- Отправить в Route 03
+- Отправить в Route 05
+- Смотреть позже
+- Отклонить
+- Решение Иона
+
+## Rule
+
+Route 06 recommends. Ion decides before buying or building live listing path.
