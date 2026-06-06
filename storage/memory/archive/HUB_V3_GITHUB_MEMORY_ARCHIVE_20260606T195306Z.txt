@@ -1,0 +1,13 @@
+# V7.3C R05 Pass C2B Cost View
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 06 Cost View.
+Purpose: show all money-out parts for one SKU.
+
+Output:
+cost_view
+
+Rule:
+Ion must see why a product costs what it costs.
