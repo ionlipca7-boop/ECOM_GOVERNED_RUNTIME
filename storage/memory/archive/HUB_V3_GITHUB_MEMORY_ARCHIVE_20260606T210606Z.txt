@@ -1,0 +1,44 @@
+# V7.3C GitHub Code Contract Drafts — Part 01 Architecture Paths
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+Server transfer: PAUSED
+Server write: false
+
+## Goal
+
+Create clean GitHub-first code/contract drafts for all 8 routes before any server transfer.
+
+This is not active runtime code yet.
+This is the clean contract layer that later maps to server folders.
+
+## Proposed GitHub draft folders
+
+storage/contracts/v7_3c/routes/
+storage/contracts/v7_3c/agents/
+storage/contracts/v7_3c/telegram/
+storage/contracts/v7_3c/handoffs/
+storage/contracts/v7_3c/validators/
+storage/contracts/v7_3c/final_gates/
+storage/contracts/v7_3c/memory/
+storage/contracts/v7_3c/marketplace_adapters/
+storage/contracts/v7_3c/runtime_registry/
+storage/contracts/v7_3c/server_transfer/
+
+## Proposed draft files
+
+route_registry_v7_3c.json
+telegram_button_map_v7_3c.json
+callback_contract_v7_3c.json
+agent_passport_schema_v7_3c.json
+handoff_schema_v7_3c.json
+validator_contract_v7_3c.json
+final_gate_contract_v7_3c.json
+memory_pointer_contract_v7_3c.json
+server_transfer_file_plan_v7_3c.json
+
+## Rule
+
+GitHub drafts first.
+Server receives reviewed clean packet later.
+No server trash. No active patch now.
