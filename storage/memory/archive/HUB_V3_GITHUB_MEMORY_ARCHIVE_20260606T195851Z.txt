@@ -1,0 +1,35 @@
+# ECOM OS V7.3C — Route 06 Product Radar Part 02 Sources
+
+topic_id: V7_3C_ROUTE_06_PRODUCT_RADAR
+part_number: 02_SOURCES
+previous_part: V7_3C_ROUTE_06_PRODUCT_RADAR_PART_01_SCOPE
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Internal sources
+
+Route 06 receives signals from:
+- Route 01 product attempts;
+- Route 02 variant and bundle ideas;
+- Route 03 listing experiments;
+- Route 04 weak or strong listing life;
+- Route 05 stock, profit and reorder signals;
+- Route 07 Ion decisions;
+- Route 08 lessons.
+
+## External source groups
+
+- marketplace search signals;
+- competitor listings;
+- price ranges;
+- sold or performance evidence when legally available;
+- supplier pages and screenshots;
+- supplier costs;
+- reviews and defect evidence;
+- trend/search interest tools;
+- official marketplace APIs where available.
+
+## Rule
+
+All external data must be marked by source and confidence.
+Supplier claims are not truth until evidence confirms them.
