@@ -1,0 +1,28 @@
+{
+  "pointer": "ECOM_OS_MEMORY_V2_LATEST_POINTER",
+  "status": "ACTIVE",
+  "created_utc": "2026-06-06T08:00:00Z",
+  "memory_lane": "ECOM_OS_MEMORY_V2",
+  "source_of_truth": "GitHub repo ionlipca7-boop/ECOM_GOVERNED_RUNTIME",
+  "checkpoint_path": "storage/memory_v2/current/ECOM_OS_MEMORY_V2_CURRENT_STATE.md",
+  "policy_path": "storage/memory_v2/policy/ECOM_OS_MEMORY_V2_POLICY.md",
+  "rules": {
+    "read_memory_v2_first": true,
+    "old_memory_readonly_reference": true,
+    "server_is_runtime_not_memory": true,
+    "github_is_long_term_source_of_truth": true,
+    "no_commit_without_ion_approval": true,
+    "no_push_without_ion_approval": true,
+    "no_delete_without_gate": true,
+    "no_ebay_live_without_gate": true,
+    "no_secrets_print": true
+  },
+  "confirmed_previous_status": {
+    "AUTOCLIP_V1_DONE": "PASS",
+    "RUN_TASK_FIX_DONE": "PASS",
+    "GITHUB_ACCESS": "PASS",
+    "MEMORY_V2_POLICY_READY": "PASS",
+    "FULL_MEMORY_V2_FILE_CREATED": "YES"
+  },
+  "next_allowed_action": "VERIFY_MEMORY_V2_FILES_AND_PREPARE_STAGE_REVIEW_NO_COMMIT_NO_PUSH"
+}
