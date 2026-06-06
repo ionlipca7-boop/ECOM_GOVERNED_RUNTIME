@@ -1,0 +1,164 @@
+# ECOM OS V7.3C — Route Pointer + Telegram Candidate DRY
+
+Status: APPROVED_BY_ION_FOR_DRY_CANDIDATE_ONLY
+Approval marker: APPROVE_CREATE_V7_3C_ROUTE_POINTER_AND_TELEGRAM_CANDIDATE_DRY_ONLY_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+Mode: DRY_ONLY_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY_NO_DELETE_NO_COMMIT_NO_PUSH
+
+## Continuity protection
+
+Previous Stage Review + 8 Route Specs were successfully preserved in GitHub memory archive:
+- storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T164258Z.txt
+
+Important limitation recorded:
+- The HUB V3 memory write tool saved the archive into the standard GitHub memory archive path, not into the requested memory_v2 path.
+- This is not data loss. The archive exists and the latest pointer was updated to it.
+- Until a direct safe server-write or memory_v2-write tool is available, GitHub memory archive is the preservation lane.
+
+## V7.3C Route Pointer Draft
+
+version: ECOM_OS_V7_3C
+architecture: 8_MAIN_TELEGRAM_BUTTONS_AS_INDEPENDENT_ROUTE_BLOCKS
+source_stage_review_archive: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T164258Z.txt
+candidate_status: DRY_CANDIDATE_READY_FOR_REVIEW
+active_patch_status: NOT_APPLIED
+restart_status: NOT_RESTARTED
+ebay_status: NOT_CALLED
+cleanup_delete_status: NOT_CALLED
+commit_push_status: NOT_CALLED
+
+next_allowed_action: REVIEW_V7_3C_TELEGRAM_CANDIDATE_DRY_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+
+## Global Navigation Contract
+
+Global buttons available from route screens:
+- ⬅️ Назад
+- 🏠 Домой
+- ⛔ Стоп
+
+Rules:
+- Home opens main menu only.
+- Home does not show paused cases.
+- Paused/unfinished cases go to route 07.
+- Stop asks confirmation.
+- Stop does not perform immediate unsafe delete.
+- Cleanup/delete only through explicit cleanup gate.
+
+## Telegram Main Menu Candidate
+
+Button 01: 🆕 Новый товар
+route_id: route_01_new_product
+callback: v73c:route:01_new_product
+case_namespace: cases/v73c/route_01_new_product
+purpose: one product, one variant, normal listing flow.
+
+Button 02: 🧩 Новый товар с вариантами
+route_id: route_02_variant_product
+callback: v73c:route:02_variant_product
+case_namespace: cases/v73c/route_02_variant_product
+purpose: product with variants, variant matrix, SKU/photo/price/qty mapping.
+
+Button 03: 🧪 Листинг-студия
+route_id: route_03_listing_studio
+callback: v73c:route:03_listing_studio
+case_namespace: cases/v73c/route_03_listing_studio
+purpose: listing experiments, SEO/marketplace/AI discovery angles, no cloning.
+
+Button 04: 📈 Маркетплейсы / жизнь листингов
+route_id: route_04_marketplace_lifecycle
+callback: v73c:route:04_marketplace_lifecycle
+case_namespace: cases/v73c/route_04_marketplace_lifecycle
+purpose: observe live listings, classify status, send problem cards.
+
+Button 05: 📦 Финансы / склад
+route_id: route_05_finance_inventory
+callback: v73c:route:05_finance_inventory
+case_namespace: cases/v73c/route_05_finance_inventory
+purpose: 05A stock + 05B finance source of truth.
+
+Button 06: 🔎 Product Radar / Найти товар
+route_id: route_06_product_radar
+callback: v73c:route:06_product_radar
+case_namespace: cases/v73c/route_06_product_radar
+purpose: market intelligence radar, product opportunity decisions through Decision Board.
+
+Button 07: 📥 Решения / отчёты / агенты
+route_id: route_07_decisions_reports_agents
+callback: v73c:route:07_decisions_reports_agents
+case_namespace: cases/v73c/route_07_decisions_reports_agents
+purpose: dispatcher for decisions, paused cases, blocks, reports, agents, lessons.
+
+Button 08: ⚙️ Система / память
+route_id: route_08_system_memory
+callback: v73c:route:08_system_memory
+case_namespace: cases/v73c/route_08_system_memory
+purpose: admin/diagnostic panel, memory/archive/rules/agents/version/security.
+
+## Candidate Layout Draft
+
+Row 1:
+- 🆕 Новый товар
+- 🧩 Новый товар с вариантами
+
+Row 2:
+- 🧪 Листинг-студия
+- 📈 Маркетплейсы / жизнь листингов
+
+Row 3:
+- 📦 Финансы / склад
+- 🔎 Product Radar / Найти товар
+
+Row 4:
+- 📥 Решения / отчёты / агенты
+- ⚙️ Система / память
+
+## Route State Isolation Rules
+
+Each route has independent:
+- route_id
+- case_namespace
+- agent namespace
+- reports namespace
+- checkpoints namespace
+- repair path
+- safety gates
+
+No chaotic shared flow.
+No automatic unsafe route switching.
+No active writes from informational routes without explicit gate.
+
+## Safety Locks For Candidate
+
+active_bot_patch_allowed: false
+telegram_restart_allowed: false
+ebay_live_allowed: false
+ebay_publish_allowed: false
+ebay_revise_allowed: false
+ebay_delete_allowed: false
+cleanup_delete_allowed: false
+secret_print_allowed: false
+git_add_dot_allowed: false
+git_commit_allowed: false
+git_push_allowed: false
+
+## Candidate Review Checklist
+
+Review must confirm:
+1. all 8 buttons exist;
+2. callbacks are unique;
+3. route_id values are unique;
+4. case namespaces are isolated;
+5. Back/Home/Stop contract is present;
+6. route 07 receives paused/unfinished cases;
+7. route 08 remains read-only/admin unless separate gate;
+8. no active bot.py patch exists;
+9. no restart exists;
+10. no eBay call exists;
+11. no delete/cleanup exists;
+12. no secrets are printed.
+
+## Next allowed action
+
+REVIEW_V7_3C_TELEGRAM_CANDIDATE_DRY_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+
+After review PASS only:
+PREPARE_V7_3C_ACTIVE_PATCH_APPROVAL_PACKET_NO_PATCH_NO_RESTART_NO_EBAY
