@@ -1,0 +1,56 @@
+# ECOM OS V7.3C Master Menu — Part 02 Routes 01 and 02
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Route 01 — Новый товар
+
+Role: simple product route.
+Purpose: create one clean product/listing package for one product without variants.
+
+Main flow:
+1 intake from Ion: link, photo, description, receipt or idea;
+2 identify product facts and missing data;
+3 select eBay as default marketplace for Germany;
+4 create German title, item specifics, description and price draft;
+5 check photos: order, proof, German text, no invented geometry;
+6 create HTML shop block only when useful and safe;
+7 run final readiness checklist;
+8 send Russian preview/card to Ion;
+9 wait for Route 07 approval before any live path.
+
+Agents:
+Product Intake, Source Proof, Category, Title, Item Specifics, German Content, Photo Critic, Price/Cost Link, HTML Shop Block, Compliance Guard, Final Gate, Handoff.
+
+Important rules:
+Buyer content German only.
+Telegram preview Russian only.
+Ion creates or approves final photos.
+Agent critiques and creates rework tasks.
+No duplicate listing.
+No live marketplace action from memory stage.
+
+## Route 02 — Товар с вариантами
+
+Role: variant product route.
+Purpose: create master product with selectable variants.
+
+Main flow:
+1 receive product with variants;
+2 build variant matrix;
+3 create SKU/price/quantity/photo relation per variant;
+4 verify real variant count, not fixed number;
+5 create German group title and variant guide;
+6 map variant photos correctly;
+7 prepare HTML shop block without confusing buyer;
+8 run variant readiness gate;
+9 send Russian preview/card to Ion;
+10 wait for Route 07 approval.
+
+Agents:
+Variant Intake, Variant Matrix, SKU Mapper, Variant Price, Variant Stock Link, Variant Photo Critic, Group Description, German Language, HTML Shop Block, Duplicate Guard, Compliance Guard, Final Gate, Handoff.
+
+Important rules:
+Variant count is dynamic.
+Each variant must have clear SKU, quantity and photo mapping.
+If variant data is weak, send case to Route 07 or Route 01 rework.
