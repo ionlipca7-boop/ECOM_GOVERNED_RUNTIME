@@ -1,0 +1,36 @@
+# ECOM OS V7.3C — Route 02 Photo Rules Part 03B
+
+topic_id: V7_3C_PHOTO_RULES
+part_number: 03B
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Route 02 photo rule
+
+Route 02 is for variant products.
+Ion creates or provides final photos.
+The agent only checks, critiques, maps variant photos and creates rework tasks.
+
+## Required Route 02 photo outputs
+
+- standard_photo_plan
+- variant_photo_map
+- variant_image_control
+- missing_variant_images
+- misleading_variant_image_risk
+- photo_readiness_by_variant
+
+## Checks
+
+- standard photos are separated from variant photos;
+- each visual variant has correct photo coverage;
+- selected image attribute matches real product difference;
+- buyer-facing image text is German;
+- no wrong photo for a variant;
+- no invented product geometry;
+- dynamic variant count is supported;
+- missing variant photos create Russian task for Ion.
+
+## Telegram
+
+All variant-photo critique for Ion must be Russian.
