@@ -1,0 +1,20 @@
+# V7.3C R07 Lock Detail Repair Index
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Saved details:
+01 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T203121Z.txt
+03 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T203139Z.txt
+04 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T203148Z.txt
+
+Already existing details:
+Telegram callback/card rule: 202324Z
+Agent passports: 202509Z
+Minimal lock: 202846Z
+
+Result:
+Route 07 lock detail is repaired with chunked archives.
+
+Next:
+BUILD_R08
