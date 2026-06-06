@@ -1,0 +1,64 @@
+# ECOM OS V7.3C — Route 06 Locked After Agent Passports and Tool Refs
+
+Status: ROUTE_06_LOCKED_COMPLETE_AT_GITHUB_MEMORY_LEVEL
+Mode: GITHUB_MEMORY_ONLY
+
+## Base checkpoints
+
+Route 06 deep blueprint index:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T195939Z.txt
+
+Route 06 tool refs:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T200356Z.txt
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T200404Z.txt
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T200412Z.txt
+
+Route 06 agent refs:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T200429Z.txt
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T200452Z.txt
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T200457Z.txt
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T200504Z.txt
+
+Route 06 short index:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T200520Z.txt
+
+## Route 06 lock result
+
+Route 06 is locked for GitHub-memory stage.
+
+It now includes:
+- legal Product Radar deep blueprint;
+- source and confidence rules;
+- query plan / German buyer term logic;
+- supplier proof rule;
+- demand review;
+- market comparison;
+- margin and reserve review;
+- safety and compliance fit;
+- offer structure decision;
+- Russian Telegram decision cards for Ion;
+- lesson export to Route 08;
+- handoffs to Route 01, 02, 03, 05, 07 and 08.
+
+## Core locked rules
+
+Route 06 is a decision evidence system before Ion buys or lists a product.
+It may use official APIs, allowed public information, manual evidence, Ion screenshots, supplier sources and read-only marketplace comparison.
+It does not buy, list, publish or change marketplace data.
+Supplier pages are evidence, not final truth.
+Each product idea needs source notes, query plan, risk review, profit-after-reserve review and Ion decision card.
+German buyer words are used for market research and future listing fit.
+No live marketplace action is allowed from this memory stage.
+
+## Safety status
+
+server_write_done: false
+active_bot_patch_done: false
+telegram_restart_done: false
+marketplace_api_called: false
+commit_push_done: false
+secrets_printed: false
+
+## Next allowed action
+
+BUILD_ROUTE_07_DECISION_CENTER_DEEP_BLUEPRINT_GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
