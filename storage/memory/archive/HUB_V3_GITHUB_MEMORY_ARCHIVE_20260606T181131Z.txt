@@ -1,0 +1,155 @@
+# ECOM OS V7.3C — ROUTE 02 VARIANT PRODUCT FINAL AGENT PASSPORTS + EBAY UI MAP
+
+Status: ROUTE_02_FINAL_AGENT_PASSPORTS_CREATED_IN_GITHUB_MEMORY
+Mode: GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY_NO_COMMIT_NO_PUSH
+Base checkpoint: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T175835Z.txt
+Server read-only health checked: active runtime visible; no server write was done.
+
+## Review Verdict
+
+Route 02 is the canonical variant-listing pipeline for V7.3C.
+
+Route 01 is now locked for one simple product / one SKU.
+Route 02 handles master product + multiple selectable variants + multiple SKUs + eBay inventory item group readiness.
+
+Route 02 is now complete at GitHub-memory agent-passport level, but not locked yet.
+
+## Official Rules Applied
+
+Ebay Inventory API:
+- multiple-variation listings use inventory item group;
+- group uses inventoryItemGroupKey, variantSKUs, variesBy specifications and optionally aspectsImageVariesBy;
+- group title max 80;
+- group description becomes the multiple-variation listing description;
+- group updates are complete replacements, so future updates must read the current group first;
+- group publish uses publishOfferByInventoryItemGroup and requires valid inventory items/offers.
+
+Ebay Taxonomy:
+- only aspects with aspectEnabledForVariations=true can be used as variation dimensions;
+- aspects can be required, recommended or optional;
+- aspects have type, cardinality, max length, allowed values and mode.
+
+Ebay Picture Policy:
+- at least one image required;
+- image at least 500 px on longest side;
+- no inaccurate photos, placeholder images, borders, added text/artwork/marketing material or watermarks.
+
+Future marketplaces:
+- Amazon needs product type / listing / restrictions adapter;
+- Kaufland needs product data / variant suggestion / inventory adapter;
+- OTTO needs its own OpenAPI/changelog adapter.
+
+## Ion Screenshot UI Findings For Route 02
+
+Ion showed the real eBay.de variant editor.
+
+Observed Route 02 UI map:
+- main edit page has video, title with 80-character counter, category, variants section;
+- variants overview shows selected attributes/options;
+- example variant options: cable only, charger only, complete set, 2x cable, 2x complete set;
+- UI shows price range and total quantity;
+- variant photos are managed in a separate variant window;
+- standard images and variant images are separate sections;
+- variant images can be tied to one selected attribute;
+- variant combinations table includes photo, SKU, EAN, option value, quantity, price and fee field;
+- save/preview/cancel controls exist.
+
+## Route 02 Final Agent List
+
+01 R02 Variant Intake Agent — collects variant inputs in any order.
+02 R02 Master Product Agent — builds shared master product identity.
+03 R02 Variant Dimension Detector — detects what varies.
+04 R02 Variant Matrix Agent — builds complete option matrix.
+05 R02 SKU Agent — creates unique SKU per variant and group key.
+06 R02 Variant Photo Mapping Agent — maps photos to variants.
+07 R02 Variant Price Agent — calculates price/profit per variant.
+08 R02 Variant Quantity / Stock Agent — maps quantity per SKU.
+09 R02 Category + Variation Aspect Agent — validates category and variation-enabled aspects.
+10 R02 Title + Master Description Agent — builds group title and description.
+11 R02 Item Specifics Agent — separates shared vs varying aspects.
+12 R02 Compliance / GPSR Agent — checks safety/compliance per group/variant.
+13 R02 Duplicate + Offer Structure Guard — prevents wrong variant grouping or clone intent.
+14 R02 eBay Inventory Group Readiness Agent — maps matrix to eBay group readiness.
+15 R02 Readiness Agent — final dry readiness.
+16 R02 Publish Gate Agent — creates approval packet only.
+17 R02 Handoff Agent — routes to 01/03/04/05/06/07/08 through handoff objects.
+18 R02 Product Radar Lesson Import Agent — imports value-signal/offer-structure lessons.
+19 R02 eBay Variant UI Field Map Agent — maps real eBay UI fields to schemas.
+20 R02 Variant Search Demand Agent — uses search/trend signals safely.
+21 R02 Variant Combination Table Agent — validates visible row table.
+22 R02 Variant Image Controller Agent — decides image-controlling attribute.
+23 R02 Variant Commercials Agent — handles price range, total quantity, multi-discount, ad-rate and shipping/return fit.
+24 R02 Variant Product Documents Agent — handles product documents/safety documents per group/variant.
+
+## Strict Route 02 Rules
+
+- Route 02 is used only when options are one product family.
+- If there are no real variants, handoff back to Route 01.
+- If options are different buyer intents, send to Route 03 or Route 07.
+- If market proof or supplier comparison is missing, send to Route 06 or Route 07.
+- Every variant row needs option value, SKU status, EAN status, quantity, price and photo status.
+- Price range must match min/max active variants.
+- Total quantity must match sum of active variants.
+- Variant images must match the selected image attribute and product truth.
+- No guessed variant values.
+- Any active variant with weak or negative profit after reserve blocks group readiness unless Ion approves strategic test.
+
+## Output Contracts Added
+
+r02_ebay_variant_ui_field_map:
+video_status, title_field, category_field, variants_section_status, selected_attributes_options, variant_count, standard_images_count, variant_image_attribute_selected, variant_option_list, variant_combination_rows, item_specifics_required, item_specifics_optional_search_signals, description_editor_status, price_suggestion_card, multi_discount_status, shipping_policy, return_policy, package_size_status, product_documents_status, promoted_listing_status, save_preview_status.
+
+r02_variant_search_signal_report:
+aspect_name, visible_search_count, trend_label, confirmed_truth_status, variation_enabled_status, can_be_variant_dimension, can_be_item_specific, title_use, description_use, photo_use, missing_evidence.
+
+r02_variant_combination_table:
+row_id, variant_id, active_status, photo_id, sku, sku_valid, ean_status, option_value_text, quantity, price, eco_participation_fee_status, row_readiness.
+
+r02_variant_image_control:
+standard_images, variant_images_enabled, selected_image_attribute, attribute_values_covered, missing_variant_images, image_policy_warnings, misleading_image_risk.
+
+r02_variant_commercials_report:
+min_price, max_price, total_quantity, per_variant_margin_status, multi_discount_possible, ad_rate, shipping_policy_fit, return_policy_fit, price_suggestion_signal, margin_after_ads_and_reserve.
+
+r02_variant_product_documents_report:
+group_docs_required, group_docs_available, variant_docs_required, missing_docs_by_variant, safety_warning_status, compliance_block_reason.
+
+## Route 02 Final Readiness Gates
+
+A true variant product.
+B master product complete.
+C selected attributes/options complete.
+D variant matrix complete.
+E SKU/EAN per row reviewed.
+F variant images mapped or explicitly not needed.
+G category leaf + variation-enabled aspects checked.
+H item specifics shared/variant split correct.
+I group title/description complete.
+J price/profit after reserve per variant pass.
+K quantity/stock per SKU pass.
+L shipping/return/policies fit pass.
+M product documents/compliance pass.
+N duplicate/offer-structure guard pass.
+O eBay inventory group readiness pass.
+P Ion group publish approval marker required later.
+
+## Current Status
+
+Route 02 final agent passports: CREATED
+Route 02 eBay UI variant field map: CREATED
+Route 02 output contracts: CREATED
+Route 02 readiness gates: CREATED
+Route 02 lock status: NOT_LOCKED_YET
+Server write: not done
+Active bot patch: not done
+Telegram restart: not done
+Marketplace API calls: not done
+Commit/push: not done
+Secrets printed: no
+
+## Next allowed action
+
+REVIEW_AND_LOCK_ROUTE_02_COMPLETE_WITH_VARIANT_UI_AND_AGENT_PASSPORTS_GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+
+Then:
+BUILD_ROUTE_03_LISTING_STUDIO_DEEP_BLUEPRINT_GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
