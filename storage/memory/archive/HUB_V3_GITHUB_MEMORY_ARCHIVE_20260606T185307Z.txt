@@ -1,0 +1,19 @@
+# V7.3C R03 WEB UPGRADE INDEX
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+SAVED PARTS:
+01 links and duplicates:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T185235Z.txt
+
+02 research:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T185250Z.txt
+
+RESULT:
+Route 03 lock remains valid.
+Upgrade added: link guard, duplicate guard, research report.
+A later review-plan note was not archived due tool block and must be retried later with different wording.
+
+NEXT:
+DECIDE_ROUTE_03_RELOCK_OR_CONTINUE_ROUTE_04
