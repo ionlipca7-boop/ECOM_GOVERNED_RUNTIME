@@ -1,0 +1,57 @@
+# ECOM OS V7.3C — Photo Agent Governance Rules Part 02
+
+topic_id: V7_3C_PHOTO_RULES
+part_number: 02
+previous_part: V7_3C_CHUNKED_ARCHIVE_PROTOCOL_V1
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Main rule
+
+The project/server/agent does not create final product photos by itself.
+Ion creates or provides photos.
+The agent analyzes, criticizes, orders, verifies and gives exact rework tasks.
+
+## What photo agents may do
+
+Photo agents may:
+- check product truth;
+- check if photo matches real product;
+- detect wrong language on image text;
+- detect unclear/wrong/misleading image;
+- recommend which photo should be hero;
+- recommend order of photos;
+- create rework task for Ion/photo worker;
+- check if German text is needed;
+- check if image is acceptable for listing plan;
+- connect photos to item specifics, variants and value signals.
+
+## What photo agents must not do
+
+Photo agents must not:
+- invent product geometry;
+- invent accessories;
+- invent package contents;
+- silently change product truth;
+- approve English/Chinese/Russian text on buyer-facing German listing photos;
+- approve misleading variant photo;
+- publish or upload final photos without approval.
+
+## Project photo rule
+
+Source-based edit only.
+Use supplier/Ion photos as truth layer.
+Allowed improvement: clean background, crop, German text replacement, size normalization, lighting/sharpness, watermark removal if legal/allowed, remove clutter.
+Not allowed: create a different product or geometry.
+
+## Telegram output
+
+Photo critique and rework instructions to Ion must be Russian.
+Buyer-facing photo text must be German.
+
+## Safety status
+
+server_write_done: false
+active_patch_done: false
+restart_done: false
+marketplace_api_called: false
