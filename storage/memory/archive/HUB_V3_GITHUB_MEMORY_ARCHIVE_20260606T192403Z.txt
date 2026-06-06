@@ -1,0 +1,15 @@
+# V7.3C R04 Pass A Registry Snapshot
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 01 Registry.
+Purpose: keep relation between product, SKU, listing id, source route and platform.
+Output: r04_registry_record.
+
+Agent 02 Snapshot.
+Purpose: create read-only view of one listing state for Ion.
+Output: r04_snapshot_record.
+
+Telegram output: Russian.
+Buyer text reference: German.
