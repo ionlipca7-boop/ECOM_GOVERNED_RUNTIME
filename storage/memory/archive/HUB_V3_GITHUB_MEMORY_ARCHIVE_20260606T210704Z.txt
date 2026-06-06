@@ -1,0 +1,19 @@
+# V7.3C Code Draft 03C Memory Schema
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Memory record fields:
+- record_id
+- source_route
+- lesson_type
+- rule_text
+- evidence_ref
+- stable_or_dynamic
+- created_utc
+- version
+
+Rule:
+Stable knowledge goes to memory.
+Dynamic state goes to pointer/current state.
+No secrets in memory.
