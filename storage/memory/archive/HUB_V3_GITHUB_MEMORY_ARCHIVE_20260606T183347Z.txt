@@ -1,0 +1,45 @@
+# ECOM OS V7.3C — HTML Shop Block Part 04 Route Integration
+
+topic_id: V7_3C_HTML_SHOP_BLOCK
+part_number: 04_ROUTE_INTEGRATION
+previous_part: V7_3C_HTML_SHOP_BLOCK_PART_03_SELECTION_RULES
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Route 01 integration
+
+Route 01 simple listing must prepare:
+- German product description;
+- German shop block if safe related products exist;
+- Russian preview for Ion;
+- reason list for selected related products;
+- missing link/image/stock warnings.
+
+Examples:
+- charger -> cable;
+- cable -> charger;
+- adapter -> compatible cable;
+- simple product -> shop category if no direct related item.
+
+## Route 02 integration
+
+Route 02 variant listing must prepare:
+- German group description;
+- German variant guide;
+- variant-aware shop block;
+- Russian preview for Ion;
+- related products that do not confuse variant choices.
+
+Examples:
+- set listing -> replacement cable;
+- charger+cable set -> extra cable;
+- variant product -> shop category for other lengths, powers or connectors.
+
+## Route 03 integration later
+
+Route 03 Listing Studio must optimize:
+- block layout;
+- product selection;
+- title and description connection;
+- test versions;
+- related-product strategy.
