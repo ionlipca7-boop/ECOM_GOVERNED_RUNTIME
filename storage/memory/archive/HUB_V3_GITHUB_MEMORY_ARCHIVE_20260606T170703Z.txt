@@ -1,0 +1,184 @@
+# ECOM OS V7.3C — Route 06 Product Radar Detailed Blueprint DRY
+
+Status: SAVED_FROM_ION_UPLOADED_DETAILED_ROUTE_06_BLUEPRINT
+Mode: DRY_ONLY_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY_NO_DELETE_NO_COMMIT_NO_PUSH
+Source uploaded file: Вставленная ​​уценка.md
+Parent candidate: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T170425Z.txt
+Route: 06 Product Radar / Найти товар
+
+## Compare Result
+
+Candidate V2 already contains route 06 skeleton:
+- main button 06 🧭 Product Radar / Найти товар
+- route_id route_06_product_radar
+- callback v73c:route:06_product_radar
+- case_namespace cases/v73c/route_06_product_radar
+- subbuttons
+- basic agents
+- NO SINGLE-AGENT FINAL DECISION rule
+- connections to 01/02/05/07/08
+
+Uploaded detailed blueprint enriches route 06 with full implementation logic:
+- Market Intelligence Radar principle
+- Manual Mode and Autonomous Radar Mode
+- supplier/data sources
+- demand and marketplace proof sources
+- full 0-12 analysis chain
+- detailed layer definitions
+- profit after return/defect reserve
+- value signal formula
+- business ladder
+- offer structure
+- critic and decision board
+- memory/lesson and master teacher loop
+- NEW PRODUCT ALERT output contract
+- test example: Desk Cable Organizer Kit / Kabelmanagement Set Schreibtisch
+- exact button behavior and safety rules
+
+Decision: uploaded route 06 blueprint becomes canonical detailed spec for route_06_product_radar. It does not replace Candidate V2; it expands route 06 inside Candidate V2.
+
+## Route 06 Canonical Purpose
+
+Button 06 starts the product search and evaluation system for eBay.de and future marketplaces. It must work as Market Intelligence Radar, not random product search.
+
+Goal: find products with real demand, clear buyer problem, clean margin, low risk, listing opportunity, and product-line potential.
+
+## Route 06 Modes
+
+Manual Mode:
+Ion sends link, photo, screenshot, product name, supplier listing, or product idea. System evaluates it through the formula.
+
+Autonomous Radar Mode:
+System searches signals itself: China products, trends, growing queries, competitors, weak listings, bundle opportunities. System does not buy or publish; it sends reports only.
+
+## Route 06 Sources
+
+China / suppliers:
+Alibaba, AliExpress, 1688, Made-in-China, Global Sources, Taobao/Tmall, DHgate.
+
+Germany / demand:
+Google Trends, Google autocomplete, SEO tools, eBay.de search, Amazon.de search, YouTube, TikTok, Reddit, forums if needed.
+
+Marketplaces:
+eBay.de, Amazon.de, eBay sold listings, Terapeak/Product Research if available, Amazon reviews, competitor listings.
+
+## Route 06 Analysis Chain
+
+0 INPUT / RADAR SIGNAL
+1 QUICK SAFETY FILTER
+2 DEMAND DISCOVERY
+3 MARKET PROOF
+4 BUYER BEHAVIOR
+5 PRODUCT / PROFIT + RETURN RESERVE
+6 VALUE SIGNAL / LISTING
+7 BUSINESS LADDER
+8 OFFER STRUCTURE
+9 CRITIC AGENT
+10 DECISION BOARD
+11 MEMORY / LESSON
+12 MASTER TEACHER / RULE ENGINE
+
+## Layer Contract
+
+0 INPUT: creates product card with name, source, link, price, MOQ, shipping, category, photos, primary idea. No decision.
+
+1 QUICK SAFETY FILTER: blocks obvious dangerous/high-risk goods such as counterfeits, risky electronics, weapons, chemicals, high-risk batteries, too heavy/big items, legal risk. If unsure -> NEEDS REVIEW.
+
+2 DEMAND DISCOVERY: checks if people search for the problem or product. Outputs DEMAND_STRONG, DEMAND_MEDIUM, DEMAND_WEAK, DEMAND_UNKNOWN.
+
+3 MARKET PROOF: checks sold listings, similar Amazon products, competitors, price, sell-through if available, market saturation. Outputs MARKET_PROOF_CONFIRMED, MARKET_PROOF_PARTIAL, MARKET_PROOF_WEAK, MARKET_PROOF_UNKNOWN.
+
+4 BUYER BEHAVIOR: checks why buyer would buy using frustration, daily exposure, problem cost, emotional buy, decision friction, demo score, before/after score.
+
+5 PRODUCT / PROFIT + RETURN RESERVE: calculates supplier price, China shipping, Germany shipping, packaging, eBay fees, ads 6-8%, returns, defects, misunderstandings. Profit is not PASS until return/defect reserve is included. Outputs PROFIT_PASS_AFTER_RESERVE, PROFIT_FAIL_AFTER_RESERVE, PASS_IF_BUNDLE.
+
+6 VALUE SIGNAL / LISTING: checks whether listing can beat competitors through title, item specifics, buyer keywords, value words, photos, description, package truth, eBay algorithm fit. UD24 lesson: Title alone is not enough; Title + Item Specifics + Photos + Description + Package Truth + Delivery/Ads logic = Value Signal.
+
+7 BUSINESS LADDER: checks whether the product can become a line: product ladder, expansion, multi-location, repeat purchase, bundle potential, ecosystem, replace/upgrade potential, season resistance.
+
+8 OFFER STRUCTURE: decides selling structure: single listing, variation listing, bundle listing, replacement listings, premium listing, gaming/home office/travel versions, watch-only. No duplicate listing; each listing needs distinct buyer intent.
+
+9 CRITIC AGENT: raises risk flags: too many competitors, price war, weak margin, returns, weak quality, bad glue, false specs, counterfeit brand, compatibility issues, market may die, easy copy. Critic does not decide final outcome.
+
+10 DECISION BOARD: final decision only by board. Options: STRONG TEST, TEST SMALL LOT, WATCH 7 DAYS, WATCH 30 DAYS, NEEDS MORE DATA, REJECT, REPLACE / UPGRADE. Rule: NO SINGLE-AGENT FINAL DECISION except hard safety block.
+
+11 MEMORY / LESSON: saves product, evidence, decision, risks, calculation, what later worked/failed, mistakes.
+
+12 MASTER TEACHER / RULE ENGINE: compares forecast vs real result, finds agent mistakes, updates weights, reserves, SEO methods, rules, lessons.
+
+## NEW PRODUCT ALERT Output Contract
+
+Product:
+Source:
+Link:
+Supplier price:
+MOQ:
+Shipping:
+Category:
+Problem solved:
+German search terms:
+Marketplace proof:
+Competition:
+Profit before reserve:
+Return reserve:
+Defect reserve:
+Profit after reserve:
+Value signals:
+Listing idea:
+Offer structure:
+Risks:
+Decision:
+Next action:
+
+## Route 06 Telegram Buttons
+
+🔍 Найти автоматически
+🔎 Проверить товар
+📋 Watchlist
+🚨 Product Alerts
+🏪 Анализ конкурентов
+🏭 Сравнить поставщиков
+🧪 Добавить в тест
+❌ Отклонить товар
+📚 Сохранить урок
+⬅️ Назад
+🏠 Домой
+⛔ Стоп
+
+## Route 06 Safety
+
+System must not:
+- buy automatically
+- publish eBay listing
+- revise eBay listing
+- delete files
+- print tokens
+- use cookies in chat
+- perform live actions without approval
+
+System may:
+- search
+- compare
+- analyze
+- create reports
+- create watchlist
+- create product passport
+- create recommendation
+
+## Implementation Status
+
+Route 06 detailed blueprint: PASS_SAVED
+Candidate V2 merge note: PASS
+Active bot patch: NOT_APPLIED
+Telegram restart: NOT_DONE
+eBay API: NOT_CALLED
+Delete/cleanup: NOT_DONE
+Commit/push: NOT_DONE
+Secrets printed: NO
+
+## Next allowed action
+
+REVIEW_ROUTE_06_PRODUCT_RADAR_DETAILED_BLUEPRINT_DRY_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+
+Then:
+MERGE_ROUTE_06_DETAILED_BLUEPRINT_INTO_V7_3C_ACTIVE_PATCH_APPROVAL_PACKET_DRAFT_NO_PATCH_NO_RESTART_NO_EBAY
