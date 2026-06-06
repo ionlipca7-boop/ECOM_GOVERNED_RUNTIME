@@ -1,0 +1,45 @@
+# ECOM OS V7.3C — HTML Shop Block Part 03 Selection Rules
+
+topic_id: V7_3C_HTML_SHOP_BLOCK
+part_number: 03_SELECTION_RULES
+previous_part: V7_3C_HTML_SHOP_BLOCK_PART_02_STRUCTURE
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Product selection sources
+
+The agent may suggest products from:
+- same product family;
+- compatible accessories;
+- replacement items;
+- upgrade items;
+- bundle or kit version;
+- alternative product;
+- selected extra shop product.
+
+## Required reason
+
+Every selected item must have a reason:
+- compatible;
+- accessory;
+- replacement;
+- upgrade;
+- bundle;
+- alternative;
+- shop discovery.
+
+## Block conditions
+
+Do not show a product if:
+- link is missing or broken;
+- stock status is unknown and not marked;
+- compatibility is unconfirmed but written as true;
+- image is not approved;
+- buyer-facing text is not German;
+- item distracts too much from main product.
+
+## Quantity rule
+
+Default block should show 2-4 related items.
+Optional extra shop suggestions: 1-2 items.
+More items require Route 03 optimization review.
