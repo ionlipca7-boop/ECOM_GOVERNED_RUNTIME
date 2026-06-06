@@ -1,0 +1,15 @@
+# V7.3C R07 Pass E Wait Safety
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 09 Wait List.
+Keeps open decisions visible.
+Output: waiting_list.
+
+Agent 10 Safety.
+Blocks unclear approval, token print, restart, delete or live action without exact gate.
+Output: safety_gate_result.
+
+Rule:
+If unclear, ask Ion instead of acting.
