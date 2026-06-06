@@ -1,0 +1,33 @@
+# ECOM OS V7.3C Master Menu — Part 03A Route 03
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Route 03 — Листинг-студия
+
+Role: listing improvement laboratory.
+Purpose: improve listing angle for existing product, draft, live listing, weak listing or product opportunity.
+
+Main flow:
+1 load source package;
+2 keep master_product_id, stock_pool, finance_cost and marketplace_listing_id if present;
+3 create controlled A/B/C listing experiments;
+4 check different buyer intent or offer angle;
+5 compare German titles, descriptions, item specifics, photos, price/value and HTML block;
+6 select best angle or send to Route 07 for decision;
+7 create approval packet only;
+8 save lesson to Route 08.
+
+A/B/C logic:
+A = external search clarity.
+B = marketplace buyer intent.
+C = AI-search / clean factual discovery.
+
+Agents:
+Source Loader, Studio Planner, External Search, Marketplace Buyer, AI Search, German Language, HTML Shop Block, Photo Order Critic, Duplicate Guard, Compliance Guard, Critic, Comparison, Approval Packet, Lesson.
+
+Important rules:
+Route 03 is not a clone machine.
+Same product plus same buyer intent means improve existing plan, not create another listing.
+HTML links must be checked.
+Live action needs Route 07 approval later.
