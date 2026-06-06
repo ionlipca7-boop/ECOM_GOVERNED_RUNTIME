@@ -1,0 +1,26 @@
+# V7.3C R07 Upgrade A Telegram Limits
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Rule:
+Route 07 Telegram messages for Ion must be short, Russian and action-focused.
+
+Button callbacks must be short.
+Do not store full payload in callback data.
+Store full case data in decision case storage and use short callback key.
+
+Practical callback pattern:
+r7:a:<id>
+r7:b:<id>
+r7:o:<id>
+r7:x:<id>
+
+Meaning:
+A approve
+B back or block
+O open details
+X reject or close
+
+Long reports stay in storage or archive.
+Telegram card shows summary and buttons only.
