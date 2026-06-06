@@ -1,0 +1,98 @@
+# ECOM OS V7.3C — Routes 01/02/03 Master Blueprint Recheck
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+Source document: uploaded ECOM OS V7.3C full master blueprint menu.
+Latest memory before recheck: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T184045Z.txt
+
+## Result
+
+Route 01: already locked and complete. No structural patch needed.
+Route 02: already locked and complete. No structural patch needed.
+Route 03: deep blueprint exists, but needs one addendum before agent passports.
+
+## Route 01 comparison
+
+Master document confirms Route 01 scope:
+- one product;
+- one variant;
+- eBay default;
+- quiet intake;
+- accepted inputs;
+- build product;
+- show full listing in sections;
+- rework;
+- readiness;
+- publish gate;
+- links to 04/05/07/08.
+
+Existing Route 01 memory already includes more detail:
+- final agent passports;
+- eBay UI field map;
+- search-demand aspect logic;
+- product-search lessons;
+- return reserve;
+- value signal;
+- image governance;
+- German buyer content;
+- Russian Telegram output;
+- HTML shop block.
+
+Decision: keep Route 01 locked.
+
+## Route 02 comparison
+
+Master document confirms Route 02 scope:
+- master product plus variants;
+- variant matrix;
+- SKU/photo/price/quantity per variant;
+- readiness and publish gate;
+- links to 04/05/07/08.
+
+Existing Route 02 memory already includes more detail:
+- final agent passports;
+- eBay variant UI map;
+- dynamic variant count;
+- image rules;
+- German buyer content;
+- Russian Telegram output;
+- HTML shop block;
+- readiness gates;
+- handoffs to 01/03/04/05/06/07/08.
+
+Decision: keep Route 02 locked.
+
+## Route 03 missing addendum before agent passports
+
+Master document adds these exact Route 03 details that must be explicitly attached:
+
+1. Route 03 is not a new physical product route.
+2. Route 03 works with product from 01, product from 02, published listing, archive listing or draft.
+3. Main goal: find best selling angle.
+4. Not clone and not duplicate.
+5. Different listing experiment must be different buyer intent.
+6. One physical product can have several listing experiments, but all are tied to one master_product_id.
+7. Required links: master_product_id, stock_pool, finance_cost, listing_experiment_A, listing_experiment_B, listing_experiment_C, marketplace_listing_id.
+8. Route 03 receives from 01/02/04/06 and connects to 05/07/08.
+
+## Route 03 addendum required
+
+Before building final agent passports, Route 03 must add:
+- R03 Source Package Contract;
+- R03 Experiment Identity Contract;
+- R03 Buyer Intent Differentiation Rule;
+- R03 Stock/Finance Link Rule;
+- R03 Marketplace Listing Link Rule.
+
+## Safety
+
+No server write.
+No active patch.
+No restart.
+No marketplace API call.
+No commit/push.
+No secrets printed.
+
+## Next allowed action
+
+ADD_ROUTE_03_MASTER_BLUEPRINT_SOURCE_EXPERIMENT_CONTRACTS_GITHUB_MEMORY_ONLY
