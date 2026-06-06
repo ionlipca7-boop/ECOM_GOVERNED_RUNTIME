@@ -1,0 +1,27 @@
+# V7.3C R03 Agent Passports 02
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Agent 06 German Language Agent
+Checks buyer text is German only and Ion preview is Russian only.
+Output: language_quality_report.
+
+## Agent 07 HTML Shop Block Agent
+Builds German shop and related-products block.
+Output: html_shop_block_variant.
+Rule: only useful, truthful related products.
+
+## Agent 08 Photo Order Critic
+Checks photo order and missing photo tasks.
+Ion provides final photos; agent only critiques and orders.
+Output: photo_order_review.
+
+## Agent 09 Duplicate Guard Agent
+Blocks clone logic.
+Valid experiment needs different buyer intent or offer angle.
+Output: duplicate_risk_report.
+
+## Agent 10 Compliance Guard Agent
+Checks product-safety and risky claims.
+Output: compliance_risk_report.
