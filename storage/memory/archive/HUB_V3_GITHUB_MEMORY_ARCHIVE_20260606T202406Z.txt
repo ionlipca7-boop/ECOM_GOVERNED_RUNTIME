@@ -1,0 +1,15 @@
+# V7.3C R07 Pass B Risk Card
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 03 Risk.
+Marks risk level and approval strength.
+Output: risk_label.
+
+Agent 04 Card.
+Creates short Russian Telegram card.
+Output: ion_card.
+
+Rule:
+Card is short. Full details stay outside card.
