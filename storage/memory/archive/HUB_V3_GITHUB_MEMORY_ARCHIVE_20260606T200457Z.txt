@@ -1,0 +1,16 @@
+# V7.3C R06 Agent 05 07
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 05 Supplier Proof.
+Purpose: check supplier evidence and unknown claims.
+Output: supplier_proof_card.
+
+Agent 06 Margin Risk.
+Purpose: use Route 05 cost and reserve logic.
+Output: margin_risk_card.
+
+Agent 07 Safety Fit.
+Purpose: check product risk before recommendation.
+Output: safety_fit_card.
