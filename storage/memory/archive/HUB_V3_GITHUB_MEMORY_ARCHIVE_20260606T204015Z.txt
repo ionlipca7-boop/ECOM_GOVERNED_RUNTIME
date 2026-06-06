@@ -1,0 +1,17 @@
+# V7.3C R08 Pass E Evidence Safety
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 09 Evidence.
+Links lesson to evidence refs when available.
+Output: evidence_map.
+
+Agent 10 Safety Memory.
+Stores repeated mistake prevention notes.
+Output: safety_memory_note.
+
+Rule:
+No secrets in memory.
+No false PASS.
+Repeated failures must become lessons.
