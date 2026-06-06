@@ -1,0 +1,40 @@
+# ECOM OS V7.3C — Route 04 Marketplace Lifecycle Part 04 Signals and Rules
+
+topic_id: V7_3C_ROUTE_04_MARKETPLACE_LIFECYCLE
+part_number: 04_SIGNALS_RULES
+previous_part: V7_3C_ROUTE_04_MARKETPLACE_LIFECYCLE_PART_03_AGENT_TEAM
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Signals
+
+Route 04 watches listing life signals:
+- views / visits;
+- buyer clicks;
+- sales;
+- conversion direction;
+- ad cost direction;
+- returns;
+- listing age;
+- stock status;
+- profit status;
+- buyer questions;
+- listing issue notes.
+
+## Rules
+
+Do not alert Ion for everything.
+Show only useful summaries and problem cards.
+
+If listing is good: stay silent.
+If listing is medium: add to summary.
+If listing is weak: create attention card.
+If stock or finance issue exists: handoff to Route 05 or 07.
+If listing content issue exists: handoff to Route 03.
+If system needs Ion decision: handoff to Route 07.
+
+## Shared rules
+
+German buyer content remains required.
+Russian Ion reports remain required.
+No automatic live action.
