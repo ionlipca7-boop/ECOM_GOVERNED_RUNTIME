@@ -1,0 +1,34 @@
+# ECOM OS V7.3C — Route 08 Memory Teacher Part 02 Sources
+
+topic_id: V7_3C_ROUTE_08_MEMORY_TEACHER
+part_number: 02_SOURCES
+previous_part: V7_3C_ROUTE_08_MEMORY_TEACHER_PART_01_SCOPE
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Receives from all routes
+
+Route 01: product/listing lessons.
+Route 02: variant lessons.
+Route 03: listing experiment lessons.
+Route 04: listing-life lessons.
+Route 05: stock and finance lessons.
+Route 06: product search lessons.
+Route 07: decision and approval lessons.
+
+## Storage zones later
+
+- storage/memory_v2
+- storage/memory/archive
+- storage/teacher_memory
+- storage/rules
+- storage/control_room
+- storage/prompts
+- storage/evidence
+- storage/reports
+
+## Rule
+
+Stable knowledge goes to memory.
+Dynamic state goes to pointer/current state.
+Secrets never go to memory or Telegram.
