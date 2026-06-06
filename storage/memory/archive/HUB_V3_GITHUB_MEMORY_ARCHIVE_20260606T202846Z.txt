@@ -1,0 +1,16 @@
+# V7.3C R07 LOCK MIN
+
+Status: ROUTE_07_LOCKED
+Mode: GITHUB_MEMORY_ONLY
+
+Refs:
+201914Z
+202324Z
+202509Z
+202817Z
+
+Result:
+R07 locked with cards, callbacks, markers, log, handoff, wait list and safety check.
+
+Next:
+BUILD_R08
