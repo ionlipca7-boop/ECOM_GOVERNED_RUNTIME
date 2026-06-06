@@ -1,0 +1,49 @@
+# ECOM OS V7.3C — Route 05 Finance Inventory Part 01 Scope
+
+topic_id: V7_3C_ROUTE_05_FINANCE_INVENTORY
+part_number: 01_SCOPE
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Identity
+
+Button: 05 📊 Финансы / склад
+route_id: route_05_finance_inventory
+callback: v73c:route:05_finance_inventory
+case_namespace: cases/v73c/route_05_finance_inventory
+
+## Purpose
+
+Route 05 is the money and stock control center.
+It must know what was bought, what is in stock, what sold, what returned, what cost money and what produced profit.
+
+## Two cores
+
+05A Stock core:
+- product stock;
+- SKU and variant stock;
+- marketplace stock links;
+- sold quantity;
+- available quantity;
+- low stock alerts;
+- reorder decision.
+
+05B Finance core:
+- purchase cost;
+- shipping cost;
+- packaging cost;
+- marketplace fees;
+- ad cost;
+- return cost;
+- refund cost;
+- profit before reserve;
+- profit after reserve;
+- date-based reports.
+
+## Safety
+
+GitHub memory only.
+No server write.
+No active patch.
+No restart.
+No marketplace call.
