@@ -1,0 +1,18 @@
+# V7.3C R05 Ref B Telegram Cards
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Rule:
+Route 05 must send Russian Telegram cards to Ion when stock or finance needs attention.
+
+Card types:
+- low stock
+- sale noted
+- return noted
+- stock mismatch
+- low profit
+- loss risk
+- Ion decision needed
+
+Cards should include buttons to open the correct route.
