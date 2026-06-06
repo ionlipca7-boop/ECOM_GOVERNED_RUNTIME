@@ -1,0 +1,45 @@
+# ECOM OS V7.3C — HTML Shop Block Part 02 Structure
+
+topic_id: V7_3C_HTML_SHOP_BLOCK
+part_number: 02_STRUCTURE
+previous_part: V7_3C_HTML_SHOP_BLOCK_PART_01_SCOPE
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Recommended German block structure
+
+1. Main product short summary.
+2. What is included.
+3. Compatibility / limits.
+4. If Route 02: variant choice guide.
+5. Related products section.
+6. Shop link section.
+7. Short trust/safety note if needed.
+
+## German label examples
+
+- Weitere passende Artikel im Ionel-Shop
+- Passt gut dazu
+- Auch interessant
+- Zum passenden Kabel
+- Zum passenden Ladegerät
+- Weitere Angebote ansehen
+- Zum Ionel-Shop
+- Als Ergänzung empfohlen
+
+## Buyer card fields
+
+Each shown product card should have:
+- product image if approved;
+- short German title;
+- short German reason;
+- link to listing or shop category;
+- relation type.
+
+## Ion preview
+
+Telegram preview must explain in Russian:
+- why each product was selected;
+- whether link exists;
+- whether image exists;
+- whether compatibility is confirmed.
