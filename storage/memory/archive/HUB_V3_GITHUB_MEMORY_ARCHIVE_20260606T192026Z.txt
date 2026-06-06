@@ -1,0 +1,13 @@
+# V7.3C Final Gate Ref F
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Reference group:
+auth and ID automation.
+
+Rule:
+Tokens, scopes, IDs, policy IDs and location keys must be checked automatically by tools before final gate.
+
+No token value may be printed.
+No secret is stored here.
