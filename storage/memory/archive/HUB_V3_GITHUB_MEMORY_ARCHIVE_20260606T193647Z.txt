@@ -1,0 +1,45 @@
+# ECOM OS V7.3C — Route 05 Finance Inventory Part 05 Agent Team
+
+topic_id: V7_3C_ROUTE_05_FINANCE_INVENTORY
+part_number: 05_AGENT_TEAM
+previous_part: V7_3C_ROUTE_05_FINANCE_INVENTORY_PART_04_FINANCE_CORE
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Agents
+
+01 R05 Purchase Intake Agent
+Reads receipt/order data from Route 01 and Route 02.
+
+02 R05 Stock Ledger Agent
+Maintains stock events and available quantity.
+
+03 R05 Variant Stock Agent
+Tracks stock by variant SKU.
+
+04 R05 Sales Import Agent
+Receives sales records from marketplace adapters later.
+
+05 R05 Return Refund Agent
+Tracks returns, refunds and return costs.
+
+06 R05 Fee Cost Agent
+Tracks fees, ads, shipping and packaging costs.
+
+07 R05 Profit Agent
+Calculates profit before and after reserve.
+
+08 R05 Low Stock Agent
+Creates low stock cards.
+
+09 R05 Reorder Agent
+Suggests buy, wait, stop, improve listing or review product.
+
+10 R05 Report Agent
+Creates Russian reports for Ion.
+
+11 R05 ELSTER Summary Agent
+Prepares tax summary later, no submission.
+
+12 R05 Handoff Agent
+Sends cases to 03, 04, 06, 07 or 08.
