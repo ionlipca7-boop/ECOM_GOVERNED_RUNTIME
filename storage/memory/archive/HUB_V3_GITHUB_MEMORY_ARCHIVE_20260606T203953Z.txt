@@ -1,0 +1,16 @@
+# V7.3C R08 Pass B Archive Pointer
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 03 Archivist.
+Creates archive records and index notes.
+Output: archive_index.
+
+Agent 04 Pointer.
+Keeps current pointer after approval.
+Output: pointer_update_request.
+
+Rule:
+Archive stores history.
+Pointer shows current active memory state.
