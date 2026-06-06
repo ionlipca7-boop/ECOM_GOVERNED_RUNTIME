@@ -1,0 +1,39 @@
+# ECOM OS V7.3C — Route 04 Marketplace Lifecycle Part 03 Agent Team
+
+topic_id: V7_3C_ROUTE_04_MARKETPLACE_LIFECYCLE
+part_number: 03_AGENT_TEAM
+previous_part: V7_3C_ROUTE_04_MARKETPLACE_LIFECYCLE_PART_02_STATUS_CARDS
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Agents
+
+01 R04 Listing Registry Agent
+Keeps active listing references by SKU, listing_id, route source and marketplace.
+
+02 R04 Listing Snapshot Agent
+Creates a read-only listing snapshot for review.
+
+03 R04 Health Classifier Agent
+Classifies listing as no data, good, medium or needs attention.
+
+04 R04 Attention Card Agent
+Creates Russian cards for Ion only when action is needed.
+
+05 R04 Weak Listing Agent
+Detects listings that should go to Route 03 for improvement.
+
+06 R04 Stock Link Agent
+Checks listing against Route 05 stock state.
+
+07 R04 Finance Link Agent
+Checks listing against Route 05 cost/profit state.
+
+08 R04 Recommendation Agent
+Suggests keep, watch, improve, pause decision, or send to another route.
+
+09 R04 Handoff Agent
+Creates handoff objects to 03, 05, 07 or 08.
+
+10 R04 Lesson Agent
+Saves lifecycle lessons to Route 08.
