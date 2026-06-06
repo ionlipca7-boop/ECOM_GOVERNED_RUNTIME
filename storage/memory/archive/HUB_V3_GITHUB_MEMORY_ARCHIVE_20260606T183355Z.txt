@@ -1,0 +1,20 @@
+# V7.3C HTML SHOP BLOCK INDEX LOCK
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+PARTS:
+01 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T183312Z.txt
+02 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T183325Z.txt
+03 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T183336Z.txt
+04 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T183347Z.txt
+
+LOCKED RESULT:
+Routes 01 and 02 need a German HTML shop/related-products block when safe.
+Ion preview must be Russian.
+Buyer text must be German.
+Related products need reason, link, stock/image status and truth check.
+Route 03 will optimize this block later.
+
+NEXT:
+LOCK_ROUTE_02_AFTER_LANGUAGE_SHOP_IMAGE_RULES
