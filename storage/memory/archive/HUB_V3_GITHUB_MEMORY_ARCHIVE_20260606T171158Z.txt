@@ -1,0 +1,441 @@
+# ECOM OS V7.3C — Route 06 Product Radar Candidate Code DRY DRAFT
+
+Status: CODE_DRAFT_SAVED_IN_MEMORY_NO_RUNTIME_FILE_WRITE
+Approval marker: APPROVE_BUILD_ROUTE_06_PRODUCT_RADAR_CANDIDATE_CODE_DRY_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+Mode: DRY_CODE_DRAFT_ONLY_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY_NO_DELETE_NO_COMMIT_NO_PUSH
+Source approval packet: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T171005Z.txt
+Route: 06 Product Radar / Найти товар
+
+## Important limitation
+
+Current HUB V3 available write path is GitHub memory archive/pointer. No direct safe server-write tool is available in this chat to create real runtime files under storage/runtime_bridge/candidates.
+
+Therefore this step preserves reproducible candidate-code draft in memory. It can be materialized later into real files by a separate approved server-write/CMD step.
+
+No active bot.py change was made.
+No runtime candidate file was created on server by this step.
+
+## Intended real target paths for later materialization
+
+- storage/runtime_bridge/candidates/V7_3C_ROUTE_06_PRODUCT_RADAR/route_06_product_radar_candidate.py
+- storage/runtime_bridge/candidates/V7_3C_ROUTE_06_PRODUCT_RADAR/route_06_product_radar_schema.json
+- storage/runtime_bridge/candidates/V7_3C_ROUTE_06_PRODUCT_RADAR/route_06_product_radar_review.json
+- storage/control_room/V7_3C_ROUTE_06_PRODUCT_RADAR_POINTER.json
+
+## route_06_product_radar_schema.json DRAFT
+
+```json
+{
+  "version": "ECOM_OS_V7_3C",
+  "route_id": "route_06_product_radar",
+  "callback": "v73c:route:06_product_radar",
+  "case_namespace": "cases/v73c/route_06_product_radar",
+  "mode": "DRY_STUB_ONLY",
+  "safety_locks": {
+    "active_bot_patch_allowed": false,
+    "telegram_restart_allowed": false,
+    "ebay_api_allowed": false,
+    "purchase_allowed": false,
+    "delete_cleanup_allowed": false,
+    "secret_print_allowed": false,
+    "git_commit_allowed": false,
+    "git_push_allowed": false,
+    "autonomous_scrape_allowed": false
+  },
+  "callbacks": {
+    "home": "v73c:route:06_product_radar",
+    "auto_find": "v73c:r06:auto_find",
+    "check_product": "v73c:r06:check_product",
+    "watchlist": "v73c:r06:watchlist",
+    "product_alerts": "v73c:r06:product_alerts",
+    "competitor_analysis": "v73c:r06:competitor_analysis",
+    "compare_suppliers": "v73c:r06:compare_suppliers",
+    "add_to_test": "v73c:r06:add_to_test",
+    "reject_product": "v73c:r06:reject_product",
+    "save_lesson": "v73c:r06:save_lesson",
+    "back": "v73c:r06:back",
+    "global_home": "v73c:r06:home",
+    "stop": "v73c:r06:stop"
+  },
+  "schemas": {
+    "radar_signal": {
+      "required": ["signal_id", "created_utc", "mode", "input_type", "status"],
+      "status_values": ["NEW", "NEEDS_REVIEW", "IN_ANALYSIS", "DECISION_READY", "PAUSED", "REJECTED"]
+    },
+    "product_alert": {
+      "required": ["alert_id", "signal_id", "product", "decision", "next_action"]
+    },
+    "watchlist_item": {
+      "required": ["watch_id", "signal_id", "product", "reason", "status", "next_check"]
+    },
+    "decision_board_result": {
+      "required": ["decision_id", "signal_id", "board_decision", "decision_reason", "next_action"],
+      "decision_values": ["STRONG_TEST", "TEST_SMALL_LOT", "WATCH_7_DAYS", "WATCH_30_DAYS", "NEEDS_MORE_DATA", "REJECT", "REPLACE_UPGRADE"]
+    },
+    "lesson_record": {
+      "required": ["lesson_id", "source_route", "signal_id", "decision_id", "teacher_review_required"]
+    }
+  }
+}
+```
+
+## route_06_product_radar_candidate.py DRAFT
+
+```python
+"""ECOM OS V7.3C Route 06 Product Radar candidate.
+
+DRY/STUB ONLY.
+This module is designed to be materialized as a separate candidate file.
+It must not patch active bot.py, must not call eBay, must not buy,
+must not delete, must not print secrets, and must not scrape autonomously.
+"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass, asdict
+from datetime import datetime, timezone
+from typing import Any, Dict, List, Literal
+
+ROUTE_ID = "route_06_product_radar"
+ROUTE_TITLE = "🧭 Product Radar / Найти товар"
+CASE_NAMESPACE = "cases/v73c/route_06_product_radar"
+MODE = "DRY_STUB_ONLY"
+
+CALLBACKS: Dict[str, str] = {
+    "route_home": "v73c:route:06_product_radar",
+    "auto_find": "v73c:r06:auto_find",
+    "check_product": "v73c:r06:check_product",
+    "watchlist": "v73c:r06:watchlist",
+    "product_alerts": "v73c:r06:product_alerts",
+    "competitor_analysis": "v73c:r06:competitor_analysis",
+    "compare_suppliers": "v73c:r06:compare_suppliers",
+    "add_to_test": "v73c:r06:add_to_test",
+    "reject_product": "v73c:r06:reject_product",
+    "save_lesson": "v73c:r06:save_lesson",
+    "back": "v73c:r06:back",
+    "home": "v73c:r06:home",
+    "stop": "v73c:r06:stop",
+}
+
+SAFETY_LOCKS: Dict[str, bool] = {
+    "active_bot_patch_allowed": False,
+    "telegram_restart_allowed": False,
+    "ebay_api_allowed": False,
+    "purchase_allowed": False,
+    "delete_cleanup_allowed": False,
+    "secret_print_allowed": False,
+    "git_commit_allowed": False,
+    "git_push_allowed": False,
+    "autonomous_scrape_allowed": False,
+}
+
+BUTTONS: List[List[Dict[str, str]]] = [
+    [
+        {"text": "🔍 Найти автоматически", "callback_data": CALLBACKS["auto_find"]},
+        {"text": "🔎 Проверить товар", "callback_data": CALLBACKS["check_product"]},
+    ],
+    [
+        {"text": "📋 Watchlist", "callback_data": CALLBACKS["watchlist"]},
+        {"text": "🚨 Product Alerts", "callback_data": CALLBACKS["product_alerts"]},
+    ],
+    [
+        {"text": "🏪 Анализ конкурентов", "callback_data": CALLBACKS["competitor_analysis"]},
+        {"text": "🏭 Сравнить поставщиков", "callback_data": CALLBACKS["compare_suppliers"]},
+    ],
+    [
+        {"text": "🧪 Добавить в тест", "callback_data": CALLBACKS["add_to_test"]},
+        {"text": "❌ Отклонить товар", "callback_data": CALLBACKS["reject_product"]},
+    ],
+    [
+        {"text": "📚 Сохранить урок", "callback_data": CALLBACKS["save_lesson"]},
+    ],
+    [
+        {"text": "⬅️ Назад", "callback_data": CALLBACKS["back"]},
+        {"text": "🏠 Домой", "callback_data": CALLBACKS["home"]},
+        {"text": "⛔ Стоп", "callback_data": CALLBACKS["stop"]},
+    ],
+]
+
+Decision = Literal[
+    "STRONG_TEST",
+    "TEST_SMALL_LOT",
+    "WATCH_7_DAYS",
+    "WATCH_30_DAYS",
+    "NEEDS_MORE_DATA",
+    "REJECT",
+    "REPLACE_UPGRADE",
+]
+
+
+@dataclass(frozen=True)
+class RadarSignal:
+    signal_id: str
+    created_utc: str
+    mode: Literal["manual", "autonomous"]
+    input_type: Literal["link", "photo", "screenshot", "name", "supplier_listing", "idea"]
+    source: str = "DRY_STUB"
+    source_url: str = ""
+    raw_title: str = ""
+    category_guess: str = ""
+    supplier_price: str = "UNKNOWN"
+    moq: str = "UNKNOWN"
+    shipping: str = "UNKNOWN"
+    photos_count: int = 0
+    primary_idea: str = ""
+    status: Literal["NEW", "NEEDS_REVIEW", "IN_ANALYSIS", "DECISION_READY", "PAUSED", "REJECTED"] = "NEW"
+
+
+@dataclass(frozen=True)
+class DecisionBoardResult:
+    decision_id: str
+    signal_id: str
+    demand_status: str
+    market_proof_status: str
+    profit_status: str
+    critic_flags: List[str]
+    board_decision: Decision
+    decision_reason: str
+    next_action: str
+    created_utc: str
+
+
+@dataclass(frozen=True)
+class ProductAlert:
+    alert_id: str
+    signal_id: str
+    product: str
+    source: str
+    link: str
+    supplier_price: str
+    moq: str
+    shipping: str
+    category: str
+    problem_solved: str
+    german_search_terms: List[str]
+    marketplace_proof: str
+    competition: str
+    profit_before_reserve: str
+    return_reserve: str
+    defect_reserve: str
+    profit_after_reserve: str
+    value_signals: List[str]
+    listing_idea: str
+    offer_structure: List[str]
+    risks: List[str]
+    decision: Decision
+    next_action: str
+
+
+def utc_now_compact() -> str:
+    return datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+
+
+def get_route_06_home_screen() -> Dict[str, Any]:
+    """Return Telegram screen contract for Route 06 home. No side effects."""
+    text = (
+        "🧭 Product Radar / Найти товар\n\n"
+        "Market Intelligence Radar для поиска и оценки товаров.\n"
+        "Режим DRY: без покупки, без eBay, без автоскрейпа, без удаления.\n\n"
+        "Выбери действие:"
+    )
+    return {
+        "route_id": ROUTE_ID,
+        "title": ROUTE_TITLE,
+        "case_namespace": CASE_NAMESPACE,
+        "mode": MODE,
+        "text": text,
+        "buttons": BUTTONS,
+        "safety_locks": SAFETY_LOCKS,
+    }
+
+
+def create_manual_signal_stub(raw_title: str = "Desk Cable Organizer Kit") -> Dict[str, Any]:
+    """Create a manual radar signal stub. No external calls."""
+    signal = RadarSignal(
+        signal_id=f"r06_signal_dry_{utc_now_compact()}",
+        created_utc=utc_now_compact(),
+        mode="manual",
+        input_type="idea",
+        raw_title=raw_title,
+        category_guess="Kabelmanagement / Schreibtisch Ordnung",
+        primary_idea="Nicht einzelne Clips verkaufen, sondern Ordnungslösung für Schreibtisch.",
+        status="IN_ANALYSIS",
+    )
+    return asdict(signal)
+
+
+def build_desk_cable_organizer_alert_stub(signal_id: str = "r06_signal_dry_sample") -> Dict[str, Any]:
+    """Build static NEW PRODUCT ALERT sample for dry testing only."""
+    alert = ProductAlert(
+        alert_id=f"r06_alert_dry_{utc_now_compact()}",
+        signal_id=signal_id,
+        product="Desk Cable Organizer Kit / Kabelmanagement Set Schreibtisch",
+        source="DRY_SAMPLE_FROM_BLUEPRINT",
+        link="",
+        supplier_price="UNKNOWN_DRY",
+        moq="UNKNOWN_DRY",
+        shipping="UNKNOWN_DRY",
+        category="Kabelmanagement / Home Office / Gaming Desk",
+        problem_solved="Kabelsalat vermeiden und Schreibtisch ordnen.",
+        german_search_terms=[
+            "Kabelmanagement Schreibtisch",
+            "Kabel Organizer Set",
+            "Kabel verstecken Schreibtisch",
+            "Kabelhalter selbstklebend",
+        ],
+        marketplace_proof="DRY: sold listings/source proof not checked yet.",
+        competition="DRY: competitor density not checked yet.",
+        profit_before_reserve="UNKNOWN_DRY",
+        return_reserve="5-7% planned for simple goods",
+        defect_reserve="2-3% planned for simple goods",
+        profit_after_reserve="UNKNOWN_DRY",
+        value_signals=[
+            "Before/after photo possible",
+            "Bundle/kit value stronger than single clip",
+            "Home office and gaming desk buyer intents possible",
+        ],
+        listing_idea="Kabelmanagement Set Schreibtisch 40-teilig für Home Office Ordnung",
+        offer_structure=[
+            "variation listing: 20/40/60-teilig",
+            "variation listing: Schwarz/Weiß",
+            "replacement listings: Kabelclips, Klettbinder, Kabelhalter",
+            "premium listing: Gaming Desk Cable Kit",
+        ],
+        risks=[
+            "Kleberqualität prüfen",
+            "viele Wettbewerber",
+            "leicht kopierbar",
+            "sold listings noch prüfen",
+            "echte Supplier-Varianten noch prüfen",
+        ],
+        decision="TEST_SMALL_LOT",
+        next_action="WATCH / dry supplier and sold-listings check before purchase decision",
+    )
+    return asdict(alert)
+
+
+def get_callback_response(callback_data: str) -> Dict[str, Any]:
+    """Return dry response for a Route 06 callback. No side effects."""
+    if callback_data == CALLBACKS["route_home"]:
+        return get_route_06_home_screen()
+    if callback_data == CALLBACKS["auto_find"]:
+        return {
+            "status": "DRY_LOCKED",
+            "text": "🔍 Autonomous Radar ist geplant, aber noch gesperrt: keine automatische Suche ohne Data-Source- und Schedule-Gate.",
+            "safety_locks": SAFETY_LOCKS,
+        }
+    if callback_data == CALLBACKS["check_product"]:
+        signal = create_manual_signal_stub()
+        return {
+            "status": "DRY_SIGNAL_CREATED",
+            "text": "🔎 Dry: Produktprüfung vorbereitet. Sende später Link/Foto/Name/Supplier-Idee.",
+            "radar_signal": signal,
+        }
+    if callback_data == CALLBACKS["watchlist"]:
+        return {"status": "DRY_PLACEHOLDER", "text": "📋 Watchlist placeholder. Schema ist definiert, echte Speicherung folgt später."}
+    if callback_data == CALLBACKS["product_alerts"]:
+        return {
+            "status": "DRY_SAMPLE_ALERT",
+            "text": "🚨 Dry Product Alert Beispiel.",
+            "product_alert": build_desk_cable_organizer_alert_stub(),
+        }
+    if callback_data == CALLBACKS["competitor_analysis"]:
+        return {"status": "DRY_REQUIRED_FIELDS_ONLY", "text": "🏪 Wettbewerbsanalyse geplant: eBay/Amazon Datenquellen später anbinden."}
+    if callback_data == CALLBACKS["compare_suppliers"]:
+        return {"status": "DRY_REQUIRED_FIELDS_ONLY", "text": "🏭 Lieferantenvergleich geplant: Preis, MOQ, Versand, Varianten, Bewertungen."}
+    if callback_data == CALLBACKS["add_to_test"]:
+        return {"status": "DRY_NO_PURCHASE", "text": "🧪 Testkandidat kann trocken markiert werden. Kein Kauf ohne Ion-Entscheidung."}
+    if callback_data == CALLBACKS["reject_product"]:
+        return {"status": "DRY_REJECT_NOTE", "text": "❌ Ablehnung wird später als Lesson gespeichert. Kein Delete."}
+    if callback_data == CALLBACKS["save_lesson"]:
+        return {"status": "DRY_LESSON_STUB", "text": "📚 Lesson stub. Kein Rule-Update ohne Teacher/Gate."}
+    if callback_data == CALLBACKS["back"]:
+        return {"status": "GLOBAL_BACK_DRY", "text": "⬅️ Zurück innerhalb Route 06."}
+    if callback_data == CALLBACKS["home"]:
+        return {"status": "GLOBAL_HOME_DRY", "text": "🏠 Zurück ins Hauptmenü. Unfertige Cases -> Route 07."}
+    if callback_data == CALLBACKS["stop"]:
+        return {"status": "GLOBAL_STOP_CONFIRM_DRY", "text": "⛔ Stop: bestätigen, dann abbrechen oder pausieren. Kein Delete."}
+    return {"status": "UNKNOWN_CALLBACK", "callback_data": callback_data}
+
+
+def self_review() -> Dict[str, Any]:
+    """Static candidate self-review for dry validation."""
+    callback_values = list(CALLBACKS.values())
+    return {
+        "status": "PASS_DRY_SELF_REVIEW",
+        "route_id": ROUTE_ID,
+        "unique_callbacks": len(callback_values) == len(set(callback_values)),
+        "button_rows": len(BUTTONS),
+        "safety_locks_all_false": all(value is False for value in SAFETY_LOCKS.values()),
+        "has_home_screen": bool(get_route_06_home_screen().get("text")),
+        "has_product_alert_stub": bool(build_desk_cable_organizer_alert_stub().get("product")),
+        "active_patch_done": False,
+        "telegram_restart_done": False,
+        "ebay_api_called": False,
+        "purchase_done": False,
+        "delete_cleanup_done": False,
+        "secrets_printed": False,
+    }
+
+
+if __name__ == "__main__":
+    import json
+    print(json.dumps(self_review(), ensure_ascii=False, indent=2))
+```
+
+## route_06_product_radar_review.json EXPECTED DRAFT
+
+```json
+{
+  "status": "PASS_DRY_SELF_REVIEW",
+  "route_id": "route_06_product_radar",
+  "unique_callbacks": true,
+  "button_rows": 6,
+  "safety_locks_all_false": true,
+  "has_home_screen": true,
+  "has_product_alert_stub": true,
+  "active_patch_done": false,
+  "telegram_restart_done": false,
+  "ebay_api_called": false,
+  "purchase_done": false,
+  "delete_cleanup_done": false,
+  "secrets_printed": false
+}
+```
+
+## Candidate Code Review
+
+Review status: PASS_AS_MEMORY_CODE_DRAFT
+
+Confirmed:
+- route_id present;
+- callbacks defined;
+- buttons defined;
+- schemas represented;
+- dry home screen present;
+- manual signal stub present;
+- Desk Cable Organizer Product Alert stub present;
+- callback dry responses present;
+- self_review function present;
+- no eBay call;
+- no purchase;
+- no delete;
+- no secrets;
+- no active bot patch;
+- no restart.
+
+Not confirmed because no runtime file was created by current tool:
+- actual server file existence;
+- python compile on server;
+- import test on server;
+- real review.json generated on server.
+
+## Correct next step
+
+Materialize candidate code into real server files via a safe server-write/CMD step, then compile/run self_review. Still no active bot.py patch and no restart.
+
+Next allowed action:
+MATERIALIZE_ROUTE_06_PRODUCT_RADAR_CANDIDATE_FILES_ON_SERVER_DRY_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+
+Suggested future marker:
+APPROVE_MATERIALIZE_ROUTE_06_PRODUCT_RADAR_CANDIDATE_FILES_ON_SERVER_DRY_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
