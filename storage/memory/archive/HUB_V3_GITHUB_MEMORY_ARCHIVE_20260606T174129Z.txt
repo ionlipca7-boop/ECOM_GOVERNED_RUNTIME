@@ -1,0 +1,663 @@
+# ECOM OS V7.3C — ROUTE 01 NEW PRODUCT FINAL AGENT PASSPORTS
+
+Status: ROUTE_01_FINAL_AGENT_PASSPORTS_CREATED_IN_GITHUB_MEMORY
+Approval marker: APPROVE_REVIEW_ROUTE_01_NEW_PRODUCT_DEEP_BLUEPRINT_AND_BUILD_AGENT_PASSPORTS_GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+Mode: GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY_NO_DELETE_NO_COMMIT_NO_PUSH
+Base Route 01 blueprint: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T173734Z.txt
+Base marketplace layer: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T173036Z.txt
+Base V3 contract: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T172422Z.txt
+
+## Review Verdict
+
+Route 01 logic is correct but must become a reusable base for Route 02. Therefore Route 01 is finalized as a single-product pipeline with agent passports, exact handoff rules, and marketplace-safe readiness gates.
+
+Route 01 is now considered:
+- COMPLETE_AT_GITHUB_MEMORY_LEVEL
+- READY_FOR_ROUTE_02_BASE_REUSE
+- NOT_READY_FOR_SERVER_MATERIALIZATION until all buttons are deep-finished or Ion approves server materialization later.
+
+No server files created.
+No active bot.py patch.
+No restart.
+No eBay live/API call.
+
+## Official + practical audit applied
+
+Telegram:
+- callback_data must stay 1-64 bytes.
+- callback_query must be handled as update type.
+
+Ebay photos:
+- at least one image required.
+- longest side at least 500 px.
+- no inaccurate item representation.
+- no placeholder/message images.
+- no borders.
+- no added text/artwork/marketing material.
+- no watermarks.
+
+Ebay inventory item:
+- SKU is unique per seller inventory.
+- SKU max length 50.
+- Inventory API listings cannot be revised/relisted with Trading API.
+- Product title max length 80.
+- Product description supports basic HTML but no active content.
+- Item aspects are needed before publish.
+- Inventory item replacement is complete replacement, so read current item before future update.
+
+Ebay offer:
+- createOffer only stages offer.
+- createOffer initially requires sku, marketplaceId, listing format.
+- Before publish, location, price, quantity, category and business policies become required.
+- publishOffer is separate live step.
+- regulatory/GPSR product safety and responsible person data may be conditionally required.
+
+Ebay taxonomy/aspects:
+- getItemAspectsForCategory returns category aspects, required/recommended status, variation support, allowed values, data type, cardinality, and buyer demand relevance if access exists.
+- Category must be leaf category for aspect check.
+
+Route 02 future reuse note:
+- eBay variations use inventory item group, variantSKUs, variesBy, aspectsImageVariesBy, specifications.
+- Therefore Route 01 handles one SKU only; Route 02 must extend, not duplicate, Route 01 base logic.
+
+Practical seller guidance applied as non-policy inspiration only:
+- multiple clear photos;
+- honest description;
+- good lighting;
+- competitive/realistic pricing;
+- buyer trust and communication.
+Official eBay policy remains authority.
+
+## Route 01 Final Flow
+
+1. Open Route 01.
+2. Create route_state NEW/COLLECTING.
+3. Silent intake: link/photos/receipt/specs/comments/price idea/package notes.
+4. Accepted inputs report.
+5. Build source_snapshot.
+6. Build photo_manifest and photo_truth_report.
+7. Build receipt_cost_record.
+8. Build product_passport.
+9. Run category candidate and eBay aspect draft.
+10. Build German title under 80 chars.
+11. Build description + HTML description without active content.
+12. Build photo plan under eBay policy.
+13. Build compliance/GPSR packet.
+14. Build stock link.
+15. Build finance/pricing report with return/defect reserve.
+16. Build duplicate risk report.
+17. Build eBay simple offer readiness packet.
+18. Run final readiness report.
+19. If ready, create publish_gate_packet only.
+20. Future publish is separate live marker only.
+
+## Route 01 Agent Passports
+
+### AGENT 01 — R01 Intake Agent
+id: r01_intake_agent
+owns_state: accepted_input_state only
+purpose: collect Ion inputs in any order without chaos.
+inputs:
+- Telegram text
+- Telegram photo references
+- product/supplier links
+- receipt/order screenshots
+- Ion comments
+- quantity/package notes
+outputs:
+- accepted_input_state
+- missing_input_report
+rules:
+- silent collection first;
+- ask only for missing critical data;
+- do not decide category/price/listing;
+- if unfinished and Home/Stop -> Route 07 decision_card.
+pass_condition:
+- at least one meaningful product signal exists.
+block_condition:
+- no product signal at all.
+
+### AGENT 02 — R01 Source Truth Agent
+id: r01_source_truth_agent
+owns_state: source_snapshot only
+purpose: separate supplier claims from confirmed facts.
+inputs:
+- product link
+- supplier screenshots
+- raw title
+- supplier price
+- visible specs
+outputs:
+- source_snapshot
+- supplier_truth_notes
+rules:
+- no blind trust;
+- mark unconfirmed claims;
+- preserve original source wording;
+- do not invent accessories/features.
+pass_condition:
+- source or product idea is identifiable.
+block_condition:
+- source cannot be understood enough to create product passport.
+
+### AGENT 03 — R01 Photo Intake + Truth Agent
+id: r01_photo_truth_agent
+owns_state: photo_manifest, photo_truth_report
+purpose: organize photos and protect product truth.
+inputs:
+- Ion photos
+- supplier photos
+- existing project images
+outputs:
+- photo_manifest
+- photo_truth_report
+rules:
+- no invented geometry;
+- source-based edit only;
+- detect duplicate/unclear photos;
+- mark hero candidate.
+pass_condition:
+- at least one photo candidate exists for listing plan.
+block_condition:
+- no usable image for eBay photo policy.
+
+### AGENT 04 — R01 Receipt / Cost Agent
+id: r01_receipt_cost_agent
+owns_state: receipt_cost_record
+purpose: extract real cost basis.
+inputs:
+- receipt screenshot
+- supplier order cost
+- Ion manual cost
+outputs:
+- receipt_cost_record
+fields:
+- purchase_cost
+- quantity_bought
+- china_shipping
+- order_date
+- supplier
+- currency
+rules:
+- unknown cost blocks final profit PASS;
+- do not guess if receipt missing;
+- allow manual Ion cost with confidence flag.
+pass_condition:
+- cost known or Ion marks cost_unknown_allowed_for_draft.
+block_condition:
+- final pricing requested but cost unknown.
+
+### AGENT 05 — R01 Product Passport Agent
+id: r01_product_passport_agent
+owns_state: product_passport
+purpose: create master product identity reusable by all routes.
+inputs:
+- source_snapshot
+- photo_manifest
+- receipt_cost_record
+- Ion comments
+outputs:
+- product_passport
+required_fields:
+- master_product_id
+- sku_candidate
+- product_name_de
+- internal_name_ru
+- brand
+- model
+- product_type
+- package_contents
+- supplier_source
+- supplier_price
+- quantity_bought
+- photo_refs
+- marketplace_targets
+- risk_flags
+rules:
+- brand/model only if confirmed;
+- package truth must be exact;
+- if variants detected -> create handoff_offer_to_route_02.
+pass_condition:
+- one simple product identity exists.
+block_condition:
+- product identity ambiguous.
+
+### AGENT 06 — R01 Category Agent
+id: r01_category_agent
+owns_state: category_candidate_report
+purpose: find eBay category candidate and future adapter categories.
+inputs:
+- product_passport
+- product_type
+- German buyer terms
+outputs:
+- category_candidate_report
+rules:
+- eBay.de is default marketplace;
+- category must be leaf category before aspect check;
+- no hardcoded final category without verification;
+- future Amazon/Kaufland/OTTO categories are adapter placeholders.
+pass_condition:
+- at least one eBay category candidate exists.
+block_condition:
+- no plausible category or product type unclear.
+
+### AGENT 07 — R01 eBay Aspect / Item Specifics Agent
+id: r01_ebay_aspect_agent
+owns_state: item_specifics_draft, missing_aspects_report
+purpose: build eBay item specifics from category aspects.
+inputs:
+- category_candidate_report
+- product_passport
+- source_truth_notes
+outputs:
+- item_specifics_draft
+- missing_aspects_report
+rules:
+- use required/recommended aspects from eBay Taxonomy where available;
+- use confirmed facts only;
+- unknown stays unknown;
+- values must respect data type, cardinality, allowed values when known;
+- aspects enabled for variations are flagged for Route 02 reuse.
+pass_condition:
+- mandatory aspects satisfied or marked NEEDS_REVIEW.
+block_condition:
+- required aspect missing before publish gate.
+
+### AGENT 08 — R01 German Title SEO Agent
+id: r01_title_seo_agent
+owns_state: title_draft, title_score
+purpose: build eBay.de title under 80 chars.
+inputs:
+- product_passport
+- item_specifics_draft
+- buyer search terms
+- value signals
+outputs:
+- title_draft
+- title_score
+- keyword_notes
+rules:
+- max 80 characters;
+- German-first;
+- no false brand/model/features;
+- avoid weak generic-only title;
+- title must balance search terms + value signal.
+project_formula:
+- confirmed brand/model + product class + premium feature + value function + buyer intent + protocols if true.
+pass_condition:
+- title <=80 and truthful.
+block_condition:
+- title includes unconfirmed claim or exceeds limit.
+
+### AGENT 09 — R01 Description Agent
+id: r01_description_agent
+owns_state: plain_description_de, description_html_de
+purpose: create buyer-friendly German description.
+inputs:
+- product_passport
+- title_draft
+- item_specifics_draft
+- package_truth
+- risk/compliance notes
+outputs:
+- plain_description_de
+- description_html_de
+rules:
+- buyer benefit first;
+- short mobile summary;
+- exact package contents;
+- clear compatibility/limits;
+- no active content;
+- no false promises.
+pass_condition:
+- description is clear, truthful, package-exact.
+block_condition:
+- important compatibility/package/compliance ambiguity.
+
+### AGENT 10 — R01 Photo Plan Agent
+id: r01_photo_plan_agent
+owns_state: photo_plan, photo_rework_tasks
+purpose: make listing photo sequence.
+inputs:
+- photo_manifest
+- product_passport
+- eBay picture policy
+outputs:
+- photo_plan
+- photo_rework_tasks
+photo_slots:
+1 hero clean product truth;
+2 package/contents;
+3 feature closeup;
+4 size/compatibility visual;
+5 use case/context;
+6 specification visual if compliant;
+7 trust/detail/box/accessory truth;
+8 optional comparison/angle only if truthful.
+rules:
+- at least one 500px+ photo;
+- no watermark/text/border/marketing material on eBay listing photos;
+- no stock photo for used/damaged/defective items;
+- hero no text/watermark;
+- project source-based edit only.
+pass_condition:
+- photo plan has at least one compliant hero candidate.
+block_condition:
+- no compliant photo.
+
+### AGENT 11 — R01 Compliance / GPSR Agent
+id: r01_compliance_gpsr_agent
+owns_state: compliance_packet
+purpose: prevent unsafe/non-compliant listings.
+inputs:
+- product_passport
+- category_candidate
+- product type
+- package/warnings
+outputs:
+- compliance_packet
+fields:
+- product_safety_required
+- manufacturer_info_status
+- responsible_person_status
+- warnings
+- CE_flag
+- WEEE_flag
+- battery_flag
+- EPR_packaging_flag
+- charger/common_charger_flag
+- risk_level
+rules:
+- EU/Germany safety risk is checked before readiness;
+- if manufacturer/responsible person/product safety info required and missing -> NEEDS_REVIEW/BLOCKED_COMPLIANCE;
+- no unsafe product publish gate.
+pass_condition:
+- compliance not blocking or marked not required for category.
+block_condition:
+- product safety/responsible person info required but missing.
+
+### AGENT 12 — R01 Stock Link Agent
+id: r01_stock_link_agent
+owns_state: stock_link_record
+purpose: connect product to stock pool.
+inputs:
+- product_passport
+- receipt_cost_record
+outputs:
+- stock_link_record
+fields:
+- master_product_id
+- sku
+- qty_bought
+- qty_available
+- stock_pool
+- future_listing_ids
+rules:
+- one simple product = one SKU by default;
+- if quantity or variant matrix appears -> handoff to Route 02 or Route 05 as needed.
+pass_condition:
+- SKU and quantity logic clear.
+block_condition:
+- quantity impossible/unknown for readiness.
+
+### AGENT 13 — R01 Finance / Pricing Agent
+id: r01_finance_pricing_agent
+owns_state: price_margin_report
+purpose: calculate price after all known costs and reserves.
+inputs:
+- receipt_cost_record
+- stock_link_record
+- shipping/packaging defaults
+- eBay fee estimate
+- ad percent
+- return/defect reserve
+outputs:
+- price_margin_report
+rules:
+- no profit PASS without return/defect reserve;
+- unknown costs block final margin;
+- ad reserve default can use 6-8% unless project setting overrides;
+- finance data later handoff to Route 05.
+pass_condition:
+- price and margin are calculable.
+block_condition:
+- cost/fees/reserve unknown and publish gate requested.
+
+### AGENT 14 — R01 eBay Offer Readiness Agent
+id: r01_ebay_offer_readiness_agent
+owns_state: ebay_simple_offer_readiness
+purpose: map product package to eBay Inventory API readiness.
+inputs:
+- product_passport
+- listing_draft
+- item_specifics_draft
+- photo_plan
+- price_margin_report
+- stock_link_record
+- compliance_packet
+outputs:
+- ebay_simple_offer_readiness
+required_before_future_publish:
+- SKU <=50 chars
+- marketplaceId EBAY_DE
+- format FIXED_PRICE
+- inventory location
+- available quantity
+- categoryId
+- price
+- payment policy
+- fulfillment policy
+- return policy
+- title <=80
+- description
+- item aspects
+- image URLs
+- regulatory/compliance if needed
+rules:
+- createOffer is staging only;
+- publishOffer is separate live action;
+- no eBay call in dry mode.
+pass_condition:
+- offer readiness packet complete enough for review.
+block_condition:
+- missing required publish field.
+
+### AGENT 15 — R01 Duplicate Guard Agent
+id: r01_duplicate_guard_agent
+owns_state: duplicate_risk_report
+purpose: prevent duplicate listings and wrong route usage.
+inputs:
+- SKU candidate
+- product_passport
+- title
+- source link
+- existing listing refs if available
+outputs:
+- duplicate_risk_report
+rules:
+- if same physical product exists -> send to Route 03 update/improvement, not new clone;
+- if variant detected -> Route 02 handoff;
+- if uncertain -> Route 07 decision.
+pass_condition:
+- duplicate risk low/known.
+block_condition:
+- high duplicate risk without Ion decision.
+
+### AGENT 16 — R01 Readiness Agent
+id: r01_readiness_agent
+owns_state: readiness_result
+purpose: final dry gate before publish packet.
+inputs:
+- all previous agent outputs
+outputs:
+- readiness_result
+verdicts:
+- READY_FOR_REVIEW
+- NEEDS_REWORK
+- BLOCKED_MISSING_DATA
+- BLOCKED_COMPLIANCE
+- BLOCKED_DUPLICATE
+- BLOCKED_FINANCE
+- READY_FOR_EBAY_GATE
+rules:
+- missing critical data returns exact repair list;
+- no false PASS;
+- no publish.
+pass_condition:
+- READY_FOR_EBAY_GATE only if all gates pass.
+
+### AGENT 17 — R01 Publish Gate Agent
+id: r01_publish_gate_agent
+owns_state: publish_gate_packet
+purpose: create approval packet only.
+inputs:
+- readiness_result
+- ebay_simple_offer_readiness
+outputs:
+- publish_gate_packet
+rules:
+- no eBay publish/revise/delete without separate marker;
+- no token print;
+- no hidden live write;
+- show rollback/read-only verification plan.
+pass_condition:
+- packet generated and locked.
+
+### AGENT 18 — R01 Handoff Agent
+id: r01_handoff_agent
+owns_state: handoff objects only
+purpose: route cleanly to other blocks.
+inputs:
+- route_state
+- readiness_result
+- duplicate_risk_report
+- compliance_packet
+- Ion decision
+outputs:
+- handoff_to_route_02
+- handoff_to_route_03
+- handoff_to_route_04_future
+- handoff_to_route_05
+- decision_card_to_route_07
+- lesson_to_route_08
+rules:
+- no route state mutation outside Route 01;
+- use handoff object only;
+- Route 04 handoff only after future publish verification.
+
+## Route 01 Exact Output Contracts
+
+### accepted_input_state
+case_id, route_id, created_utc, source_link_status, photos_count, receipt_status, specs_status, comments_status, quantity_status, target_price_status, missing_fields, current_status.
+
+### source_snapshot
+case_id, source_type, source_url, raw_title, supplier_name, supplier_price, visible_specs, visible_package_contents, source_confidence, unverified_claims.
+
+### photo_manifest
+case_id, photo_id, origin, size_known, longest_side_px, hero_candidate, duplicate_group, truth_status, policy_status, notes.
+
+### receipt_cost_record
+case_id, currency, product_cost_total, product_cost_unit, quantity_bought, china_shipping, order_date, supplier, confidence.
+
+### product_passport
+master_product_id, sku_candidate, product_name_de, internal_name_ru, brand, model, product_type, package_contents, supplier_source, supplier_price, quantity_bought, dimensions_weight_if_known, electrical_specs_if_known, photo_refs, compliance_flags, marketplace_targets, risk_flags.
+
+### category_candidate_report
+case_id, marketplace_id, category_candidate_id, category_candidate_name, confidence, leaf_status, aspect_check_required, adapter_notes.
+
+### item_specifics_draft
+case_id, marketplace_id, category_id, required_aspects, recommended_aspects, provided_aspects, missing_aspects, variation_enabled_aspects_for_route_02.
+
+### listing_draft
+case_id, title_de, description_plain_de, description_html_de, item_specifics_ref, photo_plan_ref, price_ref, quantity_ref, compliance_packet_ref, marketplace_adapter_ref.
+
+### photo_plan
+case_id, hero_photo_id, ordered_photo_slots, missing_photo_tasks, policy_warnings, source_edit_only_required.
+
+### compliance_packet
+case_id, gpsr_required_status, manufacturer_info_status, responsible_person_status, product_safety_status, CE_flag, WEEE_flag, battery_flag, common_charger_flag, warnings, block_reason.
+
+### price_margin_report
+case_id, purchase_unit_cost, germany_shipping, packaging, ebay_fee_estimate, ads_percent, return_reserve, defect_reserve, target_price, profit_before_reserve, profit_after_reserve, verdict.
+
+### ebay_simple_offer_readiness
+case_id, sku, marketplaceId, format, merchantLocationKey, availableQuantity, categoryId, price, paymentPolicyId, fulfillmentPolicyId, returnPolicyId, title_status, description_status, aspects_status, image_status, regulatory_status, ready_for_publish_gate.
+
+### readiness_result
+case_id, verdict, title_ok, photos_ok, category_ok, aspects_ok, description_ok, price_ok, stock_ok, policies_ok, compliance_ok, duplicate_ok, missing_or_blocked, next_action.
+
+### publish_gate_packet
+case_id, marketplace_id, action_type, payload_summary_ref, approval_marker_required, live_called=false, token_printed=false, rollback_note, readonly_verify_plan.
+
+## Route 01 Final Handoff Rules
+
+To Route 02:
+- if variants detected;
+- if multiple colors/sizes/lengths/kits/powers/models/capacities appear;
+- if one product has selectable options.
+
+To Route 03:
+- if duplicate risk high;
+- if existing listing should be improved instead of new listing;
+- if Ion wants alternative titles/descriptions/angles.
+
+To Route 04:
+- future only after publish and read-only public listing verification.
+
+To Route 05:
+- stock link and cost/profit record;
+- low quantity or purchase decision later.
+
+To Route 07:
+- paused case;
+- blocked case;
+- missing decision;
+- publish approval wait;
+- compliance uncertainty;
+- category uncertainty.
+
+To Route 08:
+- lessons;
+- archive summary;
+- rule improvements.
+
+## Route 01 Final Review Result
+
+Route 01: COMPLETE_FOR_GITHUB_MEMORY
+Agent passports: CREATED
+Output contracts: CREATED
+Handoff rules: CREATED
+Marketplace adapter notes: CREATED
+eBay readiness rules: CREATED
+Route 02 reuse base: READY
+
+## What remains before server later
+
+- generate real server candidate files only after all routes deep-finished or Ion approves one-by-one materialization;
+- implement validators from V3 contract;
+- compile and self_review on server;
+- active bot patch only later with separate marker;
+- restart only later with separate marker.
+
+## Safety status
+
+server_write_done: false
+active_bot_patch_done: false
+telegram_restart_done: false
+ebay_api_called: false
+amazon_api_called: false
+kaufland_api_called: false
+otto_api_called: false
+purchase_action_done: false
+delete_cleanup_done: false
+git_commit_done: false
+git_push_done: false
+secrets_printed: false
+
+## Next allowed action
+
+BUILD_ROUTE_02_VARIANT_PRODUCT_DEEP_BLUEPRINT_GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+
+Suggested next marker:
+APPROVE_BUILD_ROUTE_02_VARIANT_PRODUCT_DEEP_BLUEPRINT_GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
