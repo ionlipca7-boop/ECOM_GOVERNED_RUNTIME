@@ -1,0 +1,13 @@
+# V7.3C R05 Pass C3 Result View
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 07 Result View.
+Purpose: show result per SKU after costs and reserve.
+
+Output:
+result_view
+
+Rule:
+No green result without reserve check.
