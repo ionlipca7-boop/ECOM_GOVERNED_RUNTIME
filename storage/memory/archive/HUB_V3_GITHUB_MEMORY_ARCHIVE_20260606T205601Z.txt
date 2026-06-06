@@ -1,0 +1,52 @@
+# ECOM OS V7.3C Master Menu — Part 05 Routes 07 and 08
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Route 07 — Решения / отчёты
+
+Role: Ion decision center.
+Purpose: collect approvals, blocked cases, missing data, reports and waiting decisions from all routes.
+
+Main flow:
+1 receive case from any route;
+2 classify: approve, wait, info, block, repair, done;
+3 show short Russian Telegram card;
+4 use short callback key only;
+5 record Ion decision;
+6 return case to source route;
+7 keep useful lesson for Route 08.
+
+Agents:
+Inbox, Classify, Risk, Card, Buttons, Marker, Log, Handoff, Wait List, Safety.
+
+Important rules:
+Telegram card is short; full details stay in storage.
+Callback carries only short case key.
+No hidden live action behind button.
+Old decision controls must not stay active after Ion chooses.
+If unclear, ask Ion instead of acting.
+
+## Route 08 — Память / учитель
+
+Role: autonomous project memory, teacher, archivist and rule center.
+Purpose: save lessons, rules, archives, pointers, versions, evidence and repeated mistake prevention.
+
+Main flow:
+1 receive lesson/rule from routes 01-07;
+2 store stable knowledge in project memory;
+3 keep dynamic state in pointer/current state;
+4 create archive indexes;
+5 detect conflicts;
+6 ask Route 07 if Ion decision is needed;
+7 create short Russian teacher summary for Ion.
+
+Agents:
+Lesson Intake, Rule Registry, Archivist, Pointer, Conflict Resolver, Teacher, Operator Front, Version, Evidence, Safety Memory.
+
+Important rules:
+Project memory must be autonomous in files, archives, rules and pointers.
+ChatGPT/operator front is helper only, not main memory.
+No secrets in memory.
+No false PASS.
+Repeated mistakes become lessons.
