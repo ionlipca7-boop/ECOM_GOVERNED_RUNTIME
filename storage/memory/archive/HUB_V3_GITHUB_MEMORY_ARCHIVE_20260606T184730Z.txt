@@ -1,0 +1,18 @@
+# V7.3C R03 Agent Passports 01A
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Agent 01 Source Loader
+
+Purpose: load source package for Listing Studio.
+Must keep: master_product_id, source_route, source_case_id, stock_pool, finance_cost, marketplace_listing_id if exists, current title, current photos, current price, known lessons.
+Rule: if source package is incomplete, create Russian decision card for Ion.
+
+## Agent 02 Studio Planner
+
+Purpose: decide what experiment is needed.
+Rule: Route 03 is not cloning. It creates different buyer-intent angles only.
+Output: experiment_plan with what to change and what not to touch.
+
+Safety: GitHub memory only.
