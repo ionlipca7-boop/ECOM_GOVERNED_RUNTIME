@@ -1,0 +1,58 @@
+# ECOM OS V7.3C — Route 08 Locked After Agent Passports
+
+Status: ROUTE_08_LOCKED_COMPLETE_AT_GITHUB_MEMORY_LEVEL
+Mode: GITHUB_MEMORY_ONLY
+
+## Base checkpoints
+
+Route 08 deep blueprint index:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T203429Z.txt
+
+Autonomy clarification:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T203938Z.txt
+
+Route 08 agent passports index:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T204049Z.txt
+
+## Route 08 lock result
+
+Route 08 is locked for GitHub-memory stage.
+
+It now includes:
+- autonomous project memory rule;
+- lesson intake;
+- rule registry;
+- archive and pointer logic;
+- conflict resolver;
+- teacher summaries for Ion;
+- operator front helper only;
+- version tracker;
+- evidence linker;
+- safety memory;
+- links back to routes 01/02/03/04/05/06/07.
+
+## Core locked rules
+
+Project memory must be autonomous in project files, archives, rules and pointers.
+ChatGPT/operator front is only a helper, not the main memory.
+Stable knowledge goes to memory.
+Dynamic state goes to pointer/current state.
+Old memory is read-only reference unless migrated by approval.
+No secrets in memory.
+No false PASS.
+Repeated mistakes become lessons.
+If rule conflict exists, ask Ion through Route 07.
+No live marketplace action is allowed from this memory stage.
+
+## Safety status
+
+server_write_done: false
+active_bot_patch_done: false
+telegram_restart_done: false
+marketplace_api_called: false
+commit_push_done: false
+secrets_printed: false
+
+## Next allowed action
+
+CREATE_V7_3C_ALL_8_ROUTES_FINAL_MASTER_INDEX_GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
