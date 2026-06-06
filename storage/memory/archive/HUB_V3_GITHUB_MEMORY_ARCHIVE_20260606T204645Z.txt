@@ -1,0 +1,27 @@
+# V7.3C All 8 Routes Final Master Index Part B — Routes 05-08
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Route 05
+Status: LOCKED
+Role: finance and inventory truth center.
+Includes: stock core, finance core, collector, shared stock truth, returns, cost view, result view, alerts, reports, tax summary, handoffs.
+
+## Route 06
+Status: LOCKED
+Role: legal Product Radar.
+Includes: source confidence, query plan, supplier proof, demand review, market comparison, margin/reserve review, safety fit, offer structure, Ion decision cards.
+
+## Route 07
+Status: LOCKED_WITH_DETAIL_REPAIR
+Role: decision center and reports.
+Includes: short Russian Telegram cards, short callbacks, exact markers, decision log, handoff, wait list, safety check, card state rule.
+
+## Route 08
+Status: LOCKED
+Role: autonomous project memory and teacher.
+Includes: lessons, rules, archive, pointer, conflict resolver, teacher, version, evidence, safety memory. Operator front is helper only.
+
+## Result
+Routes 05-08 are complete at GitHub-memory stage.
