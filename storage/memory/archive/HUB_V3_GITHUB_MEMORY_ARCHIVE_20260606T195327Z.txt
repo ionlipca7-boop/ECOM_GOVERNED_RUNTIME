@@ -1,0 +1,19 @@
+# V7.3C R05 Pass E Tax Handoff
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 11 Tax Summary.
+Prepares summary for Ion later.
+No submission.
+
+Agent 12 Handoff.
+Sends cases to Route 03, 04, 06, 07 or 08.
+
+Outputs:
+- tax_summary
+- handoff_record
+
+Rule:
+Route 05 keeps stock and money truth.
+Other routes request data through handoff.
