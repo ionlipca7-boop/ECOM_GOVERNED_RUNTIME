@@ -1,0 +1,16 @@
+# V7.3C R07 Lock Detail 03 Decision Flow
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Route 07 flow:
+1. receive case from source route
+2. classify case
+3. show Ion a short card
+4. record Ion choice
+5. return case to source route
+6. keep lesson for Route 08 if useful
+
+Rule:
+Route 07 decides and records.
+The source route continues the work after the correct gate.
