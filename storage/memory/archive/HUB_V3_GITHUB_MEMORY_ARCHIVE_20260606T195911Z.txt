@@ -1,0 +1,39 @@
+# ECOM OS V7.3C — Route 06 Product Radar Part 04 Agent Team
+
+topic_id: V7_3C_ROUTE_06_PRODUCT_RADAR
+part_number: 04_AGENT_TEAM
+previous_part: V7_3C_ROUTE_06_PRODUCT_RADAR_PART_03_SCORING
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Agents
+
+01 R06 Intake Agent
+Collects product idea, link, screenshot, supplier note or Ion voice idea.
+
+02 R06 Demand Agent
+Checks buyer demand and search signals.
+
+03 R06 Competition Agent
+Checks competitor listings and price range.
+
+04 R06 Supplier Evidence Agent
+Checks supplier source, cost, shipping, reviews and proof.
+
+05 R06 Margin Agent
+Uses Route 05 cost model and reserve logic.
+
+06 R06 Risk Agent
+Checks return, defect, compliance, safety and restricted-product risks.
+
+07 R06 Offer Structure Agent
+Decides simple product, variants, bundle, accessory, upgrade or watch-only.
+
+08 R06 Listing Angle Agent
+Sends strong ideas to Route 03 for A/B/C angle.
+
+09 R06 Decision Card Agent
+Creates Russian Telegram card for Ion.
+
+10 R06 Lesson Agent
+Saves product-search lessons to Route 08.
