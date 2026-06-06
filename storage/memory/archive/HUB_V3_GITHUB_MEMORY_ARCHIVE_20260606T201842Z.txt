@@ -1,0 +1,37 @@
+# ECOM OS V7.3C — Route 07 Decision Center Part 03 Gates
+
+topic_id: V7_3C_ROUTE_07_DECISION_CENTER
+part_number: 03_GATES
+previous_part: V7_3C_ROUTE_07_DECISION_CENTER_PART_02_CARDS
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Approval gates
+
+Route 07 handles approval gates for:
+- publish path
+- update path
+- price change
+- quantity change
+- photo change
+- delete or cleanup request
+- purchase decision
+- supplier decision
+- blocked/retry decision
+
+## Core rule
+
+High-risk actions need explicit Ion approval marker.
+No vague approval.
+No hidden live action.
+No delete without separate delete gate.
+No secret values in cards.
+
+## Report gates
+
+Reports must be short and Russian:
+- what happened
+- what is blocked
+- what is safe
+- what Ion should decide
+- what next route will do
