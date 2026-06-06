@@ -1,0 +1,9 @@
+# V7.3C Final Gate Ref G2
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Rule:
+Each sales site needs its own adapter and own field check.
+
+Do not reuse one site format for all sites.
