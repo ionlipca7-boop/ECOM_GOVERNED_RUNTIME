@@ -1,0 +1,17 @@
+# V7.3C FINAL GATE REFS INDEX
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Refs:
+E storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T192020Z.txt
+F storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T192026Z.txt
+G2 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T192037Z.txt
+
+Result:
+Final gate refs saved.
+Auth and IDs must be automatic.
+Each sales site needs its own adapter.
+
+Next:
+R04_AGENT_PASSPORTS
