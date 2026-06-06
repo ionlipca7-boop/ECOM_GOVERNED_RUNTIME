@@ -1,0 +1,15 @@
+# V7.3C R04 Pass B State Card
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 03 State Label.
+Purpose: mark listing as no-data, good, watch or action-needed.
+Output: r04_state_label.
+
+Agent 04 Ion Card.
+Purpose: create Russian Telegram card only when Ion should see something.
+Output: r04_ion_card.
+
+Rule:
+Do not flood Ion with every small change.
