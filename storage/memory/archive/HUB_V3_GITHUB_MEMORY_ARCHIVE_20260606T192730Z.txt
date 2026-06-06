@@ -1,0 +1,64 @@
+# ECOM OS V7.3C — Route 04 Locked After Agent Passports and Final Refs
+
+Status: ROUTE_04_LOCKED_COMPLETE_AT_GITHUB_MEMORY_LEVEL
+Mode: GITHUB_MEMORY_ONLY
+
+## Base checkpoints
+
+Route 04 deep blueprint index:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T185953Z.txt
+
+Route 04 web refs index:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T190822Z.txt
+
+Final gate refs index:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T192049Z.txt
+
+Route 04 agent passports index:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T192527Z.txt
+
+## Route 04 lock result
+
+Route 04 is locked for GitHub-memory stage.
+
+It now includes:
+- marketplace lifecycle deep blueprint;
+- status cards;
+- listing registry;
+- listing snapshot;
+- state card;
+- Ion attention card;
+- links to Route 03, Route 05, Route 07 and Route 08;
+- recommendation logic;
+- handoff logic;
+- lesson export;
+- web reference notes;
+- final gate references;
+- auth and ID automation reminder;
+- no-clone listing rule;
+- Russian-only Telegram output for Ion;
+- German-only buyer content rule.
+
+## Core locked rules
+
+Route 04 observes listing life and does not flood Ion.
+Good listings stay silent.
+Medium listings go to summary.
+Weak listings create attention cards.
+Route 04 sends weak content cases to Route 03, stock or finance issues to Route 05, decisions to Route 07, and lessons to Route 08.
+Before any final approval path, IDs, policies, location, stock, price, content, photos, safety data and auth state must be checked by tools.
+No secret values may be printed.
+No live marketplace action is allowed from this memory stage.
+
+## Safety status
+
+server_write_done: false
+active_bot_patch_done: false
+telegram_restart_done: false
+marketplace_api_called: false
+commit_push_done: false
+secrets_printed: false
+
+## Next allowed action
+
+BUILD_ROUTE_05_FINANCE_INVENTORY_DEEP_BLUEPRINT_GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
