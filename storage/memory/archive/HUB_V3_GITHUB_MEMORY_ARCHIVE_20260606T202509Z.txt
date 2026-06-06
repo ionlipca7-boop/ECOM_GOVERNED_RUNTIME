@@ -1,0 +1,21 @@
+# V7.3C R07 Agent Passports Index
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+UPGRADE:
+storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T202324Z.txt
+
+PARTS:
+A storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T202354Z.txt
+B storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T202406Z.txt
+C storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T202415Z.txt
+D storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T202422Z.txt
+E storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T202433Z.txt
+
+RESULT:
+Route 07 agent passports saved.
+Route 07 uses short Russian Telegram cards, short callbacks, exact markers, decision log, handoff and safety gate.
+
+NEXT:
+LOCK_ROUTE_07
