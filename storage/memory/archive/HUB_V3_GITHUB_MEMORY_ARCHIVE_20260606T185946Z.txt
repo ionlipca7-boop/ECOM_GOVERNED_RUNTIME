@@ -1,0 +1,41 @@
+# ECOM OS V7.3C — Route 04 Marketplace Lifecycle Part 05 Handoffs
+
+topic_id: V7_3C_ROUTE_04_MARKETPLACE_LIFECYCLE
+part_number: 05_HANDOFFS
+previous_part: V7_3C_ROUTE_04_MARKETPLACE_LIFECYCLE_PART_04_SIGNALS_RULES
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Receives from
+
+Route 01 after future simple listing publish verification.
+Route 02 after future variant listing publish verification.
+Route 03 after future approved listing update or experiment.
+Route 05 if stock or finance asks for listing review.
+Route 07 if Ion continues a lifecycle case.
+Route 08 for rules and lessons.
+
+## Sends to
+
+Route 03 for weak listing or listing improvement.
+Route 05 for stock, cost, return or profit issue.
+Route 07 for Ion decision, approval wait or blocker.
+Route 08 for lifecycle lesson.
+
+## Handoff object fields
+
+- handoff_id
+- from_route
+- to_route
+- listing_id
+- sku
+- master_product_id
+- reason
+- payload_ref
+- suggested_action
+- created_utc
+
+## Rule
+
+Route 04 never changes another route state directly.
+It creates handoff objects only.
