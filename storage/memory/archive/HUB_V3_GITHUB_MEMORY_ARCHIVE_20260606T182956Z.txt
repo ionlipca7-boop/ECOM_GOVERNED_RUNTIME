@@ -1,0 +1,49 @@
+# ECOM OS V7.3C — Chunked Archive Protocol V1
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Why
+
+If a large detailed archive is blocked by tool safety/size limits, do not reduce important knowledge to one short summary.
+Instead split the topic into numbered safe checkpoints.
+
+## Rule
+
+One big topic must be saved as:
+- PART_01_INDEX
+- PART_02_DETAIL_A
+- PART_03_DETAIL_B
+- PART_04_DETAIL_C
+- PART_05_LOCK_SUMMARY
+
+Each part must contain:
+- topic_id
+- part_number
+- parent_archive if known
+- previous_part if any
+- next_part if planned
+- exact route scope
+- safety status
+- next allowed action
+
+## Naming pattern
+
+V7_3C_<TOPIC>_PART_01_INDEX
+V7_3C_<TOPIC>_PART_02_<DETAIL>
+V7_3C_<TOPIC>_PART_03_<DETAIL>
+V7_3C_<TOPIC>_PART_04_<DETAIL>
+V7_3C_<TOPIC>_LOCK_SUMMARY
+
+## Pointer rule
+
+After saving all parts, pointer should point to the LOCK_SUMMARY or INDEX that lists all parts.
+If pointer update fails, the exact archive paths must be printed and then repaired in a separate pointer-fix step.
+
+## Safety
+
+Chunking does not permit server write, active patch, restart, marketplace API call, delete, commit or push.
+
+## Use now
+
+Use this protocol for detailed photo rules, HTML shop block rules, and any future long route blueprint.
