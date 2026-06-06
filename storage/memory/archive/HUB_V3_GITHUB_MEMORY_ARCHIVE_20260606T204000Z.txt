@@ -1,0 +1,16 @@
+# V7.3C R08 Pass C Conflict Teacher
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 05 Conflict Resolver.
+Detects rule conflict and sends question to Route 07 if Ion decision is needed.
+Output: conflict_report.
+
+Agent 06 Teacher.
+Creates short Russian explanation for Ion.
+Output: teacher_summary.
+
+Rule:
+Do not silently overwrite old rule if conflict exists.
+Ask Ion through Route 07.
