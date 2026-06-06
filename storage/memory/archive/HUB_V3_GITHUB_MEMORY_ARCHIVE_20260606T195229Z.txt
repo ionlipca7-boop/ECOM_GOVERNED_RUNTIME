@@ -1,0 +1,25 @@
+# V7.3C R05 Pass A Intake Collector
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 01 Purchase Intake.
+Reads Ion receipts, supplier orders, product cost, bought quantity and document refs from Route 01 and Route 02.
+
+Agent 02 Site Collector.
+Collects later normalized records from sales-site adapters.
+
+Inputs:
+- receipt_ref
+- product_id
+- sku
+- quantity
+- cost
+- source_site
+
+Outputs:
+- purchase_record
+- collected_site_record
+
+Rule:
+No raw site format enters Route 05 core without normalization.
