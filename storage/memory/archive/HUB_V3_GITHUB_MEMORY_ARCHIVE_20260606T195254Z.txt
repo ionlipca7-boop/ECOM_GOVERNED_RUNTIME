@@ -1,0 +1,14 @@
+# V7.3C R05 Pass C1 Returns
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 05 Return Agent.
+Purpose: track returned items and related notes.
+
+Outputs:
+- return_record
+- return_note
+
+Rule:
+Returned item affects stock and money view.
