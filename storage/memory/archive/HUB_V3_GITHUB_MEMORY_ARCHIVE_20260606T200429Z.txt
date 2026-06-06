@@ -1,0 +1,8 @@
+# V7.3C R06 Agent 01
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 01 Intake.
+Purpose: collect Ion product idea, link, screenshot or note.
+Output: r06_input_card.
