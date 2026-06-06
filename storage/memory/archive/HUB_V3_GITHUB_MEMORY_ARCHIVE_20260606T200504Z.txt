@@ -1,0 +1,16 @@
+# V7.3C R06 Agent 08 10
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 08 Offer Structure.
+Purpose: decide simple product, variant, bundle, accessory, upgrade or watch.
+Output: offer_structure_note.
+
+Agent 09 Ion Card.
+Purpose: create Russian decision card for Ion.
+Output: r06_ion_card.
+
+Agent 10 Lesson.
+Purpose: save product research lesson to Route 08.
+Output: r06_lesson.
