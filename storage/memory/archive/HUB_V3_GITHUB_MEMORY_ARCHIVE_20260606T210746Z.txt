@@ -1,0 +1,52 @@
+# V7.3C GitHub Code Contract Drafts — Part 06 Validators Final Gates
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Shared validators draft
+
+language_validator:
+Ion output Russian. Buyer Germany content German.
+
+source_truth_validator:
+Source pages are evidence, not final truth.
+
+photo_validator:
+Ion provides/approves final photos. Agents check order, proof and language.
+
+duplicate_validator:
+Same product and same buyer intent must not create clone.
+
+stock_money_validator:
+Route 05 is stock and money truth.
+
+telegram_validator:
+Cards are short. Button callback carries key only.
+
+memory_validator:
+Stable lessons go to memory. Dynamic state goes to pointer.
+
+## Final gate draft
+
+Before any future publish/update/live path, tools must check:
+- route approval state
+- exact Ion marker
+- product id
+- SKU
+- category
+- policy ids
+- location
+- price
+- quantity
+- stock pool
+- photos
+- German content
+- item fields
+- safety data
+- auth state
+- adapter type
+
+## Rule
+
+Validator FAIL means stop and create Route 07 decision card.
+No live action in GitHub draft stage.
