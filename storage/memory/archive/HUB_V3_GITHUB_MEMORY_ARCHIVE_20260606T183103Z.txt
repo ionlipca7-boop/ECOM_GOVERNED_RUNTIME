@@ -1,0 +1,21 @@
+# V7.3C IMAGE RULES INDEX
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+PARTS:
+1 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T182956Z.txt
+2 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T183008Z.txt
+3A storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T183032Z.txt
+3B storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T183041Z.txt
+
+RESULT:
+Chunked archive method works.
+Ion provides final images.
+Agents review, rank, map and create rework tasks.
+Buyer-facing image text: German.
+Ion-facing reports: Russian.
+No server write. No active patch. No restart. No marketplace call.
+
+NEXT:
+REVIEW_AND_LOCK_ROUTE_02_COMPLETE_WITH_LANGUAGE_SHOP_AND_IMAGE_RULES_GITHUB_MEMORY_ONLY
