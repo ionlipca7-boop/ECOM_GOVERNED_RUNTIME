@@ -1,0 +1,51 @@
+# ECOM OS V7.3C — Route 03 Listing Studio Part 03 Agent Team
+
+topic_id: V7_3C_ROUTE_03_LISTING_STUDIO
+part_number: 03_AGENT_TEAM
+previous_part: V7_3C_ROUTE_03_LISTING_STUDIO_PART_02_ABC_EXPERIMENTS
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Core agents
+
+01 R03 Source Loader Agent
+Loads product/listing/draft/weak listing/source case.
+
+02 R03 Listing Studio Planner
+Decides what experiment is needed and what not to touch.
+
+03 R03 External Search Agent
+Builds Variant A for external German search clarity.
+
+04 R03 Marketplace Buyer Agent
+Builds Variant B for eBay buyer intent and item-specific signals.
+
+05 R03 AI Search Agent
+Builds Variant C for clear machine-readable product facts.
+
+06 R03 German Language Agent
+Ensures buyer-facing content is German only.
+
+07 R03 HTML Shop Block Agent
+Builds/optimizes related-products and shop block.
+
+08 R03 Photo Order Critic
+Does not create photos; checks order, value proof and missing tasks.
+
+09 R03 Duplicate Guard Agent
+Blocks clone or same buyer-intent duplicate.
+
+10 R03 Compliance Guard Agent
+Checks GPSR/product safety and risky claims.
+
+11 R03 Critic Agent
+Finds weak title, weak value signal, false claims, confusion.
+
+12 R03 Comparison Agent
+Compares A/B/C and creates ranked recommendation.
+
+13 R03 Approval Packet Agent
+Creates update/publish packet only, no live action.
+
+14 R03 Lesson Agent
+Saves experiment lesson for Route 08 and future Route 06/01/02 use.
