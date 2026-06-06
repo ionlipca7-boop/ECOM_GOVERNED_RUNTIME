@@ -1,0 +1,651 @@
+# ECOM OS V7.3C — ROUTE 01 LOCKED + ROUTE 02 VARIANT PRODUCT DEEP BLUEPRINT
+
+Status: ROUTE_01_LOCKED_AND_ROUTE_02_DEEP_BLUEPRINT_CREATED_IN_GITHUB_MEMORY
+Approval marker: APPROVE_REVIEW_AND_LOCK_ROUTE_01_COMPLETE_WITH_PRODUCT_SEARCH_CHAT_LESSONS_GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+Mode: GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY_NO_DELETE_NO_COMMIT_NO_PUSH
+Base Route 01 product search lessons: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T175425Z.txt
+Base Route 01 eBay UI map: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T174857Z.txt
+Base Route 01 final passports: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T174129Z.txt
+Base marketplace layer: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T173036Z.txt
+Base V3 contract: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T172422Z.txt
+Uploaded product-search chat source: Вставленный текст.txt
+
+## PART A — ROUTE 01 LOCK
+
+Route 01 / Button 01 / 🆕 Новый товар is now LOCKED at GitHub-memory level.
+
+Locked scope:
+- one simple product;
+- one SKU;
+- one listing draft;
+- eBay.de default;
+- future marketplace adapter fields preserved;
+- no variants inside Route 01;
+- no bundle/kit decision inside Route 01 unless it is still truly one SKU;
+- if variants/bundles/multiple SKU choice appears, Route 01 must handoff before publish gate.
+
+Route 01 includes:
+- final agent passports;
+- eBay listing UI field map;
+- search-demand aspect logic;
+- product-search chat lessons;
+- Return Reserve V2.1R;
+- Value Signal system;
+- Offer Structure warning;
+- Product Radar Lesson Import Agent;
+- handoff to 02/03/04/05/06/07/08.
+
+Route 01 lock rule:
+Route 01 may generate a publish_gate_packet only if it is still a single-product/single-SKU case. If a product has selectable options, variants, colors, lengths, sizes, kits, power levels, capacities, materials, connector choices, pack counts, or model choices, it must create Route 02 handoff instead of forcing the product into Route 01.
+
+Route 01 server status:
+server_write_done=false
+active_bot_patch_done=false
+telegram_restart_done=false
+ebay_api_called=false
+
+## PART B — ROUTE 02 IDENTITY
+
+Top button: 02 🧬 Новый товар с вариантами
+route_id: route_02_variant_product
+callback: v73c:route:02_variant_product
+case_namespace: cases/v73c/route_02_variant_product
+primary_marketplace: ebay_de
+future_marketplaces: amazon_de, kaufland_de, otto_de, etsy_future
+server_status: NOT_MATERIALIZED
+active_bot_patch: NOT_DONE
+
+## Route 02 Purpose
+
+Route 02 handles a master product with variants. It extends Route 01 but does not duplicate Route 01.
+
+Route 02 is used when a product has selectable choices such as:
+- color;
+- size;
+- length;
+- kit size;
+- pack count;
+- power/wattage;
+- capacity;
+- connector type;
+- model;
+- material;
+- bundle option;
+- version/generation.
+
+Goal:
+Turn a multi-option product into a clean variant listing candidate with master product truth, variant matrix, SKU map, photo map, price/quantity map, item specifics/aspects, compliance, profit after reserve, and publish gate packet.
+
+Route 02 must prevent partial/incorrect variation listings.
+
+## Why Route 02 must be separate from Route 01
+
+From Ion's real eBay UI screenshot:
+If the original listing did not include variants, eBay shows that variants are not available and a new listing/offer is needed for variants. Therefore variants must be detected before publish or update, not after.
+
+From eBay Inventory API:
+Multiple-variation listings require inventory item groups. The group contains variantSKUs and variesBy specifications. Publishing a group is done through publishOfferByInventoryItemGroup, not normal publishOffer.
+
+Route 01 handles one SKU.
+Route 02 handles master product + multiple SKUs + inventory item group readiness.
+
+## Route 02 Full Flow
+
+Step 0 — Open Route 02
+Bot shows:
+"Пришли ссылку, фото, чек, характеристики, варианты: цвет/длина/размер/комплект/мощность/количество/модель. Можно всё в любом порядке. Я соберу матрицу вариантов."
+Creates route_state NEW/COLLECTING.
+
+Step 1 — Silent Variant Intake
+Bot accepts:
+- supplier/product link;
+- variant photos;
+- master photos;
+- receipt/order screenshot;
+- variant price table;
+- supplier variant table;
+- SKU/stock notes;
+- Ion comments;
+- product specs;
+- package/quantity notes.
+
+Step 2 — Accepted Inputs Report
+Bot shows:
+- source link yes/no;
+- variant photos count;
+- master photos count;
+- receipt/cost yes/no;
+- variant options detected;
+- missing variant fields;
+- route_state status.
+
+Step 3 — Build Master Product
+Reuse Route 01 base product_passport logic to build master_product_passport.
+Master product owns shared product identity.
+Variants own only difference fields.
+
+Step 4 — Build Variant Matrix
+Create full variant matrix:
+- variant_id;
+- option names;
+- option values;
+- SKU;
+- photo refs;
+- cost;
+- price;
+- quantity;
+- dimensions/weight if different;
+- compliance risk if different;
+- status.
+
+Step 5 — Validate Variation Model
+Check whether variants are valid:
+- every variant has unique SKU;
+- every selectable option has clear values;
+- no impossible option combinations;
+- no duplicate variant rows;
+- no missing quantity/price/cost where needed;
+- variant count manageable;
+- variation aspects are supported by category/taxonomy where available.
+
+Step 6 — Build Variant Photo Map
+Map photos to variation aspect:
+- if color varies, images should demonstrate colors;
+- if length/size/pack varies, photos or graphics must be truthful;
+- no invented geometry;
+- no misleading photo for variants.
+
+Step 7 — Build Variant Listing Content
+Create:
+- master title;
+- master description explaining all variants;
+- variant option labels;
+- item specifics common to all variants;
+- item specifics differing by variant;
+- photo plan;
+- package truth per variant.
+
+Step 8 — Build Finance + Stock Per Variant
+Calculate per variant:
+- purchase unit cost;
+- Germany shipping/packaging if different;
+- eBay fees estimate;
+- ad percent;
+- return reserve;
+- defect reserve;
+- profit after reserve;
+- quantity.
+
+Step 9 — Build eBay Variant Group Readiness
+Create eBay inventory item group readiness packet:
+- inventoryItemGroupKey;
+- variantSKUs;
+- variesBy.specifications;
+- aspectsImageVariesBy if variation images are used;
+- group title <=80;
+- group description;
+- group imageUrls;
+- shared aspects;
+- per-SKU inventory items;
+- per-SKU offers;
+- category;
+- policies;
+- location;
+- price/quantity per offer;
+- compliance/GPSR if required.
+
+Step 10 — Readiness Check
+Readiness can only PASS if:
+- master product complete;
+- variant matrix complete;
+- SKUs unique;
+- photos mapped;
+- prices/quantities ready;
+- category/aspects ready;
+- compliance ready;
+- duplicate guard pass;
+- offer structure pass;
+- group publish gate packet ready.
+
+Step 11 — Publish Gate
+Bot shows approval packet only.
+No eBay group publish without separate marker.
+
+Step 12 — After Future Publish
+Future only:
+- publishOfferByInventoryItemGroup;
+- read-only verify public listing;
+- handoff to Route 04 lifecycle;
+- handoff to Route 05 stock/finance;
+- lessons to Route 08.
+
+## Route 02 Subbuttons
+
+📦 Собрать товар с вариантами -> v73c:r02:build_variant_product
+📊 Что уже принято -> v73c:r02:accepted_inputs
+👁 Показать матрицу вариантов -> v73c:r02:show_variant_matrix
+👁 Показать полный листинг -> v73c:r02:show_full_listing
+🔁 Переделать -> v73c:r02:rework
+✅ Проверить готовность -> v73c:r02:readiness
+🚀 Опубликовать на eBay -> v73c:r02:publish_gate
+⬅️ Назад -> v73c:r02:back
+🏠 Домой -> v73c:r02:home
+⛔ Стоп -> v73c:r02:stop
+
+## Route 02 Agent Team
+
+### AGENT 01 — R02 Variant Intake Agent
+id: r02_variant_intake_agent
+owns_state: r02_accepted_input_state
+purpose: collect all variant-related inputs in any order.
+inputs:
+- Telegram text/photo/link/screenshots;
+- supplier variant table;
+- receipt/order screenshots;
+- Ion variant notes;
+- pack/quantity notes.
+outputs:
+- r02_accepted_input_state
+- missing_variant_input_report
+rules:
+- silent collection first;
+- do not build matrix until at least one variant dimension is detected;
+- if no variants are detected, offer handoff back to Route 01.
+
+### AGENT 02 — R02 Master Product Agent
+id: r02_master_product_agent
+owns_state: r02_master_product_passport
+purpose: reuse Route 01 product_passport logic for shared product identity.
+inputs:
+- accepted inputs;
+- source truth;
+- photos;
+- cost;
+- specs.
+outputs:
+- r02_master_product_passport
+rules:
+- master contains shared facts only;
+- variant-specific facts stay in matrix;
+- no false shared claim.
+
+### AGENT 03 — R02 Variant Dimension Detector
+id: r02_variant_dimension_detector
+owns_state: variant_dimension_report
+purpose: detect what varies.
+possible dimensions:
+- color;
+- size;
+- length;
+- pack count;
+- connector type;
+- power/wattage;
+- capacity;
+- model/version;
+- material;
+- bundle/kit option.
+outputs:
+- variant_dimension_report
+rules:
+- separate true variants from separate products;
+- if options imply different buyer intent, flag Route 03/06 review.
+
+### AGENT 04 — R02 Variant Matrix Agent
+id: r02_variant_matrix_agent
+owns_state: variant_matrix
+purpose: build complete matrix of variants.
+outputs:
+- variant_matrix
+- missing_variant_fields_report
+rules:
+- every row must be unique;
+- every row needs variant_id and SKU candidate;
+- incomplete rows block publish gate.
+
+### AGENT 05 — R02 SKU Agent
+id: r02_sku_agent
+owns_state: variant_sku_map
+purpose: create unique SKU per variant.
+rules:
+- SKU <=50 for eBay;
+- stable naming convention;
+- no duplicate SKU;
+- master group key separate from SKUs.
+
+### AGENT 06 — R02 Variant Photo Mapping Agent
+id: r02_variant_photo_mapping_agent
+owns_state: variant_photo_map
+purpose: map photos to variants and variation image aspects.
+rules:
+- if color varies and images show colors, map image aspect to color;
+- if length/pack varies, photos must not mislead;
+- per inventory item group, eBay allows up to 24 listing photos and up to 12 pictures per inventory item in multiple-variation listings according to official Inventory API docs;
+- no invented product geometry.
+
+### AGENT 07 — R02 Variant Price Agent
+id: r02_variant_price_agent
+owns_state: variant_price_map
+purpose: calculate price per variant.
+rules:
+- different variants can have different costs/prices;
+- calculate profit_after_reserve per variant;
+- no global PASS if any sellable variant fails unless disabled/removed.
+
+### AGENT 08 — R02 Variant Quantity / Stock Agent
+id: r02_variant_quantity_stock_agent
+owns_state: variant_quantity_stock_map
+purpose: connect each variant to stock quantity.
+rules:
+- each SKU has independent quantity;
+- zero quantity can exist as disabled/sold-out state, but cannot be hidden as available;
+- future eBay update quantity uses SKU/offer-specific route.
+
+### AGENT 09 — R02 Category + Variation Aspect Agent
+id: r02_category_variation_aspect_agent
+owns_state: variation_aspect_report
+purpose: verify category and aspects that support variations.
+outputs:
+- category_candidate_report
+- variation_aspect_report
+rules:
+- category must support intended variation aspects;
+- if eBay taxonomy says aspect is not variation-enabled, block or rework;
+- common aspects vs variant aspects must be separated.
+
+### AGENT 10 — R02 Title + Master Description Agent
+id: r02_title_description_agent
+owns_state: r02_title_description_package
+purpose: create listing title/description for the group, not one variant.
+rules:
+- group title max 80;
+- title must reflect master offer and key variation value;
+- description explains all variant choices clearly;
+- individual offer listingDescription should be omitted/controlled so group description is not overwritten in future Inventory API group logic.
+
+### AGENT 11 — R02 Item Specifics Agent
+id: r02_item_specifics_agent
+owns_state: r02_item_specifics_package
+purpose: create shared and variant item specifics.
+rules:
+- shared aspects in group aspects;
+- differing aspects in variesBy.specifications;
+- high-demand aspects from eBay UI/search signals prioritized if truthful;
+- no guessed aspect values.
+
+### AGENT 12 — R02 Compliance / GPSR Agent
+id: r02_compliance_gpsr_agent
+owns_state: r02_compliance_packet
+purpose: check compliance for master and variants.
+rules:
+- if all variants share compliance status, store at group level;
+- if a variant has unique risk, store variant-level risk;
+- electronics/chargers/cables must check product safety, common charger, CE/WEEE/battery flags where relevant.
+
+### AGENT 13 — R02 Duplicate + Offer Structure Guard
+id: r02_duplicate_offer_structure_guard
+owns_state: r02_duplicate_offer_structure_report
+purpose: prevent wrong variant listing, duplicate listing, or mixed buyer intents.
+rules:
+- variants must be one product family;
+- if options are actually separate buyer intents, send to Route 03;
+- if it is a bundle/kit line, decide if Route 02 or Route 03 is better;
+- no clone listings.
+
+### AGENT 14 — R02 eBay Inventory Group Readiness Agent
+id: r02_ebay_inventory_group_readiness_agent
+owns_state: ebay_inventory_group_readiness
+purpose: map Route 02 to eBay Inventory API group readiness.
+required before future group publish:
+- inventoryItemGroupKey <=50;
+- variantSKUs array;
+- variesBy.specifications;
+- aspectsImageVariesBy if variation images used;
+- group title <=80;
+- group description;
+- group imageUrls if needed;
+- shared aspects;
+- per-SKU inventory item records;
+- per-SKU offers;
+- category;
+- price/quantity/policies/location;
+- compliance fields if required.
+rules:
+- createOrReplaceInventoryItemGroup is not live publish;
+- publishOfferByInventoryItemGroup is separate live action;
+- if updating existing group, first read current group because replacement is complete.
+
+### AGENT 15 — R02 Readiness Agent
+id: r02_readiness_agent
+owns_state: r02_readiness_result
+purpose: final dry readiness before group publish packet.
+verdicts:
+- READY_FOR_REVIEW
+- NEEDS_REWORK
+- BLOCKED_MISSING_VARIANTS
+- BLOCKED_SKU_DUPLICATE
+- BLOCKED_PHOTO_MAPPING
+- BLOCKED_CATEGORY_ASPECTS
+- BLOCKED_COMPLIANCE
+- BLOCKED_FINANCE
+- BLOCKED_DUPLICATE_INTENT
+- READY_FOR_EBAY_GROUP_GATE
+rules:
+- no false PASS;
+- publish gate only if all required gates pass.
+
+### AGENT 16 — R02 Publish Gate Agent
+id: r02_publish_gate_agent
+owns_state: r02_publish_gate_packet
+purpose: create group publish approval packet only.
+rules:
+- no eBay publish without separate marker;
+- no token print;
+- no hidden live write;
+- show rollback/read-only verification plan.
+
+### AGENT 17 — R02 Handoff Agent
+id: r02_handoff_agent
+owns_state: route_02_handoff_objects
+purpose: route cleanly to related buttons.
+handoffs:
+- to Route 01 if no variants;
+- to Route 03 if listing angle/duplicate/buyer-intent decision is needed;
+- to Route 04 after future publish verification;
+- to Route 05 stock/finance per SKU;
+- to Route 06 if market proof/supplier comparison is missing;
+- to Route 07 if decision/block/approval/paused;
+- to Route 08 lessons/rules.
+
+### AGENT 18 — R02 Product Radar Lesson Import Agent
+id: r02_product_radar_lesson_import_agent
+owns_state: r02_radar_lesson_map
+purpose: import useful Product Radar lessons for variants, bundles, offer structure and value signal.
+inputs:
+- uploaded product-search chat;
+- Route 01 locked lessons;
+- Route 06 radar lessons;
+- Route 04 performance results later.
+outputs:
+- variant_value_signal_rules
+- bundle_vs_variation_warning
+- profit_reserve_rules
+- duplicate_intent_rules
+rules:
+- Route 02 uses Route 06 lessons for listing strategy, not autonomous search;
+- no full Product Radar chain inside Route 02 unless handoff requested.
+
+## Route 02 Data Sources
+
+Internal future server zones:
+- storage/master_product_registry
+- storage/intake
+- storage/images
+- storage/photo_review
+- storage/listing_drafts
+- storage/inventory
+- storage/finance
+- storage/compliance
+- storage/marketplace_adapters
+- storage/runtime_agents
+- storage/decision_inbox
+- storage/memory_v2/archive
+- storage/rules
+- storage/approval
+
+External official/practical sources to respect:
+- Telegram Bot API callback/update rules;
+- eBay Inventory API inventory item group and publishOfferByInventoryItemGroup;
+- eBay Taxonomy aspects and variation support;
+- eBay picture policy;
+- eBay UI field map from Ion screenshots;
+- Product Search Chat / Chain V2.1R lessons;
+- Amazon product type and variation themes later;
+- Kaufland variant suggestions later;
+- OTTO product variants future only;
+- GPSR/EU product safety where relevant.
+
+## Route 02 Schemas
+
+### r02_accepted_input_state
+case_id, route_id, created_utc, source_link_status, master_photos_count, variant_photos_count, receipt_status, specs_status, comments_status, detected_variant_dimensions, missing_fields, current_status.
+
+### r02_master_product_passport
+master_product_id, group_key_candidate, product_name_de, internal_name_ru, brand, model, product_type, shared_package_truth, supplier_source, marketplace_targets, shared_risk_flags.
+
+### variant_dimension_report
+case_id, dimensions_detected, dimension_names, dimension_values, dimension_confidence, supported_by_source, needs_ion_review.
+
+### variant_matrix
+case_id, variant_id, sku_candidate, option_values, title_fragment, package_contents, cost, price, quantity, photo_refs, weight_dimensions_if_different, compliance_flags, status.
+
+### variant_sku_map
+case_id, inventoryItemGroupKey_candidate, variant_id, sku, sku_length, sku_unique_status, sku_reason.
+
+### variant_photo_map
+case_id, image_variation_aspect, variant_id, photo_id, image_url_future, truth_status, policy_status, missing_photo_task.
+
+### variant_price_map
+case_id, variant_id, cost, price, fees_estimate, ads_percent, return_reserve, defect_reserve, profit_after_reserve, verdict.
+
+### variant_quantity_stock_map
+case_id, variant_id, sku, qty_bought, qty_available, stock_pool, future_listing_id, stock_status.
+
+### variation_aspect_report
+case_id, marketplace_id, category_id, common_aspects, variant_aspects, variesBy_specifications, aspectsImageVariesBy, missing_required_variation_data, taxonomy_support_status.
+
+### r02_listing_draft
+case_id, group_title_de, group_description_de, group_description_html_de, shared_item_specifics_ref, variant_matrix_ref, photo_plan_ref, price_map_ref, quantity_map_ref, compliance_packet_ref, marketplace_adapter_ref.
+
+### ebay_inventory_group_readiness
+case_id, inventoryItemGroupKey, variantSKUs, variesBy_specifications, aspectsImageVariesBy, group_title_status, group_description_status, shared_aspects_status, image_status, per_sku_inventory_status, per_sku_offer_status, category_status, policies_status, compliance_status, ready_for_group_publish_gate.
+
+### r02_readiness_result
+case_id, verdict, master_ok, variant_matrix_ok, sku_ok, photos_ok, category_aspects_ok, description_ok, price_ok, stock_ok, policies_ok, compliance_ok, duplicate_intent_ok, missing_or_blocked, next_action.
+
+### r02_publish_gate_packet
+case_id, marketplace_id, action_type, inventoryItemGroupKey, variant_count, payload_summary_ref, approval_marker_required, live_called=false, token_printed=false, rollback_note, readonly_verify_plan.
+
+## Route 02 eBay Default Flow
+
+Dry only now:
+1. Build master_product_passport.
+2. Build variant_dimension_report.
+3. Build variant_matrix.
+4. Build variant_sku_map.
+5. Build variant_photo_map.
+6. Build variant_price_map.
+7. Build variant_quantity_stock_map.
+8. Build variation_aspect_report.
+9. Build group listing_draft.
+10. Build compliance_packet.
+11. Build duplicate_offer_structure_report.
+12. Build ebay_inventory_group_readiness.
+13. Build r02_readiness_result.
+14. Build r02_publish_gate_packet only if READY_FOR_EBAY_GROUP_GATE.
+
+Future live phase only after marker:
+1. create/replace each inventory item by SKU.
+2. create/replace inventory item group.
+3. create offers for each SKU.
+4. verify group/offer readiness read-only.
+5. publishOfferByInventoryItemGroup.
+6. read-only verify public listing and all variants.
+7. handoff to Route 04 and Route 05.
+
+## Route 02 Search Demand + Value Signal Rules
+
+Route 02 inherits Route 01 search-demand logic and adds variant-specific logic:
+- high-demand aspects can become variation dimensions only if truthful;
+- if eBay UI shows search count/trend for aspect such as color, length, connectivity, pack count, those aspects should be prioritized in variant matrix and listing content;
+- title must not list every variant if too long; use master offer + strongest variant dimension;
+- description and item specifics must clarify all options;
+- photo plan must prove variant differences;
+- price/quantity must be clear per variant;
+- no variant should hide weak margin.
+
+## Route 02 Offer Structure Rules
+
+Route 02 is correct if buyer sees options as one product family.
+
+Route 02 is wrong if:
+- options are unrelated products;
+- variants have different buyer intent;
+- bundle/kit logic is more important than selectable variant logic;
+- marketplace category does not support intended variation aspects;
+- variant matrix is incomplete.
+
+If wrong, handoff:
+- Route 03 for listing strategy / separate buyer intents;
+- Route 06 for product radar / offer structure decision;
+- Route 07 for Ion decision.
+
+## Route 02 Readiness Gates
+
+GATE A — route is truly variant product
+GATE B — master product complete
+GATE C — variant dimensions clear
+GATE D — variant matrix complete
+GATE E — SKUs unique and valid
+GATE F — variant photos mapped
+GATE G — category/aspects/variation support checked
+GATE H — stock/quantity per SKU ready
+GATE I — price/profit after reserve per variant ready
+GATE J — compliance/GPSR ready
+GATE K — duplicate/offer structure guard pass
+GATE L — eBay inventory group readiness ready
+GATE M — Ion group publish approval marker required
+
+## Route 02 Lessons To Save
+
+Lessons to Route 08:
+- which variation dimensions worked;
+- which variant had sales or no sales;
+- which high-search aspect improved views;
+- which variant created returns;
+- which photo mapping confused buyers;
+- price/margin by variant;
+- bundle vs variation decisions.
+
+## Current status
+
+Route 01: LOCKED_COMPLETE_AT_GITHUB_MEMORY_LEVEL
+Route 02 deep blueprint: PASS_CREATED_IN_GITHUB_MEMORY
+server_write_done: false
+active_bot_patch_done: false
+telegram_restart_done: false
+ebay_api_called: false
+amazon_api_called: false
+kaufland_api_called: false
+otto_api_called: false
+purchase_action_done: false
+delete_cleanup_done: false
+git_commit_done: false
+git_push_done: false
+secrets_printed: false
+
+## Next allowed action
+
+REVIEW_ROUTE_02_VARIANT_PRODUCT_DEEP_BLUEPRINT_AND_BUILD_AGENT_PASSPORTS_GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+
+Suggested next marker:
+APPROVE_REVIEW_ROUTE_02_VARIANT_PRODUCT_DEEP_BLUEPRINT_AND_BUILD_AGENT_PASSPORTS_GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
