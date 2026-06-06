@@ -1,0 +1,23 @@
+# V7.3C R05 Pass B Stock Truth
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 03 Stock Ledger.
+Keeps stock events for each SKU.
+
+Agent 04 Variant Stock.
+Keeps stock by variant SKU when Route 02 is used.
+
+Outputs:
+- stock_item
+- stock_event
+- variant_stock_record
+- shared_stock_pool
+
+Rule:
+One SKU has one shared stock truth.
+If one unit is sold anywhere, shared stock is reduced.
+
+Purpose:
+Prevent wrong quantity and overselling.
