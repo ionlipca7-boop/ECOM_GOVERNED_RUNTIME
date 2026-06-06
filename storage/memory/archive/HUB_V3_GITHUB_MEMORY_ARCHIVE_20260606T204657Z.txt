@@ -1,0 +1,23 @@
+# V7.3C All 8 Routes Final Master Index Part C — Shared Rules
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Shared locked rules
+
+- Ion-facing Telegram output is Russian.
+- Buyer-facing marketplace content for Germany is German.
+- Agents do not create final product photos; Ion provides or approves them.
+- Source-based image editing only.
+- No invented product geometry.
+- No duplicate listing logic.
+- HTML links and shop blocks must be safe and useful.
+- Final publish/readiness gate must check IDs, policies, location, price, quantity, stock, photos, content, safety data and auth state.
+- Tokens and secrets are checked by tools but never printed.
+- Marketplace research is read-only unless a later explicit gate exists.
+- Each marketplace needs its own adapter.
+- Project memory is autonomous in files, archives, rules and pointers.
+- If a long archive is blocked, save it as numbered chunks and index.
+
+## Result
+Shared V7.3C rules are complete at GitHub-memory stage.
