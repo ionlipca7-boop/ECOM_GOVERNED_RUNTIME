@@ -1,0 +1,27 @@
+# V7.3C All 8 Routes Final Master Index Part A — Routes 01-04
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Route 01
+Status: LOCKED
+Role: simple new product route.
+Includes: product intake, German listing content, Russian Telegram preview, photo critique, HTML shop block, final gate, handoffs.
+
+## Route 02
+Status: LOCKED
+Role: variant product route.
+Includes: variant matrix, dynamic variant count, variant photo map, German buyer content, Russian Telegram preview, HTML shop block, final gate, handoffs.
+
+## Route 03
+Status: LOCKED_WITH_UPGRADES
+Role: Listing Studio.
+Includes: A/B/C listing experiments, source package, buyer-intent rule, no-clone rule, HTML link guard, duplicate guard, research support, after-check rule.
+
+## Route 04
+Status: LOCKED
+Role: marketplace lifecycle center.
+Includes: listing registry, snapshot, state cards, Ion cards, lifecycle signals, weak-listing handoff, final gate refs, no-clone rule, auth/ID reminder.
+
+## Result
+Routes 01-04 are complete at GitHub-memory stage.
