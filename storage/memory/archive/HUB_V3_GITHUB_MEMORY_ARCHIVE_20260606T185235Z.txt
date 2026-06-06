@@ -1,0 +1,21 @@
+# V7.3C R03 Web Upgrade 01
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## HTML link guard
+
+Route 03 must check every HTML shop link.
+For eBay descriptions, links must stay inside eBay where allowed: other eBay items, Store pages, seller follow/favorite, or required legal info.
+No external shop links.
+No active scripts.
+
+Output: html_link_policy_report.
+
+## Duplicate guard upgrade
+
+Route 03 must not create duplicate fixed-price listings for identical items.
+A new experiment is valid only if buyer intent, offer structure or fit-target is truly different.
+If same item and same intent exists, improve existing listing plan instead of creating a new one.
+
+Output: duplicate_policy_verdict.
