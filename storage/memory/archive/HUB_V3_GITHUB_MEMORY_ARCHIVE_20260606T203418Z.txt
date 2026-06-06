@@ -1,0 +1,35 @@
+# ECOM OS V7.3C — Route 08 Memory Teacher Part 04 Rules Outputs
+
+topic_id: V7_3C_ROUTE_08_MEMORY_TEACHER
+part_number: 04_RULES_OUTPUTS
+previous_part: V7_3C_ROUTE_08_MEMORY_TEACHER_PART_03_AGENT_TEAM
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Output contracts
+
+lesson_record
+rule_record
+archive_index
+pointer_update_request
+conflict_report
+teacher_summary
+next_chat_front
+version_record
+evidence_map
+safety_memory_note
+
+## Rules
+
+Route 08 does not invent facts.
+Each lesson needs route source and evidence reference if available.
+Old memory is read-only reference unless migrated by approval.
+GitHub memory is source of truth for route blueprints.
+Server is runtime, not heavy archive.
+Telegram output for Ion is Russian.
+No secrets in memory.
+
+## Handoffs
+
+Route 08 sends rules and lessons back to all routes.
+Route 08 asks Route 07 if Ion decision is needed.
