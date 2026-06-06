@@ -1,0 +1,12 @@
+# V7.3C R04 Source Ref C
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Official reference group:
+eBay duplicate listings policy.
+
+Route impact:
+Route 04 must not send weak listings to a clone path. It should send them to Route 03 improvement path.
+
+No action is performed here.
