@@ -1,0 +1,260 @@
+# ECOM OS V7.3C — Master Blueprint Compare + Telegram Candidate V2 DRY
+
+Status: APPROVED_BY_ION_IN_CHAT_FOR_COMPARE_AND_NEXT_STEP
+Mode: DRY_ONLY_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY_NO_DELETE_NO_COMMIT_NO_PUSH
+Source A uploaded master blueprint: Вставленная ​​уценка.md
+Source B saved dry candidate: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T164831Z.txt
+Previous specs archive: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T164258Z.txt
+
+## Compare Result
+
+Overall: PASS_WITH_V2_ENRICHMENT_REQUIRED
+
+Saved dry candidate already preserved:
+- 8 independent route-blocks
+- unique route_id
+- unique callback
+- isolated case_namespace
+- Back/Home/Stop global contract
+- safety locks no patch/restart/eBay/delete/commit/push
+
+Uploaded master blueprint adds missing implementation detail:
+- canonical top-level button names/icons
+- exact subbuttons for routes 01-08
+- detailed route links between 01/02/03/04/05/06/07/08
+- exact agent groups per route
+- Product Radar sources and 13-layer analysis
+- Finance/Stock split into 05A and 05B
+- full system safety rules and final status
+
+Decision: uploaded master blueprint becomes canonical UI/route blueprint for V7.3C Candidate V2. Existing saved candidate remains valid skeleton but is superseded by V2 for implementation planning.
+
+## Canonical Main Menu V2
+
+01 🆕 Новый товар
+route_id: route_01_new_product
+callback: v73c:route:01_new_product
+case_namespace: cases/v73c/route_01_new_product
+
+02 🧬 Новый товар с вариантами
+route_id: route_02_variant_product
+callback: v73c:route:02_variant_product
+case_namespace: cases/v73c/route_02_variant_product
+
+03 📝 Листинг-студия
+route_id: route_03_listing_studio
+callback: v73c:route:03_listing_studio
+case_namespace: cases/v73c/route_03_listing_studio
+
+04 🛒 Маркетплейсы / жизнь листингов
+route_id: route_04_marketplace_lifecycle
+callback: v73c:route:04_marketplace_lifecycle
+case_namespace: cases/v73c/route_04_marketplace_lifecycle
+
+05 📊 Финансы / склад
+route_id: route_05_finance_inventory
+callback: v73c:route:05_finance_inventory
+case_namespace: cases/v73c/route_05_finance_inventory
+
+06 🧭 Product Radar / Найти товар
+route_id: route_06_product_radar
+callback: v73c:route:06_product_radar
+case_namespace: cases/v73c/route_06_product_radar
+
+07 📥 Решения / отчёты / агенты
+route_id: route_07_decisions_reports_agents
+callback: v73c:route:07_decisions_reports_agents
+case_namespace: cases/v73c/route_07_decisions_reports_agents
+
+08 ⚙️ Система / память
+route_id: route_08_system_memory
+callback: v73c:route:08_system_memory
+case_namespace: cases/v73c/route_08_system_memory
+
+## Global Buttons V2
+
+⬅️ Назад
+🏠 Домой
+⛔ Стоп
+
+Rules:
+- Back returns to previous screen inside current route-block only.
+- Home opens main menu only and does not show paused/unfinished cases.
+- If case unfinished, case becomes PAUSED and card goes to route 07.
+- Stop asks confirmation: cancel case or leave paused.
+- Stop does not physically delete files.
+- Heavy temp deletion only through cleanup gate.
+
+## Route 01 Subbuttons V2
+
+📦 Собрать товар
+📊 Что уже принято
+👁 Показать полный листинг
+🔁 Переделать
+✅ Проверить готовность
+🚀 Опубликовать на eBay
+⬅️ Назад
+🏠 Домой
+⛔ Стоп
+
+Agents: Source Agent, Photo Agent, Receipt Agent, Product Passport Agent, Category Agent, Title Agent, Description Agent, Item Specifics Agent, Price Agent, Critic Agent, Readiness Agent.
+Connections: 01 -> 05 stock/finance, 01 -> 04 after publish, 01 -> 07 if pause/decision, 01 -> 08 memory/archive.
+
+## Route 02 Subbuttons V2
+
+📦 Собрать товар с вариантами
+📊 Что уже принято
+👁 Показать матрицу вариантов
+👁 Показать полный листинг
+🔁 Переделать
+✅ Проверить готовность
+🚀 Опубликовать на eBay
+⬅️ Назад
+🏠 Домой
+⛔ Стоп
+
+Agents: Variant Matrix Agent, SKU Agent, Photo Mapping Agent, Variant Price Agent, Variant Quantity Agent, Category Variation Agent, Critic Agent, Readiness Agent.
+Connections: 02 -> 05 stock/finance, 02 -> 04 after publish, 02 -> 07 if pause/decision, 02 -> 08 memory/archive.
+
+## Route 03 Subbuttons V2
+
+📦 Выбрать товар / листинг
+✨ Сделать 3 варианта
+👁 Показать вариант A
+👁 Показать вариант B
+👁 Показать вариант C
+🧪 Сравнить варианты
+🧯 Проверить дубли / риски
+✅ Выбрать лучший
+🔁 Переделать
+🚀 Опубликовать / обновить
+⬅️ Назад
+🏠 Домой
+⛔ Стоп
+
+Agents: Listing Studio Agent, External Search Listing Agent, Marketplace Buyer Agent, AI Search Listing Agent, Duplicate Guard Agent, Competitor Angle Agent, Critic Agent.
+Connections: receives from 01/02/04/06, sends to 04 after publish/update, linked to 05, decisions to 07, lessons to 08.
+
+## Route 04 Subbuttons V2
+
+📋 Активные листинги
+🔴 Требуют внимания
+🟡 Средние
+📊 Сводка
+📈 Подробно
+🔁 Отправить в Листинг-студию
+⏸ Оставить без изменений
+⬅️ Назад
+🏠 Домой
+⛔ Стоп
+
+Agents: Marketplace Lifecycle Agent, Metrics Agent, Weak Listing Agent, Ad Cost Agent, Listing Health Agent, Recommendation Agent.
+Connections: receives after publication from 01/02/03, weak listings to 03, finance data to 05, important decisions to 07, lessons to 08.
+
+## Route 05 Subbuttons V2
+
+05A Склад:
+📦 Остатки
+📥 Закупки
+📤 Продажи
+⚠️ Заканчивается
+📋 Карточка товара
+🛒 Решение по закупке
+
+05B Финансы:
+💰 Прибыль
+📈 Отчёты
+🧾 ELSTER
+📊 По маркетплейсам
+📉 Убыточные товары
+↩️ Возвраты
+
+Global:
+⬅️ Назад
+🏠 Домой
+⛔ Стоп
+
+Agents: Reorder Agent, Finance Health Agent plus stock/finance support agents.
+Connections: receives sales from 04, purchases from 06, gives stock to 04, cost to 01/02/03, decisions to 07, lessons to 08.
+
+## Route 06 Subbuttons V2
+
+🔍 Найти автоматически
+🔎 Проверить товар
+📋 Watchlist
+🚨 Product Alerts
+🏪 Анализ конкурентов
+🏭 Сравнить поставщиков
+🧪 Добавить в тест
+❌ Отклонить товар
+📚 Сохранить урок
+⬅️ Назад
+🏠 Домой
+⛔ Стоп
+
+Agents: Product Radar Agent, Demand Agent, Market Proof Agent, Supplier Agent, Profit After Reserve Agent, Critic Agent, Decision Board Agent, Teacher Agent, Inventory Impact Agent.
+Rule: NO SINGLE-AGENT FINAL DECISION.
+Connections: 06 -> 01 simple product, 06 -> 02 variants, 06 -> 05 approved purchase, 06 -> 07 decision, 06 -> 08 lessons/rules.
+
+## Route 07 Subbuttons V2
+
+📥 Требует решения
+⏸ На паузе
+⚠️ Блокировки
+📊 Отчёты
+🤖 Агенты
+🧠 Уроки системы
+⬅️ Назад
+🏠 Домой
+⛔ Стоп
+
+Agents: Decision Inbox Agent, Approval Agent, Report Agent, Agent Status Agent, Lesson Inbox Agent.
+Connections: all routes -> 07; 07 returns to needed route-block; 07 -> 08 memory/lessons.
+
+## Route 08 Subbuttons V2
+
+🟢 Статус системы
+🧠 Память
+📁 Архив
+📜 Правила
+🤖 Агенты
+🏷 Версия
+🔒 Безопасность
+⬅️ Назад
+🏠 Домой
+⛔ Стоп
+
+Shows: bot, server, Telegram, GitHub, memory, archive, queues, last error, active rules, active lessons, active routes, current version, archive lists, safety rules, agent status, changelog, locks.
+Connections: all routes -> 08 memory/archive; 08 -> version/rules/audit.
+
+## Safety Rules V2
+
+No eBay live without approval gate.
+No delete without cleanup gate.
+No restart without restart gate.
+No secrets print.
+No git add dot.
+No full menu rewrite without architecture gate.
+No single-agent final decision for Product Radar.
+No duplicate listing without duplicate policy audit.
+
+## Implementation Decision
+
+Candidate V1: PASS as skeleton.
+Master Blueprint: PASS as canonical detailed route map.
+Candidate V2: READY_FOR_DRY_REVIEW.
+
+No active patch was created.
+No bot.py was changed.
+No restart was attempted.
+No eBay API was called.
+No delete/cleanup was done.
+No commit/push was done.
+No secrets were printed.
+
+## Next allowed action
+
+REVIEW_V7_3C_TELEGRAM_CANDIDATE_V2_DRY_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+
+After review PASS:
+PREPARE_V7_3C_ACTIVE_PATCH_APPROVAL_PACKET_FROM_CANDIDATE_V2_NO_PATCH_NO_RESTART_NO_EBAY
