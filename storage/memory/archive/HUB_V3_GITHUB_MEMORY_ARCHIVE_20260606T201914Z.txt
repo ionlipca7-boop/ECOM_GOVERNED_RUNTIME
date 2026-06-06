@@ -1,0 +1,20 @@
+# V7.3C ROUTE 07 DECISION CENTER INDEX
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+PARTS:
+01 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T201823Z.txt
+02 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T201833Z.txt
+03 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T201842Z.txt
+04 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T201851Z.txt
+05 storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T201903Z.txt
+
+RESULT:
+Route 07 deep blueprint created.
+Route 07 is Decision Center for approvals, reports, blocked cases, waiting decisions and safe handoffs.
+It connects all routes and keeps Ion decisions visible.
+No server write. No active patch. No restart. No marketplace call.
+
+NEXT:
+REVIEW_ROUTE_07_DECISION_CENTER_DEEP_BLUEPRINT_AND_BUILD_AGENT_PASSPORTS_GITHUB_MEMORY_ONLY
