@@ -1,0 +1,44 @@
+# ECOM OS V7.3C — Route 05 Finance Inventory Part 02 Data Sources
+
+topic_id: V7_3C_ROUTE_05_FINANCE_INVENTORY
+part_number: 02_DATA_SOURCES
+previous_part: V7_3C_ROUTE_05_FINANCE_INVENTORY_PART_01_SCOPE
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Internal sources
+
+Route 05 receives data from:
+- Route 01 purchase receipt and simple product stock;
+- Route 02 variant matrix, per-SKU quantity and costs;
+- Route 03 listing experiment cost and price decisions;
+- Route 04 sales, listing life, return and ad signals;
+- Route 06 product opportunity and reorder signals;
+- Route 07 decisions;
+- Route 08 lessons and rules.
+
+## Server storage zones to use later
+
+- storage/master_product_registry
+- storage/inventory
+- storage/finance
+- storage/marketplace_adapters
+- storage/performance
+- storage/reports
+- storage/evidence
+- storage/decision_inbox
+
+## External source groups later
+
+- marketplace orders;
+- marketplace finance events;
+- marketplace payouts;
+- inventory quantity records;
+- returns and refunds;
+- invoices and reports;
+- shipping and fulfillment records.
+
+## Rule
+
+All external data must come through adapter modules.
+Do not mix eBay, Amazon, Kaufland or OTTO formats in one core schema.
