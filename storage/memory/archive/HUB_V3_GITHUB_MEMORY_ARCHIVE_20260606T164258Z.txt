@@ -1,0 +1,129 @@
+# ECOM OS V7.3C — Stage Review + 8 Route Specs
+
+Status: APPROVED_BY_ION_FOR_SPEC_WRITE_ONLY
+Approval marker: APPROVE_CREATE_V7_3C_STAGE_REVIEW_AND_8_ROUTE_SPECS_NO_PATCH_NO_RESTART_NO_EBAY
+Mode: NO_PATCH_NO_RESTART_NO_EBAY_NO_DELETE_NO_COMMIT_NO_PUSH
+Source archive: storage/memory_v2/archive/V7_3C_FULL_8_BUTTON_ROUTE_ARCHIVE_20260606T163359Z.md
+Front prompt: storage/prompts/new_chat/NEW_CHAT_ECOM_OS_V7_3C_AFTER_8_BUTTON_ROUTE_SPEC_20260606T163359Z.txt
+
+## Stage Review
+
+V7.3C confirms the main Telegram architecture as 8 independent route-blocks. Each route has its own namespace, case state, agents, reports, checkpoints, repair path and safety gates. Global navigation is shared: Back, Home, Stop. Home returns only to main menu. Stop requests confirmation and does not perform unsafe delete. Paused/unfinished cases go to route 07.
+
+Current allowed scope: create/review specifications and pointers only. No active bot patch. No Telegram restart. No eBay live/publish/revise/delete. No cleanup/delete. No secrets print. No git add dot. No commit/push under this approval.
+
+## Route 01 — Новый товар
+
+Namespace: route_01_new_product
+Purpose: one product, one variant, normal eBay-first listing.
+Inputs: supplier link, product photos, receipt/cost, specs, Ion comments.
+Main flow: create clean case, silently collect inputs, build product package, show short card, show full listing by parts, allow rework, readiness check, publish only through final eBay gate.
+Agents: intake_agent, product_builder_agent, photo_check_agent, listing_writer_agent, readiness_agent, safety_gate_agent.
+Reports: short product card, full listing preview, readiness report, missing data report.
+Checkpoints: case_created, inputs_collected, product_built, listing_preview_ready, readiness_checked, publish_gate_waiting.
+Repair path: if variants detected, warn Ion and offer continue single route or move to route 02; no automatic route switch.
+Safety gates: no publish without explicit final eBay approval.
+
+## Route 02 — Новый товар с вариантами
+
+Namespace: route_02_variant_product
+Purpose: product with colors, sizes, lengths, kits, power/model variants.
+Inputs: supplier link, variant photos, variant prices, quantities, specs, cost data.
+Main flow: create variants case, collect inputs, build master product, build variant matrix, map photos/price/qty/SKU per variant, show matrix, show full listing by parts, rework, readiness check, publish only through final eBay gate.
+Agents: variant_intake_agent, matrix_builder_agent, sku_agent, variant_photo_mapper_agent, listing_writer_agent, readiness_agent.
+Reports: variant matrix, master product card, per-variant readiness report.
+Checkpoints: case_created, matrix_built, sku_map_ready, photos_mapped, listing_preview_ready, readiness_checked.
+Repair path: if matrix incomplete, return missing variant fields; do not publish partial matrix.
+Safety gates: no eBay publish/revise without explicit approval.
+
+## Route 03 — Листинг-студия
+
+Namespace: route_03_listing_studio
+Purpose: listing laboratory for experiments on existing products/listings; not cloning.
+Sources: route 01/02 product packages, existing eBay listings, drafts, archive packages, SKU/listing_id/link search.
+Experiment types: external search SEO, marketplace buyer search, AI search discovery.
+Main flow: select source, choose experiment angle, build differentiated title/description/photo order/value signal, duplicate/risk check, show experiment preview, send selected version to full listing flow/update gate.
+Agents: listing_lab_agent, seo_agent, marketplace_buyer_agent, ai_search_agent, duplicate_risk_agent, value_signal_agent, critic_agent.
+Reports: experiment comparison, duplicate risk report, selected variant recommendation.
+Checkpoints: source_loaded, experiment_created, risk_checked, preview_ready, selected_for_gate.
+Repair path: if duplicate risk high, force re-angle or reject experiment.
+Safety gates: no clone, no revise/publish without gate.
+
+## Route 04 — Маркетплейсы / жизнь листингов
+
+Namespace: route_04_marketplace_lifecycle
+Purpose: lifecycle control center for live listings and marketplace health.
+Inputs: marketplace listing metrics, SKU/listing ids, stock and finance signals.
+Statuses: no data, good, medium, needs attention.
+Main flow: observe listings, keep good listings silent, summarize medium listings, send problem cards separately, offer details, send to Listing Studio, or leave unchanged.
+Agents: listing_observer_agent, metrics_agent, lifecycle_verdict_agent, recommendation_agent.
+Reports: problem card, lifecycle summary, listing detail report.
+Checkpoints: metrics_collected, verdict_created, card_sent, Ion_decision_recorded.
+Repair path: if metrics missing, mark no data and request source refresh; do not guess.
+Safety gates: no live revise/delete/hide without gate.
+
+## Route 05 — Финансы / склад
+
+Namespace: route_05_finance_inventory
+Purpose: source of truth for stock and money.
+Internal blocks: 05A stock, 05B finance.
+05A inputs: stock count, purchases, sales, low-stock thresholds, product card.
+05B inputs: revenue, cost, ads, fees, returns, ELSTER/export reports.
+Main flow: track stock, warn at 75/50/25/10-15/0 percent, calculate profit, detect high revenue low profit, high ad cost, frequent returns, dead stock.
+Agents: stock_agent, reorder_agent, finance_health_agent, return_cost_agent, elster_export_agent.
+Reports: stock alert, reorder decision, finance health report, unprofitable product report.
+Checkpoints: stock_synced, finance_synced, alerts_created, decision_needed, lesson_logged.
+Repair path: if stock/cost missing, block reorder decision until data is present.
+Safety gates: no marketplace action from stock route without gate.
+
+## Route 06 — Product Radar / Найти товар
+
+Namespace: route_06_product_radar
+Purpose: Market Intelligence Radar; finds opportunities, not random cheap products.
+Modes: manual signal from Ion, autonomous radar signal.
+Master chain: input, safety filter, demand discovery, market proof, buyer behavior, product/profit/return reserve, value signal, business ladder, offer structure, critic, decision board, memory lesson, rule engine, inventory impact.
+Agents: radar_signal_agent, safety_filter_agent, demand_agent, market_proof_agent, buyer_behavior_agent, profit_agent, value_signal_agent, critic_agent, decision_board_agent, teacher_agent.
+Reports: new product alert with source, supplier price, demand, proof, profit after reserve, value signals, risks, decision, next action.
+Checkpoints: signal_logged, safety_passed, demand_checked, profit_checked, critic_done, board_decision_done, lesson_saved.
+Repair path: if evidence weak, decision is needs_more_data/watch/reject; no single-agent final decision.
+Safety gates: no purchase/listing/publish without Ion decision.
+
+## Route 07 — Решения / отчёты / агенты
+
+Namespace: route_07_decisions_reports_agents
+Purpose: dispatcher center; not product working route.
+Inputs: paused cases, unfinished cases, blocked cases, reports, agent status, lessons.
+Buttons: requires decision, paused, blocks, reports, agents, system lessons, home, stop.
+Main flow: collect what needs Ion attention, show cards, allow continue/rework/cancel/later, show information reports and lessons.
+Agents: decision_inbox_agent, report_router_agent, block_explainer_agent, agent_status_agent, lesson_agent.
+Reports: decision inbox, paused cases report, blocks report, agent status report, lessons report.
+Checkpoints: inbox_refreshed, decision_card_sent, Ion_action_recorded, case_routed.
+Repair path: if route state broken, send to block card with repair recommendation.
+Safety gates: no hidden destructive action; cancel/delete only through explicit gate.
+
+## Route 08 — Система / память
+
+Namespace: route_08_system_memory
+Purpose: admin/info/diagnostic panel; not daily product work.
+Inputs: system health, memory pointers, archive list, rules, agents, version, security locks.
+Buttons: status, memory, archive, rules, agents, version, security, home, stop.
+Main flow: show system status, active memory/rules/routes/lessons/current version, read-only archive view, agent list/status/last run/error/lesson, version/changelog, security locks.
+Agents: system_status_agent, memory_view_agent, archive_view_agent, rules_view_agent, version_agent, security_lock_agent.
+Reports: system status card, memory summary, archive index, rules summary, version report, security locks report.
+Checkpoints: status_loaded, memory_loaded, archive_loaded, locks_verified.
+Repair path: if pointer conflict exists, block write and send to review gate.
+Safety gates: no secrets print, no delete, no restart, no patch from this route without explicit gate.
+
+## Build Plan After This Spec
+
+1. Verify this stage review and specs.
+2. Create V7.3C route map pointer.
+3. Create Telegram route candidate only.
+4. Run candidate review: buttons, navigation, state isolation, safety locks.
+5. Prepare approval packet for active patch, but do not patch yet.
+6. Restart only through separate restart gate.
+7. eBay live/publish/revise/delete only through separate eBay gates.
+
+## Next allowed action
+
+CREATE_V7_3C_ROUTE_POINTER_AND_TELEGRAM_CANDIDATE_DRY_ONLY_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
