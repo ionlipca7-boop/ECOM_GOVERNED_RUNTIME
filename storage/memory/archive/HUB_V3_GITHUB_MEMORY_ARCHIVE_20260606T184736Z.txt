@@ -1,0 +1,27 @@
+# V7.3C R03 Agent Passports 01B
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Agent 03 External Search Agent
+
+Purpose: create Variant A for external German search clarity.
+Focus: clear product class, German search phrase, structured description.
+Output: listing_experiment_A.
+
+## Agent 04 Marketplace Buyer Agent
+
+Purpose: create Variant B for marketplace buyer intent.
+Focus: item specifics, value signal, price/value, photos, buyer decision friction.
+Output: listing_experiment_B.
+
+## Agent 05 AI Search Agent
+
+Purpose: create Variant C for AI-search readability.
+Focus: exact facts, problem solved, compatibility, package truth, clean summary.
+Output: listing_experiment_C.
+
+Rules:
+Buyer-facing content: German.
+Ion Telegram preview: Russian.
+No false claims.
