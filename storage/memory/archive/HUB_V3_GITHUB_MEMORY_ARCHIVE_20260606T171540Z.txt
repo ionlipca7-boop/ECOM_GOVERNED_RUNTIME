@@ -1,0 +1,564 @@
+# ECOM OS V7.3C — ALL 8 BUTTONS FULL GITHUB MEMORY BEFORE SERVER TRANSFER
+
+Status: ALL_8_BUTTONS_MEMORY_BUILD_CREATED
+Approval/context: Ion requested to complete all 8 buttons in GitHub memory first, then transfer cleanly to server.
+Mode: GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY_NO_DELETE_NO_COMMIT_NO_PUSH
+Parent full menu blueprint: uploaded master blueprint Вставленная ​​уценка.md
+Parent V7.3C Candidate V2: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T170425Z.txt
+Route 06 deep draft: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T171158Z.txt
+
+## Core decision
+
+GitHub memory is the source of truth and design/build lane.
+Server is the runtime/materialization lane.
+
+Before moving to server, all 8 Telegram route-blocks must exist in GitHub memory with:
+- route_id
+- callback namespace
+- case namespace
+- top-level button
+- subbuttons
+- screen contract
+- agents
+- reports
+- schemas/storage concept
+- safety gates
+- links to other routes
+- server transfer target paths
+
+No server files are created by this archive.
+No active bot.py patch is made.
+
+## Global V7.3C Navigation Contract
+
+Global buttons in all route-blocks:
+- ⬅️ Назад
+- 🏠 Домой
+- ⛔ Стоп
+
+Rules:
+- Back returns to previous screen inside current route-block only.
+- Home opens main menu only.
+- Home does not show paused/unfinished cases.
+- If case is unfinished, it becomes PAUSED and card goes to Route 07.
+- Stop asks confirmation: cancel case or leave paused.
+- Stop does not physically delete files.
+- Cleanup/delete only through cleanup gate.
+
+## Global Safety Locks
+
+No eBay live without approval gate.
+No eBay publish/revise/delete without explicit eBay marker.
+No delete without cleanup gate.
+No restart without restart gate.
+No secrets print.
+No git add dot.
+No full menu rewrite without architecture gate.
+No single-agent final decision for Product Radar.
+No duplicate listing without duplicate policy audit.
+
+## Main Menu V7.3C Canonical
+
+01 🆕 Новый товар
+02 🧬 Новый товар с вариантами
+03 📝 Листинг-студия
+04 🛒 Маркетплейсы / жизнь листингов
+05 📊 Финансы / склад
+06 🧭 Product Radar / Найти товар
+07 📥 Решения / отчёты / агенты
+08 ⚙️ Система / память
+
+# ROUTE 01 — Новый товар
+
+route_id: route_01_new_product
+callback: v73c:route:01_new_product
+case_namespace: cases/v73c/route_01_new_product
+memory_status: SPEC_FULL_READY_FOR_CODE_DRAFT
+server_status: NOT_MATERIALIZED
+
+Purpose:
+One product, one variant, normal listing flow, eBay default after final live gate.
+
+Subbuttons:
+- 📦 Собрать товар -> v73c:r01:build_product
+- 📊 Что уже принято -> v73c:r01:accepted_inputs
+- 👁 Показать полный листинг -> v73c:r01:show_full_listing
+- 🔁 Переделать -> v73c:r01:rework
+- ✅ Проверить готовность -> v73c:r01:readiness
+- 🚀 Опубликовать на eBay -> v73c:r01:publish_gate
+- ⬅️ Назад -> v73c:r01:back
+- 🏠 Домой -> v73c:r01:home
+- ⛔ Стоп -> v73c:r01:stop
+
+Screens:
+0 Home: asks Ion to send link/photos/receipt/specs/comments; silent collection mode.
+1 Accepted Inputs: link yes/no, photo count, receipt yes/no, specs yes/no, comments yes/no, case status.
+2 Build Product: runs dry agent chain and creates product package.
+3 Full Listing: shows parts: card, title/price, product description, designed description, specifics, photo-plan, shop/cross-sell block, final draft.
+4 Rework: choose title, description, price/margin, specifics, photo-plan, shop block, keywords, whole listing, custom text.
+5 Readiness: checks title, photos, description, specifics, category, price, quantity, policies, duplicates, risks, eBay readiness.
+6 Publish Gate: only shows approval requirement; no publish without eBay marker.
+
+Agents:
+Source Agent, Photo Agent, Receipt Agent, Product Passport Agent, Category Agent, Title Agent, Description Agent, Item Specifics Agent, Price Agent, Critic Agent, Readiness Agent.
+
+Reports:
+accepted_inputs_report, short_product_card, full_listing_preview, readiness_report, missing_data_report, publish_gate_packet.
+
+Data schemas/storage:
+case_01_new_product, accepted_input_state, product_passport, listing_draft, readiness_result, rework_request, publish_gate_record.
+
+Links:
+01 -> 05 stock/finance; 01 -> 04 after publish; 01 -> 07 if pause/block/decision; 01 -> 08 archive/lesson.
+
+Safety:
+No automatic route switch. If variants detected, warn Ion and offer continue as single product or move to Route 02. No eBay publish without explicit final eBay gate.
+
+# ROUTE 02 — Новый товар с вариантами
+
+route_id: route_02_variant_product
+callback: v73c:route:02_variant_product
+case_namespace: cases/v73c/route_02_variant_product
+memory_status: SPEC_FULL_READY_FOR_CODE_DRAFT
+server_status: NOT_MATERIALIZED
+
+Purpose:
+One master product with variants: colors, sizes, lengths, kits, power/model variants, capacity/volume.
+
+Subbuttons:
+- 📦 Собрать товар с вариантами -> v73c:r02:build_variant_product
+- 📊 Что уже принято -> v73c:r02:accepted_inputs
+- 👁 Показать матрицу вариантов -> v73c:r02:show_variant_matrix
+- 👁 Показать полный листинг -> v73c:r02:show_full_listing
+- 🔁 Переделать -> v73c:r02:rework
+- ✅ Проверить готовность -> v73c:r02:readiness
+- 🚀 Опубликовать на eBay -> v73c:r02:publish_gate
+- ⬅️ Назад -> v73c:r02:back
+- 🏠 Домой -> v73c:r02:home
+- ⛔ Стоп -> v73c:r02:stop
+
+Screens:
+0 Home: asks for supplier link, variant photos, receipt, variant specs.
+1 Accepted Inputs: source, variant photos, cost, specs, comments, status.
+2 Variant Matrix: variant, color, size, length, kit, power, model, SKU, price, quantity, photo, status.
+3 Full Listing: master listing + variant matrix + per-variant readiness.
+4 Rework: matrix, variant photos, price/quantity, SKU, title, description, designed description, specifics, photo-plan, shop block, cross-sell, whole listing, custom text.
+5 Readiness: checks master + every variant.
+6 Publish Gate: only through explicit eBay gate.
+
+Agents:
+Variant Matrix Agent, SKU Agent, Photo Mapping Agent, Variant Price Agent, Variant Quantity Agent, Category Variation Agent, Title Agent, Description Agent, Item Specifics Agent, Critic Agent, Readiness Agent.
+
+Reports:
+variant_matrix_report, master_product_card, per_variant_readiness_report, missing_variant_fields_report, publish_gate_packet.
+
+Data schemas/storage:
+case_02_variant_product, master_product, variant_matrix, variant_sku_map, variant_photo_map, variant_price_qty_map, variant_readiness_result.
+
+Links:
+02 -> 05 stock/finance; 02 -> 04 after publish; 02 -> 07 if pause/block/decision; 02 -> 08 archive/lesson.
+
+Safety:
+If matrix incomplete, block readiness/publish and return missing fields. No partial variant publish without Ion gate.
+
+# ROUTE 03 — Листинг-студия
+
+route_id: route_03_listing_studio
+callback: v73c:route:03_listing_studio
+case_namespace: cases/v73c/route_03_listing_studio
+memory_status: SPEC_FULL_READY_FOR_CODE_DRAFT
+server_status: NOT_MATERIALIZED
+
+Purpose:
+Listing laboratory for experiments over product/listing, not product cloning. Finds best buyer intent/angle.
+
+Sources:
+Route 01/02 product packages, existing eBay listings, drafts, archive packages, SKU/listing_id/link search, Route 04 weak listings, Route 06 product opportunities.
+
+Subbuttons:
+- 📦 Выбрать товар / листинг -> v73c:r03:select_source
+- ✨ Сделать 3 варианта -> v73c:r03:create_3_variants
+- 👁 Показать вариант A -> v73c:r03:show_variant_a
+- 👁 Показать вариант B -> v73c:r03:show_variant_b
+- 👁 Показать вариант C -> v73c:r03:show_variant_c
+- 🧪 Сравнить варианты -> v73c:r03:compare_variants
+- 🧯 Проверить дубли / риски -> v73c:r03:duplicate_risk_check
+- ✅ Выбрать лучший -> v73c:r03:select_best
+- 🔁 Переделать -> v73c:r03:rework
+- 🚀 Опубликовать / обновить -> v73c:r03:publish_update_gate
+- ⬅️ Назад -> v73c:r03:back
+- 🏠 Домой -> v73c:r03:home
+- ⛔ Стоп -> v73c:r03:stop
+
+Experiment types:
+A External Search: Google/Bing/SEO/indexing/external traffic.
+B Marketplace Buyer: eBay/Amazon/Kaufland buyer search intent.
+C AI Search: ChatGPT/Copilot/Gemini/Perplexity future AI product discovery.
+
+Screens:
+0 Home: choose product/listing source.
+1 Source Loaded: shows master_product_id, stock_pool, finance_cost, current listing/draft state.
+2 Variant A/B/C screens.
+3 Compare: table of angle, title, description, value signal, risks.
+4 Duplicate/Risk: duplicate audit and marketplace risk.
+5 Select Best: chosen variant goes to gate.
+6 Publish/Update Gate: requires explicit approval.
+
+Agents:
+Listing Studio Agent, External Search Listing Agent, Marketplace Buyer Agent, AI Search Listing Agent, Duplicate Guard Agent, Competitor Angle Agent, Value Signal Agent, Critic Agent.
+
+Reports:
+listing_experiment_A, listing_experiment_B, listing_experiment_C, experiment_comparison, duplicate_risk_report, selected_variant_recommendation, publish_update_gate_packet.
+
+Data schemas/storage:
+listing_studio_case, listing_source_reference, listing_experiment, duplicate_risk_result, selected_experiment, update_gate_record.
+
+Links:
+03 receives from 01/02/04/06; 03 sends published/updated listings to 04; 03 links stock/finance to 05; decisions to 07; lessons to 08.
+
+Safety:
+No identical duplicate listing. Each listing experiment must have distinct buyer intent. No revise/publish without gate.
+
+# ROUTE 04 — Маркетплейсы / жизнь листингов
+
+route_id: route_04_marketplace_lifecycle
+callback: v73c:route:04_marketplace_lifecycle
+case_namespace: cases/v73c/route_04_marketplace_lifecycle
+memory_status: SPEC_FULL_READY_FOR_CODE_DRAFT
+server_status: NOT_MATERIALIZED
+
+Purpose:
+Lifecycle control center for published listings. Ion should not manually check hundreds of listings.
+
+Statuses:
+⚫ Нет данных; 🟢 Хороший; 🟡 Средний; 🔴 Требует внимания.
+
+Subbuttons:
+- 📋 Активные листинги -> v73c:r04:active_listings
+- 🔴 Требуют внимания -> v73c:r04:needs_attention
+- 🟡 Средние -> v73c:r04:medium_listings
+- 📊 Сводка -> v73c:r04:summary
+- 📈 Подробно -> v73c:r04:details
+- 🔁 Отправить в Листинг-студию -> v73c:r04:send_to_listing_studio
+- ⏸ Оставить без изменений -> v73c:r04:leave_unchanged
+- ⬅️ Назад -> v73c:r04:back
+- 🏠 Домой -> v73c:r04:home
+- ⛔ Стоп -> v73c:r04:stop
+
+Checks:
+impressions, views, CTR, sales, conversion, ads, returns, listing age, stock, margin.
+
+Notification rules:
+Good listings stay silent. Medium listings go to summary. Bad/problem listings send separate card.
+
+Screens:
+0 Home: lifecycle dashboard.
+1 Active Listings: list/filter.
+2 Needs Attention: red cards.
+3 Medium Listings: summary list.
+4 Summary: marketplace health.
+5 Details: selected listing metrics.
+6 Send to Listing Studio: creates Route 03 case.
+7 Leave Unchanged: records decision.
+
+Agents:
+Marketplace Lifecycle Agent, Metrics Agent, Weak Listing Agent, Ad Cost Agent, Listing Health Agent, Recommendation Agent.
+
+Reports:
+active_listings_report, lifecycle_summary, weak_listing_card, listing_detail_report, recommendation_report.
+
+Data schemas/storage:
+marketplace_listing_snapshot, listing_health_status, lifecycle_verdict, attention_card, lifecycle_decision_record.
+
+Links:
+04 receives data after publication from 01/02/03; weak listings -> 03; sales/cost data -> 05; important decisions -> 07; lifecycle lessons -> 08.
+
+Safety:
+No live revise/delete/hide without explicit gate.
+
+# ROUTE 05 — Финансы / склад
+
+route_id: route_05_finance_inventory
+callback: v73c:route:05_finance_inventory
+case_namespace: cases/v73c/route_05_finance_inventory
+memory_status: SPEC_FULL_READY_FOR_CODE_DRAFT
+server_status: NOT_MATERIALIZED
+
+Purpose:
+Source of truth for physical goods and money. Contains two internal blocks: 05A Stock and 05B Finance.
+
+Subbuttons 05A Stock:
+- 📦 Остатки -> v73c:r05:stock_left
+- 📥 Закупки -> v73c:r05:purchases
+- 📤 Продажи -> v73c:r05:sales
+- ⚠️ Заканчивается -> v73c:r05:low_stock
+- 📋 Карточка товара -> v73c:r05:product_card
+- 🛒 Решение по закупке -> v73c:r05:reorder_decision
+
+Subbuttons 05B Finance:
+- 💰 Прибыль -> v73c:r05:profit
+- 📈 Отчёты -> v73c:r05:reports
+- 🧾 ELSTER -> v73c:r05:elster
+- 📊 По маркетплейсам -> v73c:r05:by_marketplace
+- 📉 Убыточные товары -> v73c:r05:loss_makers
+- ↩️ Возвраты -> v73c:r05:returns
+
+Global:
+- ⬅️ Назад -> v73c:r05:back
+- 🏠 Домой -> v73c:r05:home
+- ⛔ Стоп -> v73c:r05:stop
+
+Stock stores:
+SKU, master_product_id, title, qty purchased, qty sold, qty left, purchase price, purchase date, supplier, linked listings, linked marketplaces.
+
+Stock alerts:
+75 percent left -> observe; 50 -> first warning; 25 -> serious warning; 10-15 -> urgent decision; 0 -> stop/hide related listings only through gate.
+
+Finance counts:
+purchase, China shipping, German shipping, packaging, fees, ads, returns, defects, profit, margin, taxes, ELSTER.
+
+Agents:
+Stock Agent, Reorder Agent, Finance Health Agent, Return Cost Agent, ELSTER Export Agent, Dead Stock Agent.
+
+Reports:
+stock_report, purchase_report, sales_report, low_stock_alert, reorder_decision, profit_report, marketplace_finance_report, loss_makers_report, return_report, elster_export_packet.
+
+Data schemas/storage:
+stock_item, purchase_record, sale_record, stock_alert, reorder_decision_record, finance_entry, profit_result, return_record, elster_summary.
+
+Links:
+05 receives sales from 04; receives purchases from 06; gives stock to 04; gives cost to 01/02/03; important decisions -> 07; financial lessons -> 08.
+
+Safety:
+No marketplace action from Route 05 without explicit gate. No ELSTER submission; export/summary only unless separate tax approval.
+
+# ROUTE 06 — Product Radar / Найти товар
+
+route_id: route_06_product_radar
+callback: v73c:route:06_product_radar
+case_namespace: cases/v73c/route_06_product_radar
+memory_status: CODE_DRAFT_READY_IN_MEMORY
+server_status: NOT_MATERIALIZED
+
+Purpose:
+Market Intelligence Radar for product opportunities. Finds products with real demand, clear buyer problem, clean margin after reserve, low risk, listing opportunity, and product-line potential.
+
+Subbuttons:
+- 🔍 Найти автоматически -> v73c:r06:auto_find
+- 🔎 Проверить товар -> v73c:r06:check_product
+- 📋 Watchlist -> v73c:r06:watchlist
+- 🚨 Product Alerts -> v73c:r06:product_alerts
+- 🏪 Анализ конкурентов -> v73c:r06:competitor_analysis
+- 🏭 Сравнить поставщиков -> v73c:r06:compare_suppliers
+- 🧪 Добавить в тест -> v73c:r06:add_to_test
+- ❌ Отклонить товар -> v73c:r06:reject_product
+- 📚 Сохранить урок -> v73c:r06:save_lesson
+- ⬅️ Назад -> v73c:r06:back
+- 🏠 Домой -> v73c:r06:home
+- ⛔ Стоп -> v73c:r06:stop
+
+Modes:
+Manual Mode: Ion sends link/photo/screenshot/name/supplier listing/product idea.
+Autonomous Radar Mode: system searches signals itself, but first implementation is dry-locked until source/schedule gates.
+
+Sources:
+China/suppliers: Alibaba, AliExpress, 1688, Made-in-China, Global Sources, Taobao/Tmall, DHgate.
+Germany/demand: Google Trends, autocomplete, SEO tools, eBay.de search, Amazon.de search, YouTube/TikTok/Reddit/forums if needed.
+Marketplaces: eBay.de, Amazon.de, eBay sold listings, Terapeak/Product Research if available, Amazon reviews, competitor listings.
+
+Analysis chain:
+0 INPUT / RADAR SIGNAL
+1 QUICK SAFETY FILTER
+2 DEMAND DISCOVERY
+3 MARKET PROOF
+4 BUYER BEHAVIOR
+5 PRODUCT / PROFIT + RETURN RESERVE
+6 VALUE SIGNAL / LISTING
+7 BUSINESS LADDER
+8 OFFER STRUCTURE
+9 CRITIC AGENT
+10 DECISION BOARD
+11 MEMORY / LESSON
+12 MASTER TEACHER / RULE ENGINE
+
+Agents:
+Product Radar Agent, Demand Agent, Market Proof Agent, Supplier Agent, Profit After Reserve Agent, Value Signal Agent, Critic Agent, Decision Board Agent, Teacher Agent, Inventory Impact Agent.
+
+Reports:
+radar_signal_card, demand_report, market_proof_report, profit_after_reserve_report, critic_report, decision_board_result, NEW_PRODUCT_ALERT, watchlist_report, lesson_record.
+
+Data schemas/storage:
+radar_signal, product_alert, watchlist_item, decision_board_result, lesson_record.
+
+Links:
+06 -> 01 if simple product; 06 -> 02 if variants; 06 -> 05 if approved purchase; 06 -> 07 if decision needed; 06 -> 08 lessons/rules.
+
+Safety:
+No automatic purchase. No eBay publish/revise. No delete. No token print. No cookies in chat. No live actions without approval. NO SINGLE-AGENT FINAL DECISION except hard safety block.
+
+# ROUTE 07 — Решения / отчёты / агенты
+
+route_id: route_07_decisions_reports_agents
+callback: v73c:route:07_decisions_reports_agents
+case_namespace: cases/v73c/route_07_decisions_reports_agents
+memory_status: SPEC_FULL_READY_FOR_CODE_DRAFT
+server_status: NOT_MATERIALIZED
+
+Purpose:
+Dispatcher center. Not a product working route. Everything requiring Ion attention goes here.
+
+Subbuttons:
+- 📥 Требует решения -> v73c:r07:requires_decision
+- ⏸ На паузе -> v73c:r07:paused
+- ⚠️ Блокировки -> v73c:r07:blocks
+- 📊 Отчёты -> v73c:r07:reports
+- 🤖 Агенты -> v73c:r07:agents
+- 🧠 Уроки системы -> v73c:r07:lessons
+- ⬅️ Назад -> v73c:r07:back
+- 🏠 Домой -> v73c:r07:home
+- ⛔ Стоп -> v73c:r07:stop
+
+What enters Route 07:
+unfinished new product, unfinished variant product, Product Radar waiting decision, weak listing from Marketplace Agent, finance loss, low stock, Critic blocker, approval wait, paused case.
+
+Actions:
+Continue, Rework, Reject, Save for later, Delete through gate.
+
+Screens:
+0 Home: decision inbox overview.
+1 Requires Decision: active decision cards.
+2 Paused: paused cases.
+3 Blocks: blockers and repair recommendations.
+4 Reports: report index.
+5 Agents: agent status/last run/error.
+6 Lessons: lesson inbox.
+7 Case Router: return to correct route-block.
+
+Agents:
+Decision Inbox Agent, Approval Agent, Report Agent, Agent Status Agent, Lesson Inbox Agent, Block Explainer Agent.
+
+Reports:
+decision_inbox, paused_cases_report, block_report, reports_index, agent_status_report, lesson_inbox_report.
+
+Data schemas/storage:
+decision_card, paused_case, block_record, approval_wait_record, agent_status_snapshot, lesson_inbox_item.
+
+Links:
+All routes -> 07; 07 -> correct route-block; 07 -> 08 memory/lessons.
+
+Safety:
+No hidden destructive action. Delete only through explicit cleanup/delete gate. Approval decisions are recorded.
+
+# ROUTE 08 — Система / память
+
+route_id: route_08_system_memory
+callback: v73c:route:08_system_memory
+case_namespace: cases/v73c/route_08_system_memory
+memory_status: SPEC_FULL_READY_FOR_CODE_DRAFT
+server_status: NOT_MATERIALIZED
+
+Purpose:
+Admin/info/diagnostic panel. Not daily product work.
+
+Subbuttons:
+- 🟢 Статус системы -> v73c:r08:system_status
+- 🧠 Память -> v73c:r08:memory
+- 📁 Архив -> v73c:r08:archive
+- 📜 Правила -> v73c:r08:rules
+- 🤖 Агенты -> v73c:r08:agents
+- 🏷 Версия -> v73c:r08:version
+- 🔒 Безопасность -> v73c:r08:security
+- ⬅️ Назад -> v73c:r08:back
+- 🏠 Домой -> v73c:r08:home
+- ⛔ Стоп -> v73c:r08:stop
+
+Screens:
+0 Home: admin panel.
+1 System Status: bot, server, Telegram, GitHub, memory, archive, queues, last error.
+2 Memory: active rules, active lessons, active routes, current version.
+3 Archive: transition archives, decision archives, lesson archives, listing archives.
+4 Rules: safety rules, publish rules, approve rules, cleanup rules, eBay rules, agent rules.
+5 Agents: list/status/last run/last error/last lesson.
+6 Version: ECOM OS V7.3C, date, changes, added, forbidden, planned.
+7 Security: eBay live lock, delete lock, restart lock, git push lock, approval mode, secrets guard.
+
+Agents:
+System Status Agent, Memory View Agent, Archive View Agent, Rules View Agent, Version Agent, Security Lock Agent, Agent Registry Agent.
+
+Reports:
+system_status_card, memory_summary, archive_index, rules_summary, agent_registry_report, version_report, security_locks_report.
+
+Data schemas/storage:
+system_status_snapshot, memory_pointer_summary, archive_index_item, rules_index, agent_registry_entry, version_record, security_lock_state.
+
+Links:
+All routes -> 08 for memory/archive; 08 -> rules; 08 -> audit; 08 -> version updates.
+
+Safety:
+Route 08 is read-only/admin unless separate gate. No secrets print. No delete. No restart. No patch without explicit gate.
+
+## Full system links
+
+06 Product Radar -> 01 simple product, 02 variants, 07 watch/reject/decision, 08 lessons.
+01 -> 04 after publish, 05 stock/finance, 07 pause/block, 08 archive.
+02 -> 04 after publish, 05 variant stock/finance, 07 pause/block, 08 archive.
+03 receives from 01/02/04/06 and sends selected experiments to 04.
+04 sends weak listings to 03, sales/costs to 05, attention cards to 07, lessons to 08.
+05 sends low stock/bad profit/reorder decisions to 07, product improvement to 03, purchase/radar decisions to 06, lessons to 08.
+07 dispatches decisions back to correct route-blocks and lessons to 08.
+08 stores rules, lessons, versions, security locks for all routes.
+
+## GitHub-to-server transfer plan
+
+Phase A: Finish GitHub memory specs for all 8 buttons. STATUS: THIS ARCHIVE CREATED.
+Phase B: Create code drafts for routes 01-05, 07, 08 in GitHub memory, using Route 06 as template.
+Phase C: Create one unified server materialization packet with exact target paths.
+Phase D: Materialize candidate files on server only, no active bot.py patch.
+Phase E: Compile/self-review all candidates.
+Phase F: Prepare active patch approval packet.
+Phase G: Apply active patch only after separate marker, no restart.
+Phase H: Restart only through restart gate.
+
+## Target server candidate paths for later
+
+storage/runtime_bridge/candidates/V7_3C_ALL_ROUTES/route_01_new_product_candidate.py
+storage/runtime_bridge/candidates/V7_3C_ALL_ROUTES/route_02_variant_product_candidate.py
+storage/runtime_bridge/candidates/V7_3C_ALL_ROUTES/route_03_listing_studio_candidate.py
+storage/runtime_bridge/candidates/V7_3C_ALL_ROUTES/route_04_marketplace_lifecycle_candidate.py
+storage/runtime_bridge/candidates/V7_3C_ALL_ROUTES/route_05_finance_inventory_candidate.py
+storage/runtime_bridge/candidates/V7_3C_ALL_ROUTES/route_06_product_radar_candidate.py
+storage/runtime_bridge/candidates/V7_3C_ALL_ROUTES/route_07_decisions_reports_agents_candidate.py
+storage/runtime_bridge/candidates/V7_3C_ALL_ROUTES/route_08_system_memory_candidate.py
+storage/runtime_bridge/candidates/V7_3C_ALL_ROUTES/v73c_all_routes_schema.json
+storage/runtime_bridge/candidates/V7_3C_ALL_ROUTES/v73c_all_routes_review.json
+storage/control_room/V7_3C_ALL_8_BUTTONS_POINTER.json
+
+## Current build status
+
+Route 01: FULL_MEMORY_SPEC_READY, code draft not yet built.
+Route 02: FULL_MEMORY_SPEC_READY, code draft not yet built.
+Route 03: FULL_MEMORY_SPEC_READY, code draft not yet built.
+Route 04: FULL_MEMORY_SPEC_READY, code draft not yet built.
+Route 05: FULL_MEMORY_SPEC_READY, code draft not yet built.
+Route 06: FULL_MEMORY_SPEC_READY + CODE_DRAFT_READY_IN_MEMORY.
+Route 07: FULL_MEMORY_SPEC_READY, code draft not yet built.
+Route 08: FULL_MEMORY_SPEC_READY, code draft not yet built.
+
+## Safety status
+
+server_write_done: false
+active_bot_patch_done: false
+telegram_restart_done: false
+ebay_api_called: false
+purchase_action_done: false
+delete_cleanup_done: false
+git_commit_done: false
+git_push_done: false
+secrets_printed: false
+
+## Next allowed action
+
+BUILD_GITHUB_MEMORY_CODE_DRAFTS_FOR_ROUTES_01_02_03_04_05_07_08_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+
+After that:
+CREATE_UNIFIED_V7_3C_SERVER_TRANSFER_PACKET_FOR_ALL_8_ROUTES_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
