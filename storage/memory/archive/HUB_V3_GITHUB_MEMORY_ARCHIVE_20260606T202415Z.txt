@@ -1,0 +1,16 @@
+# V7.3C R07 Pass C Buttons Markers
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 05 Buttons.
+Creates short safe callbacks.
+Output: button_plan.
+
+Agent 06 Marker.
+Creates exact approval marker when needed.
+Output: approval_marker_text.
+
+Rule:
+No hidden live action behind a button.
+Callback carries key only, not full payload.
