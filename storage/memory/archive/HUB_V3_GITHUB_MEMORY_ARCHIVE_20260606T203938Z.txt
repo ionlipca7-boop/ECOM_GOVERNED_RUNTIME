@@ -1,0 +1,28 @@
+# V7.3C R08 Autonomy Clarification
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Rule:
+Route 08 project memory must be autonomous.
+
+Meaning:
+Project memory is stored in project files, archives, rules, pointers and evidence records.
+It must not depend on a ChatGPT conversation as the only memory source.
+
+Next-chat front meaning:
+A next-chat front is only an operator helper for Ion when he continues work in ChatGPT.
+It is not the main project memory.
+
+Main memory:
+- memory_v2
+- archive
+- rules
+- pointers
+- teacher_memory
+- evidence
+- reports
+- route contracts
+
+Rule:
+If ChatGPT is not available, project memory should still be readable from files and pointers.
