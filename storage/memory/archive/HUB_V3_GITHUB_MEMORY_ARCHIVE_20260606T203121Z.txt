@@ -1,0 +1,16 @@
+# V7.3C R07 Lock Detail 01 Base Refs
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+This detail chunk expands the short Route 07 lock note.
+
+Base refs:
+- 201914Z route 07 deep blueprint index
+- 202324Z Telegram limits and callback rule
+- 202509Z agent passports index
+- 202817Z card state rule
+- 202846Z minimal lock note
+
+Purpose:
+Keep Route 07 lock meaning readable even when long lock summaries are blocked.
