@@ -1,0 +1,43 @@
+# ECOM OS V7.3C — Route 04 Marketplace Lifecycle Part 01 Scope
+
+topic_id: V7_3C_ROUTE_04_MARKETPLACE_LIFECYCLE
+part_number: 01_SCOPE
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Identity
+
+Button: 04 🛒 Маркетплейсы / жизнь листингов
+route_id: route_04_marketplace_lifecycle
+callback: v73c:route:04_marketplace_lifecycle
+case_namespace: cases/v73c/route_04_marketplace_lifecycle
+
+## Purpose
+
+Route 04 is the observation and lifecycle center for published listings.
+Ion should not manually check every listing.
+The system should show only useful listing-life signals.
+
+## Inputs
+
+Route 04 receives published or updated listing references from:
+- Route 01 simple product;
+- Route 02 variant product;
+- Route 03 Listing Studio.
+
+## Main outputs
+
+- active listing overview;
+- attention cards;
+- lifecycle summary;
+- listing detail report;
+- recommendation to Route 03, 05 or 07;
+- lesson to Route 08.
+
+## Safety
+
+GitHub memory only.
+No server write.
+No active patch.
+No restart.
+No marketplace call.
