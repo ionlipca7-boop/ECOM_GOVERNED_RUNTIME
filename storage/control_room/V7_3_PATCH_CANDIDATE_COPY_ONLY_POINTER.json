@@ -1,0 +1,13 @@
+{
+  "status": "PASS_V7_3_PATCH_CANDIDATE_COPY_READY_NO_ACTIVE_PATCH",
+  "updated_utc": "20260606T085753Z",
+  "report": "storage/state_control/V7_3_PATCH_CANDIDATE_COPY_ONLY_20260606T085753Z.json",
+  "candidate_dir": "storage/runtime_bridge/candidates/V7_3_PATCH_CANDIDATE_COPY_ONLY_20260606T085753Z",
+  "candidate_copy": "storage/runtime_bridge/candidates/V7_3_PATCH_CANDIDATE_COPY_ONLY_20260606T085753Z/bot_py_V7_3_PATCH_CANDIDATE_ONLY_NO_ACTIVE_PATCH.py",
+  "diff": "storage/runtime_bridge/candidates/V7_3_PATCH_CANDIDATE_COPY_ONLY_20260606T085753Z/V7_3_PATCH_CANDIDATE_ONLY.diff",
+  "active_patch_gate": "CLOSED",
+  "restart_gate": "CLOSED",
+  "ebay_gate": "CLOSED",
+  "delete_gate": "CLOSED",
+  "next_safe_action": "REVIEW_V7_3_PATCH_CANDIDATE_DIFF_AND_COMPILE_BEFORE_ACTIVE_PATCH"
+}

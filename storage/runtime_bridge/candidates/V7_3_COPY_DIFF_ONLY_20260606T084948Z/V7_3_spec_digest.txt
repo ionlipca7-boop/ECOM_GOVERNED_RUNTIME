@@ -1,0 +1,64 @@
+SPEC_PATH=/home/ionlipca7/ecom_governed_runtime/storage/runtime_bridge/candidates/V7_3_TELEGRAM_MENU_CANDIDATE_SPEC/V7_3_TELEGRAM_MENU_CANDIDATE_SPEC_RU.md
+PLAN_PATH=/home/ionlipca7/ecom_governed_runtime/storage/runtime_bridge/candidates/V7_3_ACTIVE_PATCH_PLAN_NO_ACTIVE_PATCH_20260604T204448Z.md
+SPEC_EXISTS=True
+PLAN_EXISTS=True
+
+=== SPEC_HEAD ===
+# ECOM OS V7.3 Telegram Candidate Spec
+MODE: CANDIDATE_ONLY_NO_ACTIVE_PATCH
+PART_OF: ECOM OS V6.6 FULL SKELETON
+
+MENU:
+1. Новый товар
+2. Товар с вариантами
+3. Листинг-студия
+4. Marketplace / Lifecycle
+5. Финансы / склад
+6. Поиск товаров / закупка
+7. Решения / отчёты / агенты
+8. Система / память
+
+INCLUDES:
+- Product Radar -> button 6
+- HTML Shop / Cross-sell -> button 3
+- Finance / Return Reserve -> button 5
+- Marketplace lifecycle / ads -> button 4
+- System / GitHub / memory / checkpoint -> button 8
+- Menu18 -> OLD_DONOR_NOT_CURRENT_ROUTE
+
+SAFETY:
+NO_ACTIVE_PATCH
+NO_RESTART
+NO_EBAY
+NO_DELETE
+NO_SECRET_PRINT
+
+
+=== PLAN_HEAD ===
+# V7.3 Telegram Active Patch Plan — NO ACTIVE PATCH
+
+STATUS: PLAN_ONLY
+SPEC: storage/runtime_bridge/candidates/V7_3_TELEGRAM_MENU_CANDIDATE_SPEC/V7_3_TELEGRAM_MENU_CANDIDATE_SPEC_RU.md
+
+Goal:
+- подготовить безопасный план внедрения Telegram V7.3 menu
+- active bot не трогать
+- restart не делать
+- eBay не трогать
+
+Patch route:
+1. Read active bot/menu anchors read-only.
+2. Build candidate patched copy only.
+3. Compile candidate copy only.
+4. Create diff/report.
+5. Wait for approval marker.
+6. Only after approval: apply active patch no restart.
+7. Restart gate stays closed until separate approval.
+
+Safety:
+- active_patch_done=false
+- restart_done=false
+- ebay_called=false
+- delete_done=false
+- private_values_printed=false
+

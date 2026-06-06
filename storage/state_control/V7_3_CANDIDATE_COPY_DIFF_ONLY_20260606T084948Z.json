@@ -1,0 +1,18 @@
+{
+  "step": "V7_3_READ_ANCHORS_AND_BUILD_CLEAN_CANDIDATE_COPY_DIFF_ONLY",
+  "utc": "20260606T084948Z",
+  "status": "PASS_CLEAN_ANCHOR_MAP_AND_CANDIDATE_COPY_READY_NO_ACTIVE_PATCH",
+  "bot_path_readonly": "/home/ionlipca7/runtime_eco_v1/bot.py",
+  "candidate_dir": "storage/runtime_bridge/candidates/V7_3_COPY_DIFF_ONLY_20260606T084948Z",
+  "candidate_copy": "storage/runtime_bridge/candidates/V7_3_COPY_DIFF_ONLY_20260606T084948Z/bot_py_candidate_copy_ONLY_NO_ACTIVE_PATCH.py",
+  "diff": "storage/runtime_bridge/candidates/V7_3_COPY_DIFF_ONLY_20260606T084948Z/V7_3_candidate_copy.diff",
+  "anchor_map": "storage/runtime_bridge/candidates/V7_3_COPY_DIFF_ONLY_20260606T084948Z/V7_3_active_menu_anchor_map.json",
+  "spec_digest": "storage/runtime_bridge/candidates/V7_3_COPY_DIFF_ONLY_20260606T084948Z/V7_3_spec_digest.txt",
+  "diff_is_empty": true,
+  "active_patch_done": false,
+  "restart_done": false,
+  "ebay_called": false,
+  "delete_done": false,
+  "private_values_printed": false,
+  "next_safe_action": "REVIEW_V7_3_ANCHOR_MAP_AND_SPEC_DIGEST_BEFORE_PATCH_CANDIDATE"
+}

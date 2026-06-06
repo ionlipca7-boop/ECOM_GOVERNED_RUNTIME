@@ -1,0 +1,12 @@
+{
+  "status": "PASS_V7_3B_CONTROLLED_RESTART_DONE",
+  "updated_utc": "20260606T091543Z",
+  "report": "storage/state_control/V7_3B_CONTROLLED_RESTART_DONE_20260606T091543Z.json",
+  "active_bot_target": "/home/ionlipca7/ecom_governed_runtime/storage/runtime_bridge/legacy_bot_staging_20260602T153604Z/bot.py",
+  "old_pid": "3345837",
+  "new_pid": "3642736",
+  "restart_done": true,
+  "ebay_gate": "CLOSED",
+  "delete_gate": "CLOSED",
+  "next_safe_action": "OPERATOR_VERIFY_TELEGRAM_V7_3B_MENU"
+}

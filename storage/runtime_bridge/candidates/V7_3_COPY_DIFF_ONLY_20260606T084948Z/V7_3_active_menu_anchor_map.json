@@ -1,0 +1,693 @@
+{
+  "bot_path_readonly": "/home/ionlipca7/runtime_eco_v1/bot.py",
+  "bot_sha256": "3f1870e1785077c772a908c31286a7bdeb832c8f77c711d72d93d04883926afe",
+  "functions": [
+    {
+      "type": "function",
+      "name": "_oc2_raw_is_callback",
+      "line": 17,
+      "end_line": 18
+    },
+    {
+      "type": "function",
+      "name": "_oc2_raw_try_handle_callback",
+      "line": 31,
+      "end_line": 42
+    },
+    {
+      "type": "function",
+      "name": "ecom_smart_album_router_v2_register",
+      "line": 45,
+      "end_line": 82
+    },
+    {
+      "type": "function",
+      "name": "ecom_virtual_button_tester_v2_run_no_telegram_api",
+      "line": 84,
+      "end_line": 98
+    },
+    {
+      "type": "function",
+      "name": "ecom_photo_router_v6_5_route",
+      "line": 104,
+      "end_line": 140
+    },
+    {
+      "type": "function",
+      "name": "ecom_cockpit_v2_menu_text",
+      "line": 244,
+      "end_line": 245
+    },
+    {
+      "type": "function",
+      "name": "ecom_cockpit_v2_keyboard_markup",
+      "line": 286,
+      "end_line": 287
+    },
+    {
+      "type": "function",
+      "name": "ecom_cockpit_main_inline_keyboard",
+      "line": 289,
+      "end_line": 290
+    },
+    {
+      "type": "function",
+      "name": "ecom_cockpit_price_keyboard",
+      "line": 292,
+      "end_line": 296
+    },
+    {
+      "type": "function",
+      "name": "ecom_cockpit_category_keyboard",
+      "line": 298,
+      "end_line": 302
+    },
+    {
+      "type": "function",
+      "name": "ecom_cockpit_photo_keyboard",
+      "line": 304,
+      "end_line": 308
+    },
+    {
+      "type": "function",
+      "name": "ecom_cockpit_html_keyboard",
+      "line": 310,
+      "end_line": 314
+    },
+    {
+      "type": "function",
+      "name": "ecom_cockpit_approval_keyboard",
+      "line": 316,
+      "end_line": 321
+    },
+    {
+      "type": "function",
+      "name": "ecom_cockpit_v2_send_message",
+      "line": 336,
+      "end_line": 359
+    },
+    {
+      "type": "function",
+      "name": "ecom_cockpit_v2_answer_callback",
+      "line": 361,
+      "end_line": 371
+    },
+    {
+      "type": "function",
+      "name": "_cockpit_set_wait",
+      "line": 373,
+      "end_line": 378
+    },
+    {
+      "type": "function",
+      "name": "_r75e_previous_ecom_cockpit_v2_try_handle_update",
+      "line": 387,
+      "end_line": 540
+    },
+    {
+      "type": "function",
+      "name": "_r75e_keyboard",
+      "line": 609,
+      "end_line": 621
+    },
+    {
+      "type": "function",
+      "name": "_r83_previous_ecom_cockpit_v2_try_handle_update",
+      "line": 641,
+      "end_line": 666
+    },
+    {
+      "type": "function",
+      "name": "_r83_home_keyboard",
+      "line": 682,
+      "end_line": 696
+    },
+    {
+      "type": "function",
+      "name": "_r83_screen_keyboard",
+      "line": 709,
+      "end_line": 725
+    },
+    {
+      "type": "function",
+      "name": "_r93_previous_ecom_cockpit_v2_try_handle_update",
+      "line": 893,
+      "end_line": 939
+    },
+    {
+      "type": "function",
+      "name": "_r93_keyboard",
+      "line": 1171,
+      "end_line": 1177
+    },
+    {
+      "type": "function",
+      "name": "_r93_chat_id_from_callback",
+      "line": 1179,
+      "end_line": 1184
+    },
+    {
+      "type": "function",
+      "name": "_r93_handle_new_product_callback",
+      "line": 1216,
+      "end_line": 1260
+    },
+    {
+      "type": "function",
+      "name": "_r98_previous_ecom_cockpit_v2_try_handle_update",
+      "line": 1310,
+      "end_line": 1329
+    },
+    {
+      "type": "function",
+      "name": "_r98_keyboard",
+      "line": 1608,
+      "end_line": 1615
+    },
+    {
+      "type": "function",
+      "name": "_r98_boundary_keyboard",
+      "line": 1617,
+      "end_line": 1622
+    },
+    {
+      "type": "function",
+      "name": "_r98_handle_special_callback",
+      "line": 1657,
+      "end_line": 1682
+    },
+    {
+      "type": "function",
+      "name": "_r98_handle_new_product_callback",
+      "line": 1684,
+      "end_line": 1730
+    },
+    {
+      "type": "function",
+      "name": "ecom_cockpit_v2_try_handle_update",
+      "line": 1809,
+      "end_line": 1828
+    },
+    {
+      "type": "function",
+      "name": "telegram_active_router_v1",
+      "line": 1883,
+      "end_line": 1925
+    },
+    {
+      "type": "function",
+      "name": "handle_review_callback_v1",
+      "line": 2117,
+      "end_line": 2179
+    }
+  ],
+  "string_hits_first_120": [
+    {
+      "line": 5,
+      "text": "# ECOM_SMART_ALBUM_ROUTER_V2_PATCH_START"
+    },
+    {
+      "line": 7,
+      "text": "# === OPERATOR_COCKPIT_V2_RAW_UPDATE_PATCH_BEGIN ==="
+    },
+    {
+      "line": 8,
+      "text": "# R66D candidate: raw Telegram update dict model. No eBay/delete/cleanup. Restart is separate gate."
+    },
+    {
+      "line": 11,
+      "text": "    _oc2_sys.path.insert(0, \"/home/ionlipca7/ecom_governed_runtime/storage/runtime_bridge/candidates/R64_OPERATOR_COCKPIT_V2_PATCH_CANDIDATE_20260527T173222Z\")"
+    },
+    {
+      "line": 12,
+      "text": "    from operator_cockpit_v2_candidate import oc2_get_main_message, oc2_resolve_callback, oc2_validate_pack"
+    },
+    {
+      "line": 13,
+      "text": "    OPERATOR_COCKPIT_V2_RAW_AVAILABLE = bool(oc2_validate_pack().get(\"ok\"))"
+    },
+    {
+      "line": 15,
+      "text": "    OPERATOR_COCKPIT_V2_RAW_AVAILABLE = False"
+    },
+    {
+      "line": 17,
+      "text": "def _oc2_raw_is_callback(data):"
+    },
+    {
+      "line": 18,
+      "text": "    return isinstance(data, str) and (data.startswith(\"m:\") or data.startswith(\"a:\") or data.startswith(\"nav:\"))"
+    },
+    {
+      "line": 25,
+      "text": "            return ecom_cockpit_v2_send_message(chat_id, text, markup)"
+    },
+    {
+      "line": 27,
+      "text": "            return ecom_cockpit_v2_send_message(chat_id, text)"
+    },
+    {
+      "line": 31,
+      "text": "def _oc2_raw_try_handle_callback(chat_id, callback_id, callback_data):"
+    },
+    {
+      "line": 32,
+      "text": "    if not OPERATOR_COCKPIT_V2_RAW_AVAILABLE:"
+    },
+    {
+      "line": 34,
+      "text": "    if not _oc2_raw_is_callback(callback_data):"
+    },
+    {
+      "line": 37,
+      "text": "        ecom_cockpit_v2_answer_callback(callback_id)"
+    },
+    {
+      "line": 40,
+      "text": "    screen = oc2_resolve_callback(callback_data)"
+    },
+    {
+      "line": 43,
+      "text": "# === OPERATOR_COCKPIT_V2_RAW_UPDATE_PATCH_END ==="
+    },
+    {
+      "line": 84,
+      "text": "def ecom_virtual_button_tester_v2_run_no_telegram_api():"
+    },
+    {
+      "line": 88,
+      "text": "        _module_path = _EcomPath(\"/home/ionlipca7/ecom_governed_runtime/storage/tools/telegram_virtual_button_tester/telegram_virtual_button_tester_v2_candidate.py\")"
+    },
+    {
+      "line": 89,
+      "text": "        _spec = _ecom_importlib_util.spec_from_file_location(\"telegram_virtual_button_tester_v2_candidate\", str(_module_path))"
+    },
+    {
+      "line": 92,
+      "text": "        return _mod.run_virtual_button_matrix()"
+    },
+    {
+      "line": 93,
+      "text": "    except Exception as _ecom_button_tester_error:"
+    },
+    {
+      "line": 95,
+      "text": "            \"status\": \"VIRTUAL_BUTTON_TESTER_V2_ERROR_NO_CRASH\","
+    },
+    {
+      "line": 96,
+      "text": "            \"error\": str(_ecom_button_tester_error),"
+    },
+    {
+      "line": 103,
+      "text": "# ECOM_PHOTO_PRODUCT_ROUTER_V6_5_PATCH_START"
+    },
+    {
+      "line": 104,
+      "text": "def ecom_photo_router_v6_5_route(saved_photo_path, chat_id=None, msg_id=None, file_id=None, caption=\"\"):"
+    },
+    {
+      "line": 108,
+      "text": "        _module_path = _EcomPath(\"/home/ionlipca7/ecom_governed_runtime/storage/tools/telegram_photo_router/telegram_photo_product_router_v6_5_candidate.py\")"
+    },
+    {
+      "line": 109,
+      "text": "        _spec = _ecom_importlib_util.spec_from_file_location(\"telegram_photo_product_router_v6_5_candidate\", str(_module_path))"
+    },
+    {
+      "line": 141,
+      "text": "# ECOM_PHOTO_PRODUCT_ROUTER_V6_5_PATCH_END"
+    },
+    {
+      "line": 145,
+      "text": "# ECOM_COCKPIT_V2_INLINE_START"
+    },
+    {
+      "line": 146,
+      "text": "# ECOM_COCKPIT_WAITING_V3_ACTIVE_NO_BACKSLASH_NEWLINE"
+    },
+    {
+      "line": 177,
+      "text": "                d.setdefault('cockpit', {})"
+    },
+    {
+      "line": 178,
+      "text": "                d['cockpit'].setdefault('waiting_mode', {'active': False})"
+    },
+    {
+      "line": 182,
+      "text": "    return {'status':'OPERATOR_INPUTS_CURRENT_PRODUCT_V1','active_product_key':_CPRODUCT,'operator_inputs':{},'cockpit':{'waiting_mode':{'active':False}},'publication_status':{'live_gate':'CLOSED','message':'Публикация на eBay не запускаетс"
+    },
+    {
+      "line": 190,
+      "text": "# RUNTIME_ROUTER_V1_PATCH_START"
+    },
+    {
+      "line": 198,
+      "text": "        return {'current_screen':'MAIN_MENU','previous_screen':None,'breadcrumbs':['MAIN_MENU'],'waiting_mode':{'active':False,'field':None,'product_key':None},'live_gate':'CLOSED','restart_gate':'CLOSED','mode':'CANDIDATE_RUNTIME_ONLY'}"
+    },
+    {
+      "line": 244,
+      "text": "def ecom_cockpit_v2_menu_text():"
+    },
+    {
+      "line": 245,
+      "text": "    return 'ECOM Agent — главное меню V6.5\\n\\n📌 Статус:\\n• Telegram bot активен.\\n• Digest V2E активен.\\n• Авто-агенты работают по расписанию.\\n• eBay live/create/publish/revise закрыты.\\n\\n🧩 Основной поток товара:\\n01. Новый товар\\n02. Тек"
+    },
+    {
+      "line": 276,
+      "text": "        'БЛОК / BLOCK: ' + (', '.join(blocks) if blocks else 'для cockpit-ввода критичных блокеров нет'),"
+    },
+    {
+      "line": 286,
+      "text": "def ecom_cockpit_v2_keyboard_markup():"
+    },
+    {
+      "line": 287,
+      "text": "    return ecom_cockpit_main_inline_keyboard()"
+    },
+    {
+      "line": 289,
+      "text": "def ecom_cockpit_main_inline_keyboard():"
+    },
+    {
+      "line": 290,
+      "text": "    return {\"inline_keyboard\": [[{'text': '01. Новый товар', 'callback_data': 'menu:new_product'}, {'text': '02. Текущий товар', 'callback_data': 'menu:current_product'}], [{'text': '03. Паспорт товара', 'callback_data': 'menu:product_passp"
+    },
+    {
+      "line": 292,
+      "text": "def ecom_cockpit_price_keyboard():"
+    },
+    {
+      "line": 294,
+      "text": "        [{'text': 'Закупка/цена', 'callback_data': 'cockpit_wait:purchase_price'}, {'text': 'Желаемая цена', 'callback_data': 'cockpit_wait:target_price'}],"
+    },
+    {
+      "line": 295,
+      "text": "        [{'text': 'Проверить цену', 'callback_data': 'cockpit_price_check'}, {'text': '⬅️ Назад', 'callback_data': 'cockpit_menu'}]"
+    },
+    {
+      "line": 298,
+      "text": "def ecom_cockpit_category_keyboard():"
+    },
+    {
+      "line": 300,
+      "text": "        [{'text': 'Ввести категорию', 'callback_data': 'cockpit_wait:category'}, {'text': 'Статус категории', 'callback_data': 'c_status'}],"
+    },
+    {
+      "line": 301,
+      "text": "        [{'text': 'Проверить specifics позже', 'callback_data': 'cockpit_category_check'}, {'text': '⬅️ Назад', 'callback_data': 'cockpit_menu'}]"
+    },
+    {
+      "line": 304,
+      "text": "def ecom_cockpit_photo_keyboard():"
+    },
+    {
+      "line": 306,
+      "text": "        [{'text': 'Фото подтверждаю', 'callback_data': 'cockpit_wait:photos'}, {'text': 'Статус фото', 'callback_data': 'c_status'}],"
+    },
+    {
+      "line": 307,
+      "text": "        [{'text': 'Загрузить фото обычным сообщением', 'callback_data': 'cockpit_photo_help'}, {'text': '⬅️ Назад', 'callback_data': 'cockpit_menu'}]"
+    },
+    {
+      "line": 310,
+      "text": "def ecom_cockpit_html_keyboard():"
+    },
+    {
+      "line": 312,
+      "text": "        [{'text': 'Ввести заметку HTML', 'callback_data': 'cockpit_wait:html_description'}, {'text': 'Проверить описание позже', 'callback_data': 'cockpit_html_check'}],"
+    },
+    {
+      "line": 313,
+      "text": "        [{'text': '⬅️ Назад', 'callback_data': 'cockpit_menu'}]"
+    },
+    {
+      "line": 316,
+      "text": "def ecom_cockpit_approval_keyboard():"
+    },
+    {
+      "line": 318,
+      "text": "        [{'text': 'Финальная проверка', 'callback_data': 'c_status'}],"
+    },
+    {
+      "line": 319,
+      "text": "        [{'text': 'Черновик подтверждаю без live', 'callback_data': 'cockpit_wait:draft_approval'}],"
+    },
+    {
+      "line": 320,
+      "text": "        [{'text': '⬅️ Назад', 'callback_data': 'cockpit_menu'}, {'text': '❌ Отмена', 'callback_data': 'c_cancel'}]"
+    },
+    {
+      "line": 323,
+      "text": "_COCKPIT_LABELS = {"
+    },
+    {
+      "line": 336,
+      "text": "def ecom_cockpit_v2_send_message(chat_id, text, reply_markup=None):"
+    },
+    {
+      "line": 361,
+      "text": "def ecom_cockpit_v2_answer_callback(callback_id):"
+    },
+    {
+      "line": 366,
+      "text": "        if not tok or not callback_id:"
+    },
+    {
+      "line": 368,
+      "text": "        requests.post('https://api.telegram.org/bot' + str(tok) + '/answerCallbackQuery', json={'callback_query_id': callback_id}, timeout=10)"
+    },
+    {
+      "line": 373,
+      "text": "def _cockpit_set_wait(chat_id, d, field_key):"
+    },
+    {
+      "line": 374,
+      "text": "    fl = _COCKPIT_LABELS.get(field_key, field_key)"
+    },
+    {
+      "line": 375,
+      "text": "    d.setdefault('cockpit', {})['waiting_mode'] = {'active': True, 'field_key': field_key, 'field_label': fl, 'started_utc': _ct()}"
+    },
+    {
+      "line": 377,
+      "text": "    ecom_cockpit_v2_send_message(chat_id, _NL.join(['Введи значение для поля: ' + str(fl), 'Публикация на eBay не запускается. Live закрыт.']))"
+    },
+    {
+      "line": 381,
+      "text": "    d.setdefault('cockpit', {})['waiting_mode'] = {'active': False}"
+    },
+    {
+      "line": 383,
+      "text": "    ecom_cockpit_v2_send_message(chat_id, _NL.join(['ГОТОВО / PASS', 'Ожидание ввода отменено.', 'Публикация на eBay не запускается. Live закрыт.']), ecom_cockpit_v2_keyboard_markup())"
+    },
+    {
+      "line": 386,
+      "text": "# === R75E_ENRICHED_RAW_HANDLER_START ==="
+    },
+    {
+      "line": 387,
+      "text": "def _r75e_previous_ecom_cockpit_v2_try_handle_update(update):"
+    },
+    {
+      "line": 389,
+      "text": "        cb = update.get('callback_query') or {}"
+    },
+    {
+      "line": 390,
+      "text": "        callback_id = cb.get('id')"
+    },
+    {
+      "line": 391,
+      "text": "        callback_data = str(cb.get('data') or '').strip()"
+    },
+    {
+      "line": 392,
+      "text": "        callback_msg = cb.get('message') or {}"
+    },
+    {
+      "line": 393,
+      "text": "        msg = update.get('message') or update.get('edited_message') or callback_msg or {}"
+    },
+    {
+      "line": 399,
+      "text": "        # OPERATOR_COCKPIT_V2_RAW_CALLBACK_INTERCEPT_BEGIN"
+    },
+    {
+      "line": 400,
+      "text": "        if _oc2_raw_try_handle_callback(chat_id, callback_id, callback_data):"
+    },
+    {
+      "line": 402,
+      "text": "        # OPERATOR_COCKPIT_V2_RAW_CALLBACK_INTERCEPT_END"
+    },
+    {
+      "line": 405,
+      "text": "        wait = (d.get('cockpit') or {}).get('waiting_mode') or {}"
+    },
+    {
+      "line": 407,
+      "text": "        if callback_data:"
+    },
+    {
+      "line": 408,
+      "text": "            ecom_cockpit_v2_answer_callback(callback_id)"
+    },
+    {
+      "line": 410,
+      "text": "            if callback_data == 'cockpit_menu':"
+    },
+    {
+      "line": 412,
+      "text": "                d.setdefault('cockpit', {})['waiting_mode'] = {'active': False}"
+    },
+    {
+      "line": 414,
+      "text": "                ecom_cockpit_v2_send_message(chat_id, ecom_cockpit_v2_menu_text(), ecom_cockpit_main_inline_keyboard())"
+    },
+    {
+      "line": 417,
+      "text": "            if callback_data.startswith('cockpit_wait:'):"
+    },
+    {
+      "line": 418,
+      "text": "                return _cockpit_set_wait(chat_id, d, callback_data.split(':', 1)[1].strip())"
+    },
+    {
+      "line": 420,
+      "text": "            if callback_data in ('c_new', 'cockpit_new_product'):"
+    },
+    {
+      "line": 422,
+      "text": "                ecom_cockpit_v2_send_message(chat_id, _NL.join(["
+    },
+    {
+      "line": 429,
+      "text": "                ]), ecom_cockpit_main_inline_keyboard())"
+    },
+    {
+      "line": 432,
+      "text": "            if callback_data in ('c_agents', 'cockpit_agents_menu'):"
+    },
+    {
+      "line": 434,
+      "text": "                ecom_cockpit_v2_send_message(chat_id, _NL.join(["
+    },
+    {
+      "line": 447,
+      "text": "                ]), ecom_cockpit_main_inline_keyboard())"
+    },
+    {
+      "line": 450,
+      "text": "            if callback_data in ('c_status', 'cockpit_status'):"
+    },
+    {
+      "line": 452,
+      "text": "                ecom_cockpit_v2_send_message(chat_id, _status_text(d), ecom_cockpit_v2_keyboard_markup())"
+    },
+    {
+      "line": 455,
+      "text": "            if callback_data in ('c_cancel', 'cockpit_cancel'):"
+    },
+    {
+      "line": 459,
+      "text": "            if callback_data in ('c_price', 'cockpit_price_menu'):"
+    },
+    {
+      "line": 461,
+      "text": "                ecom_cockpit_v2_send_message(chat_id, 'Раздел: Цена. Выбери действие.', ecom_cockpit_price_keyboard())"
+    },
+    {
+      "line": 464,
+      "text": "            if callback_data in ('c_cat', 'cockpit_category_menu'):"
+    },
+    {
+      "line": 466,
+      "text": "                ecom_cockpit_v2_send_message(chat_id, 'Раздел: Категория. Выбери действие.', ecom_cockpit_category_keyboard())"
+    },
+    {
+      "line": 469,
+      "text": "            if callback_data in ('c_photo', 'cockpit_photo_menu'):"
+    },
+    {
+      "line": 471,
+      "text": "                ecom_cockpit_v2_send_message(chat_id, 'Раздел: Фото. Выбери действие.', ecom_cockpit_photo_keyboard())"
+    },
+    {
+      "line": 474,
+      "text": "            if callback_data in ('c_desc', 'cockpit_html_menu'):"
+    },
+    {
+      "line": 476,
+      "text": "                ecom_cockpit_v2_send_message(chat_id, 'Раздел: HTML / описание. Выбери действие.', ecom_cockpit_html_keyboard())"
+    },
+    {
+      "line": 479,
+      "text": "            if callback_data in ('c_check', 'cockpit_approval_menu'):"
+    },
+    {
+      "line": 481,
+      "text": "                ecom_cockpit_v2_send_message(chat_id, 'Раздел: Подтверждение. Live закрыт, публикация не запускается.', ecom_cockpit_approval_keyboard())"
+    },
+    {
+      "line": 484,
+      "text": "            if callback_data in ('cockpit_price_check', 'cockpit_category_check', 'cockpit_photo_help', 'cockpit_html_check'):"
+    },
+    {
+      "line": 485,
+      "text": "                ecom_cockpit_v2_send_message(chat_id, _NL.join(['ВНИМАНИЕ / WARN', 'Этот helper найден как donor и будет подключён через router следующим шагом.', 'Сейчас live закрыт, старые ветки не запускаются.']), ecom_cockpit_v2_keyboar"
+    },
+    {
+      "line": 497,
+      "text": "            fl = wait.get('field_label') or _COCKPIT_LABELS.get(fk, fk)"
+    },
+    {
+      "line": 499,
+      "text": "            d.setdefault('cockpit', {})['waiting_mode'] = {'active': False}"
+    },
+    {
+      "line": 501,
+      "text": "            ecom_cockpit_v2_send_message(chat_id, _NL.join(['ГОТОВО / PASS', 'Поле сохранено: ' + str(fl) + ' = ' + text, 'Публикация на eBay не запускается. Live закрыт.']), ecom_cockpit_v2_keyboard_markup())"
+    },
+    {
+      "line": 504,
+      "text": "        # ECOM_RU_KEYBOARD_HELPER_CALL_CURRENT_START"
+    },
+    {
+      "line": 507,
+      "text": "            if handle_ru_keyboard(chat_id, text, globals().get('API_URL'), ecom_cockpit_v2_keyboard_markup(), ecom_cockpit_v2_menu_text()):"
+    },
+    {
+      "line": 513,
+      "text": "        if low in ('/cockpit', 'cockpit', 'пульт', '/menu', 'menu', '🏠 главное меню', 'главное меню', 'меню'):"
+    },
+    {
+      "line": 514,
+      "text": "            d.setdefault('cockpit', {})['waiting_mode'] = {'active': False}"
+    },
+    {
+      "line": 516,
+      "text": "            ecom_cockpit_v2_send_message(chat_id, ecom_cockpit_v2_menu_text(), ecom_cockpit_main_inline_keyboard())"
+    },
+    {
+      "line": 520,
+      "text": "            ecom_cockpit_v2_send_message(chat_id, _status_text(d), ecom_cockpit_v2_keyboard_markup())"
+    },
+    {
+      "line": 529,
+      "text": "                ecom_cockpit_v2_send_message(chat_id, _status_text(d), ecom_cockpit_v2_keyboard_markup())"
+    },
+    {
+      "line": 531,
+      "text": "            return _cockpit_set_wait(chat_id, d, fk)"
+    }
+  ],
+  "spec_exists": true,
+  "plan_exists": true,
+  "active_patch_done": false,
+  "restart_done": false,
+  "ebay_called": false,
+  "delete_done": false,
+  "private_values_printed": false
+}

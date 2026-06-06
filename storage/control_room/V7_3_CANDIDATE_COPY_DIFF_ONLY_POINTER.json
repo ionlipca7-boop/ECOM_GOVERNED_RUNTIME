@@ -1,0 +1,11 @@
+{
+  "status": "PASS_CLEAN_ANCHOR_MAP_AND_CANDIDATE_COPY_READY_NO_ACTIVE_PATCH",
+  "updated_utc": "20260606T084948Z",
+  "report": "storage/state_control/V7_3_CANDIDATE_COPY_DIFF_ONLY_20260606T084948Z.json",
+  "candidate_dir": "storage/runtime_bridge/candidates/V7_3_COPY_DIFF_ONLY_20260606T084948Z",
+  "active_patch_gate": "CLOSED",
+  "restart_gate": "CLOSED",
+  "ebay_gate": "CLOSED",
+  "delete_gate": "CLOSED",
+  "next_safe_action": "REVIEW_V7_3_ANCHOR_MAP_AND_SPEC_DIGEST_BEFORE_PATCH_CANDIDATE"
+}

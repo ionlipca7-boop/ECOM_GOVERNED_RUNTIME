@@ -1,0 +1,23 @@
+{
+  "step": "V7_3_BUILD_PATCH_CANDIDATE_COPY_ONLY_NO_ACTIVE_PATCH_NO_RESTART",
+  "utc": "20260606T085753Z",
+  "status": "PASS_V7_3_PATCH_CANDIDATE_COPY_READY_NO_ACTIVE_PATCH",
+  "source_bot_readonly": "/home/ionlipca7/runtime_eco_v1/bot.py",
+  "source_sha256": "3f1870e1785077c772a908c31286a7bdeb832c8f77c711d72d93d04883926afe",
+  "candidate_dir": "storage/runtime_bridge/candidates/V7_3_PATCH_CANDIDATE_COPY_ONLY_20260606T085753Z",
+  "candidate_copy": "storage/runtime_bridge/candidates/V7_3_PATCH_CANDIDATE_COPY_ONLY_20260606T085753Z/bot_py_V7_3_PATCH_CANDIDATE_ONLY_NO_ACTIVE_PATCH.py",
+  "diff": "storage/runtime_bridge/candidates/V7_3_PATCH_CANDIDATE_COPY_ONLY_20260606T085753Z/V7_3_PATCH_CANDIDATE_ONLY.diff",
+  "diff_is_empty": false,
+  "compile_ok": true,
+  "compile_error": "",
+  "changed_anchors": [
+    "ecom_cockpit_v2_menu_text",
+    "ecom_cockpit_main_inline_keyboard"
+  ],
+  "active_patch_done": false,
+  "restart_done": false,
+  "ebay_called": false,
+  "delete_done": false,
+  "private_values_printed": false,
+  "next_safe_action": "REVIEW_V7_3_PATCH_CANDIDATE_DIFF_AND_COMPILE_BEFORE_ACTIVE_PATCH"
+}

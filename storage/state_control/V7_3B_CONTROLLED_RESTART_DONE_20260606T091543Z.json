@@ -1,0 +1,18 @@
+{
+  "step": "CONTROLLED_RESTART_V7_3B_TELEGRAM_BOT",
+  "utc": "20260606T091543Z",
+  "status": "PASS_V7_3B_CONTROLLED_RESTART_DONE",
+  "approval_marker_used": "APPROVE_CONTROLLED_RESTART_V7_3B_TELEGRAM_BOT",
+  "active_bot_target": "/home/ionlipca7/ecom_governed_runtime/storage/runtime_bridge/legacy_bot_staging_20260602T153604Z/bot.py",
+  "old_pid": "3345837",
+  "new_pid": "3642736",
+  "target_sha256": "f43dc8ae3f1b05720c71ecf577ddafc1c31f34cf4d1974af74dd7000e24e59c7",
+  "log": "storage/logs/telegram_bot/v7_3b_controlled_restart_20260606T091543Z.log",
+  "new_pid_running_after_5s": true,
+  "bad_log_markers": [],
+  "restart_done": true,
+  "ebay_called": false,
+  "delete_done": false,
+  "private_values_printed": false,
+  "next_safe_action": "OPERATOR_VERIFY_TELEGRAM_V7_3B_MENU"
+}

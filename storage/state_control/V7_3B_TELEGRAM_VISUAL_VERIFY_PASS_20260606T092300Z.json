@@ -1,0 +1,24 @@
+{
+  "step": "V7_3B_TELEGRAM_VISUAL_VERIFY_PASS",
+  "utc": "20260606T092300Z",
+  "status": "PASS_V7_3B_TELEGRAM_VISUAL_VERIFY",
+  "operator_evidence": "Ion uploaded Telegram video. V7.3B menu visible; 8 buttons visible; tested safe screens open.",
+  "visual_confirmed_buttons": [
+    "01. Новый товар",
+    "02. Товар с вариантами",
+    "03. Листинг-студия",
+    "04. Marketplace / Lifecycle",
+    "05. Финансы / склад",
+    "06. Поиск товаров / закупка",
+    "07. Решения / отчёты / агенты",
+    "08. Система / память"
+  ],
+  "active_bot_target": "/home/ionlipca7/ecom_governed_runtime/storage/runtime_bridge/legacy_bot_staging_20260602T153604Z/bot.py",
+  "new_pid": "3642736",
+  "process_ok": true,
+  "restart_done": true,
+  "ebay_called": false,
+  "delete_done": false,
+  "private_values_printed": false,
+  "next_safe_action": "CREATE_V7_3B_GITHUB_CHECKPOINT_STAGE_REVIEW_NO_COMMIT_NO_PUSH"
+}

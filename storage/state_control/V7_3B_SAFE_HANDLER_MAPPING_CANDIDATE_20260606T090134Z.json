@@ -1,0 +1,30 @@
+{
+  "step": "V7_3B_SAFE_HANDLER_MAPPING_CANDIDATE_NO_ACTIVE_PATCH_NO_RESTART",
+  "utc": "20260606T090134Z",
+  "status": "PASS_V7_3B_SAFE_HANDLER_MAPPING_CANDIDATE_READY_NO_ACTIVE_PATCH",
+  "source_candidate": "storage/runtime_bridge/candidates/V7_3_PATCH_CANDIDATE_COPY_ONLY_20260606T085753Z/bot_py_V7_3_PATCH_CANDIDATE_ONLY_NO_ACTIVE_PATCH.py",
+  "source_sha256": "015a9ed40156cd6d80787df93013fb893c366a2b03d7984165d18704685256b4",
+  "candidate_dir": "storage/runtime_bridge/candidates/V7_3B_SAFE_HANDLER_MAPPING_CANDIDATE_20260606T090134Z",
+  "candidate_copy": "storage/runtime_bridge/candidates/V7_3B_SAFE_HANDLER_MAPPING_CANDIDATE_20260606T090134Z/bot_py_V7_3B_SAFE_HANDLER_MAPPING_CANDIDATE_NO_ACTIVE_PATCH.py",
+  "diff": "storage/runtime_bridge/candidates/V7_3B_SAFE_HANDLER_MAPPING_CANDIDATE_20260606T090134Z/V7_3B_SAFE_HANDLER_MAPPING.diff",
+  "compile_ok": true,
+  "compile_error": "",
+  "callback_coverage": {
+    "menu:new_product": 2,
+    "menu:variants": 2,
+    "menu:listing_studio": 2,
+    "menu:marketplace_lifecycle": 2,
+    "menu:finance_stock": 2,
+    "menu:product_search": 2,
+    "menu:decisions_agents": 2,
+    "menu:system_memory": 2
+  },
+  "callback_coverage_ok": true,
+  "diff_is_empty": false,
+  "active_patch_done": false,
+  "restart_done": false,
+  "ebay_called": false,
+  "delete_done": false,
+  "private_values_printed": false,
+  "next_safe_action": "REVIEW_V7_3B_DIFF_AND_CALLBACK_COVERAGE_BEFORE_ACTIVE_PATCH_GATE"
+}

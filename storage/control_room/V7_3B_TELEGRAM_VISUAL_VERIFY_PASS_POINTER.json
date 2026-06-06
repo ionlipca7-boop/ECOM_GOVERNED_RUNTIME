@@ -1,0 +1,12 @@
+{
+  "status": "PASS_V7_3B_TELEGRAM_VISUAL_VERIFY",
+  "updated_utc": "20260606T092300Z",
+  "report": "storage/state_control/V7_3B_TELEGRAM_VISUAL_VERIFY_PASS_20260606T092300Z.json",
+  "active_bot_target": "/home/ionlipca7/ecom_governed_runtime/storage/runtime_bridge/legacy_bot_staging_20260602T153604Z/bot.py",
+  "new_pid": "3642736",
+  "process_ok": true,
+  "restart_done": true,
+  "ebay_gate": "CLOSED",
+  "delete_gate": "CLOSED",
+  "next_safe_action": "CREATE_V7_3B_GITHUB_CHECKPOINT_STAGE_REVIEW_NO_COMMIT_NO_PUSH"
+}

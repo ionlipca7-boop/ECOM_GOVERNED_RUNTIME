@@ -1,0 +1,24 @@
+--- /home/ionlipca7/ecom_governed_runtime/storage/runtime_bridge/candidates/V7_3_PATCH_CANDIDATE_COPY_ONLY_20260606T085753Z/bot_py_V7_3_PATCH_CANDIDATE_ONLY_NO_ACTIVE_PATCH.py
++++ /home/ionlipca7/ecom_governed_runtime/storage/runtime_bridge/candidates/V7_3B_SAFE_HANDLER_MAPPING_CANDIDATE_20260606T090134Z/bot_py_V7_3B_SAFE_HANDLER_MAPPING_CANDIDATE_NO_ACTIVE_PATCH.py
+@@ -447,6 +447,21 @@
+         if callback_data:
+             ecom_cockpit_v2_answer_callback(callback_id)
+ 
++            # ECOM_V7_3B_SAFE_MENU_HANDLER_START
++            _v73_menu_screens = {
++                'menu:new_product': ('01. Новый товар', 'Раздел для нового товара. Safe mode: можно готовить intake, фото, цену и черновик. eBay live закрыт.'),
++                'menu:variants': ('02. Товар с вариантами', 'Раздел для вариантов: размеры, цвета, комплекты, quantity/price matrix. Пока safe screen без live-действий.'),
++                'menu:listing_studio': ('03. Листинг-студия', 'Раздел для title, SEO, item specifics, немецкого описания, HTML и проверки качества листинга.'),
++                'menu:marketplace_lifecycle': ('04. Marketplace / Lifecycle', 'Раздел для ads, lifecycle, monitor, reprice/relist strategy. Live действия только через отдельный gate.'),
++                'menu:finance_stock': ('05. Финансы / склад', 'Раздел для закупки, маржи, склада, резерва возвратов, упаковки и shipping economics.'),
++                'menu:product_search': ('06. Поиск товаров / закупка', 'Раздел для product radar, supplier/source checks, demand signals и закупочного решения.'),
++                'menu:decisions_agents': ('07. Решения / отчёты / агенты', 'Раздел для decision inbox, reports, agent status, audit и следующих безопасных действий.'),
++                'menu:system_memory': ('08. Система / память', 'Раздел для Memory V2, GitHub checkpoint, pointers, server status и project continuity.'),
++            }
++            if callback_data in _v73_menu_screens:
++                _title, _body = _v73_menu_screens[callback_data]
++                return ecom_cockpit_v2_send_message(chat_id, _NL.join([_title, '', _body, '', 'Безопасность: active patch/restart/eBay live закрыты без отдельного approval.']), ecom_cockpit_v2_keyboard_markup())
++            # ECOM_V7_3B_SAFE_MENU_HANDLER_END
+             if callback_data == 'cockpit_menu':
+                 _rt_navigate('MAIN_MENU')
+                 d.setdefault('cockpit', {})['waiting_mode'] = {'active': False}

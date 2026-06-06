@@ -1,0 +1,60 @@
+--- /home/ionlipca7/runtime_eco_v1/bot.py
++++ /home/ionlipca7/ecom_governed_runtime/storage/runtime_bridge/candidates/V7_3_PATCH_CANDIDATE_COPY_ONLY_20260606T085753Z/bot_py_V7_3_PATCH_CANDIDATE_ONLY_NO_ACTIVE_PATCH.py
+@@ -242,7 +242,28 @@
+ 
+ 
+ def ecom_cockpit_v2_menu_text():
+-    return 'ECOM Agent — главное меню V6.5\n\n📌 Статус:\n• Telegram bot активен.\n• Digest V2E активен.\n• Авто-агенты работают по расписанию.\n• eBay live/create/publish/revise закрыты.\n\n🧩 Основной поток товара:\n01. Новый товар\n02. Текущий товар\n03. Паспорт товара\n04. Источники\n05. Фото / галерея\n06. Заголовок / SEO\n07. Описание DE\n08. Категория / хар-ки\n09. Цена / конкуренты\n10. Количество / склад\n11. Доставка\n12. Политики\n13. Проверка / критика\n17. Одобрение\n\n🤖 Сервис и контроль:\n14. Агенты\n15. Digest / отчёты\n16. Live-статус\n18. STOP\n\nВыбери раздел кнопкой ниже.'
++    return """ECOM OS V7.3 — главное меню
++
++📌 Статус:
++• Telegram bot активен.
++• Memory V2 активна.
++• GitHub = source of truth.
++• eBay live/create/publish/revise закрыты.
++
++🧩 Основные разделы:
++01. Новый товар
++02. Товар с вариантами
++03. Листинг-студия
++04. Marketplace / Lifecycle
++05. Финансы / склад
++06. Поиск товаров / закупка
++07. Решения / отчёты / агенты
++08. Система / память
++
++Безопасность:
++• active patch только после approval.
++• restart только после отдельного approval.
++• eBay live закрыт."""
+ 
+ def _status_text(d):
+     inp = d.get('operator_inputs', {})
+@@ -287,7 +308,26 @@
+     return ecom_cockpit_main_inline_keyboard()
+ 
+ def ecom_cockpit_main_inline_keyboard():
+-    return {"inline_keyboard": [[{'text': '01. Новый товар', 'callback_data': 'menu:new_product'}, {'text': '02. Текущий товар', 'callback_data': 'menu:current_product'}], [{'text': '03. Паспорт товара', 'callback_data': 'menu:product_passport'}, {'text': '04. Источники / ссылки', 'callback_data': 'menu:sources_links'}], [{'text': '05. Фото / галерея', 'callback_data': 'menu:photo_gallery'}, {'text': '06. Заголовок / SEO', 'callback_data': 'menu:title_seo'}], [{'text': '07. Описание / немецкий текст', 'callback_data': 'menu:description_de'}, {'text': '08. Категория / характеристики', 'callback_data': 'menu:category_specs'}], [{'text': '09. Цена и конкуренты', 'callback_data': 'menu:price_competitors'}, {'text': '10. Количество / склад', 'callback_data': 'menu:quantity_stock'}], [{'text': '11. Доставка', 'callback_data': 'menu:shipping'}, {'text': '12. Бизнес-политики', 'callback_data': 'menu:business_policies'}], [{'text': '13. Проверка / критика', 'callback_data': 'menu:review_critique'}, {'text': '14. Агенты листинга', 'callback_data': 'menu:listing_agents'}], [{'text': '15. Digest / отчёты', 'callback_data': 'menu:digest_reports'}, {'text': '16. Guard / live status', 'callback_data': 'menu:guard_live_status'}], [{'text': '17. Одобрение черновика', 'callback_data': 'menu:draft_approval'}, {'text': '18. Отмена / STOP', 'callback_data': 'menu:cancel_stop'}]]}
++    return {
++        "inline_keyboard": [
++            [
++                {"text": "01. Новый товар", "callback_data": "menu:new_product"},
++                {"text": "02. Товар с вариантами", "callback_data": "menu:variants"}
++            ],
++            [
++                {"text": "03. Листинг-студия", "callback_data": "menu:listing_studio"},
++                {"text": "04. Marketplace / Lifecycle", "callback_data": "menu:marketplace_lifecycle"}
++            ],
++            [
++                {"text": "05. Финансы / склад", "callback_data": "menu:finance_stock"},
++                {"text": "06. Поиск товаров / закупка", "callback_data": "menu:product_search"}
++            ],
++            [
++                {"text": "07. Решения / отчёты / агенты", "callback_data": "menu:decisions_agents"},
++                {"text": "08. Система / память", "callback_data": "menu:system_memory"}
++            ]
++        ]
++    }
+ 
+ def ecom_cockpit_price_keyboard():
+     return {'inline_keyboard': [

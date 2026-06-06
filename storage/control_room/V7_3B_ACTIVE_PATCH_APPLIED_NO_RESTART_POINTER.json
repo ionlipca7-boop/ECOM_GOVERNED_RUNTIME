@@ -1,0 +1,13 @@
+{
+  "status": "PASS_V7_3B_ACTIVE_PATCH_APPLIED_NO_RESTART",
+  "updated_utc": "20260606T091310Z",
+  "report": "storage/state_control/V7_3B_ACTIVE_PATCH_APPLIED_NO_RESTART_20260606T091310Z.json",
+  "active_bot_target": "/home/ionlipca7/ecom_governed_runtime/storage/runtime_bridge/legacy_bot_staging_20260602T153604Z/bot.py",
+  "backup": "storage/backups/active_bot/bot_py_before_v7_3b_active_patch_20260606T091154Z.py",
+  "active_patch_done": true,
+  "restart_done": false,
+  "ebay_gate": "CLOSED",
+  "delete_gate": "CLOSED",
+  "restart_gate": "CLOSED_UNTIL_OPERATOR_APPROVAL",
+  "next_safe_action": "PREPARE_CONTROLLED_RESTART_GATE_FOR_V7_3B"
+}

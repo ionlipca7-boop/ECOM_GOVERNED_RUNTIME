@@ -1,0 +1,15 @@
+{
+  "step": "PREPARE_V7_3B_CONTROLLED_RESTART_GATE_NO_RESTART",
+  "utc": "20260606T091418Z",
+  "status": "PASS_V7_3B_CONTROLLED_RESTART_GATE_READY_NO_RESTART",
+  "approval_required": "APPROVE_CONTROLLED_RESTART_V7_3B_TELEGRAM_BOT",
+  "active_bot_target": "/home/ionlipca7/ecom_governed_runtime/storage/runtime_bridge/legacy_bot_staging_20260602T153604Z/bot.py",
+  "active_pid_before_restart": "3345837",
+  "target_sha256": "f43dc8ae3f1b05720c71ecf577ddafc1c31f34cf4d1974af74dd7000e24e59c7",
+  "target_compile_ok": true,
+  "restart_done": false,
+  "ebay_called": false,
+  "delete_done": false,
+  "private_values_printed": false,
+  "next_safe_action": "WAIT_FOR_APPROVE_CONTROLLED_RESTART_V7_3B_TELEGRAM_BOT"
+}

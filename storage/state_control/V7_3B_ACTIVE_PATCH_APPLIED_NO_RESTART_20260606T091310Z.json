@@ -1,0 +1,21 @@
+{
+  "step": "APPLY_V7_3B_ACTIVE_PATCH_NO_RESTART",
+  "utc": "20260606T091310Z",
+  "status": "PASS_V7_3B_ACTIVE_PATCH_APPLIED_NO_RESTART",
+  "approval_marker_used": "APPROVE_APPLY_V7_3B_ACTIVE_PATCH_NO_RESTART",
+  "active_pid": "3345837",
+  "active_bot_target": "/home/ionlipca7/ecom_governed_runtime/storage/runtime_bridge/legacy_bot_staging_20260602T153604Z/bot.py",
+  "candidate_copy": "storage/runtime_bridge/candidates/V7_3B_SAFE_HANDLER_MAPPING_CANDIDATE_20260606T090134Z/bot_py_V7_3B_SAFE_HANDLER_MAPPING_CANDIDATE_NO_ACTIVE_PATCH.py",
+  "backup": "storage/backups/active_bot/bot_py_before_v7_3b_active_patch_20260606T091154Z.py",
+  "active_sha_before": "3f1870e1785077c772a908c31286a7bdeb832c8f77c711d72d93d04883926afe",
+  "candidate_sha": "f43dc8ae3f1b05720c71ecf577ddafc1c31f34cf4d1974af74dd7000e24e59c7",
+  "active_sha_after": "f43dc8ae3f1b05720c71ecf577ddafc1c31f34cf4d1974af74dd7000e24e59c7",
+  "target_compile_ok": true,
+  "active_pid_still_running": true,
+  "active_patch_done": true,
+  "restart_done": false,
+  "ebay_called": false,
+  "delete_done": false,
+  "private_values_printed": false,
+  "next_safe_action": "PREPARE_CONTROLLED_RESTART_GATE_FOR_V7_3B"
+}
