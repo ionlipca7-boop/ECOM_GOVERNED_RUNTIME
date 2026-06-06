@@ -1,0 +1,20 @@
+# V7.3C R06 Ref B Query Plan
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Rule:
+Every product idea needs a query plan before score.
+
+Query groups:
+- simple German buyer term
+- technical German term
+- problem term
+- product class term
+- brand/model term if confirmed
+- bundle or variant term if relevant
+
+Output:
+query_plan
+
+No action is performed here.
