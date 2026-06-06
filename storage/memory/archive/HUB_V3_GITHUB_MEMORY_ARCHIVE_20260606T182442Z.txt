@@ -1,0 +1,83 @@
+# ECOM OS V7.3C — Language and Shop Block Rules
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Language rules
+
+Ion-facing Telegram output: Russian only.
+This applies to menus, cards, reports, previews, warnings and approval packets.
+
+Buyer-facing eBay content for Germany: German only.
+This applies to title, description, item specifics text, image text, shop block text and related product text.
+
+Supplier pages may be English, Chinese or another language, but final buyer content must be German.
+If image text is not German, the image must be flagged for rework before final listing use.
+
+## New shared check
+
+listing_language_quality_agent
+
+Tasks:
+- check German buyer content;
+- check Russian operator content;
+- find mixed-language text;
+- find untranslated image text;
+- create rework tasks.
+
+Verdicts:
+- LANGUAGE_PASS
+- NEEDS_GERMAN_TRANSLATION
+- NEEDS_RUSSIAN_PREVIEW
+- BLOCKED_MIXED_LANGUAGE
+- BLOCKED_IMAGE_TEXT_LANGUAGE
+
+## Shop block rule
+
+Routes 01 and 02 must support a German shop/related-products block in the eBay description.
+Route 03 will later optimize this block.
+
+The block can show:
+- compatible products;
+- accessories;
+- replacements;
+- upgrades;
+- bundles;
+- alternatives;
+- selected extra products from the shop.
+
+Rules:
+- buyer text German only;
+- Ion preview Russian only;
+- only truthful compatibility;
+- no broken product reference;
+- do not distract from the main product;
+- every shown item needs a clear reason.
+
+## Route updates
+
+Route 01:
+- German-only listing gate;
+- Russian Telegram preview;
+- image language check;
+- shop/related-products block when safe.
+
+Route 02:
+- German-only variant listing text;
+- Russian Telegram preview;
+- dynamic variant count remains required;
+- variant-aware shop/related-products block.
+
+Route 03 later:
+- improve shop block design;
+- test related products;
+- optimize description layout.
+
+## Screenshot note
+
+Text lessons from screenshots are saved in memory.
+Actual image files are not saved yet. Future file-ingestion route should save them to reference_screenshots with an index file.
+
+## Next allowed action
+
+REVIEW_AND_LOCK_ROUTE_02_COMPLETE_WITH_LANGUAGE_AND_SHOP_RULES_GITHUB_MEMORY_ONLY
