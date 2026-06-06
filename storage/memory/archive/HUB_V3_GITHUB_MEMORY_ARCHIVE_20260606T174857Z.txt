@@ -1,0 +1,387 @@
+# ECOM OS V7.3C — ROUTE 01 eBay Listing UI Field Map + Search Demand Signals
+
+Status: ROUTE_01_UI_FIELD_MAP_CREATED_FROM_ION_SCREENSHOTS_AND_WEB_AUDIT
+Mode: GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY_NO_DELETE_NO_COMMIT_NO_PUSH
+Base Route 01 final passports: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T174129Z.txt
+Source: Ion uploaded screenshots of a real eBay.de edit listing page for a charger/cable listing.
+
+## Why this layer is added
+
+Route 01 must not only know eBay API. It must understand the real eBay listing editor UI because Ion works with real listings and eBay shows important search-demand signals next to item specifics.
+
+The Route 01 agents must use both:
+- official eBay API/policy rules;
+- observed eBay UI fields from Ion's screenshots;
+- practical seller optimization logic;
+- Route 06 demand/value-signal logic.
+
+## Screenshot-derived listing structure
+
+The real listing editor page shows these sections:
+
+1. Fotos & Video
+- Up to 24 photos and 1-minute video.
+- Main hero image marked as Hauptfoto.
+- Existing listing has 6/25 media slots visible.
+- UI asks for professional photos.
+
+2. Titel
+- Angebotsitel field.
+- Example title visible: Schnellladegerät 45W PD USB-C | Super Fast Charging mit Kabel.
+
+3. Artikelkategorie
+- Category shown: Kabel & Adapter.
+- Parent path: Handys & Kommunikation > Handy-Zubehör.
+
+4. Varianten
+- UI states variants are not available because original listing did not contain variants.
+- If variants are needed, a new offer/listing must be created.
+- Route 01 must detect this and handoff to Route 02 before listing creation, not after.
+
+5. Artikelmerkmale
+Required:
+- Marke
+- Produktart
+
+Optional / search-demand fields seen in UI:
+- EAN
+- Konnektivität with visible search count around 53,020 searches
+- Inbegriffene Artikel with visible search count around 27,424 searches
+- Anzahl der Anschlüsse with visible search count around 12,765 searches
+- Kabellänge marked Trend
+- Farbe
+- Markenkompatibilität marked Trend
+- Material
+- Modellkompatibilität marked Trend
+- Design/Oberfläche
+- Herstellernummer
+- Version with visible search count around 10,968 searches
+- Besonderheiten with visible search count around 1,244 searches
+- Ursprungsland
+- Personalisieren
+- Anleitung für Personalisierung
+- Gewicht
+- Herstellergarantie
+- Anzahl der Einheiten
+- Breite
+- Höhe
+- Länge
+- Maßeinheit
+
+6. Zustand
+- Artikelzustand: Neu.
+
+7. Beschreibung
+- Rich text editor with HTML-Code anzeigen toggle.
+- Font toolbar visible.
+- Template selector visible.
+- KI-Beschreibung verwenden button visible.
+- Current listing uses structured German description with headings and bold terms.
+
+8. Preisgestaltung
+- Format: Sofort-Kaufen.
+- Artikelpreis field.
+- Stückzahl field.
+- eBay price suggestion card: Verkaufte Angebote der letzten 90 Tage, recommended price visible in screenshot.
+- Free shipping percent shown in suggestion card.
+
+9. Zahlungsbedingungen / Commercial toggles
+- Zahlungsbedingungen: eBay Managed Payments policy.
+- Preisvorschläge zulassen optional.
+- Multi-Rabatt hinzufügen optional.
+- Als Posten verkaufen optional.
+
+10. Details zur Lieferung
+- Versandbedingungen policy visible.
+- Paketgröße optional: package weight and dimensions.
+- Item location: Delmenhorst, Germany.
+- Return condition visible: No Return Accepted.
+
+11. Produkthinweise
+- Product documents section for EU/UK safety and quality standards.
+- Upload manuals, certificates, documents and accessibility information.
+
+12. Angebot bewerben
+- UI says competitive category and shows about 40% of Kabel & Adapter items promoted.
+- Basic ad campaign visible with ad rate 5% and recommended rate 4%.
+- Premium promotion exists as separate option.
+
+13. Save / Preview / Fees
+- Save button.
+- Preview button.
+- Fee total visible as 0.00 EUR in screenshot context.
+- Terms / marketing tools / payment terms links.
+
+## Route 01 new rule: UI Field Map Agent
+
+Add AGENT 19 — R01 eBay UI Field Map Agent
+id: r01_ebay_ui_field_map_agent
+owns_state: ebay_listing_ui_field_map
+purpose: map internal Route 01 product/listing data to real eBay.de listing editor sections.
+inputs:
+- product_passport
+- listing_draft
+- item_specifics_draft
+- photo_plan
+- price_margin_report
+- stock_link_record
+- compliance_packet
+- marketplace_adapter_contract
+outputs:
+- ebay_listing_ui_field_map
+- missing_ui_fields_report
+- ui_search_signal_report
+rules:
+- official API/policy remains authority;
+- screenshot/UI signals are used to improve completeness and buyer search fit;
+- each visible UI field must map to a Route 01 data source or be marked unknown/not applicable;
+- do not invent unconfirmed facts just because UI suggests field;
+- high-search item specifics get higher priority if truthful.
+
+## Route 01 new rule: Search Demand Aspects Agent
+
+Add AGENT 20 — R01 Search Demand Aspects Agent
+id: r01_search_demand_aspects_agent
+owns_state: ui_search_signal_report
+purpose: use eBay UI demand counts and Trend labels to prioritize item specifics and listing content.
+inputs:
+- eBay UI search counts shown near aspects
+- eBay taxonomy aspect metadata if API available
+- Route 06 demand/value-signal logic
+- product truth
+outputs:
+- ui_search_signal_report
+- aspect_priority_order
+- buyer_search_terms_for_title_description
+rules:
+- demand count is not proof by itself;
+- only confirmed truthful aspects may be filled;
+- high-search fields should be prioritized in title/description/photo-plan if relevant;
+- Trend fields should be treated as buyer-search signals;
+- if a high-search aspect is unknown, mark missing evidence, do not guess.
+
+Priority examples from screenshots for charger/cable category:
+1. Konnektivität
+2. Inbegriffene Artikel
+3. Anzahl der Anschlüsse
+4. Kabellänge
+5. Markenkompatibilität
+6. Modellkompatibilität
+7. Version
+8. Besonderheiten
+
+## Route 01 agent updates from screenshots
+
+### Photo Plan Agent update
+Must understand eBay UI supports many photos/video, but official photo policy still controls.
+Project target for new listings:
+- minimum: 6 useful photos if available;
+- better: 8-12 high-quality truthful photos;
+- maximum planning: up to 24 photos + 1 short video if available;
+- hero image clean, no text/watermark;
+- secondary images can show features only if compliant and not misleading.
+
+### Category Agent update
+For charger/cable product type, observed category path:
+Kabel & Adapter in Handys & Kommunikation > Handy-Zubehör.
+Rule: observed category can be used as candidate, not as final hardcoded category. Must verify by product type and eBay category/taxonomy.
+
+### eBay Aspect Agent update
+Must separate:
+- required fields: Marke, Produktart;
+- optional high-demand fields;
+- physical dimension fields;
+- personalization fields;
+- guarantee/condition fields.
+If EAN missing, set Does not apply / Nicht zutreffend only if marketplace/category permits; otherwise NEEDS_REVIEW.
+
+### Title SEO Agent update
+Title must use high-signal fields where truthful:
+- product type
+- connector/connectivity
+- power/watt
+- cable included if true
+- fast charging / PD if true
+- buyer function.
+But no unconfirmed brand/spec.
+Max 80 characters.
+
+### Description Agent update
+Description must produce:
+- full German description;
+- mobile-friendly summary;
+- bold headings/sections;
+- package contents exact;
+- use case / buyer pain / benefit;
+- compatibility limits;
+- safety notes if needed.
+AI-description may be used only as draft inspiration, never as final truth without verification.
+
+### Finance/Pricing Agent update
+Must read UI price suggestions as a signal:
+- sold offers last 90 days recommended price;
+- free-shipping share;
+- current price;
+- ad rate.
+But final price must come from cost + fee + reserve + market signal.
+
+### eBay Offer Readiness Agent update
+Must map UI fields to API readiness:
+- title -> product.title / offer listing title source;
+- category -> offer.categoryId;
+- condition -> inventory item condition;
+- item specifics -> product.aspects;
+- description -> offer.listingDescription or inventory product.description;
+- price -> pricingSummary.price;
+- quantity -> availableQuantity / inventory availability;
+- policies -> listingPolicies payment/fulfillment/return;
+- package size -> packageWeightAndSize;
+- product documents/GPSR -> compliance/product docs/custom policy layer when applicable;
+- promoted listing -> not part of publish core; separate marketing gate.
+
+### Compliance/GPSR Agent update
+Must include UI product documents section:
+- manuals;
+- certificates;
+- safety/quality standards;
+- accessibility information;
+- EU/UK delivery note.
+For electronics/chargers/cables this becomes more important than for low-risk simple items.
+
+### Publish Gate Agent update
+Publish gate packet must include a UI checklist:
+- photos complete;
+- title complete;
+- category confirmed;
+- variants warning checked;
+- required item specifics filled;
+- high-search optional specifics reviewed;
+- condition set;
+- description checked;
+- price/quantity set;
+- payment/fulfillment/return policies set;
+- shipping details/package size checked;
+- product documents/compliance checked;
+- ad/promoted listing decision checked;
+- preview checked;
+- no live call until marker.
+
+## Route 01 official rules to preserve
+
+Photo policy:
+- at least one image required;
+- image at least 500px on longest side;
+- no inaccurate photos, placeholders, stock photos for used/damaged/defective items, borders, added text/artwork/marketing material, or watermarks.
+
+Inventory item:
+- SKU unique across seller inventory;
+- SKU max length 50;
+- Inventory API listings must not be revised/relisted with Trading API;
+- Product title max length 80;
+- product aspects/images/description are product-layer fields;
+- replacing inventory item is full replacement, so read current item first before future updates.
+
+Offer:
+- createOffer is staging;
+- publishOffer is separate;
+- before publish, category, location, price, quantity, listing policies and description are required/conditional according to state.
+
+Taxonomy/aspects:
+- category must be leaf for aspect checks;
+- aspects can be required/recommended and may have allowed values, cardinality, data type and variation support.
+
+## Route 01 practical seller guidance to use carefully
+
+Non-official practical guidance confirms useful but not authoritative rules:
+- many clear photos build buyer trust;
+- good lighting and clean background help;
+- title should put important buyer terms early;
+- accurate, detailed description reduces returns;
+- sold/completed listings help price realistically;
+- tracking, packaging and communication affect buyer satisfaction.
+
+Practical guidance is inspiration only. Official policy and product truth remain authority.
+
+## Route 01 revised final output contracts
+
+Add ebay_listing_ui_field_map:
+- media_slots
+- title_field
+- category_field
+- variant_status
+- required_item_specifics
+- optional_item_specifics
+- ui_search_counts
+- trend_labels
+- condition_field
+- description_editor_mode
+- price_field
+- quantity_field
+- price_suggestion_card
+- best_offer_toggle
+- multi_discount_toggle
+- lot_toggle
+- payment_policy
+- fulfillment_policy
+- return_policy
+- package_size_fields
+- product_documents_fields
+- promoted_listing_options
+- save_preview_status
+
+Add ui_search_signal_report:
+- aspect_name
+- visible_search_count
+- trend_label
+- confirmed_truth_status
+- priority
+- used_in_title
+- used_in_description
+- used_in_photos
+- missing_evidence
+
+Add route_01_ui_readiness_check:
+- screenshots_fields_covered
+- official_policy_fields_covered
+- api_mapping_covered
+- high_search_aspects_reviewed
+- compliance_docs_reviewed
+- ad_decision_recorded
+- preview_required
+
+## Final Route 01 conclusion after screenshots
+
+Ion's logic is correct:
+Route 06 demand/search logic must feed Route 01 and Route 02.
+Route 01 must not only generate a listing; it must generate a listing that fills eBay UI fields intelligently, prioritizes high-search truthful item specifics, and prepares publish gate safely.
+
+Route 01 is now stronger because it understands:
+- real eBay edit form structure;
+- internal search count/aspect demand signals;
+- required vs optional fields;
+- description/HTML editor;
+- price suggestion card;
+- shipping and policy fields;
+- product safety/documents section;
+- promoted listing decision area;
+- preview/save gate.
+
+## Status
+
+Route 01 final agent passports: EXTENDED_WITH_EBAY_UI_FIELD_MAP
+server_write_done: false
+active_bot_patch_done: false
+telegram_restart_done: false
+ebay_api_called: false
+purchase_action_done: false
+delete_cleanup_done: false
+git_commit_done: false
+git_push_done: false
+secrets_printed: false
+
+## Next allowed action
+
+REVIEW_ROUTE_01_EBAY_UI_FIELD_MAP_AND_LOCK_ROUTE_01_COMPLETE_GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+
+Then:
+BUILD_ROUTE_02_VARIANT_PRODUCT_DEEP_BLUEPRINT_GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
