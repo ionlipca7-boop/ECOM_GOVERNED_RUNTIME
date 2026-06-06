@@ -1,0 +1,46 @@
+# ECOM OS V7.3C Master Menu — Part 06 Shared Rules and GitHub Build Plan
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Shared rules for all routes
+
+Ion-facing output: Russian.
+Buyer-facing Germany content: German.
+Marketplace research: read-only unless explicit future gate exists.
+Each marketplace needs own adapter.
+No duplicate listing logic.
+No invented product facts.
+No invented product geometry.
+Ion provides or approves final photos.
+Agents critique, rank, map and request rework.
+Source pages are evidence, not final truth.
+Tokens and secrets are checked by tools but never printed.
+High-risk actions go through Route 07.
+
+## Shared final readiness guard
+
+Before any future final path, tools must check:
+IDs, SKU, category, policies, location, stock, price, quantity, photos, German content, item fields, safety data, duplicate risk, auth state and adapter type.
+
+## GitHub-first build plan
+
+Current decision: do not transfer to server yet.
+First create clean GitHub route contracts and code drafts.
+Server receives only clean reviewed packet later.
+
+Build order:
+1 master menu and route contracts;
+2 route schema files;
+3 Telegram button contract;
+4 route registry draft;
+5 validators draft;
+6 handoff object draft;
+7 memory pointer contract;
+8 dry transfer packet review;
+9 server transfer only after separate approval.
+
+## Output for Ion
+
+Create a readable master menu report that Ion can save in Notepad.
+This report must help Ion understand each button, agent role, rules and route connections.
