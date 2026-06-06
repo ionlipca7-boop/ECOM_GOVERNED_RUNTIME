@@ -1,0 +1,44 @@
+# ECOM OS V7.3C — Route 05 Finance Inventory Part 07 Outputs
+
+topic_id: V7_3C_ROUTE_05_FINANCE_INVENTORY
+part_number: 07_OUTPUTS
+previous_part: V7_3C_ROUTE_05_FINANCE_INVENTORY_PART_06_HANDOFFS
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Output contracts
+
+stock_item
+purchase_record
+stock_event
+sale_record
+return_record
+refund_record
+fee_cost_record
+profit_result
+low_stock_card
+reorder_decision
+finance_report
+inventory_report
+marketplace_report
+product_report
+sku_report
+elster_summary
+handoff_record
+
+## Telegram reports for Ion
+
+All reports must be Russian.
+Reports must be simple:
+- what came in;
+- what went out;
+- what is left;
+- what was sold;
+- what returned;
+- what profit/loss exists;
+- what needs Ion decision.
+
+## Buyer content
+
+Route 05 does not create buyer-facing listing content.
+It only supplies cost, stock and finance truth to other routes.
