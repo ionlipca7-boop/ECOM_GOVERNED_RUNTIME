@@ -1,0 +1,51 @@
+# ECOM OS V7.3C — Route 03 Listing Studio Part 02 ABC Experiments
+
+topic_id: V7_3C_ROUTE_03_LISTING_STUDIO
+part_number: 02_ABC_EXPERIMENTS
+previous_part: V7_3C_ROUTE_03_LISTING_STUDIO_PART_01_SCOPE
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## A/B/C logic
+
+Route 03 creates three controlled listing angles, not three random texts.
+
+Variant A — External Search Angle
+Goal: make listing understandable for Google/eBay external search.
+Focus: German search phrase, clear product class, title clarity, description structure.
+
+Variant B — Marketplace Buyer Angle
+Goal: match eBay/Amazon-style buyer intent.
+Focus: item specifics, category signals, price/value, photos, buyer decision friction.
+
+Variant C — AI Search / Future Discovery Angle
+Goal: make product easy for AI assistants/search summaries to understand.
+Focus: clean facts, problem solved, compatibility, exact package, no hype.
+
+## Each variant must contain
+
+- title_de
+- subtitle_or_short_value
+- description_de
+- HTML shop block version
+- item specifics emphasis
+- photo order suggestion
+- buyer intent
+- value signal
+- risks
+- what changed from baseline
+
+## Comparison rule
+
+The studio compares A/B/C by:
+- search strength;
+- truth/compliance;
+- duplicate risk;
+- German quality;
+- photo support;
+- profit/price fit;
+- route handoff need.
+
+## Result
+
+Route 03 selects one best angle or sends case to rework/Route 07.
