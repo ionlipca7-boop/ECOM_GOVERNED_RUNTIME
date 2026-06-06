@@ -1,0 +1,502 @@
+# ECOM OS V7.3C — ROUTE 01 NEW PRODUCT DEEP AGENT + FLOW BLUEPRINT
+
+Status: ROUTE_01_DEEP_BLUEPRINT_CREATED_IN_GITHUB_MEMORY
+Approval/context: Ion stopped server transfer and requested to build each button deeply in GitHub first, starting with Button 01.
+Mode: GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY_NO_DELETE_NO_COMMIT_NO_PUSH
+Base latest marketplace layer: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T173036Z.txt
+Base V3 contract: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260606T172422Z.txt
+Server read-only audit: active runtime has storage zones for master_product_registry, route, specs, marketplace_adapters, inventory, runtime_agents, compliance, listing_drafts, decision_inbox.
+
+## Route 01 Identity
+
+Top button: 01 🆕 Новый товар
+route_id: route_01_new_product
+callback: v73c:route:01_new_product
+case_namespace: cases/v73c/route_01_new_product
+primary_marketplace: ebay_de
+future_marketplaces: amazon_de, kaufland_de, otto_de, etsy_future
+server_status: NOT_MATERIALIZED
+active_bot_patch: NOT_DONE
+
+## Purpose
+
+Route 01 handles one simple product / one SKU / one listing draft. Default target is eBay.de, but the core must remain marketplace-neutral through product_passport + marketplace_adapter_contract.
+
+Route 01 must take raw Ion input and turn it into a safe, reviewable product package:
+- source link/photos/receipt/specs/comments;
+- product_passport;
+- photo_plan;
+- listing_content;
+- item specifics / attributes;
+- price/margin;
+- stock/finance link;
+- compliance_packet;
+- eBay offer readiness packet;
+- approval gate for publish.
+
+Route 01 must not publish automatically.
+
+## What Bot Does From Start To Finish
+
+Step 0 — Open Route 01
+Bot shows Route 01 home screen:
+"Пришли ссылку, фото, чек, характеристики, комментарии. Можно всё в любом порядке. Я буду молча собирать кейс."
+Creates route_state with status NEW/COLLECTING.
+
+Step 1 — Silent Intake
+Bot accepts:
+- supplier/product link;
+- product photos;
+- receipt/order screenshot;
+- product specs text;
+- Ion comments;
+- package/quantity notes;
+- target price/strategy if Ion gives it.
+
+Step 2 — Accepted Inputs Report
+Bot shows:
+- link: yes/no;
+- photos count;
+- receipt: yes/no;
+- specs: yes/no;
+- comments: yes/no;
+- current missing fields;
+- route_state status.
+
+Step 3 — Build Product
+Agents build product package in dry mode.
+No eBay API call.
+No marketplace write.
+
+Step 4 — Show Short Product Card
+Bot shows:
+- product name;
+- source;
+- category candidate;
+- cost;
+- quantity;
+- main value signal;
+- risk flags;
+- next action.
+
+Step 5 — Show Full Listing In Parts
+Bot never sends giant wall of text. It shows sections:
+1. product card;
+2. title + price;
+3. product description;
+4. designed HTML/description block;
+5. item specifics / attributes;
+6. photo plan;
+7. shop / cross-sell block;
+8. final draft summary.
+
+Step 6 — Rework
+Ion can rework title, description, price, specifics, photo plan, shop block, keywords, whole listing, or custom text correction.
+
+Step 7 — Readiness Check
+System checks title/photos/category/aspects/description/price/quantity/policies/duplicate/compliance/finance.
+If missing -> blocks and returns exact repair list.
+If PASS -> publish gate packet is allowed.
+
+Step 8 — Publish Gate
+Bot shows approval packet only.
+No eBay publish without separate marker.
+
+Step 9 — After Future Publish
+Future only: successful publish creates handoff to Route 04 lifecycle and Route 05 stock/finance.
+
+## Route 01 Subbuttons
+
+📦 Собрать товар -> v73c:r01:build_product
+📊 Что уже принято -> v73c:r01:accepted_inputs
+👁 Показать полный листинг -> v73c:r01:show_full_listing
+🔁 Переделать -> v73c:r01:rework
+✅ Проверить готовность -> v73c:r01:readiness
+🚀 Опубликовать на eBay -> v73c:r01:publish_gate
+⬅️ Назад -> v73c:r01:back
+🏠 Домой -> v73c:r01:home
+⛔ Стоп -> v73c:r01:stop
+
+## Route 01 Agent Team
+
+### 01 Intake Agent
+Purpose: collect raw inputs in any order.
+Inputs: Telegram messages, photos, links, receipt screenshots, Ion notes.
+Outputs: accepted_input_state.
+Rules: must not ask too many questions; silent collection first, missing fields later.
+
+### 02 Source Link Agent
+Purpose: identify product source and supplier truth.
+Inputs: supplier link, product page screenshots, title, price, specs.
+Outputs: source_snapshot, supplier_truth_notes.
+Rules: no blind trust; supplier claims are unverified until evidence exists.
+
+### 03 Photo Intake + Truth Agent
+Purpose: organize photos and detect whether photos are real product/supplier/edited.
+Inputs: Telegram photos, source images.
+Outputs: photo_manifest, photo_truth_report.
+Rules: product geometry must not be invented.
+
+### 04 Receipt / Cost Agent
+Purpose: extract purchase cost, quantity, shipping cost, order date.
+Outputs: receipt_cost_record.
+Rules: unknown cost blocks final profit calculation.
+
+### 05 Product Passport Agent
+Purpose: create master product identity.
+Outputs: product_passport.
+Fields: master_product_id, SKU candidate, name, brand/model, product type, package truth, dimensions if known, electrical/spec fields if relevant, supplier link, photo refs, risk flags.
+
+### 06 Category Agent
+Purpose: choose marketplace category candidate.
+Default: eBay.de.
+Outputs: category_candidate_report.
+Rules:
+- no hardcoded category as final truth;
+- category must be derived from product type + marketplace taxonomy/aspects;
+- if uncertainty -> NEEDS_REVIEW;
+- future Amazon/Kaufland/OTTO category/taxonomy handled by adapters.
+
+### 07 eBay Aspect / Item Specifics Agent
+Purpose: produce item specifics required/recommended for eBay category.
+Outputs: item_specifics_draft, missing_aspects_report.
+Rules:
+- must include category-driven required aspects when available;
+- must use confirmed facts only;
+- unknowns stay unknown, not invented.
+
+### 08 Title SEO Agent
+Purpose: create German eBay title.
+Rules:
+- max eBay title length: 80 characters;
+- use buyer search + value signal;
+- no false brand/model/features;
+- for technical products use formula: Brand/Model if confirmed + product class + premium feature + value function + buyer intent + protocols.
+Outputs: title_draft, title_score, keyword_notes.
+
+### 09 Description Agent
+Purpose: create German product description.
+Outputs: plain_description, designed_description_html.
+Rules:
+- clear German;
+- buyer benefit first;
+- package contents exact;
+- avoid false claims;
+- mobile short summary must be clear.
+
+### 10 Photo Plan Agent
+Purpose: create eBay photo plan.
+Rules from eBay picture policy:
+- at least one photo required;
+- photo must be at least 500 px on longest side;
+- no text/artwork/marketing material/borders/watermarks;
+- photos must accurately represent item;
+- hero photo should be clean and product-truth based.
+Project rule:
+- source-based edit only;
+- no invented product geometry;
+- hero no text/watermark;
+- additional images may explain only if compliant and not misleading.
+Outputs: photo_plan, photo_rework_tasks.
+
+### 11 Compliance / GPSR Agent
+Purpose: evaluate EU/Germany product safety/compliance risk before listing.
+Outputs: compliance_packet.
+Fields: GPSR info requirement, manufacturer/importer/responsible person if needed, warnings, safety info, CE/EPR/WEEE/battery flags, product risk level.
+Rules:
+- if unsafe/uncertain -> NEEDS_REVIEW;
+- compliance issue blocks readiness.
+
+### 12 Stock Link Agent
+Purpose: connect product to inventory/stock pool.
+Outputs: stock_link_record.
+Fields: SKU, master_product_id, quantity bought, quantity available, linked marketplace listing IDs later.
+
+### 13 Finance / Pricing Agent
+Purpose: calculate profitable price.
+Inputs: purchase cost, China shipping, Germany shipping, packaging, eBay fee estimate, ad %, return/defect reserve.
+Outputs: price_margin_report.
+Rules:
+- no profit PASS without return/defect reserve;
+- default ad estimate can be 6-8% or project setting;
+- unknown costs block final readiness.
+
+### 14 eBay Offer Readiness Agent
+Purpose: convert product draft into eBay Inventory API readiness packet.
+Outputs: ebay_simple_offer_readiness.
+Needed for future live phase:
+- SKU;
+- marketplaceId EBAY_DE;
+- format fixed price;
+- inventory location;
+- available quantity;
+- categoryId;
+- price;
+- payment policy;
+- fulfillment policy;
+- return policy;
+- item specifics/aspects;
+- image URLs;
+- product/offer description;
+- compliance fields when required.
+Rules:
+- createOffer stages offer only; publishOffer is separate live action;
+- publish gate must remain locked.
+
+### 15 Duplicate Guard Agent
+Purpose: avoid duplicate listing mistakes.
+Outputs: duplicate_risk_report.
+Rules:
+- compare SKU/product/title/source/listing_id;
+- if same physical item already has listing, send to Route 03 or update gate, not clone.
+
+### 16 Readiness Agent
+Purpose: final dry readiness verdict.
+Outputs: readiness_report.
+Verdicts:
+- READY_FOR_REVIEW
+- NEEDS_REWORK
+- BLOCKED_MISSING_DATA
+- BLOCKED_COMPLIANCE
+- BLOCKED_DUPLICATE
+- BLOCKED_FINANCE
+- READY_FOR_EBAY_GATE
+
+### 17 Publish Gate Agent
+Purpose: prepare approval packet only.
+Outputs: publish_gate_packet.
+Rules:
+- no eBay live/publish/revise/delete without marker;
+- no token print;
+- no hidden live write.
+
+### 18 Handoff Agent
+Purpose: move cases to other routes only through handoff object.
+Examples:
+- variants detected -> Route 02 handoff;
+- weak draft -> Route 03 handoff;
+- ready stock/cost -> Route 05 handoff;
+- paused/block/approval -> Route 07 handoff;
+- archive/lesson -> Route 08 handoff.
+
+## Route 01 Data Sources
+
+Internal project sources:
+- storage/master_product_registry
+- storage/intake
+- storage/images
+- storage/photo_review
+- storage/listing_drafts
+- storage/inventory
+- storage/finance
+- storage/compliance
+- storage/marketplace_adapters
+- storage/runtime_agents
+- storage/decision_inbox
+- storage/memory_v2/archive
+- storage/rules
+- storage/approval
+
+External official sources to use in design:
+- Telegram Bot API for callback/update constraints.
+- eBay picture policy for image rules.
+- eBay Inventory API for inventory item/offer/publish model.
+- eBay Inventory API inventory item group for Route 02 later.
+- Amazon SP-API product type/listings/restrictions for future adapter.
+- Kaufland seller API for future adapter.
+- OTTO Market API for future adapter.
+- EU GPSR Regulation 2023/988 for product safety/compliance.
+
+## Route 01 Schemas
+
+### accepted_input_state
+Fields:
+- case_id
+- route_id
+- created_utc
+- source_link_status
+- photos_count
+- receipt_status
+- specs_status
+- comments_status
+- missing_fields
+- current_status
+
+### product_passport
+Fields:
+- master_product_id
+- sku_candidate
+- product_name_de
+- product_name_ru_internal
+- brand
+- model
+- product_type
+- package_contents
+- supplier_source
+- supplier_price
+- quantity_bought
+- category_candidates
+- photo_refs
+- compliance_flags
+- marketplace_targets
+
+### listing_draft
+Fields:
+- title_de
+- subtitle_optional
+- description_plain_de
+- description_html_de
+- item_specifics
+- photo_plan
+- price
+- quantity
+- fulfillment_policy_ref
+- payment_policy_ref
+- return_policy_ref
+- compliance_packet_ref
+
+### readiness_result
+Fields:
+- case_id
+- status
+- title_ok
+- photos_ok
+- category_ok
+- aspects_ok
+- description_ok
+- price_ok
+- stock_ok
+- policies_ok
+- compliance_ok
+- duplicate_ok
+- missing_or_blocked
+- next_action
+
+### publish_gate_record
+Fields:
+- gate_id
+- case_id
+- marketplace_id
+- live_action_type
+- approval_marker_required
+- payload_summary_ref
+- rollback_note
+- token_printed=false
+- live_called=false
+
+## Route 01 eBay Default Flow
+
+Dry only now:
+1. Build product_passport.
+2. Build photo_plan.
+3. Build listing_content.
+4. Build item_specifics_draft.
+5. Build offer_commercials.
+6. Build compliance_packet.
+7. Build stock_finance_link.
+8. Build ebay_simple_offer_readiness.
+9. Build publish_gate_packet.
+
+Future live phase only after marker:
+1. create or replace inventory item.
+2. create offer.
+3. verify offer readiness.
+4. publishOffer.
+5. read-only verify listing.
+6. handoff to Route 04 and Route 05.
+
+## Route 01 Future Amazon/Kaufland/OTTO Notes
+
+Amazon:
+Route 01 must not assume eBay item specifics. Amazon needs product_type definitions and listings restrictions check before listing.
+
+Kaufland:
+Route 01 must separate product data from inventory/order flows; API and CSV workflows may both exist later.
+
+OTTO:
+Route 01 must treat OTTO as future adapter with OpenAPI/changelog tracking.
+
+Etsy:
+Future only, do not implement now.
+
+## Route 01 Readiness Gates
+
+GATE A — intake completeness
+GATE B — product passport complete
+GATE C — category/aspects ready
+GATE D — photo policy ready
+GATE E — compliance ready
+GATE F — finance/profit ready
+GATE G — duplicate guard ready
+GATE H — eBay offer readiness ready
+GATE I — Ion publish approval marker required
+
+## Route 01 Stop/Home Rules
+
+Home:
+- if case unfinished -> PAUSED;
+- decision_card goes to Route 07;
+- main menu only.
+
+Stop:
+- asks cancel or pause;
+- no physical delete;
+- cleanup only through gate.
+
+Back:
+- previous screen inside Route 01 only.
+
+## Route 01 Decision Cards To Route 07
+
+Decision card examples:
+- Missing receipt cost.
+- Variants detected.
+- Compliance unclear.
+- Category uncertain.
+- Duplicate listing risk.
+- Finance margin too low.
+- Publish gate waiting for approval.
+
+## Route 01 Lessons To Route 08
+
+Lessons to save:
+- title/value signal experiments;
+- category/aspect corrections;
+- photo policy failures;
+- compliance blockers;
+- price/margin result;
+- later listing performance after Route 04.
+
+## Route 01 Server Materialization Requirements Later
+
+Future files:
+- storage/runtime_bridge/candidates/V7_3C_ROUTE_01_NEW_PRODUCT/route_01_new_product_candidate.py
+- storage/runtime_bridge/candidates/V7_3C_ROUTE_01_NEW_PRODUCT/route_01_new_product_schema.json
+- storage/runtime_bridge/candidates/V7_3C_ROUTE_01_NEW_PRODUCT/route_01_new_product_agents.json
+- storage/runtime_bridge/candidates/V7_3C_ROUTE_01_NEW_PRODUCT/route_01_new_product_review.json
+- storage/control_room/V7_3C_ROUTE_01_NEW_PRODUCT_POINTER.json
+
+No server materialization now.
+
+## Current status
+
+Route 01 deep blueprint: PASS_CREATED_IN_GITHUB_MEMORY
+server_write_done: false
+active_bot_patch_done: false
+telegram_restart_done: false
+ebay_api_called: false
+amazon_api_called: false
+kaufland_api_called: false
+otto_api_called: false
+purchase_action_done: false
+delete_cleanup_done: false
+git_commit_done: false
+git_push_done: false
+secrets_printed: false
+
+## Next allowed action
+
+REVIEW_ROUTE_01_NEW_PRODUCT_DEEP_BLUEPRINT_AND_BUILD_AGENT_PASSPORTS_GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
+
+Then after Route 01 is reviewed:
+BUILD_ROUTE_02_VARIANT_PRODUCT_DEEP_BLUEPRINT_GITHUB_MEMORY_ONLY_NO_SERVER_WRITE_NO_ACTIVE_PATCH_NO_RESTART_NO_EBAY
