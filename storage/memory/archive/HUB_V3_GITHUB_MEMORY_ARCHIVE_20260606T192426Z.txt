@@ -1,0 +1,19 @@
+# V7.3C R04 Pass C Route Links
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 05 Improve Link.
+Purpose: send weak content case to Route 03.
+Output: r04_to_r03.
+
+Agent 06 Stock Link.
+Purpose: connect listing with stock state in Route 05.
+Output: r04_to_r05_stock.
+
+Agent 07 Money Link.
+Purpose: connect listing with cost and profit state in Route 05.
+Output: r04_to_r05_money.
+
+Rule:
+Route 04 creates handoff objects only.
