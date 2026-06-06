@@ -1,0 +1,21 @@
+# V7.3C R05 Pass D Alerts Reports
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+Agent 08 Stock Alert.
+Creates Russian Telegram card when stock needs Ion attention.
+
+Agent 09 Reorder View.
+Suggests wait, buy, improve listing, or ask Ion.
+
+Agent 10 Report View.
+Creates Russian reports for Ion.
+
+Outputs:
+- stock_card
+- reorder_view
+- report_view
+
+Rule:
+Cards must have buttons to open the right route.
