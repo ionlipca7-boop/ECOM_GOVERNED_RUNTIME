@@ -1,0 +1,38 @@
+# V7.3C Next Plan 02 Local App Direction
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Best interface direction
+
+Use a local web dashboard first.
+It opens in browser on Windows, for example localhost.
+
+Why local web dashboard first:
+- easier for Codex to build quickly;
+- easier to test on Windows;
+- easier to move later to server;
+- no heavy desktop wrapper needed at first;
+- same UI logic can later become server dashboard;
+- can show all 8 buttons, cards, product cases, photo folders, reports and settings.
+
+## Desktop app later
+
+A separate desktop app can be created later as wrapper.
+Not first.
+First build simple local web app with backend plus files.
+
+## Local app first modules
+
+- home menu with 8 route buttons;
+- route cards;
+- file/photo upload area;
+- product case view;
+- contract viewer;
+- validation result panel;
+- local report export;
+- no live server action.
+
+## Decision
+
+Start with local web dashboard skeleton, then server transfer later.
