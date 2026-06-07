@@ -1,0 +1,17 @@
+{
+  "manifest": "ECOM_SAFE_CODEX_SERVER_BRAIN_PACK_V73C",
+  "created_utc": "20260607T150918Z",
+  "source_inventory": "/tmp/ECOM_DEEP_FILE_INVENTORY_SELECTION_20260607T150258Z.json",
+  "safe_zip": "/tmp/ECOM_SAFE_CODEX_SERVER_BRAIN_PACK_V73C_20260607T150914Z.zip",
+  "safe_count": 3084,
+  "sensitive_safe_count": 408,
+  "secret_encrypted_only_count": 34,
+  "exclude_count": 325,
+  "zip_file_count": 3492,
+  "zip_forbidden_paths": [],
+  "codex_allowed": true,
+  "secrets_included": false,
+  "secret_values_printed": false,
+  "live_actions_done": false,
+  "next_safe_action": "COPY_SAFE_ZIP_TO_WINDOWS_SERVER_IMPORT_THEN_BUILD_ENCRYPTED_SECRET_PACK_SEPARATELY"
+}
