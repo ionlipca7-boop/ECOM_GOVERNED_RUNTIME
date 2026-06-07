@@ -1,0 +1,26 @@
+# V73C Pause Recovery Plan
+
+Status: SAVED
+
+Current local path:
+D:\ECOM_OS_V7_3C_GITHUB_IMPORT_STAGE_10804
+
+Current branch:
+v7-3c-contracts-4806e6c
+
+Already done:
+contracts branch pushed.
+runtime_skeleton built locally.
+local dashboard opened on localhost 8000.
+HTTP check PASS.
+
+Before leaving:
+stop local dashboard with Ctrl+C.
+create local recovery scripts and checkpoint report.
+do not push.
+do not touch server.
+
+Next after return:
+open CMD in local path.
+run runtime_skeleton\start_dashboard.bat.
+continue clean commit gate.
