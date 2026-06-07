@@ -1,10 +1,7 @@
 {
-  "status": "PASS_GLOBAL_MEMORY_REPAIRED_AFTER_F1885B9_RUNTIME_SKELETON_PUSH",
-  "updated_utc": "20260607T092500Z",
-  "archive": "storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260607T092500Z_GLOBAL_REPAIR_AFTER_F1885B9.txt",
-  "source_of_truth": "GitHub memory pointer for all new chats",
-  "branch": "v7-3c-contracts-4806e6c",
-  "confirmed_commit": "f1885b9",
-  "remote_head": "f1885b95113d41a81a299736cbb127b9fb9085c8",
-  "next_allowed_action": "PREPARE_CODEX_LOCAL_8_BUTTON_RUNTIME_BUILD_TASK_NO_SERVER_NO_RESTART_NO_EBAY"
+  "status": "PASS_HUB_V3_GITHUB_MEMORY_POINTER_UPDATED_LOCAL_REPAIR",
+  "updated_utc": "20260607T123500Z",
+  "archive": "storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260607T122934Z_V73C_DASHBOARD_PUSH_PASS.txt",
+  "mode": "WINDOWS_LOCAL_GIT_REPAIR_AFTER_HUB_TOOL_TEST_PAYLOAD_BLOCK",
+  "next_safe_action": "PREPARE_RUNTIME_SKELETON_REVIEW_OR_SERVER_ACTIVATION_GATE_NO_LIVE"
 }

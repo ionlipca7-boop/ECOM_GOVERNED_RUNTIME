@@ -1,0 +1,39 @@
+ECOM OS V7.3C local dashboard build pushed PASS.
+
+Branch: v7-3c-contracts-4806e6c
+Remote HEAD after push: 4fa2c838f05db2f85cea1a3bc10fc15d134a0af1
+Short HEAD: 4fa2c83
+
+Confirmed pushed commits:
+- 1c8a650 Fix V7.3C local dashboard route blocks
+- 4fa2c83 Improve V7.3C dashboard UX and Russian UI
+
+Confirmed state:
+- Push completed from 75a7dad to 4fa2c83 on branch v7-3c-contracts-4806e6c.
+- Local HEAD and remote branch HEAD match: 4fa2c838f05db2f85cea1a3bc10fc15d134a0af1.
+- Local working tree was clean after push.
+- Runtime skeleton local dashboard starts via runtime_skeleton/start_dashboard.bat.
+- Local URL: http://127.0.0.1:8730/runtime_skeleton/_output/index.html
+- 8 independent route-block buttons 01-08 fixed and manually verified.
+- Route selection uses independent route_id/routeMap logic.
+- Russian-first visible UI implemented.
+- Responsive UX/control-room design implemented.
+- README/operator docs, verify_local.bat, and .gitignore hygiene updated.
+- Validation PASS: status PASS, file_count 20, json_count 18, route_count 8, missing [], warnings [].
+
+Safety locks maintained:
+- No server write.
+- No active patch.
+- No restart.
+- No eBay.
+- No Telegram live patch.
+- No delete/cleanup beyond approved zero-byte root junk cleanup.
+- No secrets printed.
+
+Next allowed action:
+PREPARE_RUNTIME_SKELETON_REVIEW_OR_SERVER_ACTIVATION_GATE_NO_LIVE
+
+Recommended next gate:
+1. Review pushed V7.3C local dashboard on GitHub branch.
+2. Decide: continue local runtime skeleton review OR prepare server activation gate.
+3. No server activation/live runtime patch until separate approval.
