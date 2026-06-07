@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ECOM OS V7.3C - Local Control Panel</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Локальный runtime skeleton</p>
+        <h1>ECOM OS V7.3C - Local Control Panel</h1>
+      </div>
+      <div id="validationBadge" class="badge">Проверка...</div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-head">
+          <h2>Маршруты Telegram</h2>
+          <button id="reloadButton" type="button">Обновить</button>
+        </div>
+        <nav id="routeButtons" class="route-buttons" aria-label="Маршруты"></nav>
+      </aside>
+
+      <section class="details" aria-live="polite">
+        <div class="details-head">
+          <div>
+            <p id="routeId" class="eyebrow">route_id</p>
+            <h2 id="routeButton">Выберите маршрут</h2>
+          </div>
+          <span id="callback" class="callback"></span>
+        </div>
+
+        <div class="summary-grid">
+          <section>
+            <h3>Роль</h3>
+            <p id="role">-</p>
+          </section>
+          <section>
+            <h3>Назначение</h3>
+            <p id="purpose">-</p>
+          </section>
+        </div>
+
+        <div class="lists-grid">
+          <section><h3>Inputs</h3><ul id="inputs"></ul></section>
+          <section><h3>Outputs</h3><ul id="outputs"></ul></section>
+          <section><h3>Agents</h3><ul id="agents"></ul></section>
+          <section><h3>Blocks</h3><ul id="blocks"></ul></section>
+          <section><h3>Handoffs</h3><ul id="handoffs"></ul></section>
+          <section><h3>Rules</h3><ul id="rules"></ul></section>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span id="meta">Контракты читаются локально из storage/contracts/v7_3c/</span>
+    </footer>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
