@@ -1,0 +1,35 @@
+{
+  "version": "integration_manifest_v1",
+  "current_mode": "local_dry_integration_core",
+  "server_live_patch": false,
+  "telegram_live_patch": false,
+  "ebay_live_action": false,
+  "secrets_loaded": false,
+  "next_allowed_action": "LOCAL_INTEGRATION_CORE_REVIEW",
+  "integration_chain": [
+    "Telegram button",
+    "route_id",
+    "Browser panel",
+    "Shared Case JSON",
+    "Server bridge target",
+    "Agent placeholder",
+    "Report/checkpoint",
+    "Approval gate"
+  ],
+  "secret_bridge_stage": {
+    "enabled_now": false,
+    "current_mode": "dry contract only",
+    "blocked_until": [
+      "LOCAL_SECRETS_INSTALL_APPROVED",
+      "SERVER_BRIDGE_ACTIVATION_APPROVED",
+      "LIVE_TELEGRAM_OR_EBAY_GATE_APPROVED"
+    ]
+  },
+  "safety_locks": {
+    "no_live_telegram_patch": true,
+    "no_server_write": true,
+    "no_ebay_action": true,
+    "no_delete": true,
+    "approval_required_for_live": true
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "version": "telegram_routes_v1",
+  "mode": "dry_only_no_live_patch",
+  "global_buttons": [
+    {
+      "button_text": "Назад",
+      "callback": "v73c:global:back",
+      "action": "return_previous_local_state"
+    },
+    {
+      "button_text": "Домой",
+      "callback": "v73c:global:home",
+      "action": "return_route_dashboard_start"
+    },
+    {
+      "button_text": "Стоп",
+      "callback": "v73c:global:stop",
+      "action": "local_stop_no_live_action"
+    }
+  ],
+  "routes": [
+    {
+      "route_id": "route_01_new_product",
+      "button_text": "01 Новый продукт",
+      "callback": "v73c:r:01",
+      "creates_case": true,
+      "case_namespace": "case.route_01_new_product",
+      "expected_inputs": ["supplier_url", "product_name", "product_text", "photo_notes", "receipt_notes", "cost_price", "sell_price", "stock_qty", "shipping_notes", "ion_comments", "next_action"],
+      "target_agent": "product_intake_agent",
+      "next_safe_action": "Собрать карточку товара и передать на решение маршрута 07 до live-действий.",
+      "safety_gate": "approval_required_for_live",
+      "browser_panel_id": "browser_panel_route_01_new_product",
+      "server_bridge_target": "server_bridge.product_intake",
+      "report_target": "runtime_skeleton/_output/reports/route_01",
+      "checkpoint_target": "runtime_skeleton/_output/checkpoints/route_01"
+    },
+    {
+      "route_id": "route_02_variant_product",
+      "button_text": "02 Вариант продукта",
+      "callback": "v73c:r:02",
+      "creates_case": true,
+      "case_namespace": "case.route_02_variant_product",
+      "expected_inputs": ["master_product_name", "variants_notes", "variant_price_qty_notes", "photo_mapping_notes", "ion_comments", "next_action"],
+      "target_agent": "variant_matrix_agent",
+      "next_safe_action": "Собрать матрицу вариантов и остатки по SKU.",
+      "safety_gate": "approval_required_for_live",
+      "browser_panel_id": "browser_panel_route_02_variant_product",
+      "server_bridge_target": "server_bridge.variant_matrix",
+      "report_target": "runtime_skeleton/_output/reports/route_02",
+      "checkpoint_target": "runtime_skeleton/_output/checkpoints/route_02"
+    },
+    {
+      "route_id": "route_03_listing_studio",
+      "button_text": "03 Листинг-студия",
+      "callback": "v73c:r:03",
+      "creates_case": true,
+      "case_namespace": "case.route_03_listing_studio",
+      "expected_inputs": ["listing_url_or_sku", "experiment_idea", "title_angle", "buyer_intent", "notes", "next_action"],
+      "target_agent": "listing_studio_agent",
+      "next_safe_action": "Подготовить A/B/C черновики без клонов и запросить решение.",
+      "safety_gate": "approval_required_for_live",
+      "browser_panel_id": "browser_panel_route_03_listing_studio",
+      "server_bridge_target": "server_bridge.listing_studio",
+      "report_target": "runtime_skeleton/_output/reports/route_03",
+      "checkpoint_target": "runtime_skeleton/_output/checkpoints/route_03"
+    },
+    {
+      "route_id": "route_04_marketplace_lifecycle",
+      "button_text": "04 Жизнь листингов",
+      "callback": "v73c:r:04",
+      "creates_case": true,
+      "case_namespace": "case.route_04_marketplace_lifecycle",
+      "expected_inputs": ["listing_url_or_sku", "metric_problem_notes", "recommendation_notes", "action_decision", "next_action"],
+      "target_agent": "lifecycle_monitor_agent",
+      "next_safe_action": "Описать состояние листинга и безопасную рекомендацию.",
+      "safety_gate": "approval_required_for_live",
+      "browser_panel_id": "browser_panel_route_04_marketplace_lifecycle",
+      "server_bridge_target": "server_bridge.lifecycle_monitor",
+      "report_target": "runtime_skeleton/_output/reports/route_04",
+      "checkpoint_target": "runtime_skeleton/_output/checkpoints/route_04"
+    },
+    {
+      "route_id": "route_05_finance_inventory",
+      "button_text": "05 Финансы / склад",
+      "callback": "v73c:r:05",
+      "creates_case": true,
+      "case_namespace": "case.route_05_finance_inventory",
+      "expected_inputs": ["product_or_sku", "stock_qty", "cost_notes", "sales_notes", "profit_notes", "reorder_decision", "next_action"],
+      "target_agent": "finance_stock_agent",
+      "next_safe_action": "Проверить склад, себестоимость, продажи и решение по дозакупке.",
+      "safety_gate": "approval_required_for_live",
+      "browser_panel_id": "browser_panel_route_05_finance_inventory",
+      "server_bridge_target": "server_bridge.finance_stock",
+      "report_target": "runtime_skeleton/_output/reports/route_05",
+      "checkpoint_target": "runtime_skeleton/_output/checkpoints/route_05"
+    },
+    {
+      "route_id": "route_06_product_radar",
+      "button_text": "06 Product Radar / Найти товар",
+      "callback": "v73c:r:06",
+      "creates_case": true,
+      "case_namespace": "case.route_06_product_radar",
+      "expected_inputs": ["product_idea", "source_url", "supplier_price", "demand_proof_notes", "competitor_notes", "decision_notes", "next_action"],
+      "target_agent": "product_radar_agent",
+      "next_safe_action": "Собрать доказательства спроса, конкурентов, цены и решения.",
+      "safety_gate": "approval_required_for_live",
+      "browser_panel_id": "browser_panel_route_06_product_radar",
+      "server_bridge_target": "server_bridge.product_radar",
+      "report_target": "runtime_skeleton/_output/reports/route_06",
+      "checkpoint_target": "runtime_skeleton/_output/checkpoints/route_06"
+    },
+    {
+      "route_id": "route_07_decision_center",
+      "button_text": "07 Решения / отчёты / агенты",
+      "callback": "v73c:r:07",
+      "creates_case": true,
+      "case_namespace": "case.route_07_decision_center",
+      "expected_inputs": ["decision_title", "approval_needed", "options", "priority", "deadline", "next_action"],
+      "target_agent": "decision_dispatcher_agent",
+      "next_safe_action": "Сформировать короткую карточку решения и approval marker.",
+      "safety_gate": "approval_required_for_live",
+      "browser_panel_id": "browser_panel_route_07_decision_center",
+      "server_bridge_target": "server_bridge.decision_dispatcher",
+      "report_target": "runtime_skeleton/_output/reports/route_07",
+      "checkpoint_target": "runtime_skeleton/_output/checkpoints/route_07"
+    },
+    {
+      "route_id": "route_08_memory_teacher",
+      "button_text": "08 Система / память",
+      "callback": "v73c:r:08",
+      "creates_case": true,
+      "case_namespace": "case.route_08_memory_teacher",
+      "expected_inputs": ["system_note", "memory_note", "rule_note", "diagnostic_note", "next_action"],
+      "target_agent": "system_memory_agent",
+      "next_safe_action": "Сохранить только доказанный урок или диагностическую заметку.",
+      "safety_gate": "approval_required_for_live",
+      "browser_panel_id": "browser_panel_route_08_memory_teacher",
+      "server_bridge_target": "server_bridge.system_memory",
+      "report_target": "runtime_skeleton/_output/reports/route_08",
+      "checkpoint_target": "runtime_skeleton/_output/checkpoints/route_08"
+    }
+  ]
+}

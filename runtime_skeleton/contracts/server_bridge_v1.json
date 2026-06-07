@@ -1,0 +1,22 @@
+{
+  "version": "server_bridge_v1",
+  "current_mode": "dry_contract_only",
+  "server_live_patch": false,
+  "server_write": false,
+  "bridge_targets": {
+    "server_bridge.product_intake": {"route_id": "route_01_new_product", "agent_id": "product_intake_agent", "server_status": "placeholder_no_execution"},
+    "server_bridge.variant_matrix": {"route_id": "route_02_variant_product", "agent_id": "variant_matrix_agent", "server_status": "placeholder_no_execution"},
+    "server_bridge.listing_studio": {"route_id": "route_03_listing_studio", "agent_id": "listing_studio_agent", "server_status": "placeholder_no_execution"},
+    "server_bridge.lifecycle_monitor": {"route_id": "route_04_marketplace_lifecycle", "agent_id": "lifecycle_monitor_agent", "server_status": "placeholder_no_execution"},
+    "server_bridge.finance_stock": {"route_id": "route_05_finance_inventory", "agent_id": "finance_stock_agent", "server_status": "placeholder_no_execution"},
+    "server_bridge.product_radar": {"route_id": "route_06_product_radar", "agent_id": "product_radar_agent", "server_status": "placeholder_no_execution"},
+    "server_bridge.decision_dispatcher": {"route_id": "route_07_decision_center", "agent_id": "decision_dispatcher_agent", "server_status": "placeholder_no_execution"},
+    "server_bridge.system_memory": {"route_id": "route_08_memory_teacher", "agent_id": "system_memory_agent", "server_status": "placeholder_no_execution"}
+  },
+  "safe_chain": ["Telegram button", "route_id", "Browser panel", "Shared Case JSON", "Server bridge target", "Agent placeholder", "Report/checkpoint", "Approval gate"],
+  "required_gates_before_activation": [
+    "LOCAL_SECRETS_INSTALL_APPROVED",
+    "SERVER_BRIDGE_ACTIVATION_APPROVED",
+    "LIVE_TELEGRAM_OR_EBAY_GATE_APPROVED"
+  ]
+}

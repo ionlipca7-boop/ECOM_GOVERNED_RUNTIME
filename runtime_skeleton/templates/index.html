@@ -79,6 +79,54 @@
             </section>
           </div>
 
+          <section class="operator-workspace" aria-label="Операторский ввод">
+            <div class="operator-head">
+              <div>
+                <p class="eyebrow">Операторский ввод</p>
+                <h3 id="operatorTitle">Черновик кейса</h3>
+              </div>
+              <div class="operator-actions">
+                <button id="saveDraftButton" type="button">Сохранить черновик</button>
+                <button id="buildCardButton" type="button">Собрать карточку</button>
+                <button id="exportJsonButton" type="button">Экспорт JSON</button>
+                <button id="clearFormButton" type="button">Очистить форму</button>
+              </div>
+            </div>
+
+            <div class="operator-context">
+              <section>
+                <h3>Что делает маршрут</h3>
+                <p id="operatorPurpose">-</p>
+              </section>
+              <section>
+                <h3>Что вставить Ion</h3>
+                <p id="operatorInstructions">-</p>
+              </section>
+              <section>
+                <h3>Куда идёт кейс</h3>
+                <p id="operatorNext">-</p>
+              </section>
+            </div>
+
+            <div class="chain-line" id="operatorChain">
+              Telegram → Browser → Case JSON → Server bridge → Agent
+            </div>
+
+            <form id="operatorForm" class="operator-form"></form>
+            <p id="draftStatus" class="draft-status">Черновик хранится только в этом браузере.</p>
+
+            <div class="case-output-grid">
+              <section>
+                <h3>Карточка предпросмотра</h3>
+                <article id="previewCard" class="preview-card">Заполните поля и нажмите «Собрать карточку».</article>
+              </section>
+              <section>
+                <h3>Case JSON</h3>
+                <pre id="caseJsonOutput" class="json-output">{}</pre>
+              </section>
+            </div>
+          </section>
+
           <div class="lists-grid">
             <section><h3>Входные данные</h3><ul id="inputs"></ul></section>
             <section><h3>Результаты</h3><ul id="outputs"></ul></section>
@@ -98,6 +146,6 @@
     <script>
       window.__DASHBOARD_PAYLOAD__ = $embedded_payload;
     </script>
-    <script src="../static/app.js"></script>
+    <script src="../static/app.js?v=integration-core-v2"></script>
   </body>
 </html>

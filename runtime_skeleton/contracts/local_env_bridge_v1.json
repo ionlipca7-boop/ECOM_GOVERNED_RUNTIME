@@ -1,0 +1,13 @@
+{
+  "version": "local_env_bridge_v1",
+  "local_secret_root": "D:\\ECOM_OS_LOCAL_SECRETS",
+  "local_env_file": "D:\\ECOM_OS_LOCAL_SECRETS\\.env.ecom.local",
+  "project_env_example": ".env.example",
+  "git_policy": "never commit real secrets",
+  "load_mode": "future runtime loads env from local_secret_root",
+  "current_mode": "dry contract only",
+  "required_manual_gate": "LOCAL_SECRETS_INSTALL_APPROVED",
+  "required_server_export_gate": "SERVER_SECRETS_EXPORT_APPROVED",
+  "no_secret_printing": true,
+  "secrets_loaded_now": false
+}

@@ -1,9 +1,15 @@
 .env
+.env.*
 .env.local
+*.env
+!.env.example
 *.token
 *.secret
 *secret*
 storage/secrets/
+secrets/
+runtime_skeleton/secrets/
+ECOM_OS_LOCAL_SECRETS/
 logs/
 __pycache__/
 *.pyc

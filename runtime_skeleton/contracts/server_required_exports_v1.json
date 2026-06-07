@@ -1,0 +1,12 @@
+{
+  "version": "server_required_exports_v1",
+  "mode": "future_server_export_gate_later",
+  "exports_required_later": [
+    {"export_id": "approval_ledger", "required_for": "route_07_decision_center", "source": "server_required", "integration_action": "required_server_export_gate_later"},
+    {"export_id": "runner_executor_gates", "required_for": "all_routes", "source": "server_required", "integration_action": "required_server_export_gate_later"},
+    {"export_id": "server_agent_entrypoints", "required_for": "agent_map_v1", "source": "server_required", "integration_action": "required_server_export_gate_later"},
+    {"export_id": "report_writer_schema", "required_for": "reports_and_checkpoints", "source": "server_required", "integration_action": "required_server_export_gate_later"},
+    {"export_id": "case_ingest_endpoint_or_file_drop", "required_for": "shared_case_json_bridge", "source": "server_required", "integration_action": "required_server_export_gate_later"}
+  ],
+  "forbidden_now": ["server_write", "server_restart", "live_telegram_patch", "ebay_action", "secret_export"]
+}

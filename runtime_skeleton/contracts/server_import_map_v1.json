@@ -1,0 +1,121 @@
+{
+  "version": "server_import_map_v1",
+  "mode": "read_only_reference_map_no_copy",
+  "inspection_rules": {
+    "origin_main_used": true,
+    "new_clone_created": false,
+    "branch_switched": false,
+    "secrets_read": false,
+    "live_server_modified": false
+  },
+  "components": [
+    {
+      "component_id": "telegram_adapter_skeleton",
+      "purpose": "Telegram bot/control adapter candidate.",
+      "paths": ["runtime/telegram/adapter.py"],
+      "source": "origin/main",
+      "observed_signal": "telegram_status skeleton with live_actions_allowed false",
+      "integration_action": "import_candidate_later",
+      "safety": "dry contract only, no live Telegram patch"
+    },
+    {
+      "component_id": "ebay_readonly_engine",
+      "purpose": "Read-only eBay/listing engine reference.",
+      "paths": ["runtime/ebay/readonly_trading.py"],
+      "source": "origin/main",
+      "observed_signal": "readonly status reports publish/revise/delete false",
+      "integration_action": "import_candidate_later",
+      "safety": "no eBay live action"
+    },
+    {
+      "component_id": "token_guard",
+      "purpose": "Safe future secret access guard.",
+      "paths": ["runtime/ebay/token_guard.py"],
+      "source": "origin/main",
+      "observed_signal": "secrets_required_external true and secrets_printed false",
+      "integration_action": "import_candidate_later",
+      "safety": "no secret values read or printed"
+    },
+    {
+      "component_id": "governance_state",
+      "purpose": "Runtime live-action lock state.",
+      "paths": ["runtime/governance/state.py"],
+      "source": "origin/main",
+      "observed_signal": "LIVE_ACTIONS_ALLOWED/PUBLISH/REVISE/DELETE false",
+      "integration_action": "import_candidate_later",
+      "safety": "all live gates remain closed"
+    },
+    {
+      "component_id": "project_assembler_agent",
+      "purpose": "Read-only agent/tool inventory and donor capability mapper.",
+      "paths": ["storage/agents/project_assembler/"],
+      "source": "origin/main",
+      "observed_signal": "readonly_guard and secret_references_no_values outputs",
+      "integration_action": "import_candidate_later",
+      "safety": "read-only inventory only"
+    },
+    {
+      "component_id": "server_block_registry",
+      "purpose": "Server brain block pointer registry.",
+      "paths": ["ION_LOCAL_ASSISTANT/storage/server_blocks/registry.json", "ION_LOCAL_ASSISTANT/storage/server_blocks/current/server_readonly_status_adapter_v1.sh"],
+      "source": "origin/main",
+      "observed_signal": "READ_ONLY_NO_WRITE_NO_LIVE block mode",
+      "integration_action": "import_candidate_later",
+      "safety": "no server runtime write"
+    },
+    {
+      "component_id": "control_room_pointers",
+      "purpose": "Control room pointer and bridge-state concepts.",
+      "paths": ["storage/control_room/CURRENT_POINTER.json", "storage/control_room/CURRENT_BRIDGE_STATE.json", "storage/control_room/GITHUB_MEMORY_BRIDGE_LATEST_POINTER.json", "storage/control_room/HUB_V3_GITHUB_MEMORY_LATEST_POINTER.json"],
+      "source": "origin/main",
+      "observed_signal": "tracked pointer/state files exist",
+      "integration_action": "import_candidate_later",
+      "safety": "read pointer concept only"
+    },
+    {
+      "component_id": "state_control_reports",
+      "purpose": "State-control reports, gates, bridge plans and checkpoints.",
+      "paths": ["storage/state_control/"],
+      "source": "origin/main",
+      "observed_signal": "bridge protocol, sync bridge, git status, and runtime skeleton manifests exist",
+      "integration_action": "import_candidate_later",
+      "safety": "no cleanup/delete"
+    },
+    {
+      "component_id": "memory_archive_tools",
+      "purpose": "Archive/memory source of truth references.",
+      "paths": ["storage/memory/archive/", "storage/memory_v2/archive/"],
+      "source": "origin/main",
+      "observed_signal": "GitHub memory archives and V7.3C route archive exist",
+      "integration_action": "import_candidate_later",
+      "safety": "no secret in memory"
+    },
+    {
+      "component_id": "photo_router_candidate",
+      "purpose": "Photo/file notes and future media router placeholder.",
+      "paths": ["ION_LOCAL_ASSISTANT/scripts/photo_organizer_dry_run_v1.py", "ION_LOCAL_ASSISTANT/scripts/photos_readonly_audit_v1.cmd"],
+      "source": "origin/main",
+      "observed_signal": "photo dry-run and readonly audit tools exist",
+      "integration_action": "import_candidate_later",
+      "safety": "no upload, notes/file names only"
+    },
+    {
+      "component_id": "approval_ledger",
+      "purpose": "Approval ledger / decision log for live gates.",
+      "paths": ["server_required:approval_ledger"],
+      "source": "server_required",
+      "observed_signal": "required for route 07 but not imported as live module",
+      "integration_action": "required_server_export_gate_later",
+      "safety": "approval gate required before live activation"
+    },
+    {
+      "component_id": "runner_executor_gates",
+      "purpose": "Future execution runner and safety gates.",
+      "paths": ["server_required:runner_executor_gates"],
+      "source": "server_required",
+      "observed_signal": "future server brain needs explicit export",
+      "integration_action": "required_server_export_gate_later",
+      "safety": "no execution in current mode"
+    }
+  ]
+}

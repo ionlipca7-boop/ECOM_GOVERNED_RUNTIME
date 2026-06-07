@@ -1,0 +1,62 @@
+{
+  "version": "server_capability_map_v1",
+  "current_mode": "local_dry_integration_core",
+  "capabilities": [
+    {
+      "capability_id": "telegram_remote_control",
+      "source_components": ["telegram_adapter_skeleton"],
+      "status": "dry_contract_only",
+      "source": "origin/main",
+      "integration_action": "import_candidate_later",
+      "blocked_by": ["LIVE_TELEGRAM_OR_EBAY_GATE_APPROVED"]
+    },
+    {
+      "capability_id": "browser_operator_workspace",
+      "source_components": ["runtime_skeleton/static/app.js", "runtime_skeleton/templates/index.html"],
+      "status": "local_active_static_ui",
+      "source": "current_branch",
+      "integration_action": "active_local_dry_bridge",
+      "blocked_by": []
+    },
+    {
+      "capability_id": "shared_case_json_bridge",
+      "source_components": ["runtime_skeleton/contracts/case_schema_v1.json"],
+      "status": "local_schema_ready",
+      "source": "current_branch",
+      "integration_action": "active_local_dry_bridge",
+      "blocked_by": []
+    },
+    {
+      "capability_id": "server_brain_agents",
+      "source_components": ["project_assembler_agent", "server_block_registry", "runner_executor_gates"],
+      "status": "mapped_placeholder_no_execution",
+      "source": "origin/main_and_server_required",
+      "integration_action": "required_server_export_gate_later",
+      "blocked_by": ["SERVER_BRIDGE_ACTIVATION_APPROVED"]
+    },
+    {
+      "capability_id": "ebay_listing_engine",
+      "source_components": ["ebay_readonly_engine", "token_guard", "governance_state"],
+      "status": "readonly_reference_only",
+      "source": "origin/main",
+      "integration_action": "import_candidate_later",
+      "blocked_by": ["LOCAL_SECRETS_INSTALL_APPROVED", "LIVE_TELEGRAM_OR_EBAY_GATE_APPROVED"]
+    },
+    {
+      "capability_id": "memory_github_source_of_truth",
+      "source_components": ["memory_archive_tools", "control_room_pointers"],
+      "status": "tracked_reference_ready",
+      "source": "origin/main",
+      "integration_action": "import_candidate_later",
+      "blocked_by": ["no_secret_in_memory"]
+    },
+    {
+      "capability_id": "photo_file_notes_router",
+      "source_components": ["photo_router_candidate"],
+      "status": "dry_notes_only",
+      "source": "origin/main",
+      "integration_action": "import_candidate_later",
+      "blocked_by": ["no_upload_yet"]
+    }
+  ]
+}
