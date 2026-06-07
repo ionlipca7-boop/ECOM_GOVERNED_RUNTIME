@@ -1,0 +1,27 @@
+# V73C Session Archive 02 Local Paths
+
+Status: SAVED
+
+Main local working path:
+D:\ECOM_OS_V7_3C_GITHUB_IMPORT_STAGE_10804
+
+Runtime skeleton path:
+D:\ECOM_OS_V7_3C_GITHUB_IMPORT_STAGE_10804\runtime_skeleton
+
+Dashboard start file:
+D:\ECOM_OS_V7_3C_GITHUB_IMPORT_STAGE_10804\runtime_skeleton\start_dashboard.bat
+
+Local verify file:
+D:\ECOM_OS_V7_3C_GITHUB_IMPORT_STAGE_10804\runtime_skeleton\verify_local.bat
+
+Dashboard URL:
+http://localhost:8000
+
+Pause checkpoint:
+runtime_skeleton\_output\V73C_PAUSE_CHECKPOINT.json
+
+Pause zip:
+runtime_skeleton\_output\V73C_RUNTIME_SKELETON_PAUSE_CHECKPOINT.zip
+
+Important:
+For resume, use runtime_skeleton\start_dashboard.bat, not old START_ION_WORKSPACE.cmd.
