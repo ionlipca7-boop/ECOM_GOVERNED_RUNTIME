@@ -1,0 +1,32 @@
+# V7.3C Codex MCP Tool Decision and Prompt Note
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Decision
+
+We can create an MCP-style bridge later, but not instantly inside this chat.
+Current chat has ECOM_OS_HUB_MCP_V3 only.
+Codex is not currently exposed here as a callable tool.
+
+## Official direction
+
+Codex supports MCP servers in CLI and IDE extension.
+ChatGPT can connect remote MCP servers through Apps and Connectors.
+Custom MCP servers need careful security review.
+
+## Best route for ECOM OS
+
+Step 1: use Codex from Ion menu or Codex workspace with clean V7.3C zip/contracts.
+Step 2: ask Codex to create GitHub files or branch/PR only under storage/contracts/v7_3c.
+Step 3: review diff.
+Step 4: later design ECOM_Codex_MCP bridge if needed.
+
+## Safety
+
+No server write.
+No active patch.
+No restart.
+No marketplace API.
+No eBay live action.
+No secrets print.
