@@ -1,35 +1,67 @@
-# ECOM OS V7.3C Local Runtime Skeleton
+# ECOM OS V7.3C — локальная панель маршрутов
 
-Local file-based dashboard for reviewing the eight independent ECOM OS V7.3C route-blocks.
+Локальная операторская панель показывает 8 независимых route-blocks ECOM OS V7.3C. Панель статическая: она читает локальные контрактные JSON и собирает HTML в `runtime_skeleton/_output/`.
 
-## Generate
+## Запуск панели
 
-```powershell
-python runtime_skeleton/app.py
-```
-
-This writes:
-
-- `runtime_skeleton/_output/index.html`
-- `runtime_skeleton/_output/dashboard_payload.json`
-- `runtime_skeleton/_output/validation_report.json`
-
-The dashboard is a static local HTML file. It does not start a server, patch Telegram, call eBay, restart services, delete files, commit, or push.
-
-## What It Shows
-
-- 8 route cards/buttons
-- route status
-- route purpose
-- safe next action
-- global Back / Home / Stop rules
-- inputs, outputs, agents, blocks, handoffs, and contract rules
-- validation status and source paths
-
-## Validate Only
+Из корня проекта:
 
 ```powershell
-python runtime_skeleton/validator.py
+runtime_skeleton\start_dashboard.bat
 ```
 
-The validator reads `storage/contracts/v7_3c/` and writes `runtime_skeleton/_output/validation_report.json`.
+Скрипт проверяет контракты, собирает статический dashboard и запускает локальный сервер.
+
+URL:
+
+```text
+http://127.0.0.1:8730/runtime_skeleton/_output/index.html
+```
+
+Чтобы остановить локальный сервер, вернитесь в CMD-окно с dashboard и нажмите `CTRL+C`.
+
+## Быстрая проверка без ручного открытия
+
+```powershell
+runtime_skeleton\verify_local.bat
+```
+
+Проверка запускает:
+
+- `python runtime_skeleton\validator.py`
+- `python runtime_skeleton\app.py`
+- `py -m py_compile runtime_skeleton\app.py runtime_skeleton\contract_loader.py runtime_skeleton\validator.py`
+- `git diff --check`
+- `git status --short`
+
+Скрипт ничего не коммитит, не пушит, не удаляет и не выполняет live-действия.
+
+## Кнопки оператора
+
+- `Главная` — возвращает панель к стартовому маршруту 01 и не меняет данные маршрутов.
+- `Назад` — возвращает к предыдущему выбранному маршруту из локальной истории UI.
+- `Стоп` — ставит только локальное UI-состояние остановки. После перезагрузки страницы dashboard снова работает.
+
+## Блокировки безопасности
+
+Панель работает только локально:
+
+- без eBay;
+- без Telegram;
+- без записи на сервер;
+- без restart/delete/cleanup;
+- без commit/push;
+- без секретов и `.env`;
+- без изменения контрактных route data.
+
+Маршруты выбираются по стабильному `route_id` через локальный `routeMap`. Каждый route-block остаётся независимым: ошибка одного маршрута не должна ломать остальные кнопки.
+
+## Что видно в панели
+
+- 8 независимых маршрутов;
+- статус validation;
+- количество маршрутов;
+- назначение маршрута;
+- следующее безопасное действие;
+- `route_id`, `callback`, роль блока и файл контракта;
+- входные данные, результаты, агенты, блоки, передачи и правила.

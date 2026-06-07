@@ -1,93 +1,98 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ECOM OS V7.3C Local Runtime Skeleton</title>
+    <title>ECOM OS V7.3C — локальная панель маршрутов</title>
     <link rel="stylesheet" href="../static/style.css" />
   </head>
   <body>
     <header class="topbar">
       <div>
-        <p class="eyebrow">Local dashboard / runtime skeleton</p>
-        <h1>ECOM OS V7.3C Route Blocks</h1>
+        <p class="eyebrow">Локальная операторская панель</p>
+        <h1>ECOM OS V7.3C — блоки маршрутов</h1>
       </div>
-      <div id="validationBadge" class="badge">Validation</div>
+      <div id="validationBadge" class="badge">Проверка</div>
     </header>
 
     <main class="layout">
       <aside class="sidebar">
         <div class="sidebar-head">
           <div>
-            <p class="eyebrow">Eight independent route-blocks</p>
-            <h2>Routes</h2>
+            <p class="eyebrow">8 независимых блоков</p>
+            <h2>Маршруты</h2>
           </div>
-          <button id="homeButton" type="button">Home</button>
+          <button id="homeButton" type="button">Главная</button>
         </div>
-        <nav id="routeButtons" class="route-buttons" aria-label="ECOM OS V7.3C routes"></nav>
+        <nav id="routeButtons" class="route-buttons" aria-label="Маршруты ECOM OS V7.3C"></nav>
       </aside>
 
       <section class="workspace" aria-live="polite">
-        <section class="rules-band" aria-label="Global runtime rules">
+        <section class="safety-strip" aria-label="Локальные блокировки безопасности">
+          <strong>Локальный безопасный режим</strong>
+          <span>Без eBay, без Telegram, без записи на сервер, без push. Экран только читает локальные контракты и показывает маршруты.</span>
+        </section>
+
+        <section class="rules-band" aria-label="Глобальные правила локальной панели">
           <div id="globalRules" class="rule-grid"></div>
         </section>
 
         <section class="route-panel">
           <div class="details-head">
             <div>
-              <p id="routeId" class="eyebrow">route_id</p>
-              <h2 id="routeButton">Select a route</h2>
+              <p id="routeId" class="eyebrow">ID маршрута</p>
+              <h2 id="routeButton">Выберите маршрут</h2>
             </div>
             <div class="actions">
-              <button id="backButton" type="button">Back</button>
-              <button id="stopButton" type="button">Stop</button>
+              <button id="backButton" type="button">Назад</button>
+              <button id="stopButton" type="button">Стоп</button>
             </div>
           </div>
 
           <div class="summary-grid">
             <section>
-              <h3>Status</h3>
+              <h3>Статус</h3>
               <p id="routeStatus">-</p>
             </section>
             <section>
-              <h3>Purpose</h3>
+              <h3>Назначение</h3>
               <p id="purpose">-</p>
             </section>
             <section>
-              <h3>Safe Next Action</h3>
+              <h3>Следующее безопасное действие</h3>
               <p id="safeNextAction">-</p>
             </section>
           </div>
 
           <div class="facts-grid">
             <section>
-              <h3>Callback</h3>
+              <h3>Команда / callback</h3>
               <p id="callback">-</p>
             </section>
             <section>
-              <h3>Role</h3>
+              <h3>Роль блока</h3>
               <p id="role">-</p>
             </section>
             <section>
-              <h3>Contract</h3>
+              <h3>Файл контракта</h3>
               <p id="contractFile">-</p>
             </section>
           </div>
 
           <div class="lists-grid">
-            <section><h3>Inputs</h3><ul id="inputs"></ul></section>
-            <section><h3>Outputs</h3><ul id="outputs"></ul></section>
-            <section><h3>Agents</h3><ul id="agents"></ul></section>
-            <section><h3>Blocks</h3><ul id="blocks"></ul></section>
-            <section><h3>Handoffs</h3><ul id="handoffs"></ul></section>
-            <section><h3>Rules</h3><ul id="rules"></ul></section>
+            <section><h3>Входные данные</h3><ul id="inputs"></ul></section>
+            <section><h3>Результаты</h3><ul id="outputs"></ul></section>
+            <section><h3>Агенты</h3><ul id="agents"></ul></section>
+            <section><h3>Блоки</h3><ul id="blocks"></ul></section>
+            <section><h3>Передачи</h3><ul id="handoffs"></ul></section>
+            <section><h3>Правила</h3><ul id="rules"></ul></section>
           </div>
         </section>
       </section>
     </main>
 
     <footer>
-      <span id="meta">Generated locally from storage/contracts/v7_3c/</span>
+      <span id="meta">Собрано локально из storage/contracts/v7_3c/</span>
     </footer>
 
     <script>
