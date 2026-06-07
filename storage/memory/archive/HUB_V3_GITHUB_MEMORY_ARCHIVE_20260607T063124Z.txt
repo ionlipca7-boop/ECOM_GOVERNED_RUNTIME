@@ -1,0 +1,15 @@
+# V73C Plan 04 Min
+
+Status: SAVED
+
+Next build idea:
+local browser control panel from the 8 contracts.
+
+Folder idea:
+D:\ECOM_OS_V7_3C_RUNTIME_SKELETON
+
+First view:
+8 route buttons and contract cards.
+
+Safe state:
+local review only.
