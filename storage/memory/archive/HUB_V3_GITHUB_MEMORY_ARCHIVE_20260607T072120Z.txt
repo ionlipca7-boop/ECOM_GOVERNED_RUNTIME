@@ -1,0 +1,33 @@
+# V73C Session Archive 04 Rules and Next
+
+Status: SAVED
+
+Do not touch:
+- server runtime
+- bot.py
+- .env
+- tokens
+- secrets
+- Telegram live bot
+- eBay or marketplace API
+- main branch direct push
+- cleanup or delete
+
+Safe current next step:
+Prepare clean commit gate for runtime_skeleton.
+
+Commit rules:
+- include runtime_skeleton source files
+- include start_dashboard.bat and verify_local.bat
+- include validation_report if useful
+- exclude __pycache__
+- exclude .pyc files
+- verify status before commit
+- commit locally first
+- push only after separate approval
+
+After that:
+- optionally push runtime_skeleton to a separate branch
+- then plan server snapshot whitelist
+- then compare server state to local skeleton
+- then create clean server transfer packet
