@@ -1,0 +1,34 @@
+# V7.3C Next Plan 03 Server Snapshot Rule
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Server idea
+
+The server has newer runtime blocks and project memory.
+Windows local has more disk space and Codex.
+Therefore the right route is not to code directly on server.
+
+## Later server snapshot plan
+
+Create a read-only server snapshot packet later.
+The packet should include useful runtime structure, memory pointers, route folders, validators, reports, telegram structure and current project state.
+It must exclude secrets, tokens, env files, caches, venv, backups trash and heavy archives unless explicitly approved.
+
+## Purpose
+
+Codex can compare local V7.3C contracts with server reality without touching server runtime.
+
+## Safety
+
+No server write now.
+No cleanup now.
+No delete now.
+No bot patch.
+No restart.
+No live marketplace action.
+
+## Decision
+
+First build local runtime skeleton from contracts.
+Then create server snapshot plan as a separate approval step.
