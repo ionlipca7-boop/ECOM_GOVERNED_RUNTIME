@@ -1,0 +1,16 @@
+# ION E1 GLOBAL MEMORY REPAIR AFTER F1885B9
+STATUS: PASS_GLOBAL_MEMORY_REPAIRED_AFTER_TEST_PAYLOAD
+Project: ECOM OS V7.3C
+GitHub memory pointer is source of truth for all new chats.
+Windows local is clean build place with Codex.
+Server is runtime eyes only until clean activation gate.
+Local path: D:\ECOM_OS_V7_3C_GITHUB_IMPORT_STAGE_10804
+Branch: v7-3c-contracts-4806e6c
+Confirmed pushed commit: f1885b9 Add V7.3C runtime skeleton
+Remote head: f1885b95113d41a81a299736cbb127b9fb9085c8
+8-button archive: storage/memory_v2/archive/V7_3C_FULL_8_BUTTON_ROUTE_ARCHIVE_20260606T163359Z.md
+Routes: 01 PASS, 02 PASS, 03 PASS_LOGIC, 04 PASS, 05 PASS, 06 PASS, 07 PASS, 08 PASS.
+Runtime skeleton committed and pushed in f1885b9.
+Cache cleanup PASS.
+Problem fixed: previous latest pointer pointed to HUB test payload.
+Next allowed step: PREPARE_CODEX_LOCAL_8_BUTTON_RUNTIME_BUILD_TASK_NO_SERVER_NO_RESTART_NO_EBAY
