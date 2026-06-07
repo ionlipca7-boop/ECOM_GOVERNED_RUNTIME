@@ -11,6 +11,13 @@ from report_writer import write_json_report
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 CONTRACT_ROOT = PROJECT_ROOT / "storage" / "contracts" / "v7_3c"
 OUTPUT_PATH = Path(__file__).resolve().parent / "_output" / "validation_report.json"
+ARCHIVE_PATH = (
+    PROJECT_ROOT
+    / "storage"
+    / "memory_v2"
+    / "archive"
+    / "V7_3C_FULL_8_BUTTON_ROUTE_ARCHIVE_20260606T163359Z.md"
+)
 
 REQUIRED_ROUTE_FIELDS = [
     "route_id",
@@ -60,6 +67,12 @@ def validate_contracts(
     if len(route_files) != 8:
         warnings.append(f"Expected 8 route JSON files, found {len(route_files)}")
 
+    if not ARCHIVE_PATH.exists():
+        missing.append(
+            "Route archive is missing: "
+            "storage/memory_v2/archive/V7_3C_FULL_8_BUTTON_ROUTE_ARCHIVE_20260606T163359Z.md"
+        )
+
     for required in REQUIRED_FILES:
         if not (contract_root / required).exists():
             missing.append(required)
@@ -84,6 +97,12 @@ def validate_contracts(
         if len(callback) > 32:
             warnings.append(
                 f"{_relative(route_file, contract_root)} callback is longer than 32 chars"
+            )
+
+        route_id = str(route.get("route_id", ""))
+        if route_id and route_file.stem != route_id:
+            warnings.append(
+                f"{_relative(route_file, contract_root)} route_id does not match file stem"
             )
 
         for key_path in _find_secret_like_keys(route):

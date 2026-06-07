@@ -1,0 +1,11 @@
+CODEX TASK V7.3C 8 BUTTON LOCAL RUNTIME BUILD
+ROOT: D:\ECOM_OS_V7_3C_GITHUB_IMPORT_STAGE_10804
+Work only locally. No server. No Telegram patch. No eBay. No restart. No delete.
+Improve runtime_skeleton dashboard for 8 independent route-blocks.
+Use route archive: storage/memory_v2/archive/V7_3C_FULL_8_BUTTON_ROUTE_ARCHIVE_20260606T163359Z.md
+Use contracts: storage/contracts/v7_3c
+UI must show 8 route cards, route status, purpose, safe next action.
+Include global Back Home Stop rules.
+Backend must load specs/contracts and write validation_report.json.
+Keep __pycache__ and *.pyc out of git.
+Leave all changes uncommitted for review.

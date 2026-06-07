@@ -1,0 +1,36 @@
+ Том в устройстве D имеет метку Rebecca
+ Серийный номер тома: F620-648D
+
+ Содержимое папки D:\ECOM_OS_V7_3C_GITHUB_IMPORT_STAGE_10804
+
+07.06.2026  11:42                 0 dir
+
+ Содержимое папки D:\ECOM_OS_V7_3C_GITHUB_IMPORT_STAGE_10804
+
+07.06.2026  11:42                 0 echo
+
+ Содержимое папки D:\ECOM_OS_V7_3C_GITHUB_IMPORT_STAGE_10804
+
+07.06.2026  11:42                 0 git
+
+ Содержимое папки D:\ECOM_OS_V7_3C_GITHUB_IMPORT_STAGE_10804
+
+07.06.2026  11:42                 0 if
+
+ Содержимое папки D:\ECOM_OS_V7_3C_GITHUB_IMPORT_STAGE_10804
+
+07.06.2026  11:42                 0 mkdir
+
+ Содержимое папки D:\ECOM_OS_V7_3C_GITHUB_IMPORT_STAGE_10804
+
+07.06.2026  11:42                 0 py
+
+ Содержимое папки D:\ECOM_OS_V7_3C_GITHUB_IMPORT_STAGE_10804
+
+07.06.2026  11:42                 0 set
+
+ Содержимое папки D:\ECOM_OS_V7_3C_GITHUB_IMPORT_STAGE_10804
+
+07.06.2026  11:42                 0 type
+               8 файлов              0 байт
+               0 папок  199 125 831 680 байт свободно

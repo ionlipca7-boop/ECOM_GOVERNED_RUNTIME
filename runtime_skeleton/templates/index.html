@@ -1,64 +1,98 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ECOM OS V7.3C - Local Control Panel</title>
-    <link rel="stylesheet" href="/static/style.css" />
+    <title>ECOM OS V7.3C Local Runtime Skeleton</title>
+    <link rel="stylesheet" href="../static/style.css" />
   </head>
   <body>
     <header class="topbar">
       <div>
-        <p class="eyebrow">Локальный runtime skeleton</p>
-        <h1>ECOM OS V7.3C - Local Control Panel</h1>
+        <p class="eyebrow">Local dashboard / runtime skeleton</p>
+        <h1>ECOM OS V7.3C Route Blocks</h1>
       </div>
-      <div id="validationBadge" class="badge">Проверка...</div>
+      <div id="validationBadge" class="badge">Validation</div>
     </header>
 
     <main class="layout">
       <aside class="sidebar">
         <div class="sidebar-head">
-          <h2>Маршруты Telegram</h2>
-          <button id="reloadButton" type="button">Обновить</button>
+          <div>
+            <p class="eyebrow">Eight independent route-blocks</p>
+            <h2>Routes</h2>
+          </div>
+          <button id="homeButton" type="button">Home</button>
         </div>
-        <nav id="routeButtons" class="route-buttons" aria-label="Маршруты"></nav>
+        <nav id="routeButtons" class="route-buttons" aria-label="ECOM OS V7.3C routes"></nav>
       </aside>
 
-      <section class="details" aria-live="polite">
-        <div class="details-head">
-          <div>
-            <p id="routeId" class="eyebrow">route_id</p>
-            <h2 id="routeButton">Выберите маршрут</h2>
+      <section class="workspace" aria-live="polite">
+        <section class="rules-band" aria-label="Global runtime rules">
+          <div id="globalRules" class="rule-grid"></div>
+        </section>
+
+        <section class="route-panel">
+          <div class="details-head">
+            <div>
+              <p id="routeId" class="eyebrow">route_id</p>
+              <h2 id="routeButton">Select a route</h2>
+            </div>
+            <div class="actions">
+              <button id="backButton" type="button">Back</button>
+              <button id="stopButton" type="button">Stop</button>
+            </div>
           </div>
-          <span id="callback" class="callback"></span>
-        </div>
 
-        <div class="summary-grid">
-          <section>
-            <h3>Роль</h3>
-            <p id="role">-</p>
-          </section>
-          <section>
-            <h3>Назначение</h3>
-            <p id="purpose">-</p>
-          </section>
-        </div>
+          <div class="summary-grid">
+            <section>
+              <h3>Status</h3>
+              <p id="routeStatus">-</p>
+            </section>
+            <section>
+              <h3>Purpose</h3>
+              <p id="purpose">-</p>
+            </section>
+            <section>
+              <h3>Safe Next Action</h3>
+              <p id="safeNextAction">-</p>
+            </section>
+          </div>
 
-        <div class="lists-grid">
-          <section><h3>Inputs</h3><ul id="inputs"></ul></section>
-          <section><h3>Outputs</h3><ul id="outputs"></ul></section>
-          <section><h3>Agents</h3><ul id="agents"></ul></section>
-          <section><h3>Blocks</h3><ul id="blocks"></ul></section>
-          <section><h3>Handoffs</h3><ul id="handoffs"></ul></section>
-          <section><h3>Rules</h3><ul id="rules"></ul></section>
-        </div>
+          <div class="facts-grid">
+            <section>
+              <h3>Callback</h3>
+              <p id="callback">-</p>
+            </section>
+            <section>
+              <h3>Role</h3>
+              <p id="role">-</p>
+            </section>
+            <section>
+              <h3>Contract</h3>
+              <p id="contractFile">-</p>
+            </section>
+          </div>
+
+          <div class="lists-grid">
+            <section><h3>Inputs</h3><ul id="inputs"></ul></section>
+            <section><h3>Outputs</h3><ul id="outputs"></ul></section>
+            <section><h3>Agents</h3><ul id="agents"></ul></section>
+            <section><h3>Blocks</h3><ul id="blocks"></ul></section>
+            <section><h3>Handoffs</h3><ul id="handoffs"></ul></section>
+            <section><h3>Rules</h3><ul id="rules"></ul></section>
+          </div>
+        </section>
       </section>
     </main>
 
     <footer>
-      <span id="meta">Контракты читаются локально из storage/contracts/v7_3c/</span>
+      <span id="meta">Generated locally from storage/contracts/v7_3c/</span>
     </footer>
 
-    <script src="/static/app.js"></script>
+    <script>
+      window.__DASHBOARD_PAYLOAD__ = $embedded_payload;
+    </script>
+    <script src="../static/app.js"></script>
   </body>
 </html>

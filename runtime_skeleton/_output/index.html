@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ECOM OS V7.3C Local Runtime Skeleton</title>
+    <link rel="stylesheet" href="../static/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Local dashboard / runtime skeleton</p>
+        <h1>ECOM OS V7.3C Route Blocks</h1>
+      </div>
+      <div id="validationBadge" class="badge">Validation</div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-head">
+          <div>
+            <p class="eyebrow">Eight independent route-blocks</p>
+            <h2>Routes</h2>
+          </div>
+          <button id="homeButton" type="button">Home</button>
+        </div>
+        <nav id="routeButtons" class="route-buttons" aria-label="ECOM OS V7.3C routes"></nav>
+      </aside>
+
+      <section class="workspace" aria-live="polite">
+        <section class="rules-band" aria-label="Global runtime rules">
+          <div id="globalRules" class="rule-grid"></div>
+        </section>
+
+        <section class="route-panel">
+          <div class="details-head">
+            <div>
+              <p id="routeId" class="eyebrow">route_id</p>
+              <h2 id="routeButton">Select a route</h2>
+            </div>
+            <div class="actions">
+              <button id="backButton" type="button">Back</button>
+              <button id="stopButton" type="button">Stop</button>
+            </div>
+          </div>
+
+          <div class="summary-grid">
+            <section>
+              <h3>Status</h3>
+              <p id="routeStatus">-</p>
+            </section>
+            <section>
+              <h3>Purpose</h3>
+              <p id="purpose">-</p>
+            </section>
+            <section>
+              <h3>Safe Next Action</h3>
+              <p id="safeNextAction">-</p>
+            </section>
+          </div>
+
+          <div class="facts-grid">
+            <section>
+              <h3>Callback</h3>
+              <p id="callback">-</p>
+            </section>
+            <section>
+              <h3>Role</h3>
+              <p id="role">-</p>
+            </section>
+            <section>
+              <h3>Contract</h3>
+              <p id="contractFile">-</p>
+            </section>
+          </div>
+
+          <div class="lists-grid">
+            <section><h3>Inputs</h3><ul id="inputs"></ul></section>
+            <section><h3>Outputs</h3><ul id="outputs"></ul></section>
+            <section><h3>Agents</h3><ul id="agents"></ul></section>
+            <section><h3>Blocks</h3><ul id="blocks"></ul></section>
+            <section><h3>Handoffs</h3><ul id="handoffs"></ul></section>
+            <section><h3>Rules</h3><ul id="rules"></ul></section>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <span id="meta">Generated locally from storage/contracts/v7_3c/</span>
+    </footer>
+
+    <script>
+      window.__DASHBOARD_PAYLOAD__ = {"version": "V7.3C", "status": "github_ready_contract_draft", "server_transfer": "paused", "source_paths": {"contracts": "storage/contracts/v7_3c", "archive": "storage/memory_v2/archive/V7_3C_FULL_8_BUTTON_ROUTE_ARCHIVE_20260606T163359Z.md"}, "archive": {"status": "loaded", "path": "storage/memory_v2/archive/V7_3C_FULL_8_BUTTON_ROUTE_ARCHIVE_20260606T163359Z.md", "line_count": 0, "headings": []}, "global_rules": [{"name": "Back", "rule": "Return to the previous route card or last safe decision point; do not mutate route state."}, {"name": "Home", "rule": "Return to the eight-route dashboard and keep all route blocks independent."}, {"name": "Stop", "rule": "Stop the local runtime flow immediately; no live action, restart, delete, Telegram patch, eBay action, commit, or push."}], "contract_rules": ["Ion-facing output is Russian", "Buyer-facing Germany marketplace content is German", "No live action without Route 07 exact approval gate", "No secrets in memory, Telegram or reports", "Route 05 is stock and money truth", "Route 08 is autonomous project memory"], "button_map": [{"text": "01 🆕 Новый товар", "callback_data": "v73c:r:01", "route_id": "route_01_new_product"}, {"text": "02 🧩 Товар с вариантами", "callback_data": "v73c:r:02", "route_id": "route_02_variant_product"}, {"text": "03 📝 Листинг-студия", "callback_data": "v73c:r:03", "route_id": "route_03_listing_studio"}, {"text": "04 🛒 Жизнь листингов", "callback_data": "v73c:r:04", "route_id": "route_04_marketplace_lifecycle"}, {"text": "05 📊 Финансы / склад", "callback_data": "v73c:r:05", "route_id": "route_05_finance_inventory"}, {"text": "06 🔎 Product Radar", "callback_data": "v73c:r:06", "route_id": "route_06_product_radar"}, {"text": "07 🧭 Решения / отчёты", "callback_data": "v73c:r:07", "route_id": "route_07_decision_center"}, {"text": "08 🧠 Память / учитель", "callback_data": "v73c:r:08", "route_id": "route_08_memory_teacher"}], "routes": [{"route_id": "route_01_new_product", "button": "01 New Product", "callback": "v73c:r:01", "role": "simple_product_listing", "purpose_ru": "Создать чистый пакет листинга для одного товара без вариантов.", "inputs": ["Ion link", "Ion photo", "Ion text", "receipt", "supplier source", "product idea"], "outputs": ["product_case", "listing_draft", "telegram_preview_ru", "handoff_record"], "agents": ["product_intake", "source_proof", "category", "title_de", "item_specifics", "description_de", "photo_critic", "price_cost_link", "html_shop_block", "compliance_guard", "final_gate", "handoff"], "blocks": ["missing_facts", "weak_photo_proof", "unsafe_category", "duplicate_risk", "missing_stock_cost", "missing_route07_approval"], "handoffs": ["route_03_listing_studio", "route_05_finance_inventory", "route_07_decision_center", "route_08_memory_teacher"], "rules": ["buyer_content_de", "ion_output_ru", "no_live_without_route07", "no_duplicate_listing"], "_contract_file": "routes/route_01_new_product.json", "raw_button": "01 🆕 Новый товар", "purpose": "Create a clean one-product listing package without variants.", "raw_purpose_ru": "Создать чистый пакет листинга для одного товара без вариантов.", "safe_next_action": "Collect product evidence, photos, cost, stock, and send the draft to Route 07 before any live action.", "status": "blocked_until_route_07_approval", "contract_file": "routes/route_01_new_product.json"}, {"route_id": "route_02_variant_product", "button": "02 Variant Product", "callback": "v73c:r:02", "role": "variant_listing", "purpose_ru": "Создать master product с динамическими вариантами, SKU, ценой, количеством и фото.", "inputs": ["product with variants", "variant photos", "cost per variant", "quantity per variant"], "outputs": ["variant_matrix", "per_sku_plan", "group_preview_card_ru", "handoff_record"], "agents": ["variant_intake", "variant_matrix", "sku_mapper", "variant_stock_link", "variant_price", "variant_photo_critic", "group_description_de", "html_shop_block", "duplicate_guard", "compliance_guard", "final_gate", "handoff"], "blocks": ["missing_sku", "unclear_variants", "missing_variant_photo", "stock_mismatch", "missing_route07_approval"], "handoffs": ["route_03_listing_studio", "route_05_finance_inventory", "route_07_decision_center", "route_08_memory_teacher"], "rules": ["variant_count_dynamic", "each_variant_has_sku_quantity_price_photo", "buyer_content_de", "ion_output_ru"], "_contract_file": "routes/route_02_variant_product.json", "raw_button": "02 🧩 Товар с вариантами", "purpose": "Build a master product with variant SKUs, quantities, prices, and photos.", "raw_purpose_ru": "Создать master product с динамическими вариантами, SKU, ценой, количеством и фото.", "safe_next_action": "Confirm the variant matrix and stock per SKU, then hand approval to Route 07.", "status": "blocked_until_route_07_approval", "contract_file": "routes/route_02_variant_product.json"}, {"route_id": "route_03_listing_studio", "button": "03 Listing Studio", "callback": "v73c:r:03", "role": "listing_experiment", "purpose_ru": "Улучшать listing angle через A/B/C эксперименты без создания клонов.", "inputs": ["source_package", "existing_listing_ref", "draft_ref", "weak_listing_signal", "product_opportunity"], "outputs": ["experiment_A", "experiment_B", "experiment_C", "comparison_report", "approval_packet", "lesson_record"], "agents": ["source_loader", "studio_planner", "external_search_agent", "marketplace_buyer_agent", "ai_search_agent", "german_language", "html_shop_block", "photo_order_critic", "duplicate_guard", "compliance_guard", "comparison", "approval_packet", "lesson"], "blocks": ["same_buyer_intent_clone", "missing_source_package", "missing_stock_finance_link", "mixed_language", "missing_route07_approval"], "handoffs": ["route_01_new_product", "route_02_variant_product", "route_04_marketplace_lifecycle", "route_05_finance_inventory", "route_07_decision_center", "route_08_memory_teacher"], "rules": ["not_clone_machine", "html_links_checked", "after_check_note", "buyer_content_de", "ion_output_ru"], "_contract_file": "routes/route_03_listing_studio.json", "raw_button": "03 📝 Листинг-студия", "purpose": "Improve listing angles through A/B/C drafts without creating duplicate buyer-intent clones.", "raw_purpose_ru": "Улучшать listing angle через A/B/C эксперименты без создания клонов.", "safe_next_action": "Compare draft options, keep the evidence read-only, and request Route 07 approval for the selected path.", "status": "blocked_until_route_07_approval", "contract_file": "routes/route_03_listing_studio.json"}, {"route_id": "route_04_marketplace_lifecycle", "button": "04 Marketplace Lifecycle", "callback": "v73c:r:04", "role": "listing_lifecycle", "purpose_ru": "Наблюдать жизнь листингов и показывать Иону только полезные сигналы.", "inputs": ["live_listing_ref", "snapshot", "performance_note", "route_refs"], "outputs": ["state_label", "ion_attention_card_ru", "route_handoff", "lesson_record"], "agents": ["registry", "snapshot", "state_label", "ion_card", "improve_link", "stock_link", "money_link", "recommendation", "handoff", "lesson"], "blocks": ["missing_listing_ref", "missing_sku", "unclear_state", "no_data_source"], "handoffs": ["route_03_listing_studio", "route_05_finance_inventory", "route_07_decision_center", "route_08_memory_teacher"], "rules": ["good_silent", "medium_summary", "weak_attention_card", "no_live_action"], "_contract_file": "routes/route_04_marketplace_lifecycle.json", "raw_button": "04 🛒 Жизнь листингов", "purpose": "Watch listing health and surface only useful attention signals.", "raw_purpose_ru": "Наблюдать жизнь листингов и показывать Иону только полезные сигналы.", "safe_next_action": "Label the listing state, prepare a non-live recommendation, and route decisions through Route 07.", "status": "guarded_by_contract_blocks", "contract_file": "routes/route_04_marketplace_lifecycle.json"}, {"route_id": "route_05_finance_inventory", "button": "05 Finance / Inventory", "callback": "v73c:r:05", "role": "stock_money_truth", "purpose_ru": "Единая правда по складу и деньгам.", "inputs": ["receipts", "supplier_costs", "stock_counts", "normalized_site_records", "route_refs"], "outputs": ["stock_item", "cost_view", "result_view", "stock_card_ru", "report_view_ru", "handoff_record"], "agents": ["purchase_intake", "site_collector", "stock_ledger", "variant_stock", "return_agent", "cost_view", "result_view", "stock_alert", "reorder_view", "report_view", "tax_summary", "handoff"], "blocks": ["missing_sku", "missing_cost", "stock_mismatch", "source_conflict", "unsafe_overwrite"], "handoffs": ["route_03_listing_studio", "route_04_marketplace_lifecycle", "route_06_product_radar", "route_07_decision_center", "route_08_memory_teacher"], "rules": ["one_sku_one_stock_truth", "sale_anywhere_reduces_shared_stock_pool", "other_routes_do_not_overwrite"], "_contract_file": "routes/route_05_finance_inventory.json", "raw_button": "05 📊 Финансы / склад", "purpose": "Maintain the single source of truth for stock, cost, money, and SKU state.", "raw_purpose_ru": "Единая правда по складу и деньгам.", "safe_next_action": "Verify receipts, costs, stock counts, and conflicts before allowing any other route to depend on the data.", "status": "guarded_by_contract_blocks", "contract_file": "routes/route_05_finance_inventory.json"}, {"route_id": "route_06_product_radar", "button": "06 Product Radar", "callback": "v73c:r:06", "role": "product_research", "purpose_ru": "Оценить товар до покупки и листинга.", "inputs": ["Ion idea", "link", "screenshot", "supplier source", "route signal"], "outputs": ["query_plan", "supplier_proof_card", "demand_note", "compare_note", "risk_card", "ion_decision_card_ru", "lesson_record"], "agents": ["intake", "query_planner", "demand_review", "market_compare", "supplier_proof", "margin_risk", "safety_fit", "offer_structure", "ion_card", "lesson"], "blocks": ["no_source_notes", "no_query_plan", "weak_evidence", "bad_margin", "high_risk", "missing_ion_decision"], "handoffs": ["route_01_new_product", "route_02_variant_product", "route_03_listing_studio", "route_05_finance_inventory", "route_07_decision_center", "route_08_memory_teacher"], "rules": ["supplier_page_is_evidence_not_truth", "competitor_analysis_readonly", "route06_recommends_ion_decides"], "_contract_file": "routes/route_06_product_radar.json", "raw_button": "06 🔎 Product Radar", "purpose": "Evaluate product ideas before purchase or listing.", "raw_purpose_ru": "Оценить товар до покупки и листинга.", "safe_next_action": "Build a read-only research card with evidence, risk, margin, and an Ion decision request.", "status": "guarded_by_contract_blocks", "contract_file": "routes/route_06_product_radar.json"}, {"route_id": "route_07_decision_center", "button": "07 Decision Center", "callback": "v73c:r:07", "role": "decision_report_gate", "purpose_ru": "Центр решений Иона: approvals, reports, blocked cases, waiting decisions.", "inputs": ["decision_case_from_any_route"], "outputs": ["short_ion_card_ru", "approval_marker", "decision_log", "handoff_record", "waiting_state"], "agents": ["inbox", "classify", "risk", "card", "buttons", "marker", "log", "handoff", "wait_list", "safety"], "blocks": ["unclear_action", "missing_exact_marker", "hidden_live_action", "stale_card_state", "secret_exposure_risk"], "handoffs": ["source_route", "route_08_memory_teacher"], "rules": ["short_callbacks", "full_payload_outside_button", "no_hidden_live_action", "old_buttons_disabled_after_decision"], "_contract_file": "routes/route_07_decision_center.json", "raw_button": "07 🧭 Решения / отчёты", "purpose": "Hold approvals, reports, blocked cases, waiting decisions, and exact action gates.", "raw_purpose_ru": "Центр решений Иона: approvals, reports, blocked cases, waiting decisions.", "safe_next_action": "Show the shortest safe decision card and record the exact approval or block marker.", "status": "guarded_by_contract_blocks", "contract_file": "routes/route_07_decision_center.json"}, {"route_id": "route_08_memory_teacher", "button": "08 Memory / Teacher", "callback": "v73c:r:08", "role": "autonomous_memory_teacher", "purpose_ru": "Автономная память проекта: lessons, rules, archive, pointer, teacher, evidence, safety.", "inputs": ["lesson", "rule", "archive_ref", "conflict", "evidence_ref"], "outputs": ["lesson_record", "rule_record", "archive_index", "pointer_request", "teacher_summary_ru", "version_record", "safety_note"], "agents": ["lesson_intake", "rule_registry", "archivist", "pointer", "conflict_resolver", "teacher", "operator_front", "version", "evidence", "safety_memory"], "blocks": ["missing_source_route", "no_evidence_for_factual_lesson", "rule_conflict_without_ion_decision", "secret_in_memory"], "handoffs": ["route_07_decision_center", "all_routes"], "rules": ["project_memory_autonomous", "operator_front_helper_only", "stable_to_memory_dynamic_to_pointer", "no_false_pass"], "_contract_file": "routes/route_08_memory_teacher.json", "raw_button": "08 🧠 Память / учитель", "purpose": "Maintain autonomous project memory: lessons, rules, archive pointers, evidence, and safety.", "raw_purpose_ru": "Автономная память проекта: lessons, rules, archive, pointer, teacher, evidence, safety.", "safe_next_action": "Store only evidence-backed lessons and route conflicts back to Route 07 for Ion decisions.", "status": "guarded_by_contract_blocks", "contract_file": "routes/route_08_memory_teacher.json"}], "validation": {"status": "PASS", "file_count": 20, "json_count": 18, "route_count": 8, "missing": [], "warnings": [], "checked_utc": "2026-06-07T11:34:51.818851+00:00"}};
+    </script>
+    <script src="../static/app.js"></script>
+  </body>
+</html>
