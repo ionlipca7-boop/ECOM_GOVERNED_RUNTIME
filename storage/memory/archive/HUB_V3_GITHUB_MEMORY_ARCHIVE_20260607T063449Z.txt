@@ -1,0 +1,42 @@
+# V7.3C Codex Runtime Skeleton Prompt Plan
+
+Status: SAVED
+Mode: GITHUB_MEMORY_ONLY
+
+## Goal
+
+Create a prompt for Codex to build a local runtime skeleton from the V7.3C contracts.
+
+## Current source
+
+Branch:
+v7-3c-contracts-4806e6c
+
+Commit:
+4806e6c
+
+Contracts path:
+storage/contracts/v7_3c/
+
+## Runtime direction
+
+Local Windows browser dashboard first.
+Open with localhost.
+Show 8 route buttons.
+Load route cards from contracts.
+Validate JSON contracts.
+Create handoff and decision case skeleton modules.
+Create local output reports.
+
+## Safety
+
+No server write.
+No active patch.
+No restart.
+No marketplace API.
+No eBay live action.
+No secrets.
+
+## Next
+
+Ion runs Codex with generated prompt in the clean local workspace.
