@@ -1,0 +1,15 @@
+{
+  "version": "V7.3C",
+  "main_route_pattern": "v73c:r:<route_number>",
+  "decision_patterns": {
+    "approve": "r7:a:<id>",
+    "back_or_block": "r7:b:<id>",
+    "open": "r7:o:<id>",
+    "reject_or_close": "r7:x:<id>"
+  },
+  "rules": [
+    "callback_data carries key only",
+    "full case data stays in storage",
+    "old decision controls must not remain active after Ion chooses"
+  ]
+}

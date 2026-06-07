@@ -1,0 +1,59 @@
+{
+  "route_id": "route_03_listing_studio",
+  "button": "03 📝 Листинг-студия",
+  "callback": "v73c:r:03",
+  "role": "listing_experiment",
+  "purpose_ru": "Улучшать listing angle через A/B/C эксперименты без создания клонов.",
+  "inputs": [
+    "source_package",
+    "existing_listing_ref",
+    "draft_ref",
+    "weak_listing_signal",
+    "product_opportunity"
+  ],
+  "outputs": [
+    "experiment_A",
+    "experiment_B",
+    "experiment_C",
+    "comparison_report",
+    "approval_packet",
+    "lesson_record"
+  ],
+  "agents": [
+    "source_loader",
+    "studio_planner",
+    "external_search_agent",
+    "marketplace_buyer_agent",
+    "ai_search_agent",
+    "german_language",
+    "html_shop_block",
+    "photo_order_critic",
+    "duplicate_guard",
+    "compliance_guard",
+    "comparison",
+    "approval_packet",
+    "lesson"
+  ],
+  "blocks": [
+    "same_buyer_intent_clone",
+    "missing_source_package",
+    "missing_stock_finance_link",
+    "mixed_language",
+    "missing_route07_approval"
+  ],
+  "handoffs": [
+    "route_01_new_product",
+    "route_02_variant_product",
+    "route_04_marketplace_lifecycle",
+    "route_05_finance_inventory",
+    "route_07_decision_center",
+    "route_08_memory_teacher"
+  ],
+  "rules": [
+    "not_clone_machine",
+    "html_links_checked",
+    "after_check_note",
+    "buyer_content_de",
+    "ion_output_ru"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "route_id": "route_02_variant_product",
+  "button": "02 🧩 Товар с вариантами",
+  "callback": "v73c:r:02",
+  "role": "variant_listing",
+  "purpose_ru": "Создать master product с динамическими вариантами, SKU, ценой, количеством и фото.",
+  "inputs": [
+    "product with variants",
+    "variant photos",
+    "cost per variant",
+    "quantity per variant"
+  ],
+  "outputs": [
+    "variant_matrix",
+    "per_sku_plan",
+    "group_preview_card_ru",
+    "handoff_record"
+  ],
+  "agents": [
+    "variant_intake",
+    "variant_matrix",
+    "sku_mapper",
+    "variant_stock_link",
+    "variant_price",
+    "variant_photo_critic",
+    "group_description_de",
+    "html_shop_block",
+    "duplicate_guard",
+    "compliance_guard",
+    "final_gate",
+    "handoff"
+  ],
+  "blocks": [
+    "missing_sku",
+    "unclear_variants",
+    "missing_variant_photo",
+    "stock_mismatch",
+    "missing_route07_approval"
+  ],
+  "handoffs": [
+    "route_03_listing_studio",
+    "route_05_finance_inventory",
+    "route_07_decision_center",
+    "route_08_memory_teacher"
+  ],
+  "rules": [
+    "variant_count_dynamic",
+    "each_variant_has_sku_quantity_price_photo",
+    "buyer_content_de",
+    "ion_output_ru"
+  ]
+}

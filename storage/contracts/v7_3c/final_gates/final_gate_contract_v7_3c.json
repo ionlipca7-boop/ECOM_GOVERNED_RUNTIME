@@ -1,0 +1,23 @@
+{
+  "version": "V7.3C",
+  "required_before_future_live_path": [
+    "route_approval_state",
+    "exact_ion_marker",
+    "product_id",
+    "SKU",
+    "category",
+    "policy_ids",
+    "location",
+    "price",
+    "quantity",
+    "stock_pool",
+    "photos",
+    "German_content",
+    "item_fields",
+    "safety_data",
+    "auth_state",
+    "adapter_type"
+  ],
+  "fail_action": "STOP and create Route 07 decision card",
+  "github_stage_rule": "No live action in GitHub draft stage"
+}

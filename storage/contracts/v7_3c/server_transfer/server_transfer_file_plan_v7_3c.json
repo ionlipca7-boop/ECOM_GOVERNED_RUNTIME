@@ -1,0 +1,19 @@
+{
+  "version": "V7.3C",
+  "server_transfer": "paused",
+  "future_mapping": {
+    "storage/contracts/v7_3c": "storage/contracts",
+    "telegram_button_map_v7_3c.json": "storage/telegram",
+    "route_registry_v7_3c.json": "storage/runtime_routes",
+    "validators": "storage/validators",
+    "memory contracts": "storage/memory_v2 and storage/control_room",
+    "marketplace adapters": "storage/marketplace_adapters"
+  },
+  "quarantine_rule": "Old/unclear server logic is reference/quarantine before future patch",
+  "no_actions_now": [
+    "server_write",
+    "active_patch",
+    "restart",
+    "marketplace_api_call"
+  ]
+}

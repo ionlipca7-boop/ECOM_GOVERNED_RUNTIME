@@ -1,0 +1,46 @@
+{
+  "route_id": "route_07_decision_center",
+  "button": "07 🧭 Решения / отчёты",
+  "callback": "v73c:r:07",
+  "role": "decision_report_gate",
+  "purpose_ru": "Центр решений Иона: approvals, reports, blocked cases, waiting decisions.",
+  "inputs": [
+    "decision_case_from_any_route"
+  ],
+  "outputs": [
+    "short_ion_card_ru",
+    "approval_marker",
+    "decision_log",
+    "handoff_record",
+    "waiting_state"
+  ],
+  "agents": [
+    "inbox",
+    "classify",
+    "risk",
+    "card",
+    "buttons",
+    "marker",
+    "log",
+    "handoff",
+    "wait_list",
+    "safety"
+  ],
+  "blocks": [
+    "unclear_action",
+    "missing_exact_marker",
+    "hidden_live_action",
+    "stale_card_state",
+    "secret_exposure_risk"
+  ],
+  "handoffs": [
+    "source_route",
+    "route_08_memory_teacher"
+  ],
+  "rules": [
+    "short_callbacks",
+    "full_payload_outside_button",
+    "no_hidden_live_action",
+    "old_buttons_disabled_after_decision"
+  ]
+}

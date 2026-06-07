@@ -1,0 +1,49 @@
+{
+  "route_id": "route_04_marketplace_lifecycle",
+  "button": "04 🛒 Жизнь листингов",
+  "callback": "v73c:r:04",
+  "role": "listing_lifecycle",
+  "purpose_ru": "Наблюдать жизнь листингов и показывать Иону только полезные сигналы.",
+  "inputs": [
+    "live_listing_ref",
+    "snapshot",
+    "performance_note",
+    "route_refs"
+  ],
+  "outputs": [
+    "state_label",
+    "ion_attention_card_ru",
+    "route_handoff",
+    "lesson_record"
+  ],
+  "agents": [
+    "registry",
+    "snapshot",
+    "state_label",
+    "ion_card",
+    "improve_link",
+    "stock_link",
+    "money_link",
+    "recommendation",
+    "handoff",
+    "lesson"
+  ],
+  "blocks": [
+    "missing_listing_ref",
+    "missing_sku",
+    "unclear_state",
+    "no_data_source"
+  ],
+  "handoffs": [
+    "route_03_listing_studio",
+    "route_05_finance_inventory",
+    "route_07_decision_center",
+    "route_08_memory_teacher"
+  ],
+  "rules": [
+    "good_silent",
+    "medium_summary",
+    "weak_attention_card",
+    "no_live_action"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "handoff_id": "string",
+  "from_route": "string",
+  "to_route": "string",
+  "case_id": "string",
+  "product_id": "string|null",
+  "sku": "string|null",
+  "listing_id": "string|null",
+  "reason_ru": "string",
+  "payload_ref": "string",
+  "risk_level": "low|medium|high|blocked",
+  "status": "open|waiting|done|blocked"
+}

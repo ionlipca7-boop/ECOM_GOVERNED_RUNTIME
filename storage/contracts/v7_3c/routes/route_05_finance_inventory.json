@@ -1,0 +1,55 @@
+{
+  "route_id": "route_05_finance_inventory",
+  "button": "05 📊 Финансы / склад",
+  "callback": "v73c:r:05",
+  "role": "stock_money_truth",
+  "purpose_ru": "Единая правда по складу и деньгам.",
+  "inputs": [
+    "receipts",
+    "supplier_costs",
+    "stock_counts",
+    "normalized_site_records",
+    "route_refs"
+  ],
+  "outputs": [
+    "stock_item",
+    "cost_view",
+    "result_view",
+    "stock_card_ru",
+    "report_view_ru",
+    "handoff_record"
+  ],
+  "agents": [
+    "purchase_intake",
+    "site_collector",
+    "stock_ledger",
+    "variant_stock",
+    "return_agent",
+    "cost_view",
+    "result_view",
+    "stock_alert",
+    "reorder_view",
+    "report_view",
+    "tax_summary",
+    "handoff"
+  ],
+  "blocks": [
+    "missing_sku",
+    "missing_cost",
+    "stock_mismatch",
+    "source_conflict",
+    "unsafe_overwrite"
+  ],
+  "handoffs": [
+    "route_03_listing_studio",
+    "route_04_marketplace_lifecycle",
+    "route_06_product_radar",
+    "route_07_decision_center",
+    "route_08_memory_teacher"
+  ],
+  "rules": [
+    "one_sku_one_stock_truth",
+    "sale_anywhere_reduces_shared_stock_pool",
+    "other_routes_do_not_overwrite"
+  ]
+}

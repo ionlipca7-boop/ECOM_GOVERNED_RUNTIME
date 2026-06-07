@@ -1,0 +1,55 @@
+{
+  "route_id": "route_01_new_product",
+  "button": "01 🆕 Новый товар",
+  "callback": "v73c:r:01",
+  "role": "simple_product_listing",
+  "purpose_ru": "Создать чистый пакет листинга для одного товара без вариантов.",
+  "inputs": [
+    "Ion link",
+    "Ion photo",
+    "Ion text",
+    "receipt",
+    "supplier source",
+    "product idea"
+  ],
+  "outputs": [
+    "product_case",
+    "listing_draft",
+    "telegram_preview_ru",
+    "handoff_record"
+  ],
+  "agents": [
+    "product_intake",
+    "source_proof",
+    "category",
+    "title_de",
+    "item_specifics",
+    "description_de",
+    "photo_critic",
+    "price_cost_link",
+    "html_shop_block",
+    "compliance_guard",
+    "final_gate",
+    "handoff"
+  ],
+  "blocks": [
+    "missing_facts",
+    "weak_photo_proof",
+    "unsafe_category",
+    "duplicate_risk",
+    "missing_stock_cost",
+    "missing_route07_approval"
+  ],
+  "handoffs": [
+    "route_03_listing_studio",
+    "route_05_finance_inventory",
+    "route_07_decision_center",
+    "route_08_memory_teacher"
+  ],
+  "rules": [
+    "buyer_content_de",
+    "ion_output_ru",
+    "no_live_without_route07",
+    "no_duplicate_listing"
+  ]
+}

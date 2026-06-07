@@ -1,0 +1,10 @@
+{
+  "record_id": "string",
+  "source_route": "string",
+  "lesson_type": "rule|lesson|safety|version|evidence",
+  "rule_text": "string",
+  "evidence_ref": "string|null",
+  "stable_or_dynamic": "stable|dynamic",
+  "created_utc": "string",
+  "version": "V7.3C"
+}

@@ -1,0 +1,12 @@
+{
+  "case_id": "string",
+  "source_route": "string",
+  "case_type": "approve|wait|info|block|repair|done",
+  "summary_ru": "string",
+  "required_decision": "string",
+  "button_plan": [
+    "callback_key"
+  ],
+  "full_ref": "string",
+  "state": "open|wait|yes|no|block|done"
+}

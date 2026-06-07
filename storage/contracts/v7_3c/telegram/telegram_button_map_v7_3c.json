@@ -1,0 +1,50 @@
+{
+  "version": "V7.3C",
+  "main_menu": [
+    {
+      "text": "01 🆕 Новый товар",
+      "callback_data": "v73c:r:01",
+      "route_id": "route_01_new_product"
+    },
+    {
+      "text": "02 🧩 Товар с вариантами",
+      "callback_data": "v73c:r:02",
+      "route_id": "route_02_variant_product"
+    },
+    {
+      "text": "03 📝 Листинг-студия",
+      "callback_data": "v73c:r:03",
+      "route_id": "route_03_listing_studio"
+    },
+    {
+      "text": "04 🛒 Жизнь листингов",
+      "callback_data": "v73c:r:04",
+      "route_id": "route_04_marketplace_lifecycle"
+    },
+    {
+      "text": "05 📊 Финансы / склад",
+      "callback_data": "v73c:r:05",
+      "route_id": "route_05_finance_inventory"
+    },
+    {
+      "text": "06 🔎 Product Radar",
+      "callback_data": "v73c:r:06",
+      "route_id": "route_06_product_radar"
+    },
+    {
+      "text": "07 🧭 Решения / отчёты",
+      "callback_data": "v73c:r:07",
+      "route_id": "route_07_decision_center"
+    },
+    {
+      "text": "08 🧠 Память / учитель",
+      "callback_data": "v73c:r:08",
+      "route_id": "route_08_memory_teacher"
+    }
+  ],
+  "callback_rules": [
+    "Main callbacks must stay short",
+    "Full payload stays in case storage",
+    "Route 07 decision callbacks use short key only, e.g. r7:a:<id>"
+  ]
+}

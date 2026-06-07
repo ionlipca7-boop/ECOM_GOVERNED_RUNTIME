@@ -1,0 +1,27 @@
+{
+  "agent_id": "string",
+  "route_id": "string",
+  "display_name_ru": "string",
+  "purpose_ru": "string",
+  "owns_state": "boolean",
+  "inputs": [
+    "string"
+  ],
+  "outputs": [
+    "string"
+  ],
+  "rules": [
+    "string"
+  ],
+  "blocks": [
+    "string"
+  ],
+  "handoffs": [
+    "route_id"
+  ],
+  "telegram_ru_output": "boolean",
+  "buyer_language_rule": "de_for_germany_when_buyer_facing",
+  "safety_notes": [
+    "string"
+  ]
+}

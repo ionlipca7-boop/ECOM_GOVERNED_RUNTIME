@@ -1,0 +1,51 @@
+{
+  "route_id": "route_08_memory_teacher",
+  "button": "08 🧠 Память / учитель",
+  "callback": "v73c:r:08",
+  "role": "autonomous_memory_teacher",
+  "purpose_ru": "Автономная память проекта: lessons, rules, archive, pointer, teacher, evidence, safety.",
+  "inputs": [
+    "lesson",
+    "rule",
+    "archive_ref",
+    "conflict",
+    "evidence_ref"
+  ],
+  "outputs": [
+    "lesson_record",
+    "rule_record",
+    "archive_index",
+    "pointer_request",
+    "teacher_summary_ru",
+    "version_record",
+    "safety_note"
+  ],
+  "agents": [
+    "lesson_intake",
+    "rule_registry",
+    "archivist",
+    "pointer",
+    "conflict_resolver",
+    "teacher",
+    "operator_front",
+    "version",
+    "evidence",
+    "safety_memory"
+  ],
+  "blocks": [
+    "missing_source_route",
+    "no_evidence_for_factual_lesson",
+    "rule_conflict_without_ion_decision",
+    "secret_in_memory"
+  ],
+  "handoffs": [
+    "route_07_decision_center",
+    "all_routes"
+  ],
+  "rules": [
+    "project_memory_autonomous",
+    "operator_front_helper_only",
+    "stable_to_memory_dynamic_to_pointer",
+    "no_false_pass"
+  ]
+}

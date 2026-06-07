@@ -1,0 +1,30 @@
+{
+  "version": "V7.3C",
+  "validators": {
+    "language_validator": [
+      "Ion output Russian",
+      "Buyer Germany content German"
+    ],
+    "source_truth_validator": [
+      "Source pages are evidence, not final truth"
+    ],
+    "photo_validator": [
+      "Ion provides/approves final photos",
+      "Agents check order/proof/language"
+    ],
+    "duplicate_validator": [
+      "Same product and same buyer intent must not create clone"
+    ],
+    "stock_money_validator": [
+      "Route 05 is stock and money truth"
+    ],
+    "telegram_validator": [
+      "Cards are short",
+      "Button callback carries key only"
+    ],
+    "memory_validator": [
+      "Stable lessons go to memory",
+      "Dynamic state goes to pointer"
+    ]
+  }
+}

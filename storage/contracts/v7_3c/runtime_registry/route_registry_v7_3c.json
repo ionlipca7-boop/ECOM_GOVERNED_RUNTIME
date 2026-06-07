@@ -1,0 +1,71 @@
+{
+  "version": "V7.3C",
+  "status": "github_ready_contract_draft",
+  "server_transfer": "paused",
+  "routes": [
+    {
+      "route_id": "route_01_new_product",
+      "button": "01 🆕 Новый товар",
+      "callback": "v73c:r:01",
+      "role": "simple_product_listing",
+      "contract_file": "routes/route_01_new_product.json"
+    },
+    {
+      "route_id": "route_02_variant_product",
+      "button": "02 🧩 Товар с вариантами",
+      "callback": "v73c:r:02",
+      "role": "variant_listing",
+      "contract_file": "routes/route_02_variant_product.json"
+    },
+    {
+      "route_id": "route_03_listing_studio",
+      "button": "03 📝 Листинг-студия",
+      "callback": "v73c:r:03",
+      "role": "listing_experiment",
+      "contract_file": "routes/route_03_listing_studio.json"
+    },
+    {
+      "route_id": "route_04_marketplace_lifecycle",
+      "button": "04 🛒 Жизнь листингов",
+      "callback": "v73c:r:04",
+      "role": "listing_lifecycle",
+      "contract_file": "routes/route_04_marketplace_lifecycle.json"
+    },
+    {
+      "route_id": "route_05_finance_inventory",
+      "button": "05 📊 Финансы / склад",
+      "callback": "v73c:r:05",
+      "role": "stock_money_truth",
+      "contract_file": "routes/route_05_finance_inventory.json"
+    },
+    {
+      "route_id": "route_06_product_radar",
+      "button": "06 🔎 Product Radar",
+      "callback": "v73c:r:06",
+      "role": "product_research",
+      "contract_file": "routes/route_06_product_radar.json"
+    },
+    {
+      "route_id": "route_07_decision_center",
+      "button": "07 🧭 Решения / отчёты",
+      "callback": "v73c:r:07",
+      "role": "decision_report_gate",
+      "contract_file": "routes/route_07_decision_center.json"
+    },
+    {
+      "route_id": "route_08_memory_teacher",
+      "button": "08 🧠 Память / учитель",
+      "callback": "v73c:r:08",
+      "role": "autonomous_memory_teacher",
+      "contract_file": "routes/route_08_memory_teacher.json"
+    }
+  ],
+  "global_rules": [
+    "Ion-facing output is Russian",
+    "Buyer-facing Germany marketplace content is German",
+    "No live action without Route 07 exact approval gate",
+    "No secrets in memory, Telegram or reports",
+    "Route 05 is stock and money truth",
+    "Route 08 is autonomous project memory"
+  ]
+}

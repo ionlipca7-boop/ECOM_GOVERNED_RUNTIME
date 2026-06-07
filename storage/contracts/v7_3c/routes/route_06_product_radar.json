@@ -1,0 +1,56 @@
+{
+  "route_id": "route_06_product_radar",
+  "button": "06 🔎 Product Radar",
+  "callback": "v73c:r:06",
+  "role": "product_research",
+  "purpose_ru": "Оценить товар до покупки и листинга.",
+  "inputs": [
+    "Ion idea",
+    "link",
+    "screenshot",
+    "supplier source",
+    "route signal"
+  ],
+  "outputs": [
+    "query_plan",
+    "supplier_proof_card",
+    "demand_note",
+    "compare_note",
+    "risk_card",
+    "ion_decision_card_ru",
+    "lesson_record"
+  ],
+  "agents": [
+    "intake",
+    "query_planner",
+    "demand_review",
+    "market_compare",
+    "supplier_proof",
+    "margin_risk",
+    "safety_fit",
+    "offer_structure",
+    "ion_card",
+    "lesson"
+  ],
+  "blocks": [
+    "no_source_notes",
+    "no_query_plan",
+    "weak_evidence",
+    "bad_margin",
+    "high_risk",
+    "missing_ion_decision"
+  ],
+  "handoffs": [
+    "route_01_new_product",
+    "route_02_variant_product",
+    "route_03_listing_studio",
+    "route_05_finance_inventory",
+    "route_07_decision_center",
+    "route_08_memory_teacher"
+  ],
+  "rules": [
+    "supplier_page_is_evidence_not_truth",
+    "competitor_analysis_readonly",
+    "route06_recommends_ion_decides"
+  ]
+}
