@@ -1,0 +1,129 @@
+ION / E1 — V7.3C CHECKPOINT AFTER BROWSER UI V3 PASS
+
+Date: 2026-06-07
+Operator: Ion
+Mode: LOCAL_DRY / no live
+
+PROJECT ROOT
+D:\ECOM_OS_V7_3C_GITHUB_IMPORT_STAGE_10804
+
+BRANCH
+v7-3c-contracts-4806e6c
+
+CONFIRMED STATUS
+1. Full Agent Registry V2 Reviewed = PASS
+   - target roles: 135
+   - passport files: 138
+   - JSON parse: PASS
+   - no server/eBay/Telegram live action
+   - no commit / no push
+
+2. Company Operating Model V2 Reviewed = PASS
+   - departments: 13
+   - operating modes: 5
+   - implementation stages: 12
+   - eBay first adapter; Amazon/Kaufland/Otto/Etsy planned
+   - Windows Local = main office / heavy processing
+   - Server = lightweight bridge/runtime later
+   - Telegram = notification + approval panel
+   - GitHub = memory/source of truth
+
+3. Browser Operator UI V3 Pro Workspace = PASS
+   - 8 routes visible with badges
+   - Home Command Center exists
+   - Top command bar exists
+   - Left route navigation exists
+   - Center route-specific workspace exists
+   - Common actions appear once in right rail
+   - Bottom audit/log/validation panel exists
+   - Agent chain panel and workflow strip per route exist
+   - Route-specific actions for all 8 routes exist
+   - Route 04 lifecycle panel exists
+   - Route 07 decision queue exists
+   - Route 08 memory/teacher panel exists
+   - Telegram preview/alignment card exists
+   - Dangerous actions locked 4/4
+   - Russian-first visible UI PASS
+   - Browser console errors: none
+
+SCREENSHOT OBSERVATION
+Ion visually checked Browser UI V3. Result: much better than previous repeated-button dashboard. Menu looks good, but some buttons are still not finished / not active. Next work should continue UI functionality, not just visual layout.
+
+IMPORTANT DISCUSSION / DECISION
+Telegram should be mostly an information + approval panel, not the main workspace.
+Telegram roles:
+- notifications
+- Product Radar alerts
+- 3/5/7/14 day listing warnings
+- sold/return/customer/delivery alerts
+- Teacher proposals
+- urgent approve/reject/stop/later decisions
+- optional quick media intake, but not permanent storage
+
+Browser/local app roles:
+- full work with URL/photo/receipt
+- full reports/tables
+- listing creation
+- dry tests
+- agent chains
+- detailed cards
+- export package
+
+Telegram media rule:
+- Telegram can receive photos/files/receipt, but must not be permanent storage.
+- Bot should quickly download file_id into controlled temp/case storage.
+- If media not downloaded in time, case status should become MEDIA_DOWNLOAD_EXPIRED.
+
+NEXT ALLOWED ACTION
+POST_CODEX_STAGE_REVIEW_BROWSER_UI_V3_AND_FULL_WORKTREE
+
+NEXT CHAT FRONT
+ION / E1 — CONTINUE V7.3C AFTER BROWSER UI V3 PASS
+
+Отвечай по-русски, коротко, строго A/B/C/D/FINISH/STOP.
+
+Project root:
+D:\ECOM_OS_V7_3C_GITHUB_IMPORT_STAGE_10804
+
+Branch:
+v7-3c-contracts-4806e6c
+
+Confirmed current status:
+- Full Agent Registry V2 Reviewed = PASS
+- 135 target agent roles / 138 passport files
+- Company Operating Model V2 Reviewed = PASS
+- Browser Operator UI V3 Pro Workspace = PASS
+- Dashboard HTTP PASS
+- 8 routes visible
+- Route-specific actions PASS
+- common right rail PASS
+- dangerous actions locked PASS
+- no server_import modification
+- no secrets printed
+- no live action
+- no commit
+- no push
+
+Known issue / next UI work:
+- Browser UI visual structure is good.
+- Some buttons are still not finished / not active.
+- Need to continue with post-Codex stage review and then UI functionality wiring plan.
+
+Next allowed action:
+POST_CODEX_STAGE_REVIEW_BROWSER_UI_V3_AND_FULL_WORKTREE
+
+Rules:
+No server write.
+No eBay.
+No Telegram live patch.
+No tokens.
+No commit.
+No push.
+No delete/reset.
+First verify, then plan clean commit scope.
+
+Goal:
+Check whole worktree, separate real project files from temporary context/prompt files, verify JSON/dashboard/server_import, then prepare clean commit gate.
+
+STOP STATE
+Await Ion in new chat. First action must be verification/stage review, not implementation.
