@@ -1,0 +1,8 @@
+V7.3C working branch: v7-3c-contracts-4806e6c
+Confirmed V7.3C commits: 4806e6c contracts, f1885b9 runtime skeleton, 75a7dad branch memory repair.
+V7.3C remote head after memory branch repair: 75a7dad
+8-button archive: storage/memory_v2/archive/V7_3C_FULL_8_BUTTON_ROUTE_ARCHIVE_20260606T163359Z.md
+Routes: 01 PASS, 02 PASS, 03 PASS_LOGIC, 04 PASS, 05 PASS, 06 PASS, 07 PASS, 08 PASS.
+Runtime skeleton exists only on V7.3C branch now; this main repair does not merge runtime_skeleton.
+Safety locks: no server write, no active patch, no restart, no eBay, no Telegram live patch, no delete.
+Next allowed step: PREPARE_CODEX_LOCAL_8_BUTTON_RUNTIME_BUILD_TASK_NO_SERVER_NO_RESTART_NO_EBAY
