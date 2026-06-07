@@ -1,0 +1,42 @@
+# ION E1 NEW CHAT FRONT V73C
+
+Reply in Russian, short, A/B/C/D/FINISH/STOP.
+
+Project:
+ECOM OS V7.3C.
+
+Current local path:
+D:\ECOM_OS_V7_3C_GITHUB_IMPORT_STAGE_10804
+
+Current branch:
+v7-3c-contracts-4806e6c
+
+Confirmed commit:
+4806e6c Add V7.3C route contract drafts
+
+GitHub branch already pushed:
+v7-3c-contracts-4806e6c
+
+Contracts:
+storage/contracts/v7_3c
+20 files, 18 JSON, validation PASS.
+
+Local runtime skeleton:
+runtime_skeleton
+Dashboard tested on http://localhost:8000.
+HTTP check PASS.
+
+Recovery:
+Run runtime_skeleton\start_dashboard.bat.
+Open http://localhost:8000.
+
+Current git status before next work:
+only runtime_skeleton is untracked.
+
+Next allowed step:
+Prepare clean commit gate for runtime_skeleton without __pycache__ and without pyc files.
+No push until separate approval.
+No server write.
+No restart.
+No eBay.
+No Telegram live patch.
