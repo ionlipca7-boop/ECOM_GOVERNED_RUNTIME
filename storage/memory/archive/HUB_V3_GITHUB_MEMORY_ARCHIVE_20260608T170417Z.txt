@@ -1,0 +1,37 @@
+# ION E1 New Chat Front After V4
+
+Reply in Russian. Keep A/B/C/D/FINISH/STOP.
+
+Project:
+ECOM OS V7.3C.
+
+Local path:
+D:\ECOM_OS_V7_3C_GITHUB_IMPORT_STAGE_10804
+
+Branch:
+v7-3c-contracts-4806e6c
+
+Current result:
+Operator Desktop V4 dry runtime created by Codex.
+
+Verified from Ion CMD:
+validator PASS.
+route_count 8.
+python compile PASS.
+V4 test report PASS.
+protected import folder clean.
+
+Important caution:
+A broad JSON parse command failed on UTF-8 BOM. Do not call project BLOCK yet. First rerun JSON parse with utf-8-sig and identify the file.
+
+Next allowed action:
+V4_JSON_BOM_RECHECK_AND_HTTP_VERIFY_THEN_FIRST_REAL_PRODUCT_TEST_PREP
+
+Rules:
+No commit.
+No push.
+No server change.
+No marketplace action.
+No Telegram live patch.
+No delete.
+First verify, then prepare first real Route 01 product dry test.
