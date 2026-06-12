@@ -1,0 +1,82 @@
+ION / E1 — ECOM OS PRO ARCHITECTURE REVIEW PASS ARCHIVE
+
+STATUS
+- Architecture folder: D:\ECOM_OS_PRO_ARCHITECTURE_BUILD
+- Architecture review: PASS
+- Files: 45/45 present
+- Folders: 19/19 present
+- JSON parse: 4/4 PASS
+- Tracker unchecked: NONE
+- Safety gates: CLOSED
+- Checkpoint created locally: D:\ECOM_OS_PRO_ARCHITECTURE_BUILD\00_INDEX\ARCHITECTURE_REVIEW_PASS_CHECKPOINT.json
+- Summary created locally: D:\ECOM_OS_PRO_ARCHITECTURE_BUILD\00_INDEX\ARCHITECTURE_REVIEW_PASS_SUMMARY.md
+- Next allowed action: PREPARE_CODEX_LOCAL_OPERATOR_BACKEND_V1_GATE_NO_EXECUTION
+
+CORE DECISION
+ECOM OS is not just a listing generator. It is a local agent-based company operating system for one operator, Ion. The first marketplace is eBay.de. Future marketplaces: Amazon, Kaufland, Otto, Etsy. Windows local is the main workspace; Browser Local App is the operator office; Local Python Backend is the engine; GitHub is long-term memory/source of truth; Server is runtime/bridge/reference; Telegram is notification/approval panel only.
+
+FIRST MVP
+Route 01 — New Product is the first active MVP. Input: product URL, receipt/check, photos/files/videos, cost, quantity, Ion comments. Output: local case folder, product passport, photo manifest, draft listing packet, eBay-like local preview, readiness report, decision request/card, server_bridge_packet, memory_lesson_candidate. Final dry state: APPROVED_LOCAL_DRY_READY. No live action.
+
+FOLDER REVIEW RESULT
+All architecture sections were manually reviewed and rewritten folder-by-folder/file-by-file:
+- README_FOR_CODEX.md = PASS
+- INSTALL_TO_D_DRIVE.md = PASS
+- 00_INDEX = PASS
+- 00_RAW_ARCHIVE_DO_NOT_FEED_CODEX = PASS
+- 00_REFERENCE_DIGESTS = PASS
+- 01_PRODUCT_GOAL = PASS
+- 02_USER_JOURNEY = PASS
+- 03_SYSTEM_MAP = PASS
+- 04_COMPONENTS_AGENTS = PASS
+- 05_DATA_CONTRACTS = PASS
+- 06_WORKFLOWS = PASS
+- 07_STATE_MACHINE = PASS
+- 08_BUTTON_ACTION_CONTRACTS = PASS
+- 09_UI_MAP = PASS
+- 10_ACCEPTANCE_TESTS = PASS
+- 11_MEMORY_ARCHIVE = PASS
+- 12_TEACHER_CRITICS = PASS
+- 13_LOCAL_TOOLS = PASS
+- 14_CLEAN_BUILD_PLAN = PASS
+- 15_FIRST_PRODUCT_TEST = PASS
+- 99_CODEX_PROMPTS = PASS
+
+IMPORTANT FIXES
+- INSTALL_TO_D_DRIVE.md corrected: use PowerShell Expand-Archive, not Windows tar -xf, because tar failed on this machine.
+- 00_INDEX/ARCHITECTURE_FILE_LIST.json had Invalid \escape caused by root path D:\ECOM_OS_PRO_ARCHITECTURE_BUILD written with a single backslash. Fixed to JSON-valid D:\\ECOM_OS_PRO_ARCHITECTURE_BUILD.
+- Final audit after fix returned PASS.
+
+KEY ARCHITECTURE CONTENT
+README_FOR_CODEX.md: source of truth, Route 01 MVP, read order, build law, source policy, safety law, Codex output requirements, first target LOCAL OPERATOR BACKEND V1.
+00_INDEX: manifest, project rules, file list, rewrite tracker, architecture review checkpoint.
+00_RAW_ARCHIVE_DO_NOT_FEED_CODEX: raw ZIP/old prompts/screenshots/videos/server packs are reference only, not Codex source of truth.
+00_REFERENCE_DIGESTS: server/GitHub memory, uploaded chat lessons, official marketplace/eBay rules, curated source lessons.
+01_PRODUCT_GOAL: ECOM OS identity and Route 01 MVP.
+02_USER_JOURNEY: Home → Route → Case → Dry agents → Preview → Readiness → Decision → Memory.
+03_SYSTEM_MAP: Ion, Browser Local App, Local Backend, Local Case Storage, Agents, GitHub, Server, Telegram, eBay, Suppliers, future marketplaces.
+04_COMPONENTS_AGENTS: core agent components and output contract.
+05_DATA_CONTRACTS: mandatory case and route files, JSON contracts, agent envelope.
+06_WORKFLOWS: 8 route workflows and handoffs.
+07_STATE_MACHINE: case states, button visibility, STOP_SAFE, no false PASS.
+08_BUTTON_ACTION_CONTRACTS: Route 01 buttons and backend/output expectations.
+09_UI_MAP: Home dashboard, Route 01 workspace, right Listing Assembly Panel, bottom evidence/log panel, JSON hidden by default.
+10_ACCEPTANCE_TESTS: True PASS, technical/UI/data/agent/business/preview/readiness/decision/safety/STOP_SAFE checks.
+11_MEMORY_ARCHIVE: archive/pointer/lesson/memory workflow.
+12_TEACHER_CRITICS: Teacher Agent, Critic Council, false PASS detection.
+13_LOCAL_TOOLS: Windows CMD, Python, Git, Browser, Codex, Markdown, JSON, ZIP audit, File Explorer, Notepad, local backend first, desktop wrapper later.
+14_CLEAN_BUILD_PLAN: future clean implementation folder D:\ECOM_OS_PRO_LOCAL_OPERATOR_BUILD, raw ZIP law, Codex input package, validation gates.
+15_FIRST_PRODUCT_TEST: one real product Route 01 dry test, required files, UI/button/safety/manual test, final APPROVED_LOCAL_DRY_READY.
+99_CODEX_PROMPTS: Codex master plan after architecture review, read order, backend endpoints, case folder pattern, Route 01 files/buttons, UI requirements, dry agents, preview/readiness/decision/export, safety restrictions, validation, expected report.
+
+SAFETY GATES
+Closed: eBay live/publish/revise/delete, Telegram live patch/restart, server write/restart/cleanup, Git commit/push, delete/cleanup, secrets/tokens/.env print, server_import modification.
+
+NEXT SAFE ROUTE
+1. Verify local checkpoint.
+2. Prepare Codex gate/prompt/package.
+3. Do not execute Codex build until Ion explicitly approves.
+4. Future target after approval: LOCAL_OPERATOR_BACKEND_V1 in D:\ECOM_OS_PRO_LOCAL_OPERATOR_BUILD.
+
+UNIVERSAL PROJECT DESIGN LESSON
+For future projects, use the same pattern: goal → user journey → system map → components/agents → data contracts → workflows → state machine → button/action contracts → UI map → acceptance tests → memory/archive → teacher/critics → local tools → clean build plan → first real test → implementation prompt. Always work one folder/file at a time, verify outputs, close tracker, create checkpoint, only then build.
