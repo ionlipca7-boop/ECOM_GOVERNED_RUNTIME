@@ -1,0 +1,254 @@
+ION / E1 — ECOM OS PRO ROUTE01 + LOCAL AI OPERATOR HUB CHECKPOINT
+
+Date: 2026-06-14
+Operator: Ion
+Mode: MEMORY ARCHIVE / LOCAL_DRY / no live
+
+PURPOSE
+This archive saves the important continuation state from the long ECOM OS PRO chat so future chats can resume without losing logic, route boundaries, Codex work, Ollama/local AI audit, and next allowed action.
+
+SOURCE OF TRUTH RULE
+Before any CMD / Codex prompt / code / install / patch:
+1. Read previous chat/front/archive if provided.
+2. Read master docs / reports / AGENTS.md if available.
+3. Check Memory V2 / GitHub latest / server read-only if tools are available.
+4. If not checked, state NOT_VERIFIED_WITH_GITHUB_SERVER_MEMORY.
+5. If prompt conflicts with master docs, STOP = BLOCK_LOGIC_DRIFT.
+
+SAFETY RULES
+No install unless explicitly approved.
+No delete / cleanup.
+No Git commit / push unless explicitly approved.
+No server write / restart.
+No Telegram patch / restart.
+No eBay live / publish / revise / delete.
+No secrets / tokens / .env / cookies print.
+Ollama network exposure remains OFF; use localhost only.
+
+PROJECT PATHS
+Codex workspace:
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE
+
+Architecture source:
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\ARCHITECTURE_BUILD
+
+Local implementation:
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD
+
+Master lock:
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD\docs\CODEX_MUST_READ_FIRST_ECOM_OS_PRO_LOGIC_LOCK_RU.txt
+
+Architecture master copy:
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\ARCHITECTURE_BUILD\00_INDEX\ECOM_OS_PRO_TRUE_MASTER_LOGIC_LOCK_AUDITED_V24_RU.txt
+
+Audit/gate report:
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\ARCHITECTURE_BUILD\00_INDEX\ECOM_OS_PRO_FULL_AUDIT_AND_CODEX_GATE_RU.txt
+
+STAGE REPORTS
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD\storage\logs\ROUTE01_CONTRACT_STAGE1_ALIGNMENT_REPORT.json
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD\storage\logs\ROUTE01_CONTRACT_STAGE2_DATA_CONTRACT_REPORT.json
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD\storage\logs\ROUTE01_CONTRACT_STAGE3_EBAY_LIKE_UI_REPORT.json
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD\storage\logs\ROUTE01_ROUTE03_BOUNDARY_FIX_REPORT.json
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD\storage\logs\ROUTE01_STAGE3_2_MANUAL_UI_HOTFIX_REPORT.json
+
+CODEX PARTIAL_SAFE FILES
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD\AGENTS.md
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD\static\dashboard\route01_dashboard.html
+
+CANONICAL 8 ROUTES
+01 Новый товар = simple new product intake / clean first listing draft only.
+02 Новый товар с вариантами = separate variant intake.
+03 Листинг-студия = listing improvement, A/B/C experiments, existing/draft/live/weak listings.
+04 Жизнь листингов = lifecycle monitoring only; sends signals to Route03/05/07/08.
+05 Финансы / Склад = money truth + stock truth; stock alerts 75/50/25/10/0.
+06 Product Radar = sourcing, demand, competitors, buyer pain, profit proof.
+07 Информационный центр = Ion decision inbox / reports, no hidden live action.
+08 Система / Память / Учитель = rules, lessons, marketplace policy, compliance, memory.
+
+ROUTE01/ROUTE03 BOUNDARY
+A/B/C title experiments do NOT belong to Route01.
+Route01 = one baseline clean title/listing draft.
+Route03 = Listing Studio, A/B/C experiments, external search clarity / marketplace buyer intent / AI-search factual clarity.
+Codex previously exposed A/B/C in Route01; this was identified as BLOCK_LOGIC_DRIFT and fixed/partially hotfixed.
+
+ROUTE01 STAGE STATUS
+Stage 1 alignment = PASS.
+- BUILD_SCOPE_LOCK updated.
+- route id compatibility added.
+- case folder compatibility added.
+- global 8-route memory preserved.
+- gates CLOSED.
+
+Stage 2 data contract = PASS.
+- source input, receipt/order, evidence map, unknown facts.
+- category, item specifics / Artikelmerkmale.
+- eBay search/trend placeholders.
+- title/description/price/photo contracts.
+- product passport, draft packet, readiness, decision card.
+- old/new case compatibility PASS.
+- gates CLOSED.
+
+Stage 3 UI = technical PASS but UX not final.
+- dashboard loaded and included all sections.
+- video review showed dashboard was still too much like data/audit dashboard.
+
+Route01/Route03 boundary fix = PASS by Codex report.
+- active A/B/C removed from Route01 wording.
+- baseline title UI added.
+- Route03 handoff placeholder added.
+- readiness no longer requires A/B/C.
+
+Manual Stage3.2 hotfix = PASS but UI_STILL_NOT_FINAL.
+- inserted boundary banner.
+- hid visible Route03 A/B/C card from Route01 flow.
+- reordered visible flow: summary -> photos -> title -> specifics -> price -> preview -> readiness -> decision -> technical.
+- report: ROUTE01_STAGE3_2_MANUAL_UI_HOTFIX_REPORT.json.
+
+Codex high-impact Stage3.3 = PARTIAL_SAFE.
+Completed before environment/usage block:
+- Created AGENTS.md.
+- Rebuilt route01_dashboard.html into cleaner eBay-style Route01 form workspace:
+  left nav max 180px, main workspace, dominant photo block, marketplace-style Artikelmerkmale rows, clean baseline Route01 title, collapsed Route03 A/B/C handoff, sticky right readiness/action rail, collapsed technical mode.
+Blocked by limit:
+- Could not create/update ROUTE01_STAGE3_3_CLEAN_EBAY_FORM_REBUILD_REPORT.json.
+- Could not update validate_local_build.py for new report.
+- Could not run final validation after rebuild.
+Next required action for Route01 UI when returning to implementation:
+RESUME_ROUTE01_STAGE3_3_CLEAN_EBAY_FORM_REBUILD_REPORT_AND_VALIDATION_LOCAL_ONLY.
+
+LOCAL AI OPERATOR HUB GOAL
+Create a local/hybrid AI chain to avoid being blocked by Codex limits:
+ChatGPT / Ion = main control, memory, gate.
+Codex = main builder when limit is available.
+Ollama = local AI hub / local models / launch agents.
+Aider = exact file patcher later.
+Gemini CLI = research/internet/second opinion later.
+n8n / LangGraph = orchestrator later, not now.
+GitHub / Memory V2 = source of truth / archive.
+Windows local = main workspace.
+Server = runtime/eyes/reference only.
+
+LOCAL AI AUDIT STATUS
+Audit root:
+D:\ECOM_OS_PRO_LOCAL_AI_AUDIT
+
+V1 logs:
+D:\ECOM_OS_PRO_LOCAL_AI_AUDIT\logs
+
+V2 logs:
+D:\ECOM_OS_PRO_LOCAL_AI_AUDIT\logs_v2
+
+Confirmed from Windows V1/V2:
+- Ollama version 0.30.8.
+- Ollama models: ion-assistant:latest, phi3:latest.
+- Python 3.14.3.
+- Git 2.53.0.windows.2.
+- Node v24.14.1.
+- npm 11.11.0.
+- Aider not found.
+- Gemini CLI not found.
+- Docker not found.
+- npm global folder missing/not initialized.
+
+Important local folders found:
+D:\Codex
+D:\ECOM_STANDALONE_AUTOCLIP
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE
+D:\ECOM_OS_PRO_LOCAL_OPERATOR_BUILD
+D:\ECOM_OS_PRO_ARCHITECTURE_BUILD
+D:\ECOM_OS_V7_3C_CODEX_WORKSPACE
+C:\Users\Ion Lipca\.codex
+C:\Users\Ion Lipca\.ollama
+
+OLLAMA DESKTOP OBSERVATIONS
+Ollama Desktop has Launch section with agents:
+- Claude Code
+- Codex App
+- Hermes Agent
+- OpenClaw
+- OpenCode
+- Codex
+- Copilot CLI
+- Droid
+- Pi
+
+Interpretation:
+Ollama is not Codex itself.
+Ollama = local runtime / Desktop / CLI / launcher / hub.
+Codex in Launch = separate agent that Ollama can launch.
+Need audit which launch agents actually work.
+Do not enable Expose Ollama to the network yet.
+Use localhost / 127.0.0.1 only.
+
+LAST NEXT CHAT FRONT CREATED
+ION / E1 — CONTINUE ECOM OS PRO + LOCAL AI OPERATOR HUB AUDIT
+Next action should be LOCAL_AI_TOOLS_AUDIT_V3_ECOM_OLLAMA_LAUNCH_READONLY.
+
+NEXT CMD V3 TO RUN ON WINDOWS
+cd /d D:\ECOM_OS_PRO_LOCAL_AI_AUDIT
+
+mkdir logs_v3 2>nul
+
+echo LOCAL_AI_TOOLS_AUDIT_V3_ECOM_OLLAMA_LAUNCH_READONLY > logs_v3\AUDIT_STATUS.txt
+echo DATE %DATE% %TIME% >> logs_v3\AUDIT_STATUS.txt
+
+echo === ECOM ROOT FOLDER INVENTORY === > logs_v3\ecom_root_inventory.txt
+for /d %A in (D:\ECOM*) do @echo %A >> logs_v3\ecom_root_inventory.txt
+for /d %A in (D:\Codex*) do @echo %A >> logs_v3\ecom_root_inventory.txt
+for /d %A in (D:\*CODEX*) do @echo %A >> logs_v3\ecom_root_inventory.txt
+for /d %A in (D:\*AUTOCLIP*) do @echo %A >> logs_v3\ecom_root_inventory.txt
+
+echo === ECOM FOLDER MARKERS === > logs_v3\ecom_folder_markers.txt
+for /d %A in (D:\ECOM*) do @echo --- %A --- >> logs_v3\ecom_folder_markers.txt & dir "%A" /a /b | findstr /i "README AGENTS MASTER LOCK MEMORY archive storage backend static docs package.json pyproject requirements validate local_operator_server route01 dashboard" >> logs_v3\ecom_folder_markers.txt 2>&1
+
+echo === CODEX USER FOLDER === > logs_v3\codex_user_folder.txt
+dir "%USERPROFILE%\.codex" /a /s >> logs_v3\codex_user_folder.txt 2>&1
+
+echo === OLLAMA USER FOLDER TOP === > logs_v3\ollama_user_folder_top.txt
+dir "%USERPROFILE%\.ollama" /a >> logs_v3\ollama_user_folder_top.txt 2>&1
+dir "%USERPROFILE%\.ollama\models" /a >> logs_v3\ollama_user_folder_top.txt 2>&1
+
+echo === OLLAMA MODELS === > logs_v3\ollama_models.txt
+ollama list >> logs_v3\ollama_models.txt 2>&1
+
+echo === OLLAMA LAUNCH GENERAL === > logs_v3\ollama_launch_general.txt
+ollama launch --help >> logs_v3\ollama_launch_general.txt 2>&1
+
+echo === OLLAMA LAUNCH AGENT HELP === > logs_v3\ollama_launch_agent_help.txt
+for %A in (claude codex-app hermes openclaw opencode codex copilot droid pi) do @echo --- %A --- >> logs_v3\ollama_launch_agent_help.txt & ollama launch %A --help >> logs_v3\ollama_launch_agent_help.txt 2>&1
+
+echo === PACKAGE FILES NEAR ACTIVE BUILDS === > logs_v3\active_build_package_files.txt
+for %A in (D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD D:\ECOM_OS_PRO_LOCAL_OPERATOR_BUILD D:\ECOM_STANDALONE_AUTOCLIP D:\Codex) do @echo --- %A --- >> logs_v3\active_build_package_files.txt & dir "%A" /a /b | findstr /i "package.json pyproject.toml requirements.txt AGENTS.md README.md" >> logs_v3\active_build_package_files.txt 2>&1
+
+echo === SUMMARY V3 === > logs_v3\SUMMARY_V3.txt
+echo Read-only inventory of ECOM folders, Codex user folder, Ollama models and Ollama launch agents. >> logs_v3\SUMMARY_V3.txt
+echo No install. No delete. No secrets read. >> logs_v3\SUMMARY_V3.txt
+
+echo === ECOM ROOT INVENTORY ===
+type logs_v3\ecom_root_inventory.txt
+
+echo === OLLAMA MODELS ===
+type logs_v3\ollama_models.txt
+
+echo === OLLAMA LAUNCH AGENT HELP HEAD ===
+type logs_v3\ollama_launch_agent_help.txt
+
+echo === ACTIVE BUILD PACKAGE FILES ===
+type logs_v3\active_build_package_files.txt
+
+echo === V3 FILES ===
+dir logs_v3
+
+WHAT TO DO AFTER V3 OUTPUT
+- Do not install.
+- Do not cleanup.
+- Do not Git.
+- Classify folders as ACTIVE / OLD_REFERENCE / TOOL / AI_AGENT / UNKNOWN.
+- Create map: what exists, what can be used, what is missing, recommended local AI chain.
+- Then propose safe next step, likely draft local files:
+  D:\ECOM_OS_PRO_LOCAL_AI_AUDIT\ECOM_AI_OPERATOR_HUB_PLAN_DRAFT.md
+  D:\ECOM_OS_PRO_LOCAL_AI_AUDIT\ai_operator_routing_matrix_draft.json
+Only after reviewing V3 output.
+
+STOP STATE
+NEXT_ALLOWED_ACTION = LOCAL_AI_TOOLS_AUDIT_V3_ECOM_OLLAMA_LAUNCH_READONLY
