@@ -1,0 +1,127 @@
+ION / E1 — ECOM OS PRO LOCAL AI TOOLCHAIN HANDOFF
+Date: 2026-06-14
+Mode: TOOLCHAIN_MEMORY / READONLY_SAFE / NO_SECRET_PRINT
+
+PURPOSE
+This archive records how the project used the external/local AI tools in the Route01/Button01 reconnect chat so a new chat can understand Gemini, Ollama/Llama, and Aider usage without rediscovering everything.
+
+IMPORTANT
+Do not claim a tool participated unless it was actually invoked in that step. Maintain TOOL_USAGE_LEDGER for review gates. For core CMD blocks, prefer local Python validation and avoid long blocking AI calls.
+
+ACTIVE WINDOWS ROOT
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD
+
+OPERATOR HUB SHORT RESULT
+D:\ECOM_OS_PRO_LOCAL_AI_AUDIT\operator_hub_v1\work_session\SUCCESS_RESULT_CURRENT.txt
+
+TOOLCHAIN SUMMARY
+1. Gemini CLI
+- Status: working in this project after V84/V99A checks.
+- Known command path from the session:
+  C:\Users\Ion Lipca\AppData\Roaming\npm\gemini.CMD
+- Usage rule: use short prompts only. Earlier long/context-heavy prompt caused Gemini return code 1 / prompt too long context issue. Keep inline review prompts concise, generally under 6000-8000 chars locally.
+- Working evidence:
+  V99A_TOOLCHAIN_REAL_USAGE_AUDIT_AND_REVIEW_GATE_PASS
+  GEMINI_STATUS=PASS
+  V103 Gemini review PASS
+  V104 Gemini review PASS
+- Known review file examples:
+  storage\reviews\V99A_GEMINI_SHORT_REVIEW_20260614_212741.txt
+  storage\reviews\V103_GEMINI_URL_SOURCE_READER_REVIEW_20260614_215924.txt
+  storage\reviews\V104_GEMINI_PRODUCT_PASSPORT_REVIEW_*.txt
+- In V105B repair, Gemini status was UNKNOWN because repair looked for a strict STATUS=PASS marker and did not re-run Gemini. Do not infer failure from UNKNOWN.
+
+2. Ollama / local Llama-style tool
+- Product/tool name: Ollama, not exactly "Lama". User may call it Lama.
+- Confirmed earlier version from audit: Ollama 0.30.8.
+- Models known from audit: ion-assistant:latest and phi3:latest.
+- Working evidence:
+  V99A_TOOLCHAIN_REAL_USAGE_AUDIT_AND_REVIEW_GATE_PASS
+  OLLAMA_STATUS=PASS
+  V103 Ollama review PASS
+  V104 Ollama review PASS
+- Important problem:
+  V105B original orchestrator run hung on:
+  ollama run phi3:latest <review_text>
+  It stopped with KeyboardInterrupt in subprocess.communicate after waiting. Therefore do NOT run long Ollama calls inside core CMD blocks.
+- Usage rule after the hang:
+  Use Ollama only in separate short tool gates, with strict timeout, or skip it for core build steps. Never let it block the route. If used, record status in ledger. For core CMD, prefer NOT_RUN / SKIPPED_TIMEOUT_REPAIR rather than hanging.
+- V105B repaired result:
+  OLLAMA_STATUS=SKIPPED_TIMEOUT_REPAIR
+  This was non-blocking because the master orchestrator contract was already created and validator passed.
+
+3. Aider
+- Status: installed/callable after V84D repair.
+- Known path:
+  C:\Users\Ion Lipca\.local\bin\aider.exe
+- V99A evidence: AIDER_STATUS=PASS
+- V105B: Aider was only checked as callable/no patch. No Aider patch was executed.
+- Project rule: no Aider patch unless separate explicit gate and smoke pass. Do not patch project files with Aider in Button01 dry reconnect unless Ion explicitly approves.
+
+4. Python / local validator
+- Python is the main safe execution path for CMD blocks.
+- Use writer-scripts under storage\tools\... and run with:
+  py -X utf8 <script.py>
+- Always compile first for repair/debug steps:
+  py -X utf8 -m py_compile <script.py>
+- Validator:
+  D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD\validate_local_build.py
+- Many stages V103-V110 returned VALIDATOR_STATUS=PASS.
+
+TOOL_USAGE_LEDGER / KEY FILES
+Primary real usage ledger:
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD\storage\memory\toolchain\V99A_REAL_TOOL_USAGE_LEDGER_20260614_212741.json
+
+V99A result:
+A: V99A_TOOLCHAIN_REAL_USAGE_AUDIT_AND_REVIEW_GATE_PASS
+GEMINI_STATUS=PASS
+OLLAMA_STATUS=PASS
+AIDER_STATUS=PASS
+VALIDATOR_STATUS=PASS
+
+V99A files:
+storage\reviews\V99A_GEMINI_SHORT_REVIEW_20260614_212741.txt
+storage\reviews\V99A_OLLAMA_LOCAL_REVIEW_20260614_212741.txt
+storage\diagnostics\V99A_AIDER_SMOKE_DIAGNOSTIC_20260614_212741.txt
+storage\logs\V99A_TOOLCHAIN_REAL_USAGE_AUDIT_AND_REVIEW_GATE_REPORT_20260614_212741.json
+
+TOOLCHAIN USAGE BY ROUTE01 CHAT STEPS
+- V103 URL source reader: Gemini PASS, Ollama PASS, validator PASS.
+- V104 product passport: Gemini PASS, Ollama PASS, validator PASS.
+- V105B first run: Gemini review file likely created, Ollama hung, user interrupted, no report.
+- V105B repair: finalized contract with OLLAMA_STATUS=SKIPPED_TIMEOUT_REPAIR and AIDER_STATUS=NOT_RUN_REPAIR_NO_PATCH.
+- V106-V110: no long AI tools used; local Python + validator only. This was intentional to avoid another hang.
+
+CURRENT TOOLCHAIN POLICY FOR NEW CHAT
+Before each CMD:
+1. Verify latest SUCCESS_RESULT_CURRENT.
+2. Verify relevant GitHub/server/local memory read-only when needed.
+3. Decide whether external tool review is required.
+4. If Gemini/Ollama/Aider are used, record explicit status and output file.
+5. Do not claim tool usage if tool was skipped.
+6. Avoid Ollama in core CMD because of V105B hang.
+7. Use Gemini only with short prompts.
+8. Use Aider only after explicit Ion approval and separate gate.
+
+WINDOWS CMD GUIDELINES
+- Do not use Unix tools like tail.
+- Do not depend on fragile multiline py -c.
+- Create a script file under storage\tools\... then run py -X utf8.
+- Capture stdout/stderr into storage\logs\... for diagnostics.
+- Write SUCCESS_RESULT_CURRENT only after outputs exist.
+- Use clip < "%SHORT%" only after final result is written.
+
+NEXT CHAT TOOLCHAIN START CHECK
+If the new chat cannot find Gemini/Ollama/Aider, run a read-only local toolchain check, not install:
+- where gemini
+- dir C:\Users\Ion Lipca\AppData\Roaming\npm\gemini.cmd
+- where ollama
+- dir "%LOCALAPPDATA%\Programs\Ollama\ollama.exe"
+- dir "C:\Program Files\Ollama\ollama.exe"
+- dir C:\Users\Ion Lipca\.local\bin\aider.exe
+- py -X utf8 validate_local_build.py
+
+DO NOT INSTALL OR PATCH unless Ion explicitly approves.
+
+CURRENT PROJECT CONTINUATION
+Last confirmed route status is V110 PASS. V111 was not created. Next action is V111C_INSPECT_AND_REPAIR_EXISTING_SAFE_SCRIPT_NO_LIVE, with no Gemini/Ollama/Aider required inside the core run.
