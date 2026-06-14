@@ -1,0 +1,189 @@
+ION / E1 — ECOM OS PRO + LOCAL AI OPERATOR HUB + CODEX RETURN CHECKPOINT
+
+Date: 2026-06-14
+Operator: Ion
+Mode: MEMORY ARCHIVE / LOCAL_DRY / GitHub memory write approved by user / no live eBay / no server restart
+
+PURPOSE
+This archive preserves the handoff state after completion of the local AI Operator Hub/toolchain route and the correction of a wrong return to an obsolete Git root. It must be read before continuing ECOM OS PRO Route01/Codex work in a new chat.
+
+ABSOLUTE SAFETY RULES
+- No eBay live / publish / revise / delete.
+- No Telegram/server patch/restart/write without explicit gate.
+- No Git commit/push unless explicitly approved.
+- No install unless explicitly approved.
+- No delete/cleanup unless explicitly approved.
+- No secrets/tokens/.env/cookies printed.
+- Codex must work only in the current workspace unless a new root is verified.
+- If there is root confusion, STOP and run read-only reality check before any patch/stage/commit.
+
+CURRENT CORRECT WORKSPACE
+Current Codex workspace:
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE
+
+Current active implementation build:
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD
+
+Current architecture/master logic:
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\ARCHITECTURE_BUILD
+
+Master local lock:
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD\docs\CODEX_MUST_READ_FIRST_ECOM_OS_PRO_LOGIC_LOCK_RU.txt
+
+Architecture master lock:
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\ARCHITECTURE_BUILD\00_INDEX\ECOM_OS_PRO_TRUE_MASTER_LOGIC_LOCK_AUDITED_V24_RU.txt
+
+Route01 dashboard:
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD\static\dashboard\route01_dashboard.html
+
+AGENTS file:
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD\AGENTS.md
+
+IMPORTANT CORRECTION / ERROR REGISTER
+A wrong route happened: D:\ECOM_OS_V7_3C_GITHUB_IMPORT_STAGE_10804 was incorrectly treated as the active project root. Ion corrected that this is an obsolete/old import-stage root. It must not be used as the active Codex workspace for current Route01 work.
+
+Actions performed on wrong root:
+- A stage scope was prepared in D:\ECOM_OS_V7_3C_GITHUB_IMPORT_STAGE_10804.
+- No commit was made.
+- No push was made.
+- V42 command ran git restore --staged . in 10804.
+- The wrong staging was removed.
+
+Rule added:
+DO NOT resume or commit 10804 unless Ion explicitly asks for a merge/migration stage from old root to new root. Current work belongs to D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD.
+
+OPERATOR HUB / TOOLCHAIN STATUS
+Operator Hub/toolchain route is completed PASS.
+Confirmed:
+- Operator Hub exists at D:\ECOM_OS_PRO_LOCAL_AI_AUDIT\operator_hub_v1
+- Desktop button exists: C:\Users\Ion Lipca\Desktop\ECOM_OPERATOR_HUB.cmd
+- Server bridge button separate: C:\Users\Ion Lipca\Desktop\ION WORKSPACE - Server Bridge.lnk
+- AutoClip root exists: D:\ECOM_STANDALONE_AUTOCLIP
+- AutoClip controller: D:\ECOM_STANDALONE_AUTOCLIP\autoclip_controller.ps1
+- AutoClip task: D:\ECOM_STANDALONE_AUTOCLIP\tasks\current_task.ps1
+- Gemini CLI PASS, installed by npm official package @google/gemini-cli
+- Aider PASS, found at C:\Users\Ion Lipca\AppData\Roaming\uv\tools\aider-chat\Scripts\aider.exe
+- open_gemini_cli.cmd repaired PASS
+- Ollama installed and previously confirmed
+- Java/Kotlin remain later gate because Windows admin=False
+
+Final toolchain checkpoint from V34C:
+A: V34C_OPERATOR_HUB_TOOLCHAIN_FINAL_PASS
+B: GEMINI_CLI_PASS
+C: AIDER_PASS
+D: OPEN_GEMINI_CMD_REPAIRED_PASS
+E: JAVA_KOTLIN_LATER_GATE
+F: checkpoint/zip created under D:\ECOM_OS_PRO_LOCAL_AI_AUDIT\operator_hub_v1\archive
+G: NEXT_ALLOWED_ACTION=RETURN_TO_CODEX_MAIN_PROJECT_ROUTE
+
+WHY THE TOOL EXISTS
+The tool is not a magic bypass for Codex limits. It is a fallback/control route:
+- ChatGPT = route controller, memory, gates, task builder
+- Operator Hub = local control panel / launcher
+- AutoClip = prompt/result bridge
+- Codex = main builder while limit is available
+- Gemini = second opinion, logic review, research/reasoning fallback
+- Aider = precise local file patcher when patch scope is clear
+- Ollama = local assistant/reserve for summaries/analysis/drafts when cloud limit is exhausted
+- GitHub Memory = source of truth/archive after gate
+- Server = runtime/reference; read-only first, write/restart only after gate
+
+CODEX LIMIT FALLBACK ROUTE V1
+When Codex limit is available:
+1. ChatGPT writes exact Codex task.
+2. Operator Hub opens correct folder and Codex.
+3. Codex works in LOCAL_OPERATOR_BUILD.
+4. Codex writes report.
+5. ChatGPT checks report/gates.
+6. GitHub/server only after separate approval.
+
+When Codex limit is exhausted:
+1. STOP_CODEX_LIMIT.
+2. ChatGPT creates fallback packet.
+3. Gemini reviews logic and proposes repair plan.
+4. Aider patches exact local files if the patch is deterministic.
+5. Ollama helps summarize/analyze/prepare drafts locally.
+6. Local validation runs.
+7. When Codex returns, Codex resumes from prepared state.
+
+CURRENT ROUTE / NEXT ACTION
+Resume ECOM OS PRO Route01 Stage3.3, not tool installation.
+Next allowed action:
+RESUME_ROUTE01_STAGE3_3_CLEAN_EBAY_FORM_REBUILD_REPORT_AND_VALIDATION_LOCAL_ONLY
+
+Codex should:
+1. Work only in D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD.
+2. Read AGENTS.md first.
+3. Read docs\CODEX_MUST_READ_FIRST_ECOM_OS_PRO_LOGIC_LOCK_RU.txt.
+4. Read architecture master lock in ..\ARCHITECTURE_BUILD\00_INDEX\ECOM_OS_PRO_TRUE_MASTER_LOGIC_LOCK_AUDITED_V24_RU.txt if accessible.
+5. Inspect static\dashboard\route01_dashboard.html.
+6. Inspect storage\logs\ROUTE01_*REPORT*.json.
+7. Create missing Stage3.3 report for clean eBay-style Route01 form rebuild.
+8. Update validation if needed.
+9. Run local validation only.
+10. Do not touch server, eBay live, Telegram, Git commit, Git push.
+
+KNOWN V42 REAL CODEX WORKSPACE CHECK
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE is not a Git repo.
+LOCAL_OPERATOR_BUILD=PASS
+ARCHITECTURE_BUILD=PASS
+AGENTS_MD=PASS
+ROUTE01_DASHBOARD=PASS
+LOCAL_LOCK=PASS
+ARCH_MASTER_LOCK=PASS
+
+Stage reports present under LOCAL_OPERATOR_BUILD\storage\logs include:
+- ROUTE01_BROWSER_LAUNCHER_FIX_REPORT.json
+- ROUTE01_CASE_CREATE_V1_REPORT.json
+- ROUTE01_CONTRACT_STAGE1_ALIGNMENT_REPORT.json
+- ROUTE01_CONTRACT_STAGE2_DATA_CONTRACT_REPORT.json
+- ROUTE01_CONTRACT_STAGE3_EBAY_LIKE_UI_REPORT.json
+- ROUTE01_COST_PACKET_V1_REPORT.json
+- ROUTE01_DRAFT_LISTING_PACKET_V1_REPORT.json
+- ROUTE01_FINAL_LOCAL_CHECKPOINT_V1_REPORT.json
+- ROUTE01_LOCAL_DASHBOARD_UI_V1_GATE_CREATE_REPORT.json
+- ROUTE01_LOCAL_DASHBOARD_UI_V1_REPORT.json
+- ROUTE01_OPERATOR_FLOW_UX_V1_REPORT.json
+- ROUTE01_OPERATOR_FLOW_UX_V2_READABLE_CARDS_REPORT.json
+- ROUTE01_OPERATOR_FLOW_UX_V3_FINAL_COCKPIT_POLISH_REPORT.json
+- ROUTE01_PHOTO_MANIFEST_V1_REPORT.json
+- ROUTE01_PREVIEW_V1_REPORT.json
+- ROUTE01_PRODUCT_PASSPORT_V1_REPORT.json
+- ROUTE01_ROUTE03_BOUNDARY_FIX_REPORT.json
+- ROUTE01_RUSSIAN_OPERATOR_WORKPLACE_REWRITE_REPORT.json
+- ROUTE01_SOURCE_FACTS_V1_REPORT.json
+- ROUTE01_STAGE3_2_MANUAL_UI_HOTFIX_REPORT.json
+- ROUTE01_UPLOAD_UX_V1_MULTI_PHOTO_THUMBNAILS_REPORT.json
+- ROUTE01_UPLOAD_UX_V1_THUMBNAIL_MARKER_FIX_REPORT.json
+- ROUTE01_UPLOAD_V1_REPORT.json
+
+ROUTE01 / ROUTE03 BOUNDARY
+Route01 = new product intake / one clean baseline listing draft.
+Route03 = listing studio / A-B-C experiments / existing listing improvement.
+A/B/C title experiments must not be active Route01 flow. Route01 can have collapsed handoff to Route03 only.
+
+LATEST UI INTENT
+Route01 dashboard should be cleaner, eBay-style, operator-first:
+- left navigation narrow
+- main workspace
+- dominant photo block
+- marketplace-style Artikelmerkmale rows
+- baseline Route01 title
+- collapsed Route03 A/B/C handoff
+- sticky right readiness/action rail
+- collapsed technical mode
+
+NEW CHAT BEHAVIOR REQUIRED
+In new chat, assistant must:
+1. Read this archive first.
+2. Treat current correct root as LOCAL_OPERATOR_BUILD, not 10804.
+3. Ask for or generate a Codex task prompt next.
+4. Use Operator Hub/Codex route, not manual patching, while Codex limit is available.
+5. Register errors and avoid repeating them.
+6. Keep answers in Ion/E1 Russian style: A/B/C/D/FINISH/STOP, one step at a time, exact Windows CMD paths.
+
+NEXT IMMEDIATE TASK FOR NEW CHAT
+Create a clean Codex prompt for Stage3.3 validation and report completion. It must be copied into Codex opened from Operator Hub, with working folder:
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD
+
+END ARCHIVE
