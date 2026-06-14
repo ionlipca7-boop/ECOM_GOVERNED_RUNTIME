@@ -1,0 +1,134 @@
+ION / E1 — ECOM OS PRO ROUTE01 BUTTON01 RECONNECT HANDOFF
+Date: 2026-06-14
+Mode: LOCAL_DRY / NO_LIVE / NO_SERVER_WRITE / NO_GIT_COMMIT / NO_DELETE
+
+USER CORE REQUIREMENT
+Ion corrected the route: do not create isolated Product Radar tests. Always verify project logic, server/GitHub memory, old skeleton, local files and current gates before each CMD. Build full Button 1 (Route01 new product) by reconnecting existing working modules one-by-one, not intuitively. Each CMD must be checked, safe, single-route, and avoid long blocking tools unless necessary.
+
+MANDATORY NEXT-CHAT BEHAVIOR
+Before giving each CMD:
+1. Check the latest local result in SUCCESS_RESULT_CURRENT or ask for it.
+2. Check GitHub/server memory when relevant using readonly tools.
+3. Check local file/contract existence where possible via CMD or project logs.
+4. State exactly what was verified and what was not verified.
+5. Give only one safe CMD path, no branching.
+6. Do not run long Ollama reviews inside core CMD; previous Ollama caused hang in V105B.
+7. No eBay live, no browser submit, no server write/restart, no Git commit/push, no delete/cleanup, no Aider patch unless explicit gate.
+
+ACTIVE WINDOWS ROOT
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD
+
+OPERATOR HUB SHORT RESULT
+D:\ECOM_OS_PRO_LOCAL_AI_AUDIT\operator_hub_v1\work_session\SUCCESS_RESULT_CURRENT.txt
+
+SERVER/GITHUB CHECKS DONE IN THIS CHAT
+- server_health_readonly PASS at 20260614T211115Z; roots: /home/ionlipca7/ecom_governed_runtime and /home/ionlipca7/runtime_eco_v1.
+- github_api_auth_audit_readonly PASS; repo ionlipca7-boop/ECOM_GOVERNED_RUNTIME; token exists; secret not printed; user/repo HTTP 200.
+- github_status_readonly showed dirty/untracked server runtime state; therefore no Git commit/push.
+- github_branch_readonly: memory-sync-wow-6pc-agent-playbook-20260501_110213.
+- github_memory_read_latest_archive read older pointer archive 20260614T080823Z, confirming 8 routes and Route01/Route03 boundary.
+- Old server evidence checked earlier: DRY_PHOTO_PLAN_FROM_LISTING_CONTEXT_V1_POINTER PASS, CATEGORY_ASPECTS_DESCRIPTION_DRY_RUN_POINTER PASS, DRY_MVP_PRODUCT_LISTING_CHECKPOINT_POINTER PASS.
+- COMPETITOR_PRICE_CHECK pointer was read earlier in this chat and registered in V105A CMDB, but a later fresh read attempt was blocked by safety filter; do not call it fresh PASS unless successfully re-read.
+
+PRODUCT DATA: BT5 USB ADAPTER
+Source URL: https://de.aliexpress.com/item/1005005252938636.html
+Order ID: 3065235962003117
+Order date: 2025-12-02
+Paid total EUR: 10.80
+Refund EUR: 1.24
+Effective total EUR: 9.56
+Quantity: 20
+Unit cost EUR: 0.478
+Variant: black
+Store: congdi Official Store
+Order title: 5,0 Bluetooth-kompatibel Adapter USB Sender für PC Computer Rezeptor Laptop Kopfhörer Audio Drucker Daten Dongle Empfänger
+Do not store/print personal address/phone.
+
+IMPORTANT PHOTO STATUS
+Photo folder:
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD\storage\intake\route01_real_product\BT5_USB_ADAPTER_20PC\photos_source
+V106 result: PHOTO_FILES_COUNT=8, PHOTO_READY=True, PHOTO_GATE=PASS_PHOTO_METADATA_READY.
+Visual chat review earlier: best main photo is clean white-background single adapter. Several supplier images contain text typos and risky claims. Photo quality module is metadata/rule based, not OCR/vision yet. Future photo quality should add actual visual/OCR check.
+
+COMPLETED STEPS IN THIS CHAT / CURRENT CHAIN
+V101 PASS: current input created awaiting real product data.
+V102 PASS: URL reader/Product Radar reconnect audit; local Route01 core ready; old server evidence registered.
+V103 PASS: URL source reader dry contract/test; URL_FETCH_STATUS=PASS_URL_FETCH; Gemini PASS; Ollama PASS.
+V104 PASS: Product Passport from URL evidence; unit cost 0.478; photo count then 1; unknown facts count 5; Gemini/Ollama PASS.
+V105A PASS: Full Route01 Button1 reconciliation CMDB. Core decision: STOP_ISOLATED_PRODUCT_RADAR_BUILD_BUTTON1_ORCHESTRATOR_FIRST.
+V105B REPAIRED PASS: Button1 master orchestrator contract created. Previous original run hung on Ollama, was interrupted with KeyboardInterrupt. Repair finalized with OLLAMA_STATUS=SKIPPED_TIMEOUT_REPAIR, validator PASS. Contract exists:
+D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD\storage\contracts\ROUTE01_BUTTON1_MASTER_ORCHESTRATOR_CONTRACT_V1.json
+V106 PASS: Photo intake and quality agent connected; 8 photos; photo gate open.
+V107 PASS: Category/aspects/description/claims guard connected. Category final false. Claims guard ready true.
+V108 PASS: Route06 Product Radar service handoff connected, not isolated Product Radar. Price candidates 4.99, 5.49, 5.99, 6.49; preferred test 5.99. Actual market data verified false.
+V109 PASS: Finance/stock/margin/price policy connected. Unit cost 0.478; qty 20; price final false; shipping policy final false; marketplace fee final false.
+V110 PASS: Browser UI packet and dashboard validation connected. Dashboard exists and contains Route01, Artikelmerkmale, photo, readiness. UI_SUBMIT=False.
+
+LAST CONFIRMED SUCCESS_RESULT_CURRENT
+A: V110_BROWSER_UI_PACKET_AND_DASHBOARD_VALIDATION_PASS_CONNECTED_BROWSER_UI_PACKET_DASHBOARD_VALIDATED
+NEXT_ALLOWED_ACTION=V111_RUN_FULL_BT5_BUTTON01_DRY_ROUTE_NO_LIVE
+
+V111 PROBLEM
+V111 did not successfully run. Diagnostics showed:
+- Scripts exist:
+  storage\tools\route01\v111_run_full_bt5_button01_dry_route.py
+  storage\tools\route01\v111_run_full_bt5_button01_dry_route_safe.py
+- No V111 logs:
+  storage\logs\*V111* = File Not Found
+- No Button01 runs:
+  storage\button01_runs\* = empty/File Not Found
+- No V111 decision cards.
+- SUCCESS_RESULT_CURRENT remained on V110.
+Likely CMD/run block issue or user copied only final lines. Need inspect/compile existing V111 safe script before generating a new one. The last diagnostic block using tail failed because tail is not Windows CMD; avoid Unix-only commands.
+
+CRITICAL CMD BUGS / LESSONS
+1. Avoid Unix tools like tail in Windows CMD.
+2. Avoid long Ollama subprocess in core CMD; it hung in V105B at subprocess.communicate and user had to Ctrl+C.
+3. Always write Python script first, compile it, then run it with stdout/stderr capture.
+4. After writing short result, explicitly type it and only then clip it.
+5. If short result remains old, check files/logs before rerun.
+6. Validate script syntax before asking Ion to run.
+7. Avoid fragile code-generation lines that include special CMD characters; prefer simpler scripts and echo-safe content.
+
+NEXT SAFE ACTION FOR NEW CHAT
+Start from V111 repair/diagnosis, not V112.
+Suggested next step:
+V111C_INSPECT_AND_REPAIR_EXISTING_SAFE_SCRIPT_NO_LIVE
+CMD should:
+- cd /d D:\ECOM_OS_PRO_CODEX_AUDIT_WORKSPACE\LOCAL_OPERATOR_BUILD
+- compile storage\tools\route01\v111_run_full_bt5_button01_dry_route_safe.py
+- capture stdout/stderr to storage\logs\V111C_*.txt
+- if compile fails, rewrite minimal safe V111 script with no external tools.
+- run script.
+- verify creation of:
+  storage\button01_runs\BT5_USB_ADAPTER_BUTTON01_FULL_DRY_RUN_V1.json
+  storage\button01_runs\BT5_USB_ADAPTER_BUTTON01_FULL_DRY_RUN_V1_RU.md
+  storage\decision_cards\V111_BT5_BUTTON01_PRE_DECISION_CARD_DRY_V1.md
+  storage\logs\V111_FULL_BT5_BUTTON01_DRY_ROUTE_REPORT_<stamp>.json
+- update SUCCESS_RESULT_CURRENT only after all outputs are written.
+- clip only after writing final short result.
+Expected next success:
+A: V111_FULL_BT5_BUTTON01_DRY_ROUTE_PASS_FULL_DRY_PACKET_CREATED_LIVE_BLOCKED
+NEXT_ALLOWED_ACTION=V112_CREATE_ION_MASTER_DECISION_CARD_NO_LIVE
+
+BUTTON01 TARGET LOGIC
+Button 1 must become full Route01 orchestrated dry flow:
+URL/receipt → source evidence → product passport → photo intake/quality → safe category/aspects/description/claims → Route06 Product Radar handoff → finance/stock/margin/price policy → browser/UI packet/dashboard → full dry packet → Ion decision card → memory archive. Route01 is clean first listing draft only. A/B/C experiments belong Route03. Route06 is service handoff, not direct isolated route.
+
+LIVE BLOCKERS STILL ACTIVE AFTER V111 SHOULD REMAIN
+- category_id_not_final
+- actual_market_data_not_verified
+- price_not_final
+- shipping_policy_not_final
+- marketplace_fee_not_final
+- Ion final approval missing
+Therefore live readiness must stay BLOCK_LIVE_NOT_READY.
+
+NO-LIVE SAFETY
+No eBay live/publish/revise/delete.
+No browser submit.
+No server write/restart.
+No Git commit/push.
+No delete/cleanup.
+No Aider patch.
+No secrets/tokens/env print.
