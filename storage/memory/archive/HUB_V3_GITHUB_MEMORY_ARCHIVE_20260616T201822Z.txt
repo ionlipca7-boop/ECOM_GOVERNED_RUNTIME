@@ -1,0 +1,91 @@
+ION / E1 — ARCHIVE CURRENT STOP POINT — 2026-06-16
+
+LANGUAGE: RU
+ROUTE: A -> B -> FINISH -> STOP
+CURRENT STATUS: STOP_FOR_NIGHT / CONTINUE TOMORROW FROM LOCAL TRANSFER ROUTE
+
+IMPORTANT CORRECTION:
+Assistant drifted into server-side pre-live/publish preparation after token refresh. User corrected route: current goal is NOT publish. Goal is to move refreshed server token/runtime package to Windows local and continue local project work.
+No eBay live publish/revise/create/delete was executed. S240/S241 were NO_LIVE audits only.
+
+CONFIRMED SERVER TOKEN/POLICY FIX:
+- Earlier access token caused eBay policy GET 401.
+- Authorization-code route repeatedly failed with 400 invalid_grant because code was single-use/expired/wrong exchange timing.
+- Correct solution was refresh_token grant from existing server refresh token.
+- S239R1 PASS at 20260616T200019Z:
+  REFRESH_HTTP_STATUS=200
+  ACCESS_SAVED=True
+  ACCESS_BYTES=2460
+  EXPIRES_IN=7200
+  fulfillment_HTTP_STATUS=200 + expected ID match true
+  payment_HTTP_STATUS=200 + expected ID match true
+  return_HTTP_STATUS=200 + expected ID match true
+  POLICY_PASS_COUNT=3
+  STATUS=PASS_S239R1_REFRESH_AND_POLICY_MATCHED_NO_LIVE
+- S239F PASS at 20260616T200126Z:
+  POLICY_BLOCKER=CLOSED
+  TOKEN_STATE=SERVER_ONLY_REFRESHED_NO_SECRET_PRINT
+  GITHUB_SECRET_TRANSFER=NO
+  LOCAL_SECRET_TRANSFER=NO
+  EBAY_LIVE_WRITE=NO
+
+TRANSFER PACK CREATED ON SERVER:
+S242 PASS at 20260616T201051Z:
+- Folder: /home/ionlipca7/ecom_transfer_out/S242_LOCAL_TRANSFER_20260616T201051Z
+- Manifest: /home/ionlipca7/ecom_transfer_out/S242_LOCAL_TRANSFER_20260616T201051Z/S242_LOCAL_TRANSFER_MANIFEST_20260616T201051Z.txt
+- Public runtime: /home/ionlipca7/ecom_transfer_out/S242_LOCAL_TRANSFER_20260616T201051Z/ecom_runtime_public_no_private_20260616T190054Z.tar.gz
+  size about 60M
+  sha256: 2345606256d5d3567bd6e4d56a97a2306237e75d0785ae2ac78ce27bd6010aeb
+- Protected secrets bundle: /home/ionlipca7/ecom_transfer_out/S242_LOCAL_TRANSFER_20260616T201051Z/ecom_server_secrets_PROTECTED_20260616T201051Z.tar.gz
+  size about 4.2K
+  sha256: d7d4a1c73e980aa613661aba94bf2ca705eaf183d4f0deb2c60dd833645b4467
+- Contains .env + ebay_access_token.txt + ebay_refresh_token.txt; do not print values; do not put in GitHub.
+
+ONE-FILE DOWNLOAD ARCHIVE CREATED:
+S243C PASS at 20260616T201533Z:
+- /home/ionlipca7/ecom_transfer_out/S243C_ONE_FILE_DOWNLOAD_20260616T201533Z.tar.gz
+- size: 62199529 bytes
+- sha256: fe892a48f38d725276c8f03d5dca24f63f07e349a4ac323d272f795cca3b5088
+- This one-file archive wraps S242_LOCAL_TRANSFER_20260616T201051Z for easier download.
+- STOP: do not create more ZIPs. Download this exact one file next.
+
+LOCAL WINDOWS STATUS:
+- Local project root exists: D:\ECOM_OS_PRO_LOCAL_OPERATOR_BUILD
+- Prepared staging folder exists:
+  D:\ECOM_OS_PRO_LOCAL_OPERATOR_BUILD\_server_restore_inbox\S242_20260616T201051Z
+- Download target exists but empty:
+  D:\ZIP SERVER\S242_LOCAL_TRANSFER_20260616T201051Z
+- gcloud is NOT installed on Windows.
+- scp exists: C:\Windows\System32\OpenSSH\scp.exe
+- tar exists: C:\Windows\System32\tar.exe
+
+DOWNLOAD PROBLEM:
+- gcloud compute scp failed on Windows: 'gcloud' not recognized.
+- No files downloaded yet; certutil failed because files not present.
+- Current recommended next step: use Google Cloud SSH UI download file OR configure direct scp with proper SSH key if available.
+- File to download via Google Cloud SSH UI Download file:
+  /home/ionlipca7/ecom_transfer_out/S243C_ONE_FILE_DOWNLOAD_20260616T201533Z.tar.gz
+- Put it locally to:
+  D:\ZIP SERVER\S243C_ONE_FILE_DOWNLOAD_20260616T201533Z.tar.gz
+- Verify SHA256 locally:
+  fe892a48f38d725276c8f03d5dca24f63f07e349a4ac323d272f795cca3b5088
+
+NEXT ALLOWED ACTION TOMORROW:
+S243D_DOWNLOAD_ONE_FILE_TO_WINDOWS_AND_VERIFY_HASH
+Then S243E_EXTRACT_ONE_FILE_TO_STAGING_ONLY:
+- Extract only into D:\ECOM_OS_PRO_LOCAL_OPERATOR_BUILD\_server_restore_inbox\S242_20260616T201051Z
+- Do NOT extract over project root.
+- Do NOT delete.
+- Do NOT publish.
+- Do NOT put secrets into GitHub.
+
+KEY LESSONS:
+1) No more server publish/pre-live route unless user explicitly chooses it.
+2) Current route is local project continuation, not live eBay.
+3) OAuth authorization code route is fragile; refresh_token grant works and should be preferred when refresh token is valid.
+4) Secrets stay protected and server/local only; never printed, never GitHub.
+5) Large transfer should be one exact archive only; avoid creating repeated ZIPs.
+6) For Windows local, gcloud missing; use Google Cloud SSH UI download or setup SDK later.
+
+STOP STATUS:
+STOP_FOR_NIGHT. Continue tomorrow with download of S243C one-file archive and local staging extraction only.
