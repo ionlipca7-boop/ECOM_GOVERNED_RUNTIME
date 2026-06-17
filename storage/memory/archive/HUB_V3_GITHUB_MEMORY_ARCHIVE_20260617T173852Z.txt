@@ -1,0 +1,96 @@
+ION / E1 — NEW CHAT TRANSITION ARCHIVE — ECOM OS PRO LOCAL ONE BUTTON CHECKPOINT
+
+UTC: 20260617T172000Z
+Operator: Ion
+Project: ECOM OS V3 / ECOM OS PRO LOCAL OPERATOR / ECOM_GOVERNED_RUNTIME
+
+CONFIRMED STATUS:
+- S248C = PASS_LOCAL_REFRESH_AND_POLICY_VERIFY_DONE
+  - local eBay refresh token -> new access token = HTTP 200
+  - fulfillment/payment/return policy read-only = 200/200/200
+  - secrets not printed
+- S249 = PASS_LOCAL_READY_CHECKPOINT_NO_LIVE
+  - .env, access token, refresh token exist locally
+  - local_operator_server.py, backend, frontend, storage exist
+- S255 = PASS_CORRECT_ENDPOINTS_VERIFY_DONE
+  - local operator on 127.0.0.1:8765
+  - /api/health = 200
+  - /route01/dashboard = 200
+  - /api/route01/cases/recent?limit=5 = 200
+- S256B = PASS_START_CMD_FIXED_FINAL
+  - start_local_operator.cmd fixed to D:\ECOM_OS_PRO_LOCAL_OPERATOR_BUILD
+  - PYTHONUTF8=1
+  - exit /b 1 fixed
+- S261 = PASS_ONE_BUTTON_AND_OLD_LAUNCHERS_AUDIT_DONE
+  - ECOM_OS_START_ONE_BUTTON.cmd exists
+  - Desktop ECOM OS START.cmd exists
+  - old project launchers had old path hits before S262
+- S262 = PASS_LEGACY_BUTTONS_HIDDEN_AND_LAUNCHERS_NORMALIZED
+  - project legacy launchers rewritten as wrappers
+  - old Desktop launchers moved to C:\Users\Ion Lipca\Desktop\ECOM_OLD_BUTTONS_BACKUP
+  - no delete, only move to backup
+  - old path hits in project cmd files = false
+  - API_HEALTH_HTTP_STATUS=200
+  - ROUTE01_DASHBOARD_HTTP_STATUS=200
+
+ACTIVE LOCAL ROOT:
+D:\ECOM_OS_PRO_LOCAL_OPERATOR_BUILD
+
+MAIN ONE BUTTON:
+D:\ECOM_OS_PRO_LOCAL_OPERATOR_BUILD\ECOM_OS_START_ONE_BUTTON.cmd
+C:\Users\Ion Lipca\Desktop\ECOM OS START.cmd
+
+WORKING DASHBOARD:
+http://127.0.0.1:8765/route01/dashboard
+
+LOCAL OPERATOR:
+- port: 8765
+- health endpoint: /api/health
+- dashboard endpoint: /route01/dashboard
+- cases endpoint: /api/route01/cases/recent?limit=5
+
+SERVER STATUS:
+- server eyes/read-only PASS
+- roots visible:
+  - /home/ionlipca7/ecom_governed_runtime
+  - /home/ionlipca7/runtime_eco_v1
+- Python 3.11.2 and Git available
+
+GITHUB STATUS:
+- GitHub API auth PASS
+- repo ionlipca7-boop/ECOM_GOVERNED_RUNTIME accessible
+- permissions admin/push/pull true
+- no GitHub write in S248-S262 route except this transition archive if write succeeds
+- server git working tree currently dirty/untracked; do not clean without separate cleanup gate
+
+LOCAL AUDIT LESSONS:
+- D:\ECOM_STANDALONE_AUTOCLIP exists and contains AutoClip controller, start/stop cmds, config/tasks/reports/logs. Keep as future integration source.
+- D:\ECOM_OS_PRO_ARCHITECTURE_BUILD exists and is useful architecture source, not trash.
+- D:\ECOM_OS_V7_3C_GITHUB_IMPORT_STAGE_10804 contains V73C agent coverage/gap documents. Agent layer is not fully complete: core agents exist, but deep route agents still need coverage audit.
+- Active root still contains junk files 0, 10, 11, 3), 3}, Dict[str, AdapterResult etc. Do not delete yet; cleanup gate later.
+
+NEXT ALLOWED ACTION:
+S263_ROUTE01_DASHBOARD_CLEAN_CASE_AUDIT_NO_EBAY_WRITE
+
+S263 GOAL:
+- verify dashboard current shown case/content
+- identify why old Bluetooth 5.0-like case appears
+- create/read clean Route01 test case state if needed
+- no eBay write
+- no GitHub write
+- no delete
+- no cleanup
+
+STRICT GATES:
+- NO_EBAY_WRITE
+- NO_PUBLISH
+- NO_REVISE
+- NO_DELETE
+- NO_CLEANUP
+- NO_SECRET_PRINT
+- NO_GITHUB_WRITE_UNTIL_CHECKPOINT_APPROVAL
+
+NEW CHAT START PROMPT:
+ION / E1 — CONTINUE FROM S262 PASS — START S263_ROUTE01_DASHBOARD_CLEAN_CASE_AUDIT_NO_EBAY_WRITE
+Read this archive first if available: storage/memory/archive/HUB_V3_GITHUB_MEMORY_ARCHIVE_20260617T172000Z.txt
+Then verify local one button and dashboard only.
