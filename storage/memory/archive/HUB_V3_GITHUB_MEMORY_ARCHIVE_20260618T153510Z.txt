@@ -1,0 +1,40 @@
+ION / E1 — FUTURE ARCHITECTURE IDEA — AUTONOMOUS_WORKSTATION_AGENT_V1
+
+UTC: 20260618T000000Z
+Operator: Ion
+Project: ECOM OS V2 / Operator Desktop
+
+STATUS: REGISTERED_AS_SEPARATE_FUTURE_LAYER
+PRIORITY: IMPORTANT_FUTURE_AUTONOMY_LAYER
+MAIN PROJECT IMPACT: DO_NOT_INTERFERE_NOW
+
+IDEA:
+Create a future isolated autonomous workstation where ChatGPT/agent system can work closer to full autonomy through a safe bridge: ChatGPT -> Safe Bridge -> Isolated Workstation -> CMD/Browser/File System -> Builder Agent -> QA Agent -> Critic Agent -> Repair Agent -> Final Report.
+
+REASON:
+Manual copy/paste through CMD slows project work. Long-term goal is to reduce operator workload and allow controlled long-run work sessions, e.g. 2-24 hour build/check/repair loops with final report.
+
+SIX BUILD STEPS:
+1. QA_TEST_AGENT_V1 — started in local project; read-only tester after each step.
+2. LOCAL_CMD_BRIDGE_V1 — safe command bridge with allowlist/denylist and report capture.
+3. COMBINED_REPORT_V1 — single operator-facing report after each step: step result + QA + critic + next_safe_action.
+4. AGENT_LOOP_V1 — Builder -> QA -> Critic -> Repair -> Recheck -> Combined Report.
+5. ISOLATED_WORKSTATION_V1 — separate clean disk/computer/VM/sandbox for autonomous work without risking main project.
+6. LONG_RUN_AUTONOMY_V1 — controlled 2-24 hour autonomy with checkpoints, time/budget limits, no live/destructive actions without approval.
+
+FUTURE UI IDEA:
+Add either a separate Operator Desktop button or one main control button/panel to watch bridges, CMD windows, reports, QA, critic, and active run status.
+
+SAFETY GATES:
+NO_EBAY_LIVE_WITHOUT_APPROVAL
+NO_DELETE_WITHOUT_CLEANUP_GATE
+NO_GIT_PUSH_WITHOUT_APPROVAL
+NO_SECRET_PRINT
+NO_UNCONTROLLED_RESTART
+NO_MONEY_ACTIONS_WITHOUT_APPROVAL
+NO_MAIN_PROJECT_INTERFERENCE_UNTIL_INTEGRATION_GATE
+
+NEXT SAFE ACTION:
+Keep this architecture separate while the main ECOM OS V2 work continues. Later create local architecture folder/spec and then build Step 1-2 in dry/sandbox mode only.
+
+STATUS: REGISTERED_NOT_IMPLEMENTED
