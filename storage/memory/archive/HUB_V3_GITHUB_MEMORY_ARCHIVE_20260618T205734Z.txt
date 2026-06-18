@@ -1,0 +1,61 @@
+ION / E1 — S305 GITHUB MEMORY ARCHIVE — ECOM OS FINAL LOCAL OPERATOR CONNECTED CHECKPOINT
+
+UTC: 20260618T205700Z
+Operator: Ion
+Project: ECOM OS V2 / Local Operator Desktop / 8-route dashboard
+Mode: MEMORY_ARCHIVE_ONLY / NO_COMMIT / NO_PUSH / NO_EBAY / NO_DELETE / NO_SERVER_RESTART
+
+CONFIRMED LOCAL FINAL CHECKPOINT:
+- S294E PASS: dry endpoints 02–08 return full HTTP 200 JSON.
+- S295 PASS: UI cards connected on Route02–Route08 to dry endpoints.
+- S296 PASS: clickflow + UI connector reverify; UI_CARDS_OK=True; ENDPOINTS_OK=True.
+- S297 PASS: Home route status/operator flow connected to 01–08 route links and JSON endpoints.
+- S298 PASS: Home flow + 8-route checkpoint; route HTTP, endpoint JSON, Home operator flow, clickflow core all OK.
+- S299 PASS: local checkpoint archive created.
+- S301/S302 PASS: visual structure audit + cleanup plan; Home and 01–08 structure OK.
+- S302 PASS: visible English/placeholder cleanup applied, structure preserved.
+- S303 PASS: Route01 intake flow connected to 02/03/05/06/07/08 route cards and dry-chain artifacts.
+- S304 PASS: final local operator checkpoint complete.
+
+FINAL LOCAL CHECKPOINT ARTIFACT:
+ZIP: storage/memory/archive/ECOM_OS_FINAL_LOCAL_OPERATOR_CONNECTED_CHECKPOINT_20260618T205643Z.zip
+SHA256: 467fadc13e22fbabc1bc7c6633694a82f6178c07e5cefa4bbeeac39fccc35631
+FILES_COUNT: 238
+
+S304 FINAL VERIFICATION:
+HTML_OK=True
+HOME_FLOW_OK=True
+ROUTE01_FLOW_OK=True
+ROUTE02_08_CARDS_OK=True
+CLEANUP_OK=True
+ENDPOINTS_OK=True
+CLICKFLOW_CORE_OK=True
+V2_CHECKPOINT_OK=True
+ARCHIVE_OK=True
+
+SYSTEM STATE NOW:
+- Home is central operator flow for routes 01–08.
+- Route01 is active intake/workbench route and shows downstream flow.
+- Route02–Route08 have connected dry endpoint cards.
+- Backend endpoints 02–08 are active read-only/dry JSON endpoints.
+- Old visible placeholder/English target terms were cleaned without breaking route links/endpoints.
+- eBay/live/publish/revise/delete gates remain closed.
+- Git commit/push were not executed.
+
+GITHUB/STAGE REVIEW:
+- GitHub API auth PASS.
+- Latest GitHub memory archive readable.
+- Current pointers readable.
+- Server Git working tree is dirty, so direct commit/push is BLOCKED until separate clean stage review.
+
+NEXT SAFE ACTION:
+S306_CONTINUE_LOCAL_UI_ACTIVATION_OR_START_CLEAN_GIT_STAGE_REVIEW_NO_COMMIT_PUSH_UNTIL_APPROVAL
+
+DO NOT DO:
+- Do not publish/revise/delete eBay listings.
+- Do not run live marketplace actions.
+- Do not commit/push from dirty server tree.
+- Do not cleanup/delete without explicit cleanup gate.
+- Do not restart server/bot unless separate restart gate is opened.
+
+STATUS: PASS_S305_MEMORY_ARCHIVE_CONTENT_READY
