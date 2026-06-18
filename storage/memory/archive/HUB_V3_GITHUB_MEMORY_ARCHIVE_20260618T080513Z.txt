@@ -1,0 +1,39 @@
+ION / E1 — IMPORTANT IDEA ARCHIVE — EBAY RE-STORE / TRADE-IN / REFURBISHED / MARKET INTELLIGENCE AGENT
+
+UTC: 20260618T000000Z
+Operator: Ion
+Project: ECOM OS V2 / Operator Desktop
+Source: User screenshots from eBay mobile/app and user instruction to register this as important for project queue.
+
+OBSERVATION:
+- eBay UI showed Re-Store / Trade-In style promotion: "Nicht selbst verkaufen?" / old-device sale service / coupon in minutes.
+- Seller account screenshot showed remaining selling limits: 46,576 EUR and 4,511 items.
+
+PROJECT MEANING:
+- This is not a direct listing-template feature and not a normal seller automation endpoint.
+- It is important as a marketplace signal: eBay is actively promoting used/refurbished/trade-in/re-store flows.
+- ECOM OS should store it as future product-research and category-intelligence input.
+
+QUEUE ITEM:
+Name: MARKET_INTELLIGENCE_AGENT_EBAY_RESTORE_TRADEIN_REFURBISHED_V1
+Priority: IMPORTANT_FUTURE_LAYER
+Status: QUEUED_NOT_IMPLEMENTED
+Safety: READ_ONLY_RESEARCH_FIRST / NO_EBAY_WRITE
+
+IMPLEMENTATION IDEA:
+- Add a future Market Intelligence Agent to monitor eBay promoted areas: Re-Store, Trade-In, Refurbished, deals/coupons, trending categories, used electronics demand.
+- Use this as a signal for product sourcing and listing strategy.
+- Potential categories: electronics, phones, tablets, laptops, small home appliances, tools, home/garden devices.
+- Later connect to Operator Desktop as a read-only research panel and queue suggestions for Ion approval.
+
+DO NOT DO NOW:
+- Do not change live listings.
+- Do not publish/revise/delete.
+- Do not treat this as available eBay API automation until researched.
+
+NEXT SAFE STEP WHEN SELECTED:
+- Research official eBay DE seller pages for Re-Store/Trade-In/Refurbished rules.
+- Create Market Intelligence Agent specification.
+- Add task to Operator Desktop roadmap after current V2 core is stable.
+
+STATUS: REGISTER_REQUESTED
