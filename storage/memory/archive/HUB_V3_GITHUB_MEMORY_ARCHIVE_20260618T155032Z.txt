@@ -1,0 +1,120 @@
+ION / E1 — AUTONOMOUS_WORKSTATION_AGENT_V1 FULL TARGET BLUEPRINT
+
+UTC: 20260618T000000Z
+Operator: Ion
+Project lane: separate future architecture, not connected to main ECOM OS V2 active flow yet.
+
+TARGET DREAM MODE:
+Ion gives a goal. ChatGPT/agent system works for a long controlled session, builds/checks/repairs in an isolated environment, stops only for approval or human-only input, and returns a final report.
+
+REALISTIC IMPLEMENTATION PRINCIPLE:
+Do not start with uncontrolled 24h autonomy. Build a governed autonomy ladder:
+1. Read-only awareness
+2. Safe command bridge
+3. Full report contract
+4. QA + critic + repair loop
+5. Isolated workstation
+6. Long-run supervised autonomy with checkpoints
+
+SYSTEM NAME:
+AUTONOMOUS_WORKSTATION_AGENT_V1
+
+LOCATION POLICY:
+Use a separate architecture folder first:
+D:/ECOM_OS_PRO_LOCAL_OPERATOR_BUILD/storage/autonomous_workstation/
+Later, if approved, move or mirror to a clean separate disk/VM/workstation.
+
+CORE FLOW:
+Ion goal -> Task Contract -> Safe Bridge -> Isolated Workstation -> Command Runner -> Builder Agent -> QA Test Agent -> Critic Agent -> Repair Agent -> Repeat until PASS/BLOCK -> Final Report -> Ion approval.
+
+WHAT IT MUST DO:
+- Read current project memory, plans, pointers, contracts and reports.
+- Understand the current project state before acting.
+- Run safe commands through a bridge.
+- Capture full stdout/stderr from every command.
+- Write normal step report.
+- Run QA after every step.
+- Run critic after important steps.
+- Repair only safe non-live issues.
+- Stop on gates, secrets, live actions, destructive actions, unclear state or repeated errors.
+- Produce compact final Russian operator report.
+
+WHAT IT MUST NOT DO:
+- No eBay publish/revise/delete without explicit live gate.
+- No file deletion/cleanup without cleanup gate.
+- No git push/commit without approval.
+- No secrets print.
+- No uncontrolled restart.
+- No money actions.
+- No uncontrolled long-running background process on main workstation.
+- No blind changes without a report.
+
+MAIN COMPONENTS:
+1. SAFE_BRIDGE
+- Accepts structured tasks, not free dangerous shell.
+- Uses allowlist and denylist.
+- Logs every command and result.
+
+2. COMMAND_RUNNER
+- Executes one command or task block.
+- Captures stdout, stderr, exit code, duration, changed files.
+- Writes report JSON.
+
+3. BUILDER_AGENT
+- Creates/edits code, docs, configs, tests only inside allowed workspace.
+
+4. QA_TEST_AGENT
+- Already started.
+- Checks health, step result, safety flags, expected files, next action.
+
+5. CRITIC_AGENT
+- Reviews logic, missing pieces, safety risks, blind assumptions, integration gaps.
+
+6. REPAIR_AGENT
+- Creates safe repair plan.
+- Fixes only dry/safe issues.
+- Re-runs QA.
+
+7. FINAL_REPORTER
+- Produces one clean report for Ion.
+- Includes status, changed files, blockers, next actions.
+
+8. OPERATOR_PANEL
+- Future UI button/panel in Operator Desktop.
+- Shows current run, active bridge, QA, critic, blockers, last report.
+
+AUTONOMY MODES:
+MODE_0_ARCHITECTURE_ONLY: create specs only.
+MODE_1_READONLY_AUDIT: read files/reports only.
+MODE_2_SAFE_LOCAL_DRY_RUN: run allowlisted local commands only.
+MODE_3_AGENT_LOOP_DRY: builder/QA/critic/repair dry loop.
+MODE_4_ISOLATED_WORKSTATION: run on separate VM/disk/computer.
+MODE_5_LONG_RUN_AUTONOMY: time-boxed long session with checkpoints and gates.
+
+STOP CONDITIONS:
+- Needs Ion approval.
+- Live action requested.
+- Destructive action needed.
+- Secrets/token risk.
+- Repeated error twice.
+- Missing source of truth.
+- Conflicting project pointers.
+- Command bridge cannot verify result.
+- QA BLOCK or critic critical blocker.
+
+REPORTING RULE:
+Each run must end with final combined report:
+step_status, qa_status, critic_status, repair_status, changed_files, evidence_files, blockers, warnings, next_safe_action, operator_message_ru.
+
+NEXT BUILD ORDER:
+A1 Create local skeleton folder and docs.
+A2 Create safety rules contract.
+A3 Create task contract schema.
+A4 Create command report schema.
+A5 Create combined final report schema.
+A6 Create dry agent loop contract.
+A7 Create future UI panel concept.
+A8 Only after approval: build safe bridge prototype.
+
+CURRENT STATUS:
+Registered as future separate architecture. Do not interfere with active ECOM OS V2 project.
