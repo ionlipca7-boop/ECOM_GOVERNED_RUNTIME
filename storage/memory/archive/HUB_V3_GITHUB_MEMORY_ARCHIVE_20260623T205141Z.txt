@@ -1,0 +1,185 @@
+# ECOM OS V3 — VISUAL LOCK + DIRECT MARKETPLACE ROUTE ADDENDUM
+
+Date: 2026-06-23
+Operator: Ion
+Status: APPROVED_BY_ION_IN_CHAT
+Mode: LOCAL_FIRST + GITHUB_MEMORY_ARCHIVE
+Pointer: DO NOT TRUST AS SOURCE OF TRUTH
+
+## 0. Purpose
+This addendum extends the approved ECOM OS V3 skeleton with the missing but required direct marketplace/browser publication route.
+Ion confirmed that the latest visual UI screens are approved as the browser/program visual target, but the V3 skeleton must also preserve the earlier direct marketplace path: ready product/listing packet -> open marketplace automatically -> fill directly in eBay/Seller Hub visible page -> no submit without Route07 gate.
+
+## 1. Visual Lock registration
+Approved visual direction:
+- dark navy left sidebar
+- bright white main workspace
+- card-based dashboard
+- operator-facing only
+- no visible internal agents
+- no hidden reasoning/logs
+- no technical clutter for Ion
+- show only: inputs, what found, missing data, risk, next safe step, preview, decision cards
+- sticky/large bottom actions
+- eBay DE/EUR/HashtagLM Shop context first
+- Amazon/Kaufland/Otto are future/secondary channels
+
+Approved 9 operator screens:
+1. Дом / Home intake and auto-route
+2. 01 Новый товар
+3. 02 Товар с вариантами
+4. 03 Listing Studio
+5. 04 Жизнь листингов / Monitoring
+6. 05 Финансы и склад
+7. 06 Радар
+8. 07 Центр решений
+9. 08 Память и архив
+
+The latest horizontal A4 mockups are accepted as visual inspiration for implementation, but final implementation must be HTML/CSS component-based, not pixel-copy from AI images.
+
+## 2. Missing route restored: Direct Marketplace / Browser Publication Route
+Ion noticed that the visual screens show mostly internal packet creation and separate publishing, but the earlier project logic included direct marketplace access.
+This must NOT be forgotten.
+
+V3 must support multiple publication modes:
+
+### Mode A — Direct Marketplace Browser Route (priority for eBay first)
+Use when Ion wants to publish/fill directly inside marketplace page.
+
+Flow:
+Product Vault -> Listing Packet -> Route07 approval to open fill route -> Browser opens eBay/Seller Hub -> Page Reader reads visible fields -> Field Map created -> Binder maps packet fields to visible eBay fields -> Fill Agent fills visible fields only -> Validator checks page -> Ion reviews in browser -> Submit remains closed until explicit Route07 live approval.
+
+Important: Direct marketplace route is NOT auto-submit.
+It is direct visible fill / preview / no hidden click.
+
+### Mode B — Internal Project Draft Route
+Use when eBay/Seller Hub is unstable, fields are missing, or Ion wants to prepare everything inside ECOM OS first.
+
+Flow:
+Product Vault -> Listing Studio -> eBay packet -> local preview -> Route07 review -> later direct browser/API fill.
+
+### Mode C — API / Inventory Route
+Use only for controlled updates or API-safe cases.
+
+Flow:
+Product Vault -> eBay API adapter -> dry payload -> validator -> Route07 approval -> live write action only after explicit gate.
+
+Examples:
+- price update
+- quantity update
+- photo update through Inventory API
+- read-only monitor actions
+
+### Mode D — Manual / Recovery Route
+Use when browser/API fail.
+
+Flow:
+Product Vault -> generate operator checklist -> Ion manually copies/fills marketplace -> system records result -> Route08 lesson.
+
+## 3. Direct eBay Browser Route must be visible in UI
+Add to Route03 and Route07 UI:
+- button: Открыть eBay напрямую
+- button: Открыть eBay draft
+- button: Заполнить видимые поля
+- badge: No submit without Route07
+- card: Marketplace Browser Route
+- card: Page Reader / Field Map status
+- card: Missing visible fields
+
+Route01 bottom actions should include:
+- Пересобрать
+- Открыть eBay preview
+- Открыть eBay напрямую
+- Передать в Route07
+
+Route03 Listing Studio should include publication mode selector:
+- Внутренний пакет
+- eBay Browser Fill
+- API payload
+- Manual checklist
+
+Route07 decision cards must include:
+- approve browser fill
+- approve live submit
+- reject submit
+- return to packet
+- send to manual route
+
+## 4. Browser/Page Reader rules
+Direct marketplace route requires:
+- visible page only
+- no hidden submit
+- no auto-click on publish/revise/delete
+- no save/submit without explicit Route07 marker
+- before fill: confirm listing packet, product_key, SKU, title, photos, category, item specifics, price, quantity, shipping, returns, ads gate
+- after fill: screenshot/readback validator
+- if mismatch: STOP_SAFE_FIELD_BINDER_MISMATCH
+- if eBay changes UI: STOP_SAFE_PAGE_READER_FIELD_MAP_REQUIRED
+
+## 5. Agents / blocks to add to V3 plan
+Add or preserve:
+- Marketplace Access Broker
+- eBay Browser Session Agent
+- eBay Visible Page Reader
+- eBay Field Map Agent
+- Field Binder Agent
+- Visible Fill Agent
+- No Submit Guard
+- eBay Page Validator
+- Screenshot/Readback Verifier
+- Draft Recovery Agent
+- Manual Checklist Agent
+- Route07 Browser Fill Gate
+- Route07 Live Submit Gate
+- Route08 Browser Lesson Writer
+
+## 6. Route04 connection
+Route04 monitoring must work after direct marketplace route too.
+After listing is live or draft is recognized:
+- discover listingId/offerId/SKU
+- match to Product Vault
+- update listing_registry
+- create monitoring baseline
+- send sales/fees/stock changes to Route05
+- create weak listing cards to Route07
+
+## 7. Implementation priority update
+The implementation route must now explicitly include direct marketplace route:
+
+S392 — Master audit/implementation plan
+S393 — Core foundation: registry, Product Vault, boundary, state machine, event bus
+S394 — Route01 single product flow
+S395 — Route02 variant flow
+S396 — Route03 Listing Studio + publication mode selector
+S397 — Route04 marketplace monitoring access layer
+S398 — eBay active listings discovery read-only
+S399 — Route05 finance/stock/reporting
+S400 — Route06 evidence radar
+S401 — Route07 decision center/gates
+S402 — Route08 memory/archive/teacher
+S403 — eBay Page Reader + Field Map + Binder
+S404 — eBay Browser Fill Agent dry visible only
+S405 — first live gate only after explicit approval
+S406 — full dry E2E checkpoint
+S407 — GitHub archive stage review
+S408 — final sync and STOP
+
+## 8. Final V3 formula after addendum
+HOME = operator input + auto-route + Product Vault context
+01 = create single product + prepare direct eBay-ready packet
+02 = variant matrix + variant packet
+03 = Listing Studio + publication mode selector + eBay Browser route
+04 = Monitoring Center that sees marketplace read-only
+05 = Finance/Stock/Reports/Tax
+06 = Radar evidence
+07 = Ion Decision Center, including browser fill/live submit gates
+08 = Memory/Archive/Teacher/Visual Lock
+
+## 9. Next allowed action
+S392_CREATE_V3_MASTER_AUDIT_AND_IMPLEMENTATION_PLAN_LOCAL
+
+S392 must include this addendum and must not lose the direct marketplace browser route.
+
+NO eBay live, NO delete, NO GitHub push, NO pointer update before separate gate.
+
+FINISH: V3 Visual Lock + Direct Marketplace Route addendum approved and archived.
