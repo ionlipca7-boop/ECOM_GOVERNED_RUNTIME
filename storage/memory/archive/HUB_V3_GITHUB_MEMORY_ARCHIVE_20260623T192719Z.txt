@@ -1,0 +1,296 @@
+# ECOM OS V3 — MASTER CHAT ARCHIVE / APPROVED PROJECT SKELETON
+
+Date: 2026-06-23
+Operator: Ion
+Status: APPROVED_BY_ION_IN_CHAT
+Mode: LOCAL_FIRST / GITHUB_MEMORY_ARCHIVE / NO_POINTER_AS_TRUTH
+
+## 0. Purpose
+This archive fixes the final approved ECOM OS V3 skeleton discussed in chat. V3 is not a new project from zero. V3 is the final architecture and implementation route on top of the existing V2 local operator build.
+
+Active local root:
+D:\ECOM_OS_PRO_LOCAL_OPERATOR_BUILD
+
+User also saved the master skeleton manually in PROD / новые блоки:
+- ECOM_OS_V3_MASTER_SKELETON_APPROVED_20260623.md
+- ECOM_OS_V3_MASTER_SKELETON_APPROVED_20260623.zip
+Exact path must be verified read-only in the next chat.
+
+GitHub memory target repo verified read-only:
+ionlipca7-boop/ECOM_GOVERNED_RUNTIME
+
+Pointer is not trusted as source of truth.
+
+## 1. Main V3 formula
+HOME = вход / Auto Router / Product Context
+01 = Single Product Vault Builder
+02 = Variant Product Vault Builder
+03 = Listing + Channel + Search Angle Studio
+04 = Product Vault Monitoring Center
+05 = Finance + Stock + Reports + Tax Export
+06 = Evidence Radar + Buy/Don't Buy
+07 = Ion Decision Center + Gates
+08 = Memory + Teacher + Archive + Rule Upgrades
+
+Main rule:
+one product = one Product Vault = one truth.
+
+## 2. What exists from V2
+- browser-first local operator
+- Home / 8 route screens
+- Auto Router
+- Route01 real case
+- Route02-08 dry schemas
+- Route handoff index
+- Route07 Decision Inbox
+- Route05 Finance/Stock dry store
+- Route06 Radar dry store
+- Route04 Monitor dry schema
+- Route08 Memory/Teacher schema
+- Product workspace: car_charger_100w_1005007495085039
+- eBay/live/delete/git gates closed
+
+## 3. Phone upgrades approved and preserved
+S380 Page Reader / Field Map / Binder
+S381 Route01 + Route02 upgraded logic
+S382 Product Isolation Boundary
+S383 Product Vault / Product Master
+S384 Product Vault Bootstrap
+S385 Cancel / Start Over / Quarantine
+S386 Orchestrator / State Machine / Agent Contracts
+S387 Route03 Listing Studio
+S388 Search Angles A/B/C
+S389 Vault-only Radar + Teacher Evidence Loop
+S390 Finance + Stock Intake in 01/02
+S391 Route04 Monitoring Center
+
+## 4. Product Vault V3 required structure
+Each product must have a dedicated Product Vault under storage/products/<product_key>/ with:
+- product_master.json
+- product_manifest.json
+- assets/source, selected, receipts, invoices, shipping_labels, archived_heavy
+- finance/finance_packet.json, purchase_ledger.jsonl, sales_ledger.jsonl, expense_ledger.jsonl, fees_ledger.jsonl, ads_ledger.jsonl, returns_ledger.jsonl, margin_history.json, product_pnl.json
+- stock/stock_state.json, stock_ledger.jsonl
+- channels/ebay_de/listing_packet.json, ebay_field_map.json, validator_report.json, live_state.json, monitoring folder
+- future channels: amazon_de, kaufland_de
+- market/radar_packet.json, search_angle_experiments.json, competitor_snapshots, price_movement.jsonl
+- lifecycle/intake_events.jsonl, monitor_events.jsonl, listing_health_events.jsonl, sales_events.jsonl, returns_events.jsonl, relist_decisions.jsonl
+- reports/monthly_summary, yearly_summary, tax_export, steuerberater_export, euer_export, csv_export, excel_export
+- history/decision_cards.jsonl, edits.jsonl, lessons.jsonl, agent_reports, used_files_manifest.jsonl, external_evidence_manifest.jsonl
+- archive/
+
+Global indexes:
+- storage/products/PRODUCT_REGISTRY.json
+- storage/marketplaces/ebay_de/listing_registry.json
+- storage/finance_global/
+- storage/orchestrator/state_machine.json
+- storage/orchestrator/event_bus.jsonl
+
+## 5. Orchestrator Brain V3
+Required helpers:
+- State Machine Runner
+- Product Context Manager
+- Product Registry Manager
+- Route Director
+- Agent Scheduler
+- Agent Permission Guard
+- Marketplace Access Broker
+- Event Bus / Event Ledger
+- Decision Gate Controller
+- Error Recovery Manager
+- Teacher Feedback Router
+- Audit Logger
+
+Orchestrator rules:
+- keep active_product_key, active_case_id, active_route
+- block cross-product file access
+- no Radar before Product Vault exists
+- no Listing Studio before Boundary PASS
+- no eBay fill before Page Reader + Field Map + Validator
+- no publish/revise/delete/price/qty update without Route07
+- all agents write events and reports
+
+Minimal states:
+HOME_INTAKE_STARTED, ROUTE_SELECTED, PRODUCT_VAULT_CREATED, BOUNDARY_REGISTERED, FINANCE_STOCK_REGISTERED, RADAR_PACKET_CREATED, LISTING_PACKET_CREATED, FIELD_MAP_CREATED, VALIDATOR_DONE, ION_REVIEW_WAITING, LIVE_APPROVED, LIVE_PUBLISHED, MONITORING_ACTIVE, ARCHIVED
+
+## 6. HOME
+Home creates or opens product context. It is not just a route chooser.
+Agents:
+- Auto Router Agent
+- Input Classifier Agent
+- Product Vault Selector
+- Product Vault Bootstrap Agent
+- Product Registry Manager
+- Product Boundary Guard
+- Missing Data Agent
+- Route Director
+- Decision Fallback Agent
+- Home Attention Card Agent
+
+## 7. Route01 — New single product
+Role: Single Product Vault Builder.
+Flow:
+Intake URL/photos/receipt/quantity/price/notes -> Product Vault Bootstrap -> Product Master -> Source Evidence -> Receipt/Cost Parser -> Finance Packet -> Stock State -> Photo Manifest -> Category Agent -> eBay Taxonomy Aspects -> eBay Metadata Policy -> Radar Evidence -> Listing Packet -> Page Reader/Field Map -> Browser Fill Plan -> Validator -> Route07 Ion Review -> live gate only after approval.
+
+Agents:
+Route01 Orchestrator, Product Vault Bootstrap Agent, Source URL Reader, Receipt/Cost Parser, Photo Intake Agent, Photo Quality Agent, Product Passport Agent, Category Agent, eBay Taxonomy Agent, eBay Metadata Policy Agent, Finance Intake Agent, Stock Intake Agent, Radar Request Agent, Claim Safety Agent, Listing Packet Builder, Browser Page Reader, Field Binder, Validator, Route07 Decision Card Agent, Teacher Feedback Writer.
+
+Rules:
+- If URL has variants but only one variant was bought, Route01 may still be correct.
+- If single/variant unclear, create Route07 decision card.
+- No Product Vault + finance + stock + source evidence means no eBay fill/publish.
+
+## 8. Route02 — Variant product
+Role: Variant Product Vault Builder, not multiple Route01 copies.
+Required:
+- group product_key
+- variant_matrix.json
+- SKU per variant
+- qty per variant
+- purchase cost per variant
+- target price per variant
+- photo refs per variant
+- eBay variation support check
+- Route06 variant radar
+- Route03 variation listing studio
+- Route07 review
+
+Agents:
+Route02 Orchestrator, Variant Discovery Agent, Variant Truth Gate, Variant Matrix Builder, Variant SKU Generator, Variant Photo Mapper, Variant Finance Agent, Variant Stock Agent, Variation Category Agent, eBay Variation Policy Agent, Route06 Variant Radar, Variant Listing Packet Builder, Variant Validator, Route07 Variant Decision Card, Teacher Variant Lesson Agent.
+
+STOP rule:
+missing SKU/qty/price/photo/confirmed variant axis -> STOP_SAFE_VARIANT_MATRIX_INCOMPLETE.
+
+## 9. Route03 — Listing Studio
+Role: Listing Studio + Channel Studio + Search Angle Studio.
+Flow:
+open Product Registry -> select product_key -> vault lock -> read only this Product Vault -> Channel Board -> select eBay/Amazon/Kaufland/later -> select Search Angle A/B/C -> build listing packet -> validate -> Route07 decision card -> write back to same Product Vault.
+
+Search angles:
+A = internal marketplace search
+B = external web search
+C = AI discovery search
+
+Agents:
+Route03 Studio Orchestrator, Product Registry Reader, Vault Boundary Guard, Channel Board Agent, eBay Adapter Agent, Amazon Adapter Agent, Kaufland Adapter Agent, Search Angle Orchestrator, Internal Marketplace Search Agent, External Web SEO Agent, AI Discovery Agent, Title Experiment Agent, Photo Studio Agent, Aspect Mapper, HTML Description Agent, Price/Ads Preview Agent, Quality Critic, Marketplace Guard, Validator, Route07 Decision Card Agent, Teacher Feedback Agent.
+
+## 10. Route04 — Monitoring Center
+Role: Product Vault Monitoring Center. Route04 reads marketplace; it does not modify marketplace.
+
+Access:
+MARKETPLACE_ACCESS_LAYER -> EBAY_READONLY_ADAPTER -> ROUTE04_MONITORING_CENTER.
+
+Read-only eBay sources:
+- getInventoryItems
+- getOffers
+- getOrders
+- getTrafficReport if available/appropriate
+- finance/fees/payout read-only endpoints
+- competitor Browse search only for comparison, not seller truth
+
+Required listing registry:
+storage/marketplaces/ebay_de/listing_registry.json
+Fields: listing_id, offer_id, sku, product_key, case_id, title, price, quantity, status, created_at, last_seen_at, source_route, linked_product_vault.
+
+First Route04 job:
+S391A_EBAY_ACTIVE_LISTINGS_DISCOVERY_READONLY
+- get all active listings
+- count active listings
+- read SKU/title/price/qty/status/listingId/offerId
+- match to Product Registry
+- create matched/unmatched report
+- create Route07 cards for unmatched legacy listings
+- no write to eBay
+
+Agents:
+Route04 Monitoring Orchestrator, eBay Account Snapshot Agent, eBay Inventory Readonly Agent, eBay Offer Status Agent, eBay Traffic Analytics Agent, eBay Orders/Sales Agent, eBay Fees/Payouts Agent, Listing Health Agent, Stock Sync Planner, Performance Lifecycle Agent, Day 3/5/7/15 Agent, Weak Signal Detector, Duplicate SKU/Title Risk Agent, Ads/Watcher Offer Lifecycle Agent, Competitor Change Trigger, Radar Trigger Agent, Route07 Action Card Generator, Route08 Teacher Outcome Agent.
+
+Handoff:
+weak listing -> Route03
+price/market risk -> Route06
+stock/finance risk -> Route05
+decision needed -> Route07
+lesson -> Route08
+
+## 11. Route05 — Finance / Stock / Reports / Tax Export
+Role: Finance + Stock + Reporting + Tax Export.
+This was the biggest missing part in earlier summaries.
+
+Required reporting:
+- monthly report
+- yearly report
+- sales report
+- expenses report
+- EÜR export
+- Steuerberater export
+- Excel/CSV export
+- product P&L
+- marketplace P&L
+
+Agents:
+Finance Orchestrator, Receipt Cost Parser, Purchase Ledger Agent, Sales Ledger Agent, Expense Ledger Agent, eBay Fees Agent, Shipping Cost Agent, Packaging Cost Agent, Ads Cost Agent, Return/Refund Agent, Stock Ledger Agent, Margin Guard Agent, Product P&L Agent, Monthly Closing Agent, Yearly Closing Agent, EÜR Export Agent, Steuerberater Export Agent, Excel/CSV Export Agent, Document Archive Agent, Anomaly Detector Agent, Route07 Finance Decision Agent, Teacher Profit/Loss Lesson Agent.
+
+Automatic behavior:
+01/02 creates purchase/stock events; 04 sale detected -> 05 stock ledger update; 04 fees detected -> 05 finance ledger update; 05 low stock -> Route07 card; monthly close -> export card; missing receipt -> Route07 missing document card.
+
+## 12. Route06 — Evidence Radar
+Role: Evidence Radar / Market Intelligence / Buy-Don't-Buy.
+Agents:
+Radar Orchestrator, Competitor Research Agent, Sold Proof Agent, Price Band Agent, Keyword Intelligence Agent, Buyer Pain Agent, Search Angle Evidence Agent, Supplier Research Agent, Buy/Don't Buy Agent, Risk Agent, Shipping Price Normalizer, Category Opportunity Agent, Trend Watch Agent, Route07 Recommendation Agent, Teacher Evidence Agent.
+
+Rule: Radar writes evidence + score + unknowns. No false PASS.
+
+## 13. Route07 — Decision Center
+Role: Ion Decision Center / Gate Control.
+Agents:
+Decision Inbox Orchestrator, Approval Ledger Agent, Live Gate Agent, Missing Data Agent, Risk Consolidator, Paused Case Manager, Cancel/Start-over Gate Agent, Publish Gate Agent, Revise Gate Agent, Price/Qty Gate Agent, Delete/Cleanup Gate Agent, GitHub Stage Review Gate, Telegram Card Agent, Ion Review Card Agent.
+
+Card types include:
+paused_case, approval_request, missing_data, stock_alert, access_alert, weak_listing, teacher_upgrade, price_risk, live_gate, delete_gate, tax_report_ready, monthly_close_ready, yearly_close_ready, finance_anomaly, missing_receipt, missing_fee_data, oos_sync_plan, reorder_proposal, unmatched_listing.
+
+## 14. Route08 — Memory / Teacher / Archive
+Role: System Memory + Teacher + Archive + Rule Upgrade Gate.
+Agents:
+Memory Orchestrator, Teacher Agent, Archivist Agent, Rule Proposal Agent, Conflict Checker, Agent Patch Proposal Agent, Lesson Writer, GitHub Memory Sync Agent, Pointer Guard, Archive Retention Agent, Cleanup Proposal Agent, System Health Agent, Policy Knowledge Agent.
+
+Teacher learns from Radar evidence, Validator report, Ion decisions, monitoring results, sales/returns, profit/loss, agent mistakes, manual corrections, failed attempts, eBay policy changes, marketplace results.
+
+## 15. Marketplace Access Layer
+Marketplace adapters:
+- eBayAdapter first
+- AmazonAdapter later
+- KauflandAdapter later
+- OttoAdapter later
+- ManualAdapter fallback
+
+Adapter interface:
+read_listings(), read_listing_status(), read_orders(), read_fees(), read_inventory(), read_metrics_if_available(), prepare_update_plan(), NO_WRITE_WITHOUT_ROUTE07().
+
+## 16. Automation Runner
+V3 automation is read/analyze/prepare/report/card/recommend/wait for Ion. It is not live autopilot.
+
+Schedules:
+- morning: 04 monitor + 05 stock + 06 market + 07 urgent cards
+- evening: sales summary + finance update + weak listings + teacher lessons
+- weekly: weak listing review + radar recheck + price/ads review
+- monthly: Route05 monthly finance report
+- yearly: Route05 yearly/EÜR/Steuerberater export
+
+## 17. Implementation path
+Phase A: S392_V3_MASTER_AUDIT_AND_IMPLEMENTATION_PLAN
+Phase B: S393_V3_CORE_FOUNDATION_AND_ROUTE05_REPORTING_CONTRACTS
+Phase C: S394_ROUTE01_SINGLE_PRODUCT_VAULT_FLOW + S395_ROUTE02_VARIANT_PRODUCT_VAULT_FLOW
+Phase D: S396_ROUTE03_LISTING_CHANNEL_SEARCH_ANGLE_STUDIO
+Phase E: S397_ROUTE04_MARKETPLACE_MONITORING_ACCESS_LAYER + S398_EBAY_ACTIVE_LISTINGS_DISCOVERY_READONLY
+Phase F: S399_ROUTE05_FINANCE_STOCK_REPORTING_EXPORT
+Phase G: S400_ROUTE06_EVIDENCE_RADAR_SERVICE
+Phase H: S401_ROUTE07_DECISION_CENTER_UNIFIED_GATES + S402_ROUTE08_MEMORY_TEACHER_ARCHIVE_LOOP
+Phase I: S403_EBAY_PAGE_READER_FIELD_MAP_BINDER + S404_EBAY_FILL_AGENT_DRY_VISIBLE_ONLY + S405_EBAY_LIVE_GATE_FIRST_CONTROLLED_ACTION
+Phase J: S406_V3_FULL_DRY_END_TO_END_CHECKPOINT + S407_V3_GITHUB_ARCHIVE_STAGE_REVIEW + S408_V3_FINAL_SYNC_AND_STOP
+
+## 18. Next allowed action
+S392_CREATE_V3_MASTER_AUDIT_AND_IMPLEMENTATION_PLAN_LOCAL
+
+No eBay live, no delete, no GitHub push, no pointer update before separate gate.
+
+FINISH: V3 master chat archive approved and saved. Continue from S392.
