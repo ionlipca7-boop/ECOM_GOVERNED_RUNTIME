@@ -1,0 +1,87 @@
+ION / E1 — ECOM OS V3 APPLICATION-FIRST FINAL FREEZE
+
+UTC: 2026-07-04T17:36:05Z
+Operator: Ion
+Project: ECOM OS V3
+Mode: MEMORY_ARCHIVE_ONLY / NO_RUNTIME_PATCH / NO_SERVER_RESTART / NO_EBAY_WRITE / NO_DELETE
+
+FINAL DECISION
+- ECOM OS becomes its own application.
+- Windows uses the full installable PWA/operator interface.
+- Android phone uses the same installable PWA.
+- Browser mode remains available.
+- One governed backend, one canonical database, one event/job model and one Approval Ledger.
+- Telegram is not a core dependency; old Telegram code remains READONLY donor and optional emergency fallback only.
+- eBay DE is the default marketplace.
+- Other marketplaces require separate adapters and policy registries.
+
+AUTOMATION
+- Target 90–99% for preparation, validation, routing and monitoring.
+- RUN UNTIL BLOCKER.
+- Safe agents run automatically and in parallel where valid.
+- Create Draft, Publish, Revise and Delete are separate actions and separate gates.
+- Every external mutation requires idempotency and readonly post-verification.
+
+APPLICATION STACK FREEZE
+- Backend candidate: Python FastAPI.
+- Local baseline database: SQLite with migrations.
+- Multi-device server database: PostgreSQL.
+- Initial worker: durable database-backed job queue.
+- Frontend phase 1: existing HTML/CSS/JS V3 shell converted to modular PWA without broad rewrite.
+- Tauri is optional later only for native desktop integration.
+- Secrets remain server-side and never enter phone/browser storage.
+
+CANONICAL ROOTS
+- Windows active project: D:\ECOM_OS_PRO_LOCAL_OPERATOR_BUILD
+- Governed server runtime: /home/ionlipca7/ecom_governed_runtime
+- Protected legacy donor: /home/ionlipca7/runtime_eco_v1
+- GitHub memory repo: ionlipca7-boop/ECOM_GOVERNED_RUNTIME
+
+CONTRACT PACKAGE INVENTORY
+- API_EVENT_ORCHESTRATOR_CONTRACT_V1.json | 2628 bytes | sha256=fdbb782525181e3858168feab16fe99eb69f9e68ee2cb9861fe84c0d997ce3aa
+- APPLICATION_FIRST_ARCHITECTURE_V1.json | 3857 bytes | sha256=bf308ea9560c744036378ced5ebba9aa496dce915c60a4f48c7c033bffe76be4
+- APPLICATION_FIRST_IMPLEMENTATION_ROADMAP_V1.json | 4423 bytes | sha256=a1beb0237f79b3451d1cc3cc1a6ddef28463f330cffcd6b6fc7a81b8cdd717a1
+- APPLICATION_SECURITY_BOUNDARY_V1.json | 2246 bytes | sha256=6454756989c8edcfc80fe89d5d93b8910671a268cf60ba7d8e9dd805173951f4
+- AUTOMATION_RETRY_RECOVERY_CONTRACT_V1.json | 2607 bytes | sha256=59926cf62d9a6f6bcc34104edb0568a8b67aefc911667c73a67d6af29dd3b684
+- EBAY_DE_RULE_REGISTRY_SCHEMA_V1.json | 2238 bytes | sha256=4765a8a831f0b249ab53353fe6a7f589795ad13e22151b276313d8f1387fcb34
+- LISTING_STUDIO_SEARCH_SYNTHESIS_CONTRACT_V1.json | 10477 bytes | sha256=057c41437d45b0f9658f063edaf518b80b3a7c90757c38edb22eca4e53c4869c
+- MARKETPLACE_DRAFT_HANDOFF_IDEMPOTENCY_CONTRACT_V1.json | 3027 bytes | sha256=c08d4271ce7c16c281c2b7716cd1147b9adf482fa77831f3fb074b967d71c468
+- MOBILE_PWA_OPERATOR_CONTRACT_V1.json | 2788 bytes | sha256=8cda5e61f7d9f8142d3e58c02408bb4633373d24b79ffefb8a13433cb5ceeed2
+- NOTIFICATION_EXCEPTION_INBOX_V1.json | 1655 bytes | sha256=25f766abd883b31517ef014a46b5e5738cfb40b1dc7197bbd152bee64d3e6491
+- PERSISTENCE_EVIDENCE_VERSIONING_CONTRACT_V1.json | 4707 bytes | sha256=5df2b231abe155ba55143f6554d491c3d801d03c696dedacc807d4000c7bfacf
+- S427B_APPLICATION_FIRST_COMPUTER_EXECUTION_PLAN_RU.txt | 2215 bytes | sha256=78dd6b9ba1464eda22999b36f2d166f116924dd4c015a68042e68e6f0e890391
+- S427_APPLICATION_FIRST_FILE_INVENTORY_V1.json | 2668 bytes | sha256=6e0cd3c0c17055ecc4ecdd5f8730db210b5f7514aa45f0b7cb22b0b562e557db
+- S427_APPLICATION_FIRST_FINAL_FREEZE_MANIFEST_V1.json | 3504 bytes | sha256=c279220fc1daca7ec04bce9a3c11de44ea5b2268318466d6d63851c4cb1a0a51
+- S427_APPLICATION_FIRST_FINAL_FREEZE_REPORT_RU.txt | 2684 bytes | sha256=e5f581d5e6bafc52dea90898f81768e455e591b1a5e7d77cbfb97a5ff60e9b86
+- S427_APPLICATION_FIRST_FULL_CONTRACT_BUNDLE_V1.json | 59108 bytes | sha256=17f1b8669d532e096854a0a21916d85f5c3d9a1dec033cdeb801527f78c01631
+- S427_APPLICATION_FIRST_FULL_CONTRACT_BUNDLE_V1.min.json | 42440 bytes | sha256=2b9f507240d69de9039e323032f8fd91b92922728ecffb8c265aeae3d022dddf
+- TELEGRAM_DEPRECATION_DONOR_PLAN_V1.json | 1744 bytes | sha256=b00ff713ad489631b1d0257909a885969666e57763e678824a3c5b70c8342ede
+
+IMPLEMENTATION ORDER
+B0 contract baseline and validation
+B1 persistence and versioning
+B2 API/orchestrator dry runtime
+B3 PWA shell
+B4 auth and secure phone access
+B5 agent wiring and Exception Inbox
+B6 eBay DE readonly and rules
+B7 eBay unpublished draft
+B8 separately gated publish/revise lifecycle
+B9 Telegram dependency retirement and hardening
+
+CURRENT SAFETY
+- Active HTML/runtime not changed.
+- Server processes not restarted.
+- eBay API not called.
+- Marketplace write not performed.
+- No secrets or buyer personal data included.
+- Dirty server worktree must not be blindly committed.
+
+NEXT SAFE COMPUTER STAGE
+S427B_APPLICATION_FIRST_CONTRACT_BASELINE_ONLY
+- create/review exact contract files
+- validate JSON and hashes
+- create changed-files report and rollback note
+- stop before runtime, HTML, server, Git staging or eBay changes
+
+STATUS: PASS_APPLICATION_FIRST_FINAL_FREEZE_READY
