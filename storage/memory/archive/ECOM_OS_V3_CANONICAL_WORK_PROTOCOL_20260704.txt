@@ -1,0 +1,55 @@
+ECOM OS V3 CANONICAL WORK PROTOCOL
+
+CURRENT DECISION
+- Application-first project.
+- Windows and Android use the same installable PWA.
+- One governed backend, one canonical database and one event/job model.
+- Telegram is not a core dependency; old Telegram code is READONLY donor only.
+- eBay DE is the default marketplace.
+- Target automation: RUN UNTIL BLOCKER, 90-99 percent for safe preparation, validation, routing and monitoring.
+
+CANONICAL ROOTS
+- Windows: D:\ECOM_OS_PRO_LOCAL_OPERATOR_BUILD
+- Server: /home/ionlipca7/ecom_governed_runtime
+- Protected legacy donor: /home/ionlipca7/runtime_eco_v1
+- GitHub memory: ionlipca7-boop/ECOM_GOVERNED_RUNTIME
+
+SOURCE PRIORITY
+1. CURRENT_ECOM_OS_V3_CANONICAL_OPERATING_MEMORY_RU.md
+2. CURRENT_ECOM_OS_V3_SKELETON_RU.txt
+3. CURRENT_HOME_ROUTE01_ACTIVE_MANIFEST_RU.txt
+4. S425R37_DO_NOT_RUN_AND_QUARANTINE_PLAN_RU.txt
+5. latest approved stage report
+6. old V2, V7.3 and Telegram materials as READONLY references only
+
+CANONICAL FLOW
+00 Home -> automatic Intake, Source, Receipt, Photo, Compliance, Radar and Finance -> 01 New Product or 02 Variants -> 03 Listing Studio with internal marketplace search, external web research and AI/LLM research -> one canonical listing package -> 07 Decision Center -> separate Draft Gate -> unpublished eBay DE Draft -> READONLY postverify -> separate Publish Gate -> 04 Monitoring -> 05 Finance and Stock -> 08 Memory and Archive.
+
+TOOL ROLES
+- ChatGPT: lead architect, coordinator and final auditor.
+- External Gemini: READONLY independent architecture critic; no project writes and no production code.
+- Codex: primary scoped builder; one stage, exact file allow-list, tests and rollback.
+- Ollama: local private critic and summary helper; not source of truth and no active patch.
+- Aider: surgical patcher for a localized defect only.
+- MCP Hands: READONLY first, write only through exact approval gate.
+
+WORK CYCLE
+Read canonical memory -> read skeleton -> read active manifest -> read DO NOT RUN plan -> read latest report -> READONLY audit -> optional Gemini critique -> verify critique against real files -> optional Ollama critique -> exact Codex task -> backup -> scoped implementation -> syntax/schema/unit/UI tests -> changed-files report -> rollback note -> final audit -> staged Git review -> separate commit/push approval -> separate marketplace gate.
+
+HARD RULES
+- No broad replace or full rewrite.
+- No old script execution without audit.
+- No blind Git commit/push from dirty tree.
+- No server restart without gate.
+- No eBay write without exact action gate.
+- No token or secret printing.
+- No move, delete or archive cleanup without approval.
+- No CHECK converted to PASS without evidence.
+- No stale evidence treated as current.
+- No marketplace secrets on phone or browser.
+
+MEMORY RULE
+Old memory is not automatically deleted. Mark it SUPERSEDED, remove it from the current pointer and retain it as READONLY evidence for audit and rollback.
+
+NEXT STAGE
+S427B_APPLICATION_FIRST_CONTRACT_BASELINE_ONLY: create exact contract/schema files in the active Windows project, validate JSON and hashes, generate changed-files report and rollback note, then stop before runtime, HTML, server, Git staging or eBay changes.
