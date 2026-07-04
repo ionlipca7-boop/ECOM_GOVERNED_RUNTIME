@@ -1,7 +1,7 @@
 {
   "status": "PASS_HUB_V3_GITHUB_MEMORY_POINTER_UPDATED",
-  "updated_utc": "20260704T173632Z",
-  "archive": "storage/memory/archive/ECOM_OS_V3_APPLICATION_FIRST_FINAL_FREEZE_20260704T173605Z.txt",
+  "updated_utc": "20260704T175003Z",
+  "archive": "storage/memory/archive/ECOM_OS_V3_CANONICAL_WORK_PROTOCOL_20260704.txt",
   "mode": "HUB_V3_DIRECT_GITHUB_API",
   "next_safe_action": "READ_PROJECT_CURRENT_POINTER_AFTER_HUB_V3_MEMORY_WRITE"
 }
