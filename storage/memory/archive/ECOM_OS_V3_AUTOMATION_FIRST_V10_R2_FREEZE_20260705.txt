@@ -1,0 +1,284 @@
+ECOM OS V3 — AUTOMATION-FIRST V10 R2 FREEZE
+
+Status: CURRENT DESIGN FREEZE / NO ACTIVE RUNTIME INSTALL
+Date: 2026-07-05
+Operator: Ion
+
+1. CURRENT DECISION
+
+V9 remains the immutable full functional donor for screens 00–08.
+V10 R2 is the preferred target operator interface because it follows automation-first and RUN UNTIL BLOCKER.
+The backend, durable jobs, persistence, agents and marketplace adapters are still not connected.
+
+Correct model:
+- V9 = proof of full functional structure.
+- V10 R2 = simplified automation-first operator UI.
+- Backend = real automation.
+- Route07 = human decision only.
+- SafeGate = exact external action boundary.
+
+2. EXACT FILES AND HASHES
+
+Source V9:
+ECOM_OS_V3_00_01_02_03_04_05_06_07_08_FINAL_MOBILE_V9.html
+SHA256: 6b2b97db79abf6c1021bbba32c6e441f75ff4426c66b8f6a564faf275e80fa3b
+
+Created V10 R2:
+ECOM_OS_V3_HASHTAGLM_AUTOMATION_FIRST_V10_R2.html
+SHA256: af7ea7260ccf0554635199bfec4bc2b1da6d33c977e47120c5197aadd3fde312
+
+Audit report:
+ECOM_OS_V3_V9_V10_AUTOMATION_AUDIT_RU.txt
+SHA256: 3da3f2b71af683916c1416c57cc3dbd2f95f78641a097f7b07a0b15a5f8f691e
+
+Desktop contact sheet:
+ECOM_OS_V3_V10_R2_DESKTOP_CONTACT_SHEET.jpg
+SHA256: 03efe354ad4832afaa97ebdcfe3d69279ff80634c60bd771a7d7a090179e33ba
+
+Mobile contact sheet:
+ECOM_OS_V3_V10_R2_MOBILE_CONTACT_SHEET.jpg
+SHA256: 12025c5a40ec9974a04e988c106c47d31980d498c6ada84f704d9a3cab1a0cdf
+
+Route06 Radar desktop screenshot:
+desktop_r06.png
+SHA256: 7e9c5ce147f9720c04190b8b5f0aff8fb438a42c502e403c50381a6b7f411533
+
+Route06 Radar mobile screenshot:
+mobile_r06.png
+SHA256: d38fe4e6bcc2c5c1a7ffa84f2b635a4f006a37947a10dcf64caf85107941f102
+
+Ion reported that he manually saved the V10 R2 code locally under a name similar to V10-2. The exact local Windows path and byte hash were not independently verified in this stage. Treat local-save status as OPERATOR_REPORTED until READONLY verification.
+
+3. VERSION EVOLUTION
+
+V1:
+- Home, Route01, Route02.
+- 3 screens.
+- 45 buttons.
+- 87 HTML IDs.
+
+V2:
+- Added Route03 Listing Studio.
+- 4 screens.
+- 61 buttons.
+- 134 HTML IDs.
+
+V3:
+- Expanded links, manual controls and local logic.
+- 4 screens.
+- 76 buttons.
+- 175 HTML IDs.
+
+V7:
+- Added Monitoring, Finance and Radar.
+- 7 screens.
+- 134 buttons.
+- 312 HTML IDs.
+
+V9:
+- Completed screens 00–08.
+- 9 screens.
+- 165 buttons.
+- 374 HTML IDs.
+- Full local functional prototype but too many manual orchestration actions.
+
+V10 R2:
+- Built directly from exact V9.
+- 9 automation panels.
+- 79 technical/manual orchestration actions moved to the Additional menu.
+- Essential operator intake controls remain visible.
+- Original V9 remains unchanged.
+
+4. V10 R2 AUTOMATION PRINCIPLE
+
+The operator provides source URL, photos, receipt, known facts, variants and notes once.
+Safe agents then run automatically and in parallel where dependencies allow.
+The UI shows progress, blockers, evidence, policy state and exact operator decisions.
+Ion is called only for:
+- missing hard facts;
+- conflicting evidence;
+- compliance or legal risk;
+- Route07 local decision;
+- exact Draft/Publish/Revise/Delete gate;
+- unknown external mutation result.
+
+Hiding buttons is not real automation by itself.
+Real automation still requires:
+- AUTOMATION_STATE_MACHINE_V1;
+- EVENT_TRIGGER_MATRIX_V1;
+- AGENT_EXECUTION_GRAPH_V1;
+- AGENT_CAPABILITY_REGISTRY_V1;
+- SCREEN_AGENT_WIRING_V1;
+- BUTTON_ACTION_CONTRACT_V1;
+- PERSISTENCE_POLICY_V1;
+- EXCEPTION_AND_RETRY_POLICY_V1;
+- durable backend jobs;
+- canonical database;
+- Evidence Registry;
+- Approval Ledger;
+- Audit Log.
+
+5. SCREEN AUTOMATION MODEL
+
+00 Home:
+- Product Intake;
+- Source, Photo and Receipt agents;
+- Product Passport;
+- Compliance precheck;
+- Radar and Finance context;
+- automatic Route01/Route02 selection.
+
+01 New Product:
+- title, category, item specifics, photo checks, duplicate checks, price, stock, ads, shipping, Radar, Finance and draft package are automatic;
+- operator reviews preview, fixes blockers and confirms exact Draft gate.
+
+02 Variants:
+- axes, Variant Matrix, SKU, EAN, photos, prices, stock and parent/variant package are automatic;
+- operator resolves ambiguous axes and conflicts.
+
+03 Listing Studio:
+- Internal Marketplace Search;
+- approved External Web Research;
+- AI/LLM Semantic Research;
+- Evidence and policy validation;
+- one Canonical Listing Package;
+- package hash and Route07 request.
+
+04 Monitoring:
+- READONLY marketplace snapshots;
+- sales, returns, delivery, ads and lifecycle events;
+- Finance/Stock updates;
+- exceptions to Route07.
+Current status is UI model only until fresh marketplace READONLY integration exists.
+
+05 Finance and Stock:
+- receipts, purchase cost, shipping, fees, ads, returns, stock, profit, reserve and EÜR are reconciled automatically;
+- operator handles exceptions only.
+
+06 Radar:
+- automatic Evidence and Market Intelligence Hub;
+- inputs from Home, Route01, Route02, Route03 and Route05;
+- three channels: Internal Marketplace, approved External Web and AI/LLM;
+- evaluates confidence, freshness, conflicts, source count, evidence count and marketplace passport;
+- updates Evidence Registry;
+- automatically distributes verified results to Home, Route01, Route02, Route03, Route05 and Route07;
+- operator only adds evidence, resolves conflicts or approves a connector;
+- Radar never publishes, revises or invents market facts.
+
+07 Decision Center:
+- aggregates package hash, evidence, policy, risks and blockers;
+- Ion approves, rejects or sends to rework;
+- Route07 never performs marketplace write;
+- Draft, Publish, Revise and Delete remain separate exact gates.
+
+08 Memory and Archive:
+- immutable snapshots, manifest, hashes, reports, lessons, diffs and rollback metadata should save automatically;
+- operator searches history, creates handoff or requests restoration;
+- delete remains a separate destructive gate.
+
+6. ROUTE06 RADAR RULES
+
+Inputs:
+- Home;
+- Route01;
+- Route02;
+- Route03;
+- Route05.
+
+Outputs:
+- Home;
+- Route01;
+- Route02;
+- Route03;
+- Route05;
+- Route07.
+
+Mandatory evidence fields:
+- source type;
+- capture timestamp;
+- content hash;
+- confidence;
+- freshness;
+- conflict status;
+- rights/terms state;
+- rule version.
+
+INFERRED and UNKNOWN data cannot automatically become hard listing facts.
+Search snippets alone cannot receive PASS.
+Price is context and not an invented current market quote.
+
+7. VALIDATION STATUS
+
+V10_CREATED_FROM_EXACT_V9=PASS
+SCREENS_00_08=PASS
+AUTOMATION_PANELS=9
+LEGACY_ACTIONS_MOVED=79
+ESSENTIAL_INTAKE_CONTROLS=VISIBLE
+ROUTE06_AUTOMATION_MODEL=PASS
+V9_ORIGINAL_CHANGED=NO
+
+The visual screenshot generation was completed using rendered V10 R2 pages, but the later in-session Playwright rerun failed because the container Chromium crashpad process closed. Do not treat that later tool failure as a V10 application defect. Exact production smoke testing must be repeated during controlled local installation.
+
+8. CURRENT LIMITS
+
+- Local HTML prototype only.
+- Not yet an installable PWA: manifest and service worker are absent.
+- No durable persistence.
+- No backend connection.
+- No runtime agent workers.
+- No authentication/session model.
+- No current marketplace adapters.
+- No fresh eBay account snapshot.
+- No external write capability.
+- Live gate remains closed.
+
+9. SAFE IMPLEMENTATION ORDER
+
+1. S427B0 Canonical Source Realignment.
+2. Contract and schema baseline.
+3. Persistence, Evidence Registry, Approval Ledger and Audit Log.
+4. FastAPI and dry Orchestrator with durable jobs.
+5. PWA shell.
+6. Home, Route01, Route02 and Route03.
+7. Route06 Radar with approved connectors and evidence capture.
+8. Route07 decision workflow.
+9. Route05 Finance and Stock.
+10. Route04 Monitoring.
+11. Route08 durable memory UI.
+12. Separate eBay DE READONLY, unpublished Draft and later Publish/Revise gates.
+
+10. HARD RULES
+
+- Do not overwrite active Home/Route01 with V10 directly.
+- Preserve exact V9 as immutable donor.
+- Preserve exact V10 R2 as candidate/baseline.
+- One screen and one DOM owner per stage.
+- No broad replace or full rewrite.
+- No old script execution.
+- Backup before patch.
+- Tests, changed-files report and rollback note are mandatory.
+- No blind Git commit/push from dirty tree.
+- No server restart without gate.
+- No eBay write without exact gate.
+- No token or secret output.
+- No move/delete/archive cleanup without approval.
+
+11. CURRENT NEXT STAGE
+
+S427B0_CANONICAL_SOURCE_REALIGNMENT
+
+Then:
+S427B_APPLICATION_FIRST_CONTRACT_BASELINE_ONLY
+
+V10 controlled integration comes only after source alignment, contracts, persistence and event-driven automation foundations.
+
+12. SAFETY STATUS
+
+ACTIVE_WINDOWS_PROJECT_CHANGED=NO_BY_THIS_FREEZE
+ACTIVE_HTML_CHANGED=NO_BY_THIS_FREEZE
+SERVER_RUNTIME_CHANGED=NO
+SERVER_RESTARTED=NO
+GIT_COMMIT=NO
+GIT_PUSH=NO
+EBAY_ACTION=NO
+LIVE_GATE=CLOSED
