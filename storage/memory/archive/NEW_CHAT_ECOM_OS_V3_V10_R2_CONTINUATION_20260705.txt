@@ -1,0 +1,95 @@
+ECOM OS V3 — NEW CHAT CONTINUATION / V10 R2
+
+Continue the ECOM OS V3 project in Russian using compact ION format.
+
+CANONICAL ROOTS
+- Windows: D:\ECOM_OS_PRO_LOCAL_OPERATOR_BUILD
+- Governed server: /home/ionlipca7/ecom_governed_runtime
+- Protected legacy donor: /home/ionlipca7/runtime_eco_v1
+- GitHub memory: ionlipca7-boop/ECOM_GOVERNED_RUNTIME
+
+READ FIRST
+1. storage/memory/archive/ECOM_OS_V3_AUTOMATION_FIRST_V10_R2_FREEZE_20260705.txt
+2. storage/memory/archive/ECOM_OS_V3_CANONICAL_WORK_PROTOCOL_20260704.txt
+3. Local CURRENT_ECOM_OS_V3_CANONICAL_OPERATING_MEMORY_RU.md
+4. Local CURRENT_ECOM_OS_V3_SKELETON_RU.txt
+5. Local CURRENT_HOME_ROUTE01_ACTIVE_MANIFEST_RU.txt
+6. Local S425R37_DO_NOT_RUN_AND_QUARANTINE_PLAN_RU.txt
+7. R38/R39A and the latest stage report.
+
+CURRENT DECISION
+- V9 is the immutable full functional donor for screens 00–08.
+- V10 R2 is the preferred automation-first target UI.
+- V10 R2 exact SHA256: af7ea7260ccf0554635199bfec4bc2b1da6d33c977e47120c5197aadd3fde312.
+- V9 exact SHA256: 6b2b97db79abf6c1021bbba32c6e441f75ff4426c66b8f6a564faf275e80fa3b.
+- Ion reported that V10 R2 code was saved manually on Windows under a name similar to V10-2. Verify exact path and hash READONLY before using it.
+- Do not overwrite component_ui_v9_home_active.html.
+
+V10 R2 PRINCIPLE
+- Safe agents run automatically and in parallel where dependencies allow.
+- UI shows progress, blockers, evidence, policy state and exact operator decisions.
+- 79 technical/manual orchestration actions were moved from the primary flow to Additional.
+- Essential URL/photo/receipt/fact intake controls remain visible.
+- Route07 remains human-controlled and does not perform marketplace writes.
+- Draft, Publish, Revise and Delete remain separate exact gates.
+
+ROUTE06 RADAR
+- Inputs: Home, Route01, Route02, Route03, Route05.
+- Research channels: Internal Marketplace, approved External Web, AI/LLM.
+- Evaluate confidence, freshness, conflicts, source count, evidence count and marketplace passport.
+- Update Evidence Registry.
+- Outputs: Home, Route01, Route02, Route03, Route05, Route07.
+- Radar never publishes, revises or invents facts.
+
+REAL AUTOMATION STILL MISSING
+- AUTOMATION_STATE_MACHINE_V1
+- EVENT_TRIGGER_MATRIX_V1
+- AGENT_EXECUTION_GRAPH_V1
+- AGENT_CAPABILITY_REGISTRY_V1
+- SCREEN_AGENT_WIRING_V1
+- BUTTON_ACTION_CONTRACT_V1
+- PERSISTENCE_POLICY_V1
+- EXCEPTION_AND_RETRY_POLICY_V1
+- durable backend jobs
+- canonical database
+- Evidence Registry
+- Approval Ledger
+- Audit Log
+
+CURRENT NEXT STAGE
+S427B0_CANONICAL_SOURCE_REALIGNMENT
+Then S427B_APPLICATION_FIRST_CONTRACT_BASELINE_ONLY.
+V10 integration comes only after source alignment, contracts, persistence and event-driven automation foundations.
+
+FIRST RESPONSE IN NEW CHAT
+- READONLY only.
+- Verify local V10-2 path and SHA256.
+- Verify current root instructions and active manifest.
+- Compare local V10-2 with GitHub V10 R2 freeze.
+- Produce exact gap matrix and controlled write plan.
+- Do not patch, run Codex, restart server, stage Git or call eBay.
+
+HARD RULES
+- No big CMD or py -c.
+- No broad replace or full rewrite.
+- No old script execution.
+- Backup before patch.
+- One screen and one DOM owner per stage.
+- Tests, changed-files report and rollback note required.
+- No blind Git commit/push from dirty tree.
+- No server restart without gate.
+- No marketplace write without exact gate.
+- No secrets/tokens output.
+- No delete/move/archive cleanup without approval.
+
+STATUS
+V10_DESIGN_FREEZE=PASS
+GITHUB_MEMORY=PASS
+LOCAL_V10_SAVE=OPERATOR_REPORTED_NOT_VERIFIED
+ACTIVE_HTML_CHANGED=NO
+RUNTIME_CHANGED=NO
+SERVER_CHANGED=NO
+GIT_COMMIT=NO
+GIT_PUSH=NO
+EBAY_ACTION=NO
+LIVE_GATE=CLOSED
