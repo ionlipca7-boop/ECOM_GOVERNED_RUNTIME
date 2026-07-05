@@ -1,0 +1,183 @@
+ECOM OS V3 — V10 R2 LOCAL + BUTTON06 ADDENDUM
+Date: 2026-07-05
+Status: CURRENT ADDENDUM / NO ACTIVE RUNTIME INSTALL
+
+PURPOSE
+This archive records the local Windows discovery performed after V5 ngrok was reactivated and adds the Route06/Button06 details that were not fully present in the previous V10 R2 freeze.
+
+LOCAL WINDOWS DISCOVERY
+Found in D:\Promt\Gotovie faili:
+- ECOM_OS_V3_00_01_02_03_04_05_06_07_08_FINAL_MOBILE_V9.html — 255717 bytes.
+- V10 — 272579 bytes.
+- V10 .2 — 276562 bytes.
+
+Ion reported that V10 .2 is the code copied from the chat. Both V10 files are extensionless. The safe text reader refused to read the extensionless file, so their exact content and SHA256 remain unverified. Their sizes differ from the audited V10 R2 candidate size. Treat them as operator reference copies only until a later READONLY comparison. Do not delete or overwrite them.
+
+AUDITED TARGETS
+V9 donor SHA256:
+6b2b97db79abf6c1021bbba32c6e441f75ff4426c66b8f6a564faf275e80fa3b
+
+V10 R2 target SHA256:
+af7ea7260ccf0554635199bfec4bc2b1da6d33c977e47120c5197aadd3fde312
+
+Current decision:
+- V9 remains the immutable full 00–08 functional donor.
+- V10 R2 remains the preferred automation-first target UI.
+- Active runtime remains Home + Route01.
+- Do not replace the active HTML directly.
+
+LOCAL S426 BUTTON06 MEMORY VERIFIED
+The following files exist in the active Windows project and were read:
+- storage/v3_core/reports/S426_BUTTON06_AGENT_AND_BUTTON_LINK_MAP_RU.txt
+- storage/v3_core/reports/S426_BUTTON06_DATA_RULES_ADDENDUM_RU.txt
+- storage/v3_core/reports/S426_BUTTON06_DEMAND_INTELLIGENCE_ARCHIVE_RU.txt
+- storage/v3_core/reports/S426_BUTTON06_GAP_NOTES_RU.txt
+
+BUTTON06 MAIN LOGIC
+SEARCH MARKET MAP -> MARKETPLACE BUY MAP -> PROFITABILITY FILTER -> PRODUCT HUNTER -> SUPPLIER HUNTER -> LISTING STUDIO.
+
+Three separate demand streams:
+A. Problem Demand.
+B. Product Demand.
+C. Marketplace Demand.
+They merge only after normalization.
+
+BUTTON06 AGENTS
+06A Search Demand Collector.
+06B Query Normalizer.
+06C Trend Momentum Agent.
+06D Problem Demand Agent.
+06E Marketplace Buy Agent.
+06F Competition Agent.
+06G Profitability Agent.
+06H Risk and Compliance Agent.
+06I Product Hunter.
+06J Supplier Hunter.
+06K Decision Agent.
+06L Learning Agent.
+
+TIME MODEL
+- Daily raw snapshots.
+- 7/30/90-day windows.
+- Primary weekly decision after 5–7 days.
+- Day-two or day-three spikes must not override the weekly conclusion.
+
+SIGNALS
+SEARCH, CLICK, BUY, DISCUSS, SUPPLY, PRICE, MARGIN and RISK.
+
+STARTING SCORE
+20% Search Demand.
+15% Trend Momentum.
+20% Marketplace Buy.
+10% Click/Interest.
+10% Problem Relevance.
+15% Profitability.
+5% Competition Advantage.
+5% Supply Reliability.
+Minus Risk Penalty.
+Weights may change only from factual sales feedback.
+
+GATES
+Data Quality -> Demand -> Buy -> Competition -> Margin -> Risk -> Test Budget -> Operator Approval.
+No automatic purchasing.
+No supplier search before demand validation.
+No search volume treated as sales.
+
+DATA RULES
+- Illustrative search numbers are not facts.
+- If exact volume is unavailable, store index, rank, change, proxy method and confidence.
+- Do not directly add Google index, eBay sold count and forum mentions.
+- Normalize each source to its own 0–100 score with confidence before aggregation.
+- Raw evidence is immutable.
+- Normalized score may be recalculated.
+- Every decision has a version.
+- BUY/TEST/WATCH/REJECT must reference data window, formula version, source set, confidence, operator approval and factual test result.
+- Primary market Germany; primary language German.
+- Preserve synonyms, spelling variants, English product terms, sizes, power, connectors, models and compatibility.
+
+FULL DATA CHAIN
+raw signals -> source adapters -> query normalization -> intent classification -> problem/product/marketplace streams -> time series -> channel map -> aggregation -> competition/profit/risk -> weekly map -> product hunter -> supplier hunter -> market action -> test -> sales feedback -> learning.
+
+INTENT CLASSES
+Informational, problem, solution, concrete product and readiness to buy.
+
+WEEKLY OUTPUT
+TOP-100, rising, falling, new, bought, low competition and best margin.
+
+ADVANTAGE SIGNALS
+Weak supply, poor competitor reviews, missing variants, long delivery, weak listing cards, price gap and useful bundles.
+
+MARKET ENTRY OUTPUT
+Listing, keywords, FAQ, video, variant, bundle, price and delivery.
+
+LEARNING LOOP
+Small test batches, predefined success thresholds, error journal and forecast-versus-fact comparison.
+
+TEST EXAMPLES
+USB C Kabel 2m.
+90 Grad USB Adapter.
+Küchenschere Edelstahl.
+Handyhalter Auto MagSafe.
+Kabel verstecken.
+Schreibtisch Kabelchaos.
+Handy fällt im Auto.
+
+BUTTON06 UI
+Sections:
+Market Overview; Rising Queries; What People Buy; Buyer Problems; Candidates; Suppliers; Decisions; History and Learning.
+
+Cards:
+Search Demand; Trend; Buy Signal; Competition; Margin; Risk; Confidence; Final Score.
+
+CONNECTIONS
+Route01 receives approved candidate and evidence pack.
+Route02 receives query clusters for variation axes.
+Route03 receives real search phrases for title, item specifics, HTML and photo briefs.
+Route04 returns impressions, clicks, sales, returns and lifecycle status to Learning Agent.
+Route05 provides costs, stock, cash exposure and factual profit.
+Route07 shows weekly decisions, confidence, reasons and agent state.
+Route08 stores source registry, schemas, weights, formula versions, audit trail and checkpoints.
+
+PRIMARY AUTOMATION RULE
+Manual handoff buttons from Radar to every route must not be part of the normal daily flow. Verified Radar outputs propagate automatically. Operator actions are limited to reviewing results, adding evidence, resolving conflicts and approving a connector or explicit TEST/BUY gate.
+
+MVP
+20–50 seed categories; Google Trends/Autocomplete; eBay DE search and sold signals; Amazon signal manual or semi-automatic; 7-day history; Query Normalizer; Trend Momentum; Buy Score; profitability calculator; weekly TOP-100; TEST/WATCH/REJECT without automatic purchase.
+
+BUTTON06 IMPLEMENTATION ORDER
+0 dependency audit READONLY.
+1 contracts and schemas.
+2 file-based dry engine on test data.
+3 adapters one source at a time.
+4 first 7-day Germany Demand Map and TOP-100.
+5 bind Product Hunter.
+6 separate candidate UI without active patch.
+7 visual/contract PASS, then only a small active patch.
+8 feedback loop with sales, returns and profit.
+
+Button06 next safe stage:
+S426R01_BUTTON06_DEPENDENCY_AUDIT_READONLY.
+
+GLOBAL NEXT STAGE
+S427B0_CANONICAL_SOURCE_REALIGNMENT.
+Then S427B_APPLICATION_FIRST_CONTRACT_BASELINE_ONLY.
+Button06 implementation must wait for canonical alignment and contract baseline.
+
+LOCAL PROJECT POINTERS WRITTEN
+The V5 local writer successfully created concise pointer files in the active project reports folder:
+- S427V10R2_LOCAL_SAVE_TEST.txt
+- S427V10R2_CURRENT_TARGET_RU.txt
+- S427V10R2_LOCAL_COPIES_RU.txt
+- S427V10R2_ROUTE06_RADAR_FREEZE_RU.txt
+- CURRENT_ECOM_OS_V3_V10_R2_POINTER_RU.txt
+
+The local writer blocked longer payloads, so the complete detail is stored in GitHub memory while the local project contains concise current pointers.
+
+SAFETY
+ACTIVE_HTML_CHANGED=NO
+RUNTIME_CHANGED=NO
+SERVER_CHANGED=NO
+GIT_COMMIT=NO
+GIT_PUSH=NO
+EBAY_ACTION=NO
+LIVE_GATE=CLOSED
