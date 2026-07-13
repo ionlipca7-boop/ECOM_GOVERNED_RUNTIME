@@ -1,0 +1,137 @@
+ECOM OS V3 — I18N / GLOBAL UI BLOCK ARCHIVE
+Date: 2026-07-13
+Owner: Ion / Operator
+Project root: D:\ECOM_OS_PRO_LOCAL_OPERATOR_BUILD
+Active HTML: storage\v3_core\visual\preview\component_ui_v9_home_active.html
+
+PURPOSE
+Archive all important achievements, errors, decisions, active files, and next steps from the overloaded chat about global interface language, store context, notification bell, operator status, and modular block architecture.
+
+NON-NEGOTIABLE RULES
+- Russian operator conversation.
+- Windows CMD when user must execute commands.
+- Use exact project root above.
+- READ -> PLAN -> SMALL PATCH -> TEST/VERIFY.
+- No live eBay create/revise/publish.
+- Never claim visual PASS until Ion confirms on screen.
+- PASS_WRITTEN only means transport/write succeeded.
+- Prefer independent blocks with one authoritative owner per concern.
+- Do not overwrite the whole active HTML unless explicitly approved.
+
+CONFIRMED ACHIEVEMENTS
+1. Global store settings loader was added to home_autoroute_i1t.js so v3_global_state_bridge_i2i.js actually loads.
+2. Store selection now updates Route01 marketplace/site/account/currency/listing language without page reload.
+3. Ion visually confirmed marketplace and currency switching worked.
+4. Bell target was changed conceptually from plain zero to bell + count.
+5. Operator online indicator was added conceptually as green dot, red for offline.
+6. Language menu now changes and remains selected after the later block-owner redesign.
+7. Left navigation Home + 01–08 now changes between RU / DE / EN / RO.
+8. A modular architecture direction was accepted: top, nav, Home, Route01, Route02–Route08, dynamic cards, and modals should be independently repairable but coordinated by one brain.
+9. Current authoritative language file is v3_global_state_bridge_i2i.js.
+10. Current language owner marker in the latest written version is ECOM_I18N_BLOCK_OWNER_V4.
+11. Dynamic Route01/Route02 Home cards and many Home messages were added to the translation dictionary.
+12. No live marketplace action was performed.
+
+FILES TO TREAT AS IMPORTANT
+- storage/v3_core/visual/preview/component_ui_v9_home_active.html
+- storage/v3_core/visual/preview/home_autoroute_i1t.js
+- storage/v3_core/visual/preview/v3_global_state_bridge_i2i.js
+- storage/v3_core/visual/preview/route01_control_boot_g3.js
+- storage/v3_core/visual/preview/route01_i2h_clean_persist.js
+- storage/v3_core/visual/preview/v3_html_zero_state_single_owner_r12.js
+- storage/v3_core/visual/preview/v3_title_category_single_owner_zero_score_r10.js
+- storage/v3_core/visual/preview/v3_artikelmerkmale_autofill_no_confirm_r4.js
+- storage/v3_core/visual/preview/v3_artikelmerkmale_empty_until_home_product_r5.js
+- storage/v3_core/visual/preview/v3_artikelmerkmale_clean_rebuild_r6.js
+
+LEGACY / CONFLICT HISTORY
+Several old owners repeatedly rewrote visible Russian text or old state and caused language to switch back to RU:
+- v3_route01_operator_cleanup_r2.js
+- v3_route01_visual_logic_repair_ru_ui_de_listing.js
+- v3_route01_full_candidate_connector.js
+- v3_global_bridge_i2j.js
+- route01_i2f_full_gate.js is also legacy/conflict-prone and must not be treated as authoritative.
+The deeper conflict was multiple incompatible localStorage schemas sharing ECOM_V3_GLOBAL_STATE.
+Later language owners moved to separate keys:
+- ECOM_V3_UI_BLOCK_STATE_V2
+- ECOM_V3_UI_BLOCK_STATE_V3
+- current latest intended key: ECOM_V3_UI_BLOCK_STATE_V4
+
+IMPORTANT ERRORS
+1. Early replies claimed broad translation completion before visual confirmation. This was incorrect.
+2. Translation patches were too dictionary-driven and incomplete for dynamically recreated text.
+3. Multiple full rewrites of v3_global_state_bridge_i2i.js were made while the real dynamic text owners remained active.
+4. route01_control_boot_g3.js still contains many hardcoded Russian strings for price, quantity, shipping, risk messages, and HTML editor statuses.
+5. home_autoroute_i1t.js still contains hardcoded Russian runtime messages and rebuilds Route01/Route02 cards.
+6. A generated CMD block was wrong and must not be reused.
+7. A downloadable CMD patch was created but Ion rejected the format and then the pasted block was also incorrect.
+8. MCP write attempts for route01_control_boot_g3.js failed with Session terminated. Therefore do not claim that file was modified.
+9. A direct call to github_memory_write_archive_after_approval with empty args created an unrelated default archive file but did not update the latest pointer. Ignore that artifact.
+
+CURRENT TRUTHFUL STATE
+- v3_global_state_bridge_i2i.js was successfully written and read back in its V4 modular translation form.
+- Language selection and main menu persistence are visually confirmed by Ion.
+- Some Russian words still appear.
+- Main remaining sources are dynamic runtime owners, especially home_autoroute_i1t.js and route01_control_boot_g3.js.
+- The attempted route01_control_boot_g3.js multilingual rewrite was NOT applied because MCP session terminated.
+- The wrong CMD block was NOT executed successfully and should be discarded.
+- Visual acceptance for full interface translation is still PENDING.
+
+CORRECT NEXT STRATEGY
+Do not add another blind global dictionary first.
+1. READ exact current content of v3_global_state_bridge_i2i.js, home_autoroute_i1t.js, and route01_control_boot_g3.js.
+2. Search all active preview JS files for Cyrillic visible strings and for assignments to innerHTML/textContent/placeholder/title/options.
+3. Produce an ownership map by block:
+   - Top bar
+   - Navigation
+   - Home static
+   - Home dynamic cards/messages
+   - Route01 static
+   - Route01 commerce dynamic
+   - Route01 HTML dynamic
+   - Route02–Route08
+   - Modals
+4. One authoritative language state key only: ECOM_V3_UI_BLOCK_STATE_V4.
+5. Each dynamic owner must read the selected language and render its own strings from a local per-block dictionary. Do not depend only on a global DOM text sweeper.
+6. First patch home_autoroute_i1t.js dynamic strings.
+7. Then patch route01_control_boot_g3.js dynamic strings.
+8. Keep v3_global_state_bridge_i2i.js as coordinator and fallback translator, not as the sole owner of dynamic text.
+9. After each file: prepare review -> write -> read after write -> browser Ctrl+F5 -> Ion visual test.
+10. Test RU, DE, EN, RO on Home and Route01, including buttons that appear after clicks.
+
+VISUAL TEST CHECKLIST
+Home:
+- Route01 and Route02 cards
+- route explanations
+- compare routes
+- URL status
+- photo status
+- receipt status
+- facts update
+- summary and readiness
+- bottom action buttons
+Route01:
+- price and quantity
+- shipping method and handling options
+- save/error/status messages
+- risk panel
+- HTML editor/manual/preview/auto statuses
+- store settings modal
+- dynamically rebuilt content after navigation
+Then Route02–Route08.
+
+DO NOT DO
+- Do not create a second competing global language owner.
+- Do not reuse old ECOM_V3_GLOBAL_STATE.
+- Do not claim all screens are translated without Ion confirmation.
+- Do not run or provide the previous wrong CMD block.
+- Do not touch eBay live actions.
+
+NEXT SAFE ACTION
+READONLY audit of all active preview JS files for Cyrillic dynamic UI strings, then two small patches: home_autoroute_i1t.js and route01_control_boot_g3.js.
+
+STATUS
+ARCHIVE_INTENT=COMPLETE
+VISUAL_FULL_I18N=PENDING
+EBAY_WRITE=NO
+LIVE_GATE=CLOSED
