@@ -1,0 +1,1 @@
+{"schema":"ION_MEMORY_SOURCE_REGISTRY_V1","sources":[{"id":"ECOM_CANON","mode":"READONLY","priority":1},{"id":"KNOWLEDGE_LAB","mode":"READONLY","priority":2},{"id":"IWE_GUARD","mode":"READONLY","priority":2},{"id":"GITHUB_LAB_BRANCH","mode":"READWRITE_LAB_ONLY","priority":3}],"conflict_rule":"higher_authority_wins_report_conflict_never_silent_merge"}
