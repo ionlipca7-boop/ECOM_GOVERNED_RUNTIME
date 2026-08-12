@@ -1,0 +1,24 @@
+{
+  "schema": "ION_UNIVERSAL_AGENT_LAB_SKILL_REGISTRY_V1",
+  "status": "FOUNDATION",
+  "skills": [
+    {"id":"ecom-context-load","phase":1,"mode":"READONLY","status":"READY_SOURCE"},
+    {"id":"ecom-investigate","phase":2,"mode":"READONLY_FIRST","status":"PLANNED"},
+    {"id":"ecom-workflow-map","phase":2,"mode":"READONLY","status":"PLANNED"},
+    {"id":"ecom-screen-contract","phase":3,"mode":"READONLY","status":"PLANNED"},
+    {"id":"ecom-design-consultation","phase":4,"mode":"CANDIDATE_ONLY","status":"PLANNED"},
+    {"id":"ecom-design-review","phase":4,"mode":"CANDIDATE_ONLY","status":"PLANNED"},
+    {"id":"ecom-browser-qa","phase":5,"mode":"READONLY_OR_CANDIDATE","status":"PLANNED"},
+    {"id":"ecom-responsive-qa","phase":5,"mode":"READONLY_OR_CANDIDATE","status":"PLANNED"},
+    {"id":"ecom-cross-model-review","phase":6,"mode":"READONLY","status":"PLANNED"},
+    {"id":"ecom-context-save","phase":7,"mode":"LAB_WRITE_ONLY","status":"PLANNED"},
+    {"id":"ecom-context-restore","phase":7,"mode":"READONLY","status":"PLANNED"},
+    {"id":"ecom-health","phase":8,"mode":"READONLY","status":"PLANNED"}
+  ],
+  "global_invariants": {
+    "production_write_default": false,
+    "owner_boundary_required": true,
+    "evidence_before_repair": true,
+    "independent_review_before_integration": true
+  }
+}
