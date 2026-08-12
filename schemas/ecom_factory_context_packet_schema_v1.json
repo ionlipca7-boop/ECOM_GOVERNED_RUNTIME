@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ECOM_FACTORY_CONTEXT_PACKET_SCHEMA_V1",
+  "title": "ECOM Factory Context Packet V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "created_at",
+    "project_root",
+    "root_id",
+    "coordinator_inbox",
+    "governance",
+    "active_context",
+    "owners",
+    "safety",
+    "next_safe_action"
+  ],
+  "properties": {
+    "schema": {"const": "ECOM_FACTORY_CONTEXT_PACKET_V1"},
+    "created_at": {"type": "string"},
+    "project_root": {"type": "string"},
+    "root_id": {"type": "integer", "minimum": 0},
+    "coordinator_inbox": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "order_id": {"type": ["string", "null"]},
+        "order_revision": {"type": ["string", "integer", "null"]}
+      }
+    },
+    "governance": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["root_governance_path", "order_authority"],
+      "properties": {
+        "root_governance_path": {"type": "string"},
+        "order_authority": {"type": "string"},
+        "continuous_contracts": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "active_context": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "product_key": {"type": ["string", "null"]},
+        "case_id": {"type": ["string", "null"]},
+        "listing_intent_id": {"type": ["string", "null"]},
+        "listing_id": {"type": ["string", "null"]},
+        "route": {"type": ["string", "null"]},
+        "screen": {"type": ["string", "null"]}
+      }
+    },
+    "owners": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["owner_id", "status"],
+        "properties": {
+          "owner_id": {"type": "string"},
+          "status": {"type": "string"},
+          "lease": {"type": ["string", "null"]},
+          "paths": {"type": "array", "items": {"type": "string"}},
+          "source_sha256": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "evidence": {"type": "array", "items": {"type": "string"}},
+    "debts": {"type": "array", "items": {"type": "string"}},
+    "ideas": {"type": "array", "items": {"type": "string"}},
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["marketplace_write", "ebay_write", "save_publish", "active_ui_write", "delete_move_rename"],
+      "properties": {
+        "marketplace_write": {"type": "boolean"},
+        "ebay_write": {"type": "integer", "minimum": 0},
+        "save_publish": {"type": "boolean"},
+        "active_ui_write": {"type": "boolean"},
+        "delete_move_rename": {"type": "boolean"}
+      }
+    },
+    "next_safe_action": {"type": "string", "minLength": 1}
+  }
+}
