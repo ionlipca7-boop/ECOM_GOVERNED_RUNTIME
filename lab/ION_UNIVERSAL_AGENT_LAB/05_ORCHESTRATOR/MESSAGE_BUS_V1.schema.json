@@ -1,0 +1,18 @@
+{
+  "schema":"ION_MESSAGE_BUS_V1",
+  "message_id":"",
+  "thread_id":"",
+  "from":"",
+  "to":"",
+  "type":"TASK|RESULT|BLOCKER|CHALLENGE|DECISION|ACK|HEARTBEAT",
+  "priority":"LOW|NORMAL|HIGH|BLOCKING",
+  "owner_scope":"",
+  "payload":{},
+  "source_refs":[],
+  "created_at":"",
+  "cursor":0,
+  "dedup_key":"",
+  "requires_ack":true,
+  "ack_state":"PENDING",
+  "status":"OPEN"
+}
