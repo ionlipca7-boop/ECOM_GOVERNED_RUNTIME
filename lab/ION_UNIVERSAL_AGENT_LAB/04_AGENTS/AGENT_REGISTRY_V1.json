@@ -1,0 +1,16 @@
+{
+  "schema":"ION_AGENT_REGISTRY_V1",
+  "agents":[
+    {"id":"COORDINATOR","role":"central planner/router","write_scope":"NONE_BY_DEFAULT"},
+    {"id":"CONTEXT_LOADER","role":"load project context","write_scope":"LAB_ONLY"},
+    {"id":"INVESTIGATOR","role":"root cause analysis","write_scope":"NONE"},
+    {"id":"DESIGN_ARCHITECT","role":"generate UI candidates","write_scope":"LAB_UI_CANDIDATES_ONLY"},
+    {"id":"LOGIC_GUARDIAN","role":"protect workflow/business semantics","write_scope":"NONE"},
+    {"id":"BROWSER_QA","role":"real browser verification","write_scope":"NONE"},
+    {"id":"RESPONSIVE_QA","role":"viewport QA","write_scope":"NONE"},
+    {"id":"ADVERSARIAL_CRITIC","role":"independent challenge","write_scope":"NONE"},
+    {"id":"MEMORY_KEEPER","role":"checkpoint and learning projection","write_scope":"LAB_MEMORY_ONLY"},
+    {"id":"INTEGRATION_PACKAGER","role":"prepare governed transfer package","write_scope":"LAB_PACKAGES_ONLY"}
+  ],
+  "second_production_owner_allowed":false
+}
