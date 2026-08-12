@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ECOM_UI_CANON_SCHEMA_V1",
+  "title": "ECOM UI Canon V1",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "project",
+    "invariants",
+    "global_context",
+    "screens",
+    "responsive",
+    "acceptance"
+  ],
+  "properties": {
+    "schema": {"const": "ECOM_UI_CANON_V1"},
+    "status": {"enum": ["DRAFT", "READY", "FROZEN"]},
+    "project": {
+      "type": "object",
+      "required": ["root", "coordinator_pointer", "browser_entrypoint"],
+      "properties": {
+        "root": {"type": "string"},
+        "coordinator_pointer": {"type": "string"},
+        "browser_entrypoint": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "invariants": {
+      "type": "object",
+      "required": [
+        "single_browser_owner",
+        "single_navigation_owner",
+        "single_i18n_owner",
+        "single_currency_owner",
+        "single_shop_owner",
+        "no_fake_controls",
+        "no_duplicate_action_meaning"
+      ],
+      "properties": {
+        "single_browser_owner": {"const": true},
+        "single_navigation_owner": {"const": true},
+        "single_i18n_owner": {"const": true},
+        "single_currency_owner": {"const": true},
+        "single_shop_owner": {"const": true},
+        "no_fake_controls": {"const": true},
+        "no_duplicate_action_meaning": {"const": true}
+      },
+      "additionalProperties": true
+    },
+    "global_context": {
+      "type": "object",
+      "required": ["languages", "currencies", "product_context", "shop_marketplace_separation"],
+      "properties": {
+        "languages": {"type": "array", "items": {"enum": ["RU", "DE", "EN", "RO"]}, "uniqueItems": true},
+        "currencies": {"type": "array", "items": {"enum": ["EUR", "USD", "GBP", "RON"]}, "uniqueItems": true},
+        "product_context": {"type": "string"},
+        "shop_marketplace_separation": {"const": true}
+      },
+      "additionalProperties": true
+    },
+    "screens": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["screen_id", "owner", "purpose", "controls", "empty_states", "continuation"],
+        "properties": {
+          "screen_id": {"enum": ["HOME", "ROUTE01", "ROUTE02", "ROUTE03"]},
+          "owner": {"type": "string"},
+          "purpose": {"type": "string"},
+          "controls": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "meaning", "mode", "binding_status"],
+              "properties": {
+                "id": {"type": "string"},
+                "meaning": {"type": "string"},
+                "mode": {"enum": ["AUTO", "MANUAL", "DIRTY_ONLY", "CONDITIONAL", "READONLY"]},
+                "binding_status": {"enum": ["BOUND", "DISABLED_WITH_REASON", "ABSENT"]}
+              },
+              "additionalProperties": true
+            }
+          },
+          "empty_states": {"type": "array", "items": {"type": "string"}},
+          "continuation": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": true
+      }
+    },
+    "responsive": {
+      "type": "object",
+      "required": ["widths", "no_horizontal_overflow", "long_string_stress"],
+      "properties": {
+        "widths": {"type": "array", "items": {"enum": [700, 820, 960, 1200, 1500, 1648]}, "uniqueItems": true},
+        "no_horizontal_overflow": {"const": true},
+        "long_string_stress": {"const": true}
+      }
+    },
+    "acceptance": {
+      "type": "object",
+      "required": ["visual", "logic", "responsive", "cross_screen", "independent_review"],
+      "properties": {
+        "visual": {"type": "boolean"},
+        "logic": {"type": "boolean"},
+        "responsive": {"type": "boolean"},
+        "cross_screen": {"type": "boolean"},
+        "independent_review": {"type": "boolean"}
+      }
+    }
+  },
+  "additionalProperties": true
+}
