@@ -1,0 +1,12 @@
+{
+  "schema":"ION_UI_CANDIDATE_SCORE_V1",
+  "candidate_id":"",
+  "screen_set":[],
+  "scores":{"logic_preservation":0,"operator_click_efficiency":0,"clarity":0,"visual_quality":0,"responsive":0,"error_prevention":0,"state_visibility":0,"maintainability":0},
+  "hard_failures":[],
+  "browser_qa":"PENDING",
+  "responsive_qa":"PENDING",
+  "critic_review":"PENDING",
+  "operator_review":"PENDING",
+  "eligible_for_integration":false
+}
