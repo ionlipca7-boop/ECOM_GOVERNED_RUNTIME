@@ -1,0 +1,1 @@
+{"schema":"ION_AGENT_CAPABILITY_ALLOWLIST_V1","default":"DENY","capabilities":{"read_project_context":true,"write_lab_files":true,"write_production":false,"marketplace_write":false,"ebay_write":false,"save_publish":false,"delete_move_rename":false,"external_model_call":"SAFE_AI_GATE_ONLY"}}
