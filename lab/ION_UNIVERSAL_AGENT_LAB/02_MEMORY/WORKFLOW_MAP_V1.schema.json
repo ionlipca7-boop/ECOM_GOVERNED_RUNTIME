@@ -1,0 +1,15 @@
+{
+  "schema":"ION_WORKFLOW_MAP_V1",
+  "project_id":"",
+  "source_refs":[],
+  "nodes":[],
+  "edges":[],
+  "operator_decisions":[],
+  "automatic_steps":[],
+  "manual_steps":[],
+  "approval_gates":[],
+  "owners":[],
+  "invariants":[],
+  "known_debts":[],
+  "status":"DRAFT"
+}
