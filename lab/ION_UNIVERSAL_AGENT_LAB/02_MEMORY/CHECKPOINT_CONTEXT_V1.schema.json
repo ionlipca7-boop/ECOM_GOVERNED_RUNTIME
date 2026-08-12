@@ -1,0 +1,20 @@
+{
+  "schema":"ION_CHECKPOINT_CONTEXT_V1",
+  "checkpoint_id":"",
+  "project_id":"",
+  "branch":"",
+  "timestamp":"",
+  "current_goal":"",
+  "active_owner":"",
+  "source_truth_refs":[],
+  "decisions":[],
+  "completed":[],
+  "open_debts":[],
+  "blocked":[],
+  "next_actions":[],
+  "leases":[],
+  "artifacts":[],
+  "browser_state_ref":"",
+  "memory_refs":[],
+  "resume_safe":false
+}
