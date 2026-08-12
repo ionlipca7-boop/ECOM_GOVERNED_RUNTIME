@@ -1,0 +1,1 @@
+{"schema":"ION_TASK_LIFECYCLE_V1","states":["NEW","ROUTED","IN_PROGRESS","WAIT_DEPENDENCY","READY_FOR_QA","QA_FAILED","QA_PASSED","WAIT_OPERATOR","ACCEPTED","FROZEN","DEBT"],"terminal":["FROZEN","DEBT"],"no_silent_drop":true}
