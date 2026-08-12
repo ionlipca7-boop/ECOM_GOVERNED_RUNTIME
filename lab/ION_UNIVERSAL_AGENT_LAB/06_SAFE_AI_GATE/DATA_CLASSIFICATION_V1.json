@@ -1,0 +1,1 @@
+{"schema":"ION_DATA_CLASSIFICATION_V1","classes":["PUBLIC","PROJECT_INTERNAL","SENSITIVE","SECRET"],"external_default_max":"PROJECT_INTERNAL_REDACTED","secret_external":false,"pii_redaction_required":true,"audit_required":true}
