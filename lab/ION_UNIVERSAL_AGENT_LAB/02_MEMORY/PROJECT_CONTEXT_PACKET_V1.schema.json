@@ -1,0 +1,37 @@
+{
+  "schema": "ION_UNIVERSAL_AGENT_LAB_PROJECT_CONTEXT_PACKET_V1",
+  "purpose": "Canonical readonly context envelope for one project loaded into Agent Lab without becoming a second source of truth.",
+  "required": [
+    "project_id",
+    "canonical_root",
+    "source_mode",
+    "governance",
+    "owners",
+    "routes",
+    "memory_sources",
+    "runtime_guards",
+    "current_status",
+    "debts",
+    "evidence_refs"
+  ],
+  "properties": {
+    "project_id": {"type":"string"},
+    "canonical_root": {"type":"string"},
+    "source_mode": {"enum":["READONLY_MIRROR","READONLY_DIRECT"]},
+    "governance": {"type":"object"},
+    "owners": {"type":"array"},
+    "routes": {"type":"array"},
+    "memory_sources": {"type":"array"},
+    "runtime_guards": {"type":"object"},
+    "current_status": {"type":"object"},
+    "debts": {"type":"array"},
+    "evidence_refs": {"type":"array"}
+  },
+  "invariants": {
+    "second_canonical_truth": false,
+    "marketplace_write": false,
+    "ebay_write": 0,
+    "save_publish": false,
+    "project_source_mutation": false
+  }
+}
