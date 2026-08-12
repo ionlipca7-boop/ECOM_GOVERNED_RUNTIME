@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ECOM_FACTORY_SKILL_REGISTRY_SCHEMA_V1",
+  "title": "ECOM Factory Skill Registry V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "version", "skills"],
+  "properties": {
+    "schema": {"const": "ECOM_FACTORY_SKILL_REGISTRY_V1"},
+    "version": {"type": "string", "minLength": 1},
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "skill_id",
+          "purpose",
+          "mode",
+          "risk_level",
+          "allowed_owners",
+          "allowed_tools",
+          "forbidden_actions",
+          "required_inputs",
+          "required_evidence",
+          "acceptance_tests",
+          "stop_conditions"
+        ],
+        "properties": {
+          "skill_id": {"type": "string", "pattern": "^ecom-[a-z0-9-]+$"},
+          "purpose": {"type": "string", "minLength": 1},
+          "mode": {"enum": ["READONLY", "PLAN", "CANDIDATE_WRITE", "GOVERNED_EXECUTE"]},
+          "risk_level": {"enum": ["LOW", "MEDIUM", "HIGH", "BLOCKED_BY_DEFAULT"]},
+          "allowed_owners": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "allowed_tools": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "forbidden_actions": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "required_inputs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "required_evidence": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "acceptance_tests": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+          "stop_conditions": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+          "next_skills": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "approval_required": {"type": "boolean", "default": false},
+          "calls_existing_owner_only": {"type": "boolean", "const": true}
+        }
+      }
+    }
+  }
+}
