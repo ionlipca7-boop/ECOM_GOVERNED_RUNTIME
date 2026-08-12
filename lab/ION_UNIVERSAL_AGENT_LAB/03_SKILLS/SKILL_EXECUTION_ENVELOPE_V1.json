@@ -1,0 +1,1 @@
+{"schema":"ION_SKILL_EXECUTION_ENVELOPE_V1","required":["skill_id","task_id","context_packet_id","owner_scope","mode","inputs","outputs","safety","evidence"],"modes":["READONLY","LAB_WRITE","GATED_INTEGRATION"],"default_mode":"READONLY","forbid_unscoped_write":true}
