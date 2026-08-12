@@ -1,0 +1,1 @@
+{"schema":"ION_VISUAL_EVIDENCE_PACKET_V1","fields":["screen_id","candidate_id","source_sha","generated_sha","viewport","language","currency","shop","role","screenshot_ref","dom_control_map_ref","handler_map_ref","observed_at","result"],"result_enum":["PASS","FAIL","BLOCK","UNKNOWN"]}
