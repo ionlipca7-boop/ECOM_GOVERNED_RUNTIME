@@ -1,0 +1,18 @@
+{
+  "schema":"ION_INTEGRATION_PACKAGE_V1",
+  "package_id":"",
+  "source_candidate":"",
+  "target_owner":"",
+  "target_paths":[],
+  "pre_sha":{},
+  "post_sha_expected":{},
+  "changes":[],
+  "tests":[],
+  "browser_evidence":[],
+  "responsive_evidence":[],
+  "critic_evidence":[],
+  "rollback":{},
+  "operator_approval_required":true,
+  "production_write_authorized":false,
+  "status":"DRAFT"
+}
