@@ -1,0 +1,30 @@
+{
+  "schema": "ION_UNIVERSAL_AGENT_LAB_MANIFEST_V1",
+  "status": "BOOTSTRAP_PHASE_0_1",
+  "branch": "feat/ecom-factory-gstack-r1",
+  "windows_target": "D:\\ION_UNIVERSAL_AGENT_LAB",
+  "production_root": "D:\\ECOM_OS_PRO_LOCAL_OPERATOR_BUILD",
+  "knowledge_lab_root": "D:\\ECOM_KNOWLEDGE_LAB",
+  "principles": {
+    "production_untouched_during_lab_build": true,
+    "readonly_inventory_first": true,
+    "reuse_existing_owners": true,
+    "second_product_vault_writer": false,
+    "second_production_browser_owner": false,
+    "second_i18n_owner": false,
+    "marketplace_write": false,
+    "ebay_write": 0,
+    "save_publish": false
+  },
+  "phases": [
+    {"id":0,"name":"READONLY_INVENTORY","status":"ACTIVE"},
+    {"id":1,"name":"PHYSICAL_SKELETON","status":"PREPARED_GITHUB"},
+    {"id":2,"name":"MEMORY_CONTEXT_READONLY","status":"PENDING"},
+    {"id":3,"name":"SKILL_LAYER","status":"PENDING"},
+    {"id":4,"name":"UI_BROWSER_FACTORY","status":"PENDING"},
+    {"id":5,"name":"ORCHESTRATOR_POC","status":"PENDING"},
+    {"id":6,"name":"SAFE_AI_GATE_AND_MODELS","status":"PENDING"},
+    {"id":7,"name":"ACCEPTANCE","status":"PENDING"},
+    {"id":8,"name":"CONTROLLED_INTEGRATION","status":"PENDING"}
+  ]
+}
