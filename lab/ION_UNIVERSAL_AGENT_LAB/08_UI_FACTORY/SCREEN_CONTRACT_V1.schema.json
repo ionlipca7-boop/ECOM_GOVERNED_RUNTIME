@@ -1,0 +1,20 @@
+{
+  "schema":"ION_SCREEN_CONTRACT_V1",
+  "screen_id":"",
+  "owner":"",
+  "purpose":"",
+  "required_controls":[],
+  "forbidden_controls":[],
+  "automatic_controls":[],
+  "manual_dirty_only_controls":[],
+  "navigation":[],
+  "state_inputs":[],
+  "state_outputs":[],
+  "responsive_viewports":[700,820,960,1200,1500,1648],
+  "i18n":{"languages":["RU","DE","EN","RO"],"currency_independent":true},
+  "empty_state":"COMPACT",
+  "duplicate_semantics_allowed":false,
+  "visual_regression_required":true,
+  "browser_acceptance_required":true,
+  "status":"DRAFT"
+}
