@@ -1,0 +1,27 @@
+{
+  "schema": "ECOM_SOURCE_WRITE_GUARD_V1",
+  "created_at": "2026-08-17T19:19:00+02:00",
+  "protected_target": "D:/ECOM_OS_PRO_LOCAL_OPERATOR_BUILD/backend/v3_app/service.py",
+  "canonical_recovery_sha256": "3ff407fec4d15b852cb0c1c7139c1ebd208b110e1d4e46c02cbc04878199c2c1",
+  "corrupt_sha256": "41ca955586b3a1bf99452b04289af437edfbb38f29eca7c305e8f05717d8819f",
+  "rules": {
+    "literal_sha_patch_envelope_as_source_payload": "DENY",
+    "manual_fragment_reconstruction": "DENY",
+    "pyc_decompilation_recovery": "DENY",
+    "whole_file_write_requires_preimage_sha": true,
+    "candidate_must_compile_before_replace": true,
+    "postwrite_sha_readback_required": true,
+    "postwrite_import_smoke_required": true,
+    "rollback_required_on_failure": true,
+    "single_writer_per_target": true,
+    "worker_server_restart": "DENY",
+    "canonical_launcher_only": true,
+    "marketplace_write_default": false,
+    "save_publish_default": false,
+    "terminal_pass_requires_all_gates_pass": true
+  },
+  "remaining_blocks": [
+    "STOP_SAFE_HOME_P1_ISOLATED_ACCEPTANCE_FAILED_SERVER_HEALTHY",
+    "AUDIT_CHAIN_previous_event_hash_mismatch_count_1274"
+  ]
+}
